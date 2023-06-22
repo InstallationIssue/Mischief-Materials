@@ -1,6 +1,4 @@
 /*
-import Image from 'next/image'
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -112,17 +110,41 @@ export default function Home() {
 */
 
 import { Metadata } from 'next'
- 
+import Link from 'next/link'
+import Image from 'next/image'
+
 export const metadata: Metadata = {
   title: 'My Page Title',
 }
  
 export default function Page() {
   return (
-    <main>
-      <div className='flex'>
-        <button>DM</button>
-        <button>Character</button>
+    <main className='h-screen flex'>
+      <div className='flex flex-row justify-evenly w-full h-5/6 items-center'>
+        <Link href='characters' className='rounded-full flex flex-col items-center
+        aspect-square h-72 bg-lime-700 m-2 text-center justify-center'>
+          <Image
+            src="/images/note-with-pen.svg"
+            alt="Vercel Logo"
+            className="w-2/3"
+            width={200}
+            height={200}
+            priority
+          />
+          <h1 className='absolute font-mono font-bold text-2xl'>Dungeon Master</h1>
+        </Link>
+        <Link href='characters' className='rounded-full flex flex-col items-center
+        aspect-square h-72 bg-teal-700 m-2 text-center justify-center'>
+          <Image
+            src="/images/sword.svg"
+            alt="Vercel Logo"
+            className="w-2/3"
+            width={200}
+            height={200}
+            priority
+          />
+          <h1 className='absolute font-mono font-bold text-2xl'>Character</h1>
+        </Link>
       </div>
     </main>
   )

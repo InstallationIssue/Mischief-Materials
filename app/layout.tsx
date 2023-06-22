@@ -19,13 +19,13 @@ function Navigation () {
       dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border 
       lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30'>
         <Image
-              src="/images/androidhols.svg"
-              alt="Vercel Logo"
-              className="bg-black border border-white rounded-full w-10 h-10 mx-4"
-              width={50}
-              height={50}
-              priority
-            />
+          src="/images/androidhols.svg"
+          alt="Vercel Logo"
+          className="bg-black border border-white rounded-full w-10 h-10 mx-4"
+          width={50}
+          height={50}
+          priority
+        />
         <div>
           <Link href="/" className="font-mono font-bold px-4">Home</Link>
           <Link href="character" className="font-mono font-bold px-4">Character</Link>
@@ -41,7 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-        <body className={inter.className}>
+        <body className={inter.className} id='background'>
           <Navigation></Navigation>
           {children}
         </body>
