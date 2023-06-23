@@ -16,7 +16,7 @@ export default function Header(){
                         <div className="bg-green-400 w-1/2 h-full rounded-bl-md"/>
                     </div>
                 </div>
-                <div className="flex flex-row bg-slate-800 justify-start
+                <div className="flex flex-row bg-raisin-black justify-start
                 border-2 border-white w-full mx-10 rounded-lg pl-11">
                     <h1 className="font-mono font-bold border-white mr-2
                     px-4 py-2 rounded-lg text-2xl bg-black border-2 w-60

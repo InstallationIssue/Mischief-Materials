@@ -114,7 +114,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'My Page Title',
+  title: 'RiT Home',
 }
  
 export default function Page() {
@@ -122,7 +122,8 @@ export default function Page() {
     <main className='h-screen flex'>
       <div className='flex flex-row justify-evenly w-full h-5/6 items-center'>
         <Link href='characters' className='rounded-full flex flex-col items-center
-        aspect-square h-72 bg-lime-700 m-2 text-center justify-center'>
+        aspect-square w-1/3 m-2 text-center justify-center
+        border-2 border-slate-300 bg-opacity-70 bg-vermillion'>
           <Image
             src="/images/note-with-pen.svg"
             alt="Vercel Logo"
@@ -131,10 +132,14 @@ export default function Page() {
             height={200}
             priority
           />
-          <h1 className='absolute font-mono font-bold text-2xl'>Dungeon Master</h1>
+          <h1 className='absolute font-mono font-bold text-2xl 
+          bg-slate-800 bg-opacity-70 rounded-lg p-2'>
+            Dungeon Master
+          </h1>
         </Link>
         <Link href='characters' className='rounded-full flex flex-col items-center
-        aspect-square h-72 bg-teal-700 m-2 text-center justify-center'>
+        aspect-square w-1/3 bg-teal-800 m-2 text-center justify-center
+        border-2 border-slate-300 bg-opacity-70 bg-pale-azure'>
           <Image
             src="/images/sword.svg"
             alt="Vercel Logo"
@@ -143,7 +148,10 @@ export default function Page() {
             height={200}
             priority
           />
-          <h1 className='absolute font-mono font-bold text-2xl'>Character</h1>
+          <h1 className='absolute font-mono font-bold text-2xl 
+          bg-slate-800 bg-opacity-70 rounded-lg p-2'>
+            Character
+          </h1>
         </Link>
       </div>
     </main>

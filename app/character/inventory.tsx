@@ -1,9 +1,8 @@
 export default function Inventory(){
     return (
-        <main>
-            <div></div>
-            <div></div>
-            <div></div>
-        </main>
+        <div className="font-mono text-ellipsis bg-raisin-black
+        border-2 border-white rounded-lg p-2 h-full">
+            
+        </div>
     )
 }

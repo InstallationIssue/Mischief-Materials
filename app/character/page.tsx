@@ -1,6 +1,7 @@
 import Header from "./header"
-import Appearance from "./appearance"
+import Characteristics from "./characteristics"
 import Background from "./background"
+import Inventory from "./inventory"
 import Image from "next/image"
 
 export default function Character(){
@@ -18,11 +19,14 @@ export default function Character(){
                         priority/>
                 </div>
                 <div className="flex-grow m-2 w-1/3">
-                    <Appearance/>
+                    <Characteristics/>
                 </div>
                 <div className="flex-grow m-2 w-1/3">
                     <Background/>
                 </div>
+            </div>
+            <div className="flex-grow m-2 h-fit">
+                <Inventory/>
             </div>
         </main>
     )
