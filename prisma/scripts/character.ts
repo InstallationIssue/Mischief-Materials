@@ -76,3 +76,32 @@ async function getCharacterById(id: number){
         }
     })
 }
+
+async function addXp(id: number, xp: number){
+    const character = await getCharacterById(id)
+    
+    let total_xp = character.xp + xp
+
+    //x(x+1) = xp boundary
+    //x = (-1 - Math.sqrt(-1+4*this.xp))/2;
+    let x = (-1 + Math.sqrt(-1+4*total_xp))/2;
+    //xp boundaries
+    //2 6 12 20 30 42
+    let lev = Math.ceil(x);
+
+    const new_character = await prisma.character.update({
+        where: {
+            id: id
+        },
+        data: {
+            xp: total_xp,
+            level: lev,
+            creature: {
+                update: {
+                    health_max: 2+2*lev
+                }
+            }
+        }
+    })
+    return new_character
+}

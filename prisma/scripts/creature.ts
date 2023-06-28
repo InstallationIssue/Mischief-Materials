@@ -1,5 +1,4 @@
 import { PrismaClient } from '@prisma/client'
-import { idText } from 'typescript'
 
 const prisma = new PrismaClient()
 
@@ -65,13 +64,23 @@ async function getCreatureById(id: number){
 
 //Check for no health
 async function creatureLoseHealth(id: number, health_lost: number) {
-    const creature = await prisma.creature.update({
-        where: {
-            id: id
-        },
-        data: {
-            health_lost: health_lost
-        }
-    })
-    return creature.health_max-creature.health_lost
+    const old_creature = await getCreatureById(id)
+
+    let health = old_creature.health_max - old_creature.health_lost - health_lost
+
+    if (health > 0){
+        const creature = await prisma.creature.update({
+            where: {
+                id: id
+            },
+            data: {
+                health_lost: health_lost
+            }
+        })
+
+        return creature.health_max - creature.health_lost
+    }
+    else {
+        return false
+    }
 }

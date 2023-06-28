@@ -37,6 +37,7 @@ model Character {
   mannerism       String
   creature        Creature  @relation(fields: [creatureId], references: [id])
   creatureId      Int       @unique
+  npc             Npc?
 }
 
 model Spell {
@@ -51,8 +52,20 @@ model Spell {
 model Monster {
   id              Int       @id @default(autoincrement())
   power           Int
-  size            Int
+  size            String
   attack          Int
   creature        Creature  @relation(fields: [creatureId], references: [id])
   creatureId      Int       @unique
+}
+
+model Npc {
+  id              Int       @id @default(autoincrement())
+  asset           String
+  liability       String
+  goal            String
+  misfortune      String
+  mission         String
+  method          String
+  character       Character @relation(fields: [characterId], references: [id])
+  characterId     Int       @unique
 }
