@@ -2,11 +2,42 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-async function getCharacters(){
-    return await prisma.creature.findMany()
+export async function getCharacters(){
+    return await prisma.character.findMany({
+        select: {
+            xp: true,
+            level: true,
+            background: true,
+            appearance: true,
+            physical_detail: true,
+            clothing: true,
+            personality: true,
+            mannerism: true,
+            creature: {
+                select: {
+                    name: true,
+                    description: true,
+                    str: true,
+                    dex: true,
+                    wil: true,
+                    armor: true,
+                    health_max: true,
+                    health_lost: true
+                }
+            }
+        }
+    })
 }
 
-async function createCharacter(name: string, description: string,
+export async function getCharacterIds(){
+    return await prisma.character.findMany({
+        select: {
+            id:true
+        }
+    })
+}
+
+export async function createCharacter(name: string, description: string,
     str = 0, dex = 0, wil = 0, armor = 6, health_max = 4, 
     background = '', appearance = '', physical_detail = '',
     clothing = '', personality = '', mannerism = ''){
@@ -38,7 +69,7 @@ async function createCharacter(name: string, description: string,
     return character
 }
 
-async function updateCharacter(id: number, name?: string, description?: string,
+export async function updateCharacter(id: number, name?: string, description?: string,
     str?: number, dex?: number, wil?: number, armor?: number, health_max?: number, 
     background?: string, appearance?: string, physical_detail?: string,
     clothing?: string, personality?: string, mannerism?: string) {
@@ -69,15 +100,37 @@ async function updateCharacter(id: number, name?: string, description?: string,
     return character
 }
 
-async function getCharacterById(id: number){
+export async function getCharacterById(id: number){
     return await prisma.character.findUniqueOrThrow({
         where: {
             id: id
+        },
+        select: {
+            xp: true,
+            level: true,
+            background: true,
+            appearance: true,
+            physical_detail: true,
+            clothing: true,
+            personality: true,
+            mannerism: true,
+            creature: {
+                select: {
+                    name: true,
+                    description: true,
+                    str: true,
+                    dex: true,
+                    wil: true,
+                    armor: true,
+                    health_max: true,
+                    health_lost: true
+                }
+            }
         }
     })
 }
 
-async function addXp(id: number, xp: number){
+export async function addXp(id: number, xp: number){
     const character = await getCharacterById(id)
     
     let total_xp = character.xp + xp

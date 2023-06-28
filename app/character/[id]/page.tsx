@@ -1,13 +1,17 @@
-import Header from "./header"
-import Characteristics from "./characteristics"
-import Background from "./background"
-import Inventory from "./inventory"
+import Header from "../header"
+import Characteristics from "../characteristics"
+import Background from "../background"
+import Inventory from "../inventory"
 import Image from "next/image"
 
-export default function Character(){
+export default function Character({ 
+    params 
+}: { 
+    params: { id: number } 
+}) {
     return (
         <main className="flex flex-col justify-around">
-            <Header></Header>
+            <Header id={Number(params.id)}/>
             <div className="flex flex-row">
                 <div className="flex-grow m-2 w-1/3">
                     <Image
@@ -19,10 +23,10 @@ export default function Character(){
                         priority/>
                 </div>
                 <div className="flex-grow m-2 w-1/3">
-                    <Characteristics/>
+                    <Characteristics id={Number(params.id)}/>
                 </div>
                 <div className="flex-grow m-2 w-1/3">
-                    <Background/>
+                    <Background id={Number(params.id)}/>
                 </div>
             </div>
             <div className="flex-grow m-2 h-fit">
