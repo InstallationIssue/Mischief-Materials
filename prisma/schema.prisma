@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Creature {
+  id              Int       @id @default(autoincrement())
+  name            String    @unique
+  description     String
+  health_max      Int
+  health_lost     Int
+  armor           Int
+  str             Int
+  dex             Int
+  wil             Int
+  character       Character?
+  monster         Monster?
+  spells          Spell[]
+}
+
+model Character {
+  id              Int       @id @default(autoincrement())
+  xp              Int
+  level           Int
+  background      String
+  appearance      String
+  physical_detail String
+  clothing        String
+  personality     String
+  mannerism       String
+  creature        Creature  @relation(fields: [creatureId], references: [id])
+  creatureId      Int       @unique
+}
+
+model Spell {
+  id              Int       @id @default(autoincrement())
+  name            String
+  description     String
+  spellFormula    String
+  creature        Creature  @relation(fields: [creatureId], references: [id])
+  creatureId      Int       @unique
+}
+
+model Monster {
+  id              Int       @id @default(autoincrement())
+  power           Int
+  size            Int
+  attack          Int
+  creature        Creature  @relation(fields: [creatureId], references: [id])
+  creatureId      Int       @unique
+}
