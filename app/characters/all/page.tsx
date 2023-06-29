@@ -1,4 +1,4 @@
-import Header from "@/app/character/header"
+import Header from "@/app/characters/header"
 import Link from "next/link"
 import { getCharacterIds } from "@/prisma/scripts/character"
 
