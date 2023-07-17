@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Rats in Transit App',
   description: 'Maze Rats Assistant Web App',
-  
 }
 
 function Navigation () {
@@ -29,7 +28,7 @@ function Navigation () {
         />
         <div>
           <Link href="/" className="font-mono font-bold px-4">Home</Link>
-          <Link href="characters" className="font-mono font-bold px-4">Characters</Link>
+          <Link href="character/all" className="font-mono font-bold px-4">Characters</Link>
         </div>
       </nav>
     )

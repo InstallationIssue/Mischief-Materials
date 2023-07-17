@@ -121,7 +121,7 @@ export default function Page() {
   return (
     <main className='h-screen flex'>
       <div className='flex flex-row justify-evenly w-full h-5/6 items-center'>
-        <Link href='characters' className='rounded-full flex flex-col items-center
+        <Link href='campaign/all' className='rounded-full flex flex-col items-center
         aspect-square w-1/3 m-2 text-center justify-center
         border-2 border-slate-300 bg-opacity-70 bg-vermillion'>
           <Image
@@ -137,7 +137,7 @@ export default function Page() {
             Dungeon Master
           </h1>
         </Link>
-        <Link href='characters' className='rounded-full flex flex-col items-center
+        <Link href='character/all' className='rounded-full flex flex-col items-center
         aspect-square w-1/3 bg-teal-800 m-2 text-center justify-center
         border-2 border-slate-300 bg-opacity-70 bg-pale-azure'>
           <Image

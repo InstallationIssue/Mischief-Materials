@@ -10,6 +10,34 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Campaign {
+  id              Int       @id @default(autoincrement())
+  name            String    @unique
+  description     String
+  map             String
+  locations       Location[]
+  npcs            Npc[]
+  monsters        Monster[]
+  characters      Character[]
+}
+
+model Location {
+  id              Int       @id @default(autoincrement())
+  name            String    @unique
+  description     String
+  campaign        Campaign  @relation(fields: [campaignId], references: [id])
+  campaignId      Int       @unique
+}
+
+model Item {
+  id              Int       @id @default(autoincrement())
+  name            String    @unique
+  description     String
+  value           Int
+  character       Character  @relation(fields: [characterId], references: [id])
+  characterId      Int       @unique
+}
+
 model Creature {
   id              Int       @id @default(autoincrement())
   name            String    @unique
@@ -37,7 +65,10 @@ model Character {
   mannerism       String
   creature        Creature  @relation(fields: [creatureId], references: [id])
   creatureId      Int       @unique
+  campaign        Campaign  @relation(fields: [campaignId], references: [id])
+  campaignId      Int       @unique
   npc             Npc?
+  items           Item[]
 }
 
 model Spell {
@@ -56,6 +87,8 @@ model Monster {
   attack          Int
   creature        Creature  @relation(fields: [creatureId], references: [id])
   creatureId      Int       @unique
+  campaign        Campaign  @relation(fields: [campaignId], references: [id])
+  campaignId      Int       @unique
 }
 
 model Npc {
@@ -68,4 +101,6 @@ model Npc {
   method          String
   character       Character @relation(fields: [characterId], references: [id])
   characterId     Int       @unique
+  campaign        Campaign  @relation(fields: [campaignId], references: [id])
+  campaignId      Int       @unique
 }
