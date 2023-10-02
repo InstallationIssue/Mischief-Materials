@@ -1,16 +1,16 @@
 import { getFoundationById } from "@/prisma/scripts/foundation"
+import Link from "next/link"
 
 export default async function Header({
-    id,
+    id, name, setting
   }: {
-    id: number
+    id: number, name: string, setting: string
   }) {
-    const foundation = await getFoundationById(id)
 
     return (
-      <div className="flex flex-row">
-        <h1 className="font-mono font-thin">{foundation.name}</h1>
-        <p>{foundation.setting}</p>
-      </div>
+      <Link href={'/'+id} className="flex flex-row">
+        <h1 className="font-mono font-thin">{name}</h1>
+        <p>{setting}</p>
+      </Link>
     )
 }

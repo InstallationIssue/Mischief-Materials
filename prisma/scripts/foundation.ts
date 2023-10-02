@@ -5,6 +5,7 @@ const prisma = new PrismaClient()
 export async function getFoundations(){
     return await prisma.foundation.findMany({
         select: {
+            id: true,
             name: true,
             setting: true
         }

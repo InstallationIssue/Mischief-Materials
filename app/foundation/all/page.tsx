@@ -1,9 +1,9 @@
 import Header from "../header"
 import Link from "next/link"
-import { getFoundationIds } from "@/prisma/scripts/foundation"
+import { getFoundations } from "@/prisma/scripts/foundation"
 
 export default async function Foundation(){
-    const data = await getFoundationIds()
+    const data = await getFoundations()
     return (
         <main className="flex flex-col justify-around">
             <div className="flex flex-row justify-between">
@@ -11,9 +11,7 @@ export default async function Foundation(){
                 <button className="bg-emerald rounded-lg m-2 w-16 text-3xl">+</button>
             </div>
             {data.map((id, index) => (
-            <Link href={'foundation/' + id.id}>
-                <Header id={id.id}/>
-            </Link>
+                <Header id={id.id} name={id.name} setting={id.setting}/>
             ))}
         </main>
     )
