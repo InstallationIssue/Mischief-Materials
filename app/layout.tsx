@@ -18,17 +18,26 @@ function Navigation () {
       backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 
       dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border 
       lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30'>
-        <Image
-          src="/images/androidhols.svg"
-          alt="Vercel Logo"
-          className="bg-black border border-white rounded-full w-10 h-10 mx-4"
-          width={50}
-          height={50}
-          priority
-        />
+        <Link href="/" className='flex flex-row'>
+          <Image
+            src="/icons/home.svg"
+            alt="RiTs Logo"
+            className="border border-white rounded-full w-10 h-10 mx-4 bg-white"
+            width={50}
+            height={50}
+            priority
+          />
+          <h2 className='font-mono font-bold text-4xl'>MRC</h2>
+        </Link>
         <div>
-          <Link href="/" className="font-mono font-bold px-4">Home</Link>
-          <Link href="character/all" className="font-mono font-bold px-4">Characters</Link>
+          <Link href="foundation/all" className="font-mono font-bold px-4">Foundations</Link>
+          <Link href="scenario/all" className="font-mono font-bold px-4">Scenarios</Link>
+          <Link href="location/all" className="font-mono font-bold px-4">Locations</Link>
+          <Link href="player/all" className="font-mono font-bold px-4">Players</Link>
+          <Link href="npc/all" className="font-mono font-bold px-4">NPCs</Link>
+          <Link href="monster/all" className="font-mono font-bold px-4">Monsters</Link>
+          <Link href="item/all" className="font-mono font-bold px-4">Items</Link>
+          <Link href="magic/all" className="font-mono font-bold px-4">Magic</Link>
         </div>
       </nav>
     )

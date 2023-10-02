@@ -5,96 +5,59 @@ const prisma = new PrismaClient()
 export async function getCharacters(){
     return await prisma.character.findMany({
         select: {
+            name: true,
+            background: true,
             xp: true,
             level: true,
-            background: true,
-            appearance: true,
-            physical_detail: true,
-            clothing: true,
-            personality: true,
-            mannerism: true,
-            creature: {
-                select: {
-                    name: true,
-                    description: true,
-                    str: true,
-                    dex: true,
-                    wil: true,
-                    armor: true,
-                    health_max: true,
-                    health_lost: true
-                }
-            }
+            health_max: true,
+            health_lost: true,
+            armor: true,
+            str: true,
+            dex: true,
+            wil: true,
+            physical_features: true,
+            npc: true
         }
     })
 }
 
-export async function getCharacterIds(){
-    return await prisma.character.findMany({
-        select: {
-            id:true
-        }
-    })
-}
-
-export async function createCharacter(name: string, description: string,
-    str = 0, dex = 0, wil = 0, armor = 6, health_max = 4, 
-    background = '', appearance = '', physical_detail = '',
-    clothing = '', personality = '', mannerism = ''){
+export async function createCharacter(name: string, background: string,
+    str = 0, dex = 0, wil = 0, armor = 6, physical_features = "", npc = true){
 
     const character = await prisma.character.create({
         data: {
+            name: name,
+            background: background,
             xp: 0,
             level: 1,
-            background: background,
-            appearance: appearance,
-            physical_detail: physical_detail,
-            clothing: clothing,
-            personality: personality,
-            mannerism: mannerism,
-            creature: {
-                create: {
-                    name: name,
-                    description: description,
-                    str: str,
-                    dex: dex,
-                    wil: wil,
-                    armor: armor, 
-                    health_max: health_max,
-                    health_lost: 0
-                }
-            }
+            armor: armor,
+            str: str,
+            dex: dex,
+            wil: wil,
+            physical_features: physical_features,
+            npc: npc
         }
       })
     return character
 }
 
-export async function updateCharacter(id: number, name?: string, description?: string,
-    str?: number, dex?: number, wil?: number, armor?: number, health_max?: number, 
-    background?: string, appearance?: string, physical_detail?: string,
-    clothing?: string, personality?: string, mannerism?: string) {
+export async function updateCharacter(id: number, name?: string, background?: string,
+    armor?: number, str?: number, dex?: number, wil?: number, physical_features?: string,
+    npc?: boolean
+    ) {
     const character = await prisma.character.update({
         where: {
             id: id
         },
         data: {
+            name: name,
             background: background,
-            appearance: appearance,
-            physical_detail: physical_detail,
-            clothing: clothing, 
-            personality: personality,
-            mannerism: mannerism,
-            creature: {
-                update: {
-                    name: name,
-                    description: description,
-                    str: str,
-                    dex: dex,
-                    wil: wil,
-                    armor: armor,
-                    health_max: health_max
-                }
-            }
+            armor: armor,
+            str: str,
+            dex: dex,
+            wil: wil,
+            physical_features: physical_features,
+            npc: npc
         }
     })
     return character
@@ -106,55 +69,52 @@ export async function getCharacterById(id: number){
             id: id
         },
         select: {
+            name: true,
+            background: true,
             xp: true,
             level: true,
-            background: true,
-            appearance: true,
-            physical_detail: true,
-            clothing: true,
-            personality: true,
-            mannerism: true,
-            creature: {
-                select: {
-                    name: true,
-                    description: true,
-                    str: true,
-                    dex: true,
-                    wil: true,
-                    armor: true,
-                    health_max: true,
-                    health_lost: true
-                }
-            }
+            health_max: true,
+            health_lost: true,
+            armor: true,
+            str: true,
+            dex: true,
+            wil: true,
+            physical_features: true,
+            npc: true
         }
     })
 }
 
 export async function addXp(id: number, xp: number){
-    const character = await getCharacterById(id)
     
-    let total_xp = character.xp + xp
-
     //x(x+1) = xp boundary
     //x = (-1 - Math.sqrt(-1+4*this.xp))/2;
-    let x = (-1 + Math.sqrt(-1+4*total_xp))/2;
+    let x = (-1 + Math.sqrt(-1+4*xp))/2;
     //xp boundaries
     //2 6 12 20 30 42
-    let lev = Math.ceil(x);
+    let level = Math.ceil(x);
 
-    const new_character = await prisma.character.update({
+    const character = await prisma.character.update({
         where: {
             id: id
         },
         data: {
-            xp: total_xp,
-            level: lev,
-            creature: {
-                update: {
-                    health_max: 2+2*lev
-                }
-            }
+            xp: xp,
+            level: level
         }
     })
-    return new_character
+    return character
+}
+
+//Check for no health
+async function LoseHealth(id: number, health_lost: number) {
+    const character = await prisma.character.update({
+        where: {
+            id: id
+        },
+        data: {
+            health_lost: health_lost
+        }
+    })
+    return character
 }

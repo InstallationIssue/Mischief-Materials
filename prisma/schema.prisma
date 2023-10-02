@@ -10,97 +10,64 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Campaign {
+model Foundation {
   id              Int       @id @default(autoincrement())
   name            String    @unique
+  setting         String
+  scenarios       Scenario[]
+}
+
+model Scenario {
+  id              Int         @id @default(autoincrement())
+  name            String      @unique
   description     String
-  map             String
-  locations       Location[]
-  npcs            Npc[]
-  monsters        Monster[]
-  characters      Character[]
+  foundation      Foundation  @relation(fields: [foundationId], references: [id])
+  foundationId    Int         @unique
 }
 
 model Location {
   id              Int       @id @default(autoincrement())
   name            String    @unique
   description     String
-  campaign        Campaign  @relation(fields: [campaignId], references: [id])
-  campaignId      Int       @unique
 }
 
-model Item {
-  id              Int       @id @default(autoincrement())
-  name            String    @unique
-  description     String
-  value           Int
-  character       Character  @relation(fields: [characterId], references: [id])
-  characterId      Int       @unique
+model Character {
+  id                Int       @id @default(autoincrement())
+  name              String    
+  background        String
+  xp                Int       @default(0)
+  level             Int       @default(1)
+  health_max        Int       @default(4)
+  health_lost       Int       @default(0)
+  armor             Int       @default(6)
+  str               Int       @default(0)
+  dex               Int       @default(0)
+  wil               Int       @default(0)
+  physical_features String    @default("")
+  npc               Boolean   @default(true)
 }
 
-model Creature {
+model Monster {
   id              Int       @id @default(autoincrement())
-  name            String    @unique
-  description     String
   health_max      Int
   health_lost     Int
   armor           Int
   str             Int
   dex             Int
   wil             Int
-  character       Character?
-  monster         Monster?
-  spells          Spell[]
-}
-
-model Character {
-  id              Int       @id @default(autoincrement())
-  xp              Int
-  level           Int
-  background      String
-  appearance      String
-  physical_detail String
-  clothing        String
-  personality     String
-  mannerism       String
-  creature        Creature  @relation(fields: [creatureId], references: [id])
-  creatureId      Int       @unique
-  campaign        Campaign  @relation(fields: [campaignId], references: [id])
-  campaignId      Int       @unique
-  npc             Npc?
-  items           Item[]
-}
-
-model Spell {
-  id              Int       @id @default(autoincrement())
-  name            String
-  description     String
-  spellFormula    String
-  creature        Creature  @relation(fields: [creatureId], references: [id])
-  creatureId      Int       @unique
-}
-
-model Monster {
-  id              Int       @id @default(autoincrement())
   power           Int
   size            String
   attack          Int
-  creature        Creature  @relation(fields: [creatureId], references: [id])
-  creatureId      Int       @unique
-  campaign        Campaign  @relation(fields: [campaignId], references: [id])
-  campaignId      Int       @unique
 }
 
-model Npc {
+model Item {
   id              Int       @id @default(autoincrement())
-  asset           String
-  liability       String
-  goal            String
-  misfortune      String
-  mission         String
-  method          String
-  character       Character @relation(fields: [characterId], references: [id])
-  characterId     Int       @unique
-  campaign        Campaign  @relation(fields: [campaignId], references: [id])
-  campaignId      Int       @unique
+  name            String    @unique
+  description     String
+}
+
+model Magic {
+  id              Int       @id @default(autoincrement())
+  name            String    @unique
+  description     String
 }

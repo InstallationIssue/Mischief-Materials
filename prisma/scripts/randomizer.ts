@@ -454,6 +454,7 @@ export function monsterAbilities (){
     return attributes
 }
 
+/*
 export function newCreature (){
     let animal = TERRESTRIAL_ANIMAL[num(TERRESTRIAL_ANIMAL.length)]
 
@@ -540,3 +541,5 @@ export function randomNobleNPC (){
 
     return npc
 }
+
+*/

@@ -112,12 +112,18 @@ export default function Home() {
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'RiT Home',
 }
- 
+
 export default function Page() {
+  
+  //Temp
+  redirect('/foundation/all')
+  //Temp
+  
   return (
     <main className='h-screen flex'>
       <div className='flex flex-row justify-evenly w-full h-5/6 items-center'>
