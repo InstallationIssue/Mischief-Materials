@@ -26,14 +26,30 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-#background {
+input {
+  @apply rounded-lg text-black
+}
+
+button {
+  @apply h-10 w-32 bg-lime-400 rounded-lg
+}
+
+.raisin-black {
   background-color: #1a1a27;
 }
 
-/*
-#1a1a27
-#e75a7c
-#f2f5ea
-#647aa3
-#6c756b
-*/
+.blush {
+  background-color: #e75a7c;
+}
+
+.ivory {
+  background-color: #f2f5ea;
+}
+
+.glaucous {
+  background-color: #647aa3;
+}
+
+.dim-gray {
+  background-color: #6c756b;
+}

@@ -88,11 +88,11 @@ export async function getCharacterById(id: number){
 export async function addXp(id: number, xp: number){
     
     //x(x+1) = xp boundary
-    //x = (-1 - Math.sqrt(-1+4*this.xp))/2;
-    let x = (-1 + Math.sqrt(-1+4*xp))/2;
+    //x = ceil(-1 - Math.sqrt(-1+4*this.xp))/2;
+    //x = floor(1 + Math.sqrt(1+4*this.xp))/2
+    let level = Math.floor(1 + Math.sqrt(1+4*xp))/2;
     //xp boundaries
     //2 6 12 20 30 42
-    let level = Math.ceil(x);
 
     const character = await prisma.character.update({
         where: {

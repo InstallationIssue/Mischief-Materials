@@ -8,9 +8,9 @@ export default async function Header({
   }) {
 
     return (
-      <Link href={'/'+id} className="flex flex-row">
-        <h1 className="font-mono font-thin">{name}</h1>
-        <p>{setting}</p>
+      <Link href={`/foundation/${id}`} className="flex flex-col border-2 rounded-lg p-2">
+        <h1 className="font-mono font-semibold capitalize">{name}</h1>
+        <p className="font-mono font-thin">{setting}</p>
       </Link>
     )
 }
