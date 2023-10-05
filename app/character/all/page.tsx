@@ -11,8 +11,8 @@ export default async function Character(){
                 <button className="bg-emerald rounded-lg m-2 w-16 text-3xl">+</button>
             </div>
             {data.map((id, index) => (
-            <Link href={'character/' + id}>
-                <Header key={id.id} id={id.id}/>
+            <Link key={id.id} href={'character/' + id}>
+                <Header id={id.id}/>
             </Link>
             ))}
         </main>
