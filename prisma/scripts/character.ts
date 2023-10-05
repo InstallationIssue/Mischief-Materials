@@ -5,6 +5,7 @@ const prisma = new PrismaClient()
 export async function getCharacters(){
     return await prisma.character.findMany({
         select: {
+            id: true,
             name: true,
             background: true,
             xp: true,

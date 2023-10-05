@@ -1,9 +1,9 @@
 import Header from "@/app/character/header"
 import Link from "next/link"
-import { getCharacterIds } from "@/prisma/scripts/character"
+import { getCharacters } from "@/prisma/scripts/character"
 
 export default async function Character(){
-    const data = await getCharacterIds()
+    const data = await getCharacters()
     return (
         <main className="flex flex-col justify-around">
             <div className="flex flex-row justify-between">
@@ -11,7 +11,7 @@ export default async function Character(){
                 <button className="bg-emerald rounded-lg m-2 w-16 text-3xl">+</button>
             </div>
             {data.map((id, index) => (
-            <Link href={'character/' + id.id}>
+            <Link href={'character/' + id}>
                 <Header id={id.id}/>
             </Link>
             ))}

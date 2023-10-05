@@ -30,11 +30,11 @@ export default async function Header({
                     px-4 py-2 rounded-lg text-2xl bg-black border-2 w-60
                     text-clip whitespace-nowrap overflow-scroll my-1
                     ">
-                        {character.creature.name}
+                        {character.name}
                     </h1>
                     <div className="flex flex-col justify-center">                        
-                        <h4 className="font-mono px-1">Str: {character.creature.str} | Dex: {character.creature.dex}</h4>                        
-                        <h4 className="font-mono px-1">Wil: {character.creature.wil} | Arm: {character.creature.armor}</h4>
+                        <h4 className="font-mono px-1">Str: {character.str} | Dex: {character.dex}</h4>                        
+                        <h4 className="font-mono px-1">Wil: {character.wil} | Arm: {character.armor}</h4>
                     </div>
                 </div>
                 <div className="
@@ -49,7 +49,7 @@ export default async function Header({
                         </div>
                     </div>
                     <h1 className="text-5xl font-mono tabular-nums 
-                    whitespace-nowrap overflow-hidden z-20">{character.creature.health_max}</h1>
+                    whitespace-nowrap overflow-hidden z-20">{character.health_max}</h1>
                 </div>
             </div>
         )
