@@ -15,7 +15,7 @@ export default async function Scenario(){
             </div>
             <div className="space-y-2">
                 {data.map((id, index) => (
-                    <Header id={id.id} name={id.name} description={id.description}/>
+                    <Header key={id.id} id={id.id} name={id.name} description={id.description}/>
                 ))}
             </div>
         </main>
