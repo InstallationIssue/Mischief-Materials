@@ -15,7 +15,7 @@ export default async function Foundation(){
             </div>
             <div className="space-y-2">
                 {data.map((id, index) => (
-                    <Header id={id.id} name={id.name} setting={id.setting}/>
+                    <Header key={id.id} id={id.id} name={id.name} setting={id.setting}/>
                 ))}
             </div>
         </main>

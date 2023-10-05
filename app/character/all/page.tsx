@@ -12,7 +12,7 @@ export default async function Character(){
             </div>
             {data.map((id, index) => (
             <Link href={'character/' + id}>
-                <Header id={id.id}/>
+                <Header key={id.id} id={id.id}/>
             </Link>
             ))}
         </main>
