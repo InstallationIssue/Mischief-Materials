@@ -16,20 +16,20 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ### UI Resources
 
-[Figma UI Mockup](https://www.figma.com/file/MoV25z5YXoqBKPIaHi4GRM/MRC-Layouts?type=design&node-id=0-1&mode=design&t=jBr15O7pjehRa1H7-0)
-[FontAwesome Free Icon Source](https://fontawesome.com/search)
-[Hero Free Icon Source](https://heroicons.com/)
-[Hero Free Pattern Source](https://heropatterns.com/)
-[CSS Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-[Tailwind UI Resources](https://tailwindui.com/?ref=resources)
-[Tailwind Documentation](https://tailwindcss.com/docs/preflight)
-[Colour Generator](https://coolors.co/)
-[React API Reference](https://react.dev/reference/react)
+- [Figma UI Mockup](https://www.figma.com/file/MoV25z5YXoqBKPIaHi4GRM/MRC-Layouts?type=design&node-id=0-1&mode=design&t=jBr15O7pjehRa1H7-0)
+- [FontAwesome Free Icon Source](https://fontawesome.com/search)
+- [Hero Free Icon Source](https://heroicons.com/)
+- [Hero Free Pattern Source](https://heropatterns.com/)
+- [CSS Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Tailwind UI Resources](https://tailwindui.com/?ref=resources)
+- [Tailwind Documentation](https://tailwindcss.com/docs/preflight)
+- [Colour Generator](https://coolors.co/)
+- [React API Reference](https://react.dev/reference/react)
 
 ### Database Resources
 
-[Prisma API Reference](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#default)
-[Prisma API Documentation](https://www.prisma.io/docs)
+- [Prisma API Reference](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#default)
+- [Prisma API Documentation](https://www.prisma.io/docs)
 
 ### Local Deployment
 
