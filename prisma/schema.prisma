@@ -48,16 +48,17 @@ model Character {
 }
 
 model Monster {
-  id              Int       @id @default(autoincrement())
-  health_max      Int
-  health_lost     Int
-  armor           Int
-  str             Int
-  dex             Int
-  wil             Int
-  power           Int
-  size            String
-  attack          Int
+  id              Int         @id @default(autoincrement())
+  name            String    
+  background      String
+  health_max      Int         @default(4)
+  health_lost     Int         @default(0)
+  armor           Int         @default(6)
+  str             Int         @default(0)
+  dex             Int         @default(0)
+  wil             Int         @default(0)
+  size            String      @default("Typical")
+  attack          Int         @default(0)
 }
 
 model Item {

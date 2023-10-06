@@ -108,7 +108,7 @@ export async function addXp(id: number, xp: number){
 }
 
 //Check for no health
-async function LoseHealth(id: number, health_lost: number) {
+export async function LoseHealth(id: number, health_lost: number) {
     const character = await prisma.character.update({
         where: {
             id: id
