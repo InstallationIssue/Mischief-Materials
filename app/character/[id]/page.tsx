@@ -1,5 +1,4 @@
 import Header from "../header"
-import Characteristics from "../characteristics"
 import Background from "../background"
 import Inventory from "../inventory"
 import Image from "next/image"
@@ -23,7 +22,6 @@ export default function Character({
                         priority/>
                 </div>
                 <div className="flex-grow m-2 w-1/3">
-                    <Characteristics id={Number(params.id)}/>
                 </div>
                 <div className="flex-grow m-2 w-1/3">
                     <Background id={Number(params.id)}/>
