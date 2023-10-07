@@ -2,6 +2,12 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Link from "next/link"
 import Image from 'next/image'
+import Party from '../public/icons/sidebar/party.svg'
+import Location from '../public/icons/sidebar/location.svg'
+import Npc from '../public/icons/sidebar/npc.svg'
+import Monster from '../public/icons/sidebar/monster.svg'
+import Items from '../public/icons/sidebar/items.svg'
+import Magic from '../public/icons/sidebar/magic.svg'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,9 +26,9 @@ function Navigation () {
     lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30'>
       <Link href="/" className='flex flex-row'>
         <Image
-          src="/icons/home.svg"
+          src="/icons/stats/heart.svg"
           alt="RiTs Logo"
-          className="border border-white rounded-full w-10 h-10 mx-4 bg-white"
+          className="title-icon"
           width={50}
           height={50}
           priority
@@ -45,25 +51,22 @@ function Navigation () {
 
 function Sidebar () {
   return (
-    <nav className='flex flex-col w-24'>  
-      <Link href="/" id='party'>
-        <Image
-          src="/icons/party2.svg"
-          alt="Party Icon"
-          className="rounded-full w-20 h-20 fill-white"
-          width={50}
-          height={50}
-          priority
-        />
-      </Link>
-      
+    <nav className='flex flex-col w-1/6 ml-2 my-2 h-full gap-2'>  
+      <Party className="sidebar-icon"/>
+      <Location className="sidebar-icon"/>
+      <Npc className="sidebar-icon"/>
+      <Monster className="sidebar-icon"/>
+      <Items className="sidebar-icon"/>
+      <Magic className="sidebar-icon"/>
     </nav>
   )
 }
 
 function Aside () {
   return (
-    <aside></aside>
+    <aside>
+
+    </aside>
   )
 }
   

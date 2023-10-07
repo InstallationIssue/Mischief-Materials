@@ -6,11 +6,15 @@ export default function HealthCircle ({
     health_lost: number,
     armor: number
   }}) {
+
+    const health = params.health_max - params.health_lost
+    const fraction = health/params.health_max
+
     return (
       <div>
         <div>
           <div id='progress-circle'>
-
+            {6/*<CircularProgressbar value={fraction} text={`${health}`/>*/}
           </div>
           <div>
             <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,81 +31,7 @@ export default function HealthCircle ({
           <div>
             {params.armor}
           </div>
-      </div>
-
-
-
-
-
-      <div class="set-size charts-container">
-      <div class="pie-wrapper progress-30">
-        <span class="label">30<span class="smaller">%</span></span>
-        <div class="pie">
-          <div class="left-side half-circle"></div>
-          <div class="right-side half-circle"></div>
         </div>
-      </div>
-
-      <div class="pie-wrapper progress-60">
-        <span class="label">60<span class="smaller">%</span></span>
-        <div class="pie">
-          <div class="left-side half-circle"></div>
-          <div class="right-side half-circle"></div>
-        </div>
-      </div>
-
-      <div class="pie-wrapper progress-90">
-        <span class="label">90<span class="smaller">%</span></span>
-        <div class="pie">
-          <div class="left-side half-circle"></div>
-          <div class="right-side half-circle"></div>
-        </div>
-      </div>
-
-      <div class="pie-wrapper progress-45 style-2">
-        <span class="label">45<span class="smaller">%</span></span>
-        <div class="pie">
-          <div class="left-side half-circle"></div>
-          <div class="right-side half-circle"></div>
-        </div>
-        <div class="shadow"></div>
-      </div>
-
-      <div class="pie-wrapper progress-75 style-2">
-        <span class="label">75<span class="smaller">%</span></span>
-        <div class="pie">
-          <div class="left-side half-circle"></div>
-          <div class="right-side half-circle"></div>
-        </div>
-        <div class="shadow"></div>
-      </div>
-
-      <div class="pie-wrapper progress-95 style-2">
-        <span class="label">95<span class="smaller">%</span></span>
-        <div class="pie">
-          <div class="left-side half-circle"></div>
-          <div class="right-side half-circle"></div>
-        </div>
-        <div class="shadow"></div>
-      </div>
-
-      <div class="pie-wrapper pie-wrapper--solid progress-65">
-        <span class="label">65<span class="smaller">%</span></span>
-      </div>
-
-      <div class="pie-wrapper pie-wrapper--solid progress-25">
-        <span class="label">25<span class="smaller">%</span></span>
-      </div>
-
-      <div class="pie-wrapper pie-wrapper--solid progress-88">
-        <span class="label">88<span class="smaller">%</span></span>
-      </div>
-      </div>
-
-
-
-
-
       </div>
     )
   }

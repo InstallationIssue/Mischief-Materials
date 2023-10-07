@@ -6,8 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --foreground-hex: #1a1a27;
-  --background-hex: #FFFFFF;
+  --foreground-hex: #1a1a27;  /*Raisin-Black*/
+  --background-hex: #FFFFFF;  /*White*/
+  --action-hex: #647aa3;      /*Glaucous*/
+  --highlight-hex: #e75a7c;   /*Blush*/
+  --dim-gray: #6c756b;        /*Dim-gray*/
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,9 +41,11 @@ button {
   @apply rounded-lg font-mono p-2;
   background-color: #647aa3;
   transition: box-shadow 0.5s;
+  transition: background-color 0.2s;
+  color: #f2f5ea;
 }
 
-button:hover {
+button:hover, :focus {
   box-shadow: 0px 0px 5px 2px var(--action-hex);
 }
 
@@ -49,6 +54,7 @@ button:disabled {
 }
 
 button:active {
+  background-color: #6c756b;
   border-color: --foreground-hex;
 }
 
@@ -67,6 +73,25 @@ input:checked {
 
 input:required {
   @apply bg-gray-500;
+}
+
+/* Images & Icons */
+
+.sidebar-icon {
+  @apply rounded-r-md w-16 h-16 px-2;
+  fill: var(--foreground-hex);
+}
+
+.sidebar-icon:hover, :focus {
+  box-shadow: 0px 0px 5px 2px var(--action-hex);
+}
+
+.title-icon {
+  @apply border border-white rounded-full w-10 h-10 mx-4 bg-white;
+}
+
+.stats-icon {
+  @apply w-5 h-5
 }
 
 /* Spacing */
