@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --foreground-hex: #1a1a27;
+  --background-hex: #FFFFFF;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +15,11 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --foreground-hex: #f2f5ea;  /*Ivory*/
+    --background-hex: #1a1a27;  /*Raisin-Black*/
+    --action-hex: #647aa3;      /*Glaucous*/
+    --highlight-hex: #e75a7c;   /*Blush*/
+    --dim-gray: #6c756b;        /*Dim-gray*/
   }
 }
 
@@ -21,35 +28,72 @@ body {
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      #1a1a27
     )
-    rgb(var(--background-start-rgb));
+    #1a1a27;
 }
 
-input {
-  @apply rounded-lg text-black
-}
-
+/* Buttons */
 button {
-  @apply h-10 w-32 bg-lime-400 rounded-lg
-}
-
-.raisin-black {
-  background-color: #1a1a27;
-}
-
-.blush {
-  background-color: #e75a7c;
-}
-
-.ivory {
-  background-color: #f2f5ea;
-}
-
-.glaucous {
+  @apply rounded-lg font-mono p-2;
   background-color: #647aa3;
+  transition: box-shadow 0.5s;
 }
 
-.dim-gray {
-  background-color: #6c756b;
+button:hover {
+  box-shadow: 0px 0px 5px 2px var(--action-hex);
+}
+
+button:disabled {
+  @apply bg-gray-500;
+}
+
+button:active {
+  border-color: --foreground-hex;
+}
+
+/* Input */
+input {
+  @apply rounded-lg text-black;
+}
+
+input:placeholder-shown {
+  @apply rounded-lg text-black;
+}
+
+input:checked {
+  @apply bg-gray-500;
+}
+
+input:required {
+  @apply bg-gray-500;
+}
+
+/* Spacing */
+
+.monster {
+  gap: 5px;
+}
+
+.mask {
+  fill: #FFF;
+}
+
+.backing {
+  fill: #1A1A27;
+}
+
+.text-field {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+}
+
+.name_stats {
+  flex: 1 0 0;
+}
+
+.stats {
+  flex: 1 0 0;
 }

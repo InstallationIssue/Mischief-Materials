@@ -1,3 +1,5 @@
+import HealthCircle from "./health-circle"
+
 export default function AlertMonster ({
     params
   }: { 
@@ -17,32 +19,13 @@ export default function AlertMonster ({
     return (
       <div className="flex flex-col justify-center items-start self-stretch rounded-md border border-[#f2f5ea]">
         <div className="monster flex justify-center items-start self-stretch pt-[0.3125rem] pr-[0.3125rem] pb-[0.3125rem] pl-[0.3125rem] h-[3.75rem]">
-          <div className="w-[3.125rem] h-[3.125rem]">
-            <div className="flex-shrink-0 w-[3.125rem] h-[3.125rem]">
-              <div className="180deg at 50% 50%, #40ff3d 179.49220418930054deg, #e75a7c 183.28821659088135deg, #e75a7c 269.476261138916deg, #40ff3d 270.6572484970093deg)] flex-shrink-0 w-[3.125rem] h-[3.125rem] bg-[conic-gradient(from" />
-              <svg width={40} height={40} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx={20} cy={20} r={20} fill="#1A1A27" />
-              </svg>
-              <div className="inline-flex justify-center items-center gap-2.5 pl-[0.3125rem] pr-[0.3125rem] p-0 rounded-[0.625rem] text-[#40ff3d] font-['Inter'] text-2xl font-semibold leading-[normal]">
-                (level)
-              </div>
-            </div>
-            <div className="flex flex-shrink-0 justify-center items-center w-4 h-4">
-              <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clipPath="url(#clip0_46_1679)">
-                  <path d="M8.00001 0C8.14376 0 8.28751 0.03125 8.41876 0.090625L14.3031 2.5875C14.9906 2.87813 15.5031 3.55625 15.5 4.375C15.4844 7.475 14.2094 13.1469 8.82501 15.725C8.30314 15.975 7.69689 15.975 7.17501 15.725C1.79064 13.1469 0.515639 7.475 0.500014 4.375C0.496889 3.55625 1.00939 2.87813 1.69689 2.5875L7.58439 0.090625C7.71251 0.03125 7.85626 0 8.00001 0Z" fill="#F2F5EA" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_46_1679">
-                    <rect width={16} height={16} fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
-            <div className="text-field overflow-hidden text-[#1a1a27] font-['Nokora'] text-sm font-bold leading-[normal]">9</div>
-          </div>
+          <HealthCircle params={{
+            health_max: params.health_max,
+            health_lost: params.health_lost,
+            armor: params.armor
+          }}></HealthCircle>
           <div className="name_stats flex flex-col items-start self-stretch pt-[0.3125rem] pb-[0.3125rem] px-0">
-            <div className="broko self-stretch overflow-hidden text-[#f2f5ea] font-['Nokora'] text-xl leading-[normal]">The Throngler</div>
+            <div className="broko self-stretch overflow-hidden text-[#f2f5ea] font-['Nokora'] text-xl leading-[normal]">{params.name}</div>
             <div className="stats flex items-center gap-2.5 self-stretch pr-0">
               <div className="flex items-center">
                 <div className="flex justify-center items-center w-5 h-5">
@@ -50,7 +33,7 @@ export default function AlertMonster ({
                     <path d="M2.4 2.19999C2.4 1.75749 2.7575 1.39999 3.2 1.39999H4C4.4425 1.39999 4.8 1.75749 4.8 2.19999V6.19999V7.79999V11.8C4.8 12.2425 4.4425 12.6 4 12.6H3.2C2.7575 12.6 2.4 12.2425 2.4 11.8V10.2H1.6C1.1575 10.2 0.8 9.84249 0.8 9.39999V7.79999C0.3575 7.79999 0 7.44249 0 6.99999C0 6.55749 0.3575 6.19999 0.8 6.19999V4.59999C0.8 4.15749 1.1575 3.79999 1.6 3.79999H2.4V2.19999ZM13.6 2.19999V3.79999H14.4C14.8425 3.79999 15.2 4.15749 15.2 4.59999V6.19999C15.6425 6.19999 16 6.55749 16 6.99999C16 7.44249 15.6425 7.79999 15.2 7.79999V9.39999C15.2 9.84249 14.8425 10.2 14.4 10.2H13.6V11.8C13.6 12.2425 13.2425 12.6 12.8 12.6H12C11.5575 12.6 11.2 12.2425 11.2 11.8V7.79999V6.19999V2.19999C11.2 1.75749 11.5575 1.39999 12 1.39999H12.8C13.2425 1.39999 13.6 1.75749 13.6 2.19999ZM10.4 6.19999V7.79999H5.6V6.19999H10.4Z" fill="#F2F5EA" />
                   </svg>
                 </div>
-                <div className="str-2 overflow-hidden text-[#f2f5ea] font-['Nokora'] leading-[normal]">4</div>
+                <div className="str-2 overflow-hidden text-[#f2f5ea] font-['Nokora'] leading-[normal]">{params.str}</div>
               </div>
               <div className="flex items-center">
                 <div className="flex justify-center items-center w-5 h-5">
@@ -65,7 +48,7 @@ export default function AlertMonster ({
                     </defs>
                   </svg>
                 </div>
-                <div className="dex-2 overflow-hidden text-[#f2f5ea] font-['Nokora'] leading-[normal]">2</div>
+                <div className="dex-2 overflow-hidden text-[#f2f5ea] font-['Nokora'] leading-[normal]">{params.dex}</div>
               </div>
               <div className="flex items-center">
                 <div className="flex justify-center items-center w-5 h-5">
@@ -80,7 +63,7 @@ export default function AlertMonster ({
                     </defs>
                   </svg>
                 </div>
-                <div className="wil-2 overflow-hidden text-[#f2f5ea] font-['Nokora'] leading-[normal]">2</div>
+                <div className="wil-2 overflow-hidden text-[#f2f5ea] font-['Nokora'] leading-[normal]">{params.wil}</div>
               </div>
               <div className="flex items-center">
                 <div className="flex justify-center items-center w-5 h-5">
@@ -88,7 +71,7 @@ export default function AlertMonster ({
                     <path d="M7.07811 2.90312C7.52498 4.24374 7.06873 5.59687 6.05936 5.92812C5.04998 6.25937 3.86873 5.44062 3.42186 4.09999C2.97498 2.75937 3.43123 1.40624 4.44061 1.07499C5.44999 0.743742 6.63123 1.56249 7.07811 2.90312ZM3.13748 6.20624C3.72811 7.21874 3.58436 8.39687 2.81873 8.83437C2.05311 9.27187 0.95311 8.80624 0.36561 7.79374C-0.22189 6.78124 -0.0843903 5.60312 0.681235 5.16562C1.44686 4.72812 2.54686 5.19374 3.13436 6.20624H3.13748ZM2.16248 12.5375C3.79998 8.12187 6.70936 6.99999 7.99998 6.99999C9.29061 6.99999 12.2 8.12187 13.8375 12.5375C13.95 12.8406 14 13.1656 14 13.4906V13.5406C14 14.3469 13.3469 15 12.5406 15C12.1812 15 11.825 14.9562 11.4781 14.8687L8.72811 14.1812C8.24998 14.0625 7.74998 14.0625 7.27186 14.1812L4.52186 14.8687C4.17498 14.9562 3.81873 15 3.45936 15C2.65311 15 1.99998 14.3469 1.99998 13.5406V13.4906C1.99998 13.1656 2.04998 12.8406 2.16248 12.5375ZM13.1812 8.83437C12.4156 8.39687 12.2719 7.21874 12.8625 6.20624C13.4531 5.19374 14.55 4.72812 15.3156 5.16562C16.0812 5.60312 16.225 6.78124 15.6344 7.79374C15.0437 8.80624 13.9469 9.27187 13.1812 8.83437ZM9.69061 5.92812C8.68124 5.59687 8.22499 4.24374 8.67186 2.90312C9.11873 1.56249 10.3 0.743742 11.3094 1.07499C12.3187 1.40624 12.775 2.75937 12.3281 4.09999C11.8812 5.44062 10.7 6.25937 9.69061 5.92812Z" fill="#F2F5EA" />
                   </svg>
                 </div>
-                <div className="wil-3 overflow-hidden text-[#f2f5ea] font-['Nokora'] leading-[normal]">2</div>
+                <div className="wil-3 overflow-hidden text-[#f2f5ea] font-['Nokora'] leading-[normal]">{params.attack}</div>
               </div>
             </div>
           </div>
