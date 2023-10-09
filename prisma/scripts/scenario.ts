@@ -7,7 +7,8 @@ export async function getScenarios(){
         select: {
             id: true,
             name: true,
-            description: true
+            description: true,
+            foundationId: true
         }
     })
 }

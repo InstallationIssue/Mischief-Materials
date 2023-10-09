@@ -1,19 +1,22 @@
 import Header from "@/app/character/header"
 import Link from "next/link"
+import Plus from '/public/icons/system/clean-plus.svg'
 import { getCharacters } from "@/prisma/scripts/character"
 
 export default async function Character(){
     const data = await getCharacters()
+
     return (
-        <div className="flex flex-col justify-around">
+        <div>
             <div className="flex flex-row justify-between">
-                <h1 className="font-mono font-bold text-3xl px-5 py-2">Available Characters</h1>
-                <button className="bg-emerald rounded-lg m-2 w-16 text-3xl">+</button>
+                <h2>Developed Foundations</h2>
+                <Link href={"character/add"}>
+                    <Plus className="stats-icon"/>
+                </Link>
             </div>
+            <div className="space-y-4 my-2"></div>
             {data.map((id, index) => (
-            <Link key={id.id} href={'character/' + id}>
                 <Header id={id.id}/>
-            </Link>
             ))}
         </div>
     )

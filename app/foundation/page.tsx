@@ -14,7 +14,7 @@ export default async function Foundation(){
                     <Plus className="stats-icon"/>
                 </Link>
             </div>
-            <div className="space-y-2 my-2">
+            <div className="space-y-4 my-2">
                 {data.map((id, index) => (
                     <Header key={id.id} id={id.id} name={id.name} setting={id.setting}/>
                 ))}

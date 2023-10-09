@@ -1,21 +1,22 @@
 import Header from "./header"
 import Link from "next/link"
-//import Add from "../add"
+import Plus from '/public/icons/system/clean-plus.svg'
 import { getScenarios } from "@/prisma/scripts/scenario"
 
 export default async function Scenario(){
     const data = await getScenarios()
 
     return (
-        <div className="flex flex-col justify-around p-5">
+        <div>
             <div className="flex flex-row justify-between">
-                <h1 className="font-mono font-bold text-3xl">Developed Scenarios</h1>
-                <Link href="/scenario/add" className="font-mono font-bold px-4">+</Link>
-                {/*<button className="bg-emerald rounded-lg m-2 w-16 text-3xl">+</button>*/}
+                <h2>Scenarios</h2>
+                <Link href={"scenario/add"}>
+                    <Plus className="stats-icon"/>
+                </Link>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-4 my-2">
                 {data.map((id, index) => (
-                    <Header key={id.id} id={id.id} name={id.name} description={id.description}/>
+                    <Header key={id.id} id={id.id} name={id.name} description={id.description} foundation={id.foundationId}/>
                 ))}
             </div>
         </div>

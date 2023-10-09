@@ -21,7 +21,7 @@ export async function getMonsters(){
 }
 
 export async function createMonster(name: string, background: string,
-    str = 0, dex = 0, wil = 0, armor = 6, size = "", attack = 0){
+    str = 0, dex = 0, wil = 0, armor = 6, size = "Typical", attack = 0){
 
     const monster = await prisma.monster.create({
         data: {
