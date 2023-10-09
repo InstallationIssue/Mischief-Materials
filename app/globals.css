@@ -33,10 +33,11 @@ body {
 }
 
 main {
-  @apply flex flex-col p-5 h-full w-auto;
+  @apply flex flex-col p-5 h-full w-full;
 }
 
 /* Headers & Text */
+
 h1 {
   font-family: 'Notable';
   font-size: xx-large;
@@ -79,14 +80,15 @@ p {
   text-overflow: ellipsis;
 }
 
-/* Buttons */
-button [type='submit'] {
-  appearance: none;
+label {
+  font-family: 'Play';
 }
+
+/* Buttons */
 
 button {
   @apply rounded-lg font-mono py-1 px-3 h-fit w-fit;
-  background-color: #647aa3;
+  background-color: #647aa3 !important;
   transition: box-shadow 0.5s, background-color 0.2s;
   color: #f2f5ea;
   font-family: 'Play';
@@ -106,6 +108,7 @@ button:active {
 }
 
 /* Input */
+
 input {
   @apply rounded-lg text-black;
 }
@@ -200,24 +203,6 @@ input:required {
   @apply flex aspect-square z-20 absolute left-0 bottom-0 leading-none items-center justify-center;
   color: var(--background-hex);
   height: 40%;
-}
-
-/* Popup */
-
-[show] {
-  @apply invisible;
-}
-
-#popup-container {
-  @apply absolute h-full w-full top-0 left-0 flex items-center justify-center;
-  background-color: #1a1a27;
-  opacity: 50%;
-}
-
-.popup {
-  @apply absolute flex border rounded-lg p-2;
-  background-color: var(--background-hex);
-  border-color: var(--foreground-hex);
 }
 
 /**/
