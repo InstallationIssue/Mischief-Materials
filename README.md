@@ -25,6 +25,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - [Tailwind Documentation](https://tailwindcss.com/docs/preflight)
 - [Colour Generator](https://coolors.co/)
 - [React API Reference](https://react.dev/reference/react)
+- [Font Reference](https://developers.google.com/fonts/docs/css2)
 
 ### Database Resources
 

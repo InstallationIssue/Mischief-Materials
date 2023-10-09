@@ -9,7 +9,7 @@ export default function Character({
     params: { id: number } 
 }) {
     return (
-        <main className="flex flex-col justify-around">
+        <div className="flex flex-col justify-around">
             <Header id={Number(params.id)}/>
             <div className="flex flex-row">
                 <div className="flex-grow m-2 w-1/3">
@@ -30,6 +30,6 @@ export default function Character({
             <div className="flex-grow m-2 h-fit">
                 <Inventory/>
             </div>
-        </main>
+        </div>
     )
 }
