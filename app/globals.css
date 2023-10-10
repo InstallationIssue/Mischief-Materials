@@ -1,55 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Libre+Barcode+39+Text&family=Notable&family=Play');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-hex: #1a1a27;  /*Raisin-Black*/
+  --background-hex: #FFFFFF;  /*White*/
+  --action-hex: #647aa3;      /*Glaucous*/
+  --highlight-hex: #e75a7c;   /*Blush*/
+  --dim-gray: #6c756b;        /*Dim-gray*/
+  --health-green: #21cf4f;    /*Health-green*/
+  --fresh-orange: #e47e00;    /*Fresh-orange*/
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-hex: #f2f5ea;  /*Ivory*/
+    --background-hex: #1a1a27;  /*Raisin-Black*/
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  font-family: 'Roboto';
+  color: var(--foreground-hex);
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      #1a1a27
     )
-    rgb(var(--background-start-rgb));
+    #1a1a27;
 }
 
-input {
-  @apply rounded-lg text-black
+main {
+  @apply flex flex-col p-5 h-full w-full;
 }
+
+/* Headers & Text */
+
+h1 {
+  font-family: 'Notable';
+  font-size: xx-large;
+}
+
+h2 {
+  font-family: 'Play';
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: 'Play';
+  font-size: x-large;
+}
+
+h4 {
+  @apply leading-none;
+  font-family: 'Play';
+  font-size: larger;
+  text-overflow: ellipsis;
+}
+
+h5 {
+  @apply leading-none;
+  font-family: 'Play';
+  font-size: large;
+  text-overflow: ellipsis;
+}
+
+h6 {
+  font-family: 'Play';
+  font-size: medium;
+  text-overflow: ellipsis;
+}
+
+p {
+  font-family: 'Roboto';
+  font-size: medium;
+  text-overflow: ellipsis;
+}
+
+label {
+  font-family: 'Play';
+}
+
+/* Buttons */
 
 button {
-  @apply h-10 w-32 bg-lime-400 rounded-lg
+  @apply rounded-lg font-mono py-1 px-3 h-fit w-fit;
+  background-color: #647aa3 !important;
+  transition: box-shadow 0.5s, background-color 0.2s;
+  color: #f2f5ea;
+  font-family: 'Play';
 }
 
-.raisin-black {
-  background-color: #1a1a27;
+button:hover, :focus {
+  box-shadow: 0px 0px 5px 2px var(--action-hex);
 }
 
-.blush {
-  background-color: #e75a7c;
+button:disabled {
+  @apply bg-gray-500;
 }
 
-.ivory {
-  background-color: #f2f5ea;
+button:active {
+  background-color: var(--highlight-hex);
+  border-color: --foreground-hex;
 }
 
-.glaucous {
-  background-color: #647aa3;
+/* Input */
+
+input {
+  @apply rounded-lg text-black;
 }
 
-.dim-gray {
-  background-color: #6c756b;
+input:placeholder-shown {
+  @apply rounded-lg text-black;
 }
+
+input:checked {
+  @apply bg-gray-500;
+}
+
+input:required {
+  @apply bg-gray-500;
+}
+
+/* Sidebar */
+
+.sidebar-icon {
+  @apply rounded-r-md w-12 h-12;
+  fill: var(--foreground-hex);
+  transition: filter 0.5s, fill 0.2s;
+}
+
+.sidebar-icon:hover, :focus {
+  filter:drop-shadow(0px 0px 10px var(--action-hex));
+}
+
+.sidebar-icon:active {
+  fill: var(--highlight-hex)
+}
+
+.title-icon {
+  @apply border border-white rounded-full w-10 h-10 mx-4 bg-white;
+}
+
+/* Components */
+/* Monster Card */
+
+.monster-card {
+  @apply flex flex-row justify-center items-start self-stretch rounded-md border w-80 p-2;
+  height: 4.25rem;
+  border-color: var(--foreground-hex);
+  transition-property: height, width;
+  transition-duration: 1s;
+}
+
+.monster-card:active {
+  height: 8.5rem;
+  width: 40rem;
+}
+
+.stats {
+  @apply flex items-center gap-3 self-stretch;
+}
+
+.stats div {
+  @apply flex flex-row gap-1 items-center;
+}
+
+.stats-icon {
+  @apply aspect-square h-5;
+  fill: var(--foreground-hex);
+}
+
+.size-icon {
+  @apply h-full aspect-square;
+  fill: var(--foreground-hex)
+}
+
+.health-circle {
+  @apply h-full aspect-square relative;
+}
+
+.health-circle > div {
+  @apply flex rounded-full aspect-square h-full items-center justify-center;
+  background-color: var(--health-green);
+}
+
+.health-circle .stats-icon {
+  @apply z-10 absolute left-0 bottom-0;
+  height: 40%;
+}
+
+.health-circle h3 {
+  @apply flex rounded-full aspect-square h-5/6 justify-center items-center leading-none;
+  background-color: var(--background-hex);
+  color: var(--health-green);
+}
+
+.health-circle > h5 {
+  @apply flex aspect-square z-20 absolute left-0 bottom-0 leading-none items-center justify-center;
+  color: var(--background-hex);
+  height: 40%;
+}
+
+/**/

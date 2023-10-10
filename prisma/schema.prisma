@@ -29,6 +29,7 @@ model Location {
   id              Int       @id @default(autoincrement())
   name            String    @unique
   description     String
+  color           String    @default("#")
 }
 
 model Character {
@@ -65,10 +66,20 @@ model Item {
   id              Int       @id @default(autoincrement())
   name            String    @unique
   description     String
+  value           Int       @default(100)
+}
+
+model Spell {
+  id              Int       @id @default(autoincrement())
+  name            String    @unique
+  description     String
+  magic           Magic     @relation(fields: [magicId], references: [id])
+  magicId         Int
 }
 
 model Magic {
   id              Int       @id @default(autoincrement())
   name            String    @unique
   description     String
+  spells          Spell[]
 }
