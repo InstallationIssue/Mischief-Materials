@@ -16,7 +16,7 @@ export default async function Character(){
             </div>
             <div className="space-y-4 my-2"></div>
             {data.map((id, index) => (
-                <Header id={id.id}/>
+                <Header key={id.id}  id={id.id}/>
             ))}
         </div>
     )
