@@ -1,4 +1,4 @@
-import { createCharacter } from "@/prisma/scripts/character"
+import { createCharacter } from "@/app/api/scripts/character"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 

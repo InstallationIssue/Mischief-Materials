@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Link from "next/link"
-import Image from 'next/image'
+import React from 'react'
 import Logo from '/public/icons/logo.svg'
 import Party from '/public/icons/sidebar/party.svg'
 import Location from '/public/icons/sidebar/location.svg'
@@ -20,7 +20,9 @@ export const metadata = {
 function Sidebar () {
   return (
     <nav className='flex flex-col items-center w-20 my-2 h-full gap-2'>
-      <h1 className='title'>RiT</h1>
+      <Link href={'/foundation'}>
+        <h1 className='title'>RiT</h1>
+      </Link>
       <Party className="sidebar-icon"/>
       <Location className="sidebar-icon"/>
       <Npc className="sidebar-icon"/>
@@ -56,10 +58,8 @@ export default function RootLayout({
   return (
     <html lang="en">
         <body className={inter.className}>
-          <div className='flex flex-row'>
-            <Sidebar/>
-            <main>{children}</main>
-          </div>
+          <Sidebar/>
+          <main>{children}</main>
         </body>
     </html>
   )

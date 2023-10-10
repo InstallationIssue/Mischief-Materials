@@ -1,7 +1,7 @@
-import Header from "./header"
+import Header from "./card"
 import Link from "next/link"
 import Plus from '/public/icons/system/clean-plus.svg'
-import { getMonsters } from "@/prisma/scripts/monster"
+import { getMonsters } from "@/app/api/scripts/monster"
 
 export default async function Monster(){
     const data = await getMonsters()

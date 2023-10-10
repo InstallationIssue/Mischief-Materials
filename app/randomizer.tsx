@@ -1,5 +1,3 @@
-import { Prisma } from '@prisma/client'
-
 const CIVILIZED_JOBS = [
     "Acolyte", "Actor", "Apothecary", "Baker", "Barber", "Blacksmith",
     "Brewer", "Bureaucrat", "Butcher", "Carpenter", "Clockmaker", "Courier",

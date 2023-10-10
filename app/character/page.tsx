@@ -1,7 +1,7 @@
-import Header from "@/app/character/header"
+import Header from "@/app/character/card"
 import Link from "next/link"
 import Plus from '/public/icons/system/clean-plus.svg'
-import { getCharacters } from "@/prisma/scripts/character"
+import { getCharacters } from "@/app/api/scripts/character"
 
 export default async function Character(){
     const data = await getCharacters()

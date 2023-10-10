@@ -22,7 +22,7 @@ model Scenario {
   name            String      @unique
   description     String
   foundation      Foundation  @relation(fields: [foundationId], references: [id])
-  foundationId    Int         @unique
+  foundationId    Int         
 }
 
 model Location {
@@ -71,7 +71,7 @@ model Item {
 
 model Spell {
   id              Int       @id @default(autoincrement())
-  name            String    @unique
+  name            String    
   description     String
   magic           Magic     @relation(fields: [magicId], references: [id])
   magicId         Int
