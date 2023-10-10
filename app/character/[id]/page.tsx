@@ -1,4 +1,4 @@
-import Header from "../header"
+import Header from "../card"
 import Background from "../background"
 import Inventory from "../inventory"
 import Image from "next/image"

@@ -1,4 +1,4 @@
-import { createMonster } from "@/prisma/scripts/monster"
+import { createMonster } from "@/app/api/scripts/monster"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 

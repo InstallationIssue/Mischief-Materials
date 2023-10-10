@@ -1,4 +1,4 @@
-import { getScenarioById } from "@/prisma/scripts/scenario"
+import { getScenarioById } from "@/app/api/scripts/scenario"
 import Link from "next/link"
 
 export default async function Header({
