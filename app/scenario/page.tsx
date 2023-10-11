@@ -1,7 +1,7 @@
 import Header from "./card"
 import Link from "next/link"
 import Plus from '/public/icons/system/clean-plus.svg'
-import { getScenarios } from "@/app/api/scripts/scenario"
+import { getScenarios } from "@/prisma/scripts/scenario"
 
 export default async function Scenario(){
     const data = await getScenarios()

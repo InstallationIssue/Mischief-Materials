@@ -1,4 +1,4 @@
-import { getScenarioById } from "@/app/api/scripts/scenario"
+import { getScenarioById } from "@/prisma/scripts/scenario"
 
 export default async function Scenario({
     params 
