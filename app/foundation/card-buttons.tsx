@@ -2,8 +2,10 @@ import Play from '/public/icons/system/action-play.svg'
 import Edit from '/public/icons/system/action-edit.svg'
 import Delete from '/public/icons/system/action-bin.svg'
 
+import Link from 'next/link'
+import { cache } from 'react'
 import { redirect } from "next/navigation"
-import { deleteFoundation } from "@/app/api/route"
+import { deleteFoundation } from '@/prisma/scripts/foundation'
 import { revalidatePath } from 'next/cache'
 
 export default function CardButtons ({
@@ -12,42 +14,29 @@ export default function CardButtons ({
     id: number
   }) {
 
-    async function play () {
-      'use server'
-      console.log("done")
-    }
-
-    async function edit () {
-      'use server'
-      redirect('foundation/'+(id))
-    }
-
     async function del() {
       'use server'
+
       try {
-        const response = deleteFoundation(id)
+        const response = await deleteFoundation(id)
       }
       catch (e) {
         return { message: 'Failed to delete' }
       }
-
-      revalidatePath('/')
+  
+      revalidatePath('/foundation')
     }
 
     return (
         <div className="h-1/6 flex flex-row">
-          <form className='w-full' action={play}>
-            <button className="card-button form-button" type='submit'>
-              <Play className="stats-icon"/>
-            </button>
-          </form>
-          <form className='w-full' action={edit}>
-            <button className="card-button form-button" type='submit'>
-              <Edit className="stats-icon"/>
-            </button>
-          </form>
-          <form className='w-full' action={del}>
-            <button className="card-button form-button" type='submit'>
+          <Link href={'/foundation/add'} className="card-button form-button">
+            <Play className="stats-icon"/>
+          </Link>
+          <Link href={'/foundation/edit/'+id} className="card-button form-button">
+            <Edit className="stats-icon"/>
+          </Link>
+          <form className='w-full'>
+            <button className="card-button form-button" formAction={del}>
               <Delete className="stats-icon"/>
             </button>
           </form>

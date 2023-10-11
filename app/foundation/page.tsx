@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Card from "./card"
 import Plus from '/public/icons/system/clean-plus.svg'
-import { getFoundations } from "@/app/api/route"
+import { getFoundations } from "@/prisma/scripts/foundation";
 
 export default async function Foundation(){
     const data = await getFoundations();

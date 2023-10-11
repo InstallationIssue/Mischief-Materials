@@ -1,6 +1,4 @@
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import prisma from "./main"
 
 export async function getFoundations(){
     return await prisma.foundation.findMany({

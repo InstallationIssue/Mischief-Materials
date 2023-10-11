@@ -1,6 +1,4 @@
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import prisma from "./main"
 
 export async function getScenarios(){
     return await prisma.scenario.findMany({
