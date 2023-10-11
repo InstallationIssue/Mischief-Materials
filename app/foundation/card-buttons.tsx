@@ -32,11 +32,11 @@ export default function CardButtons ({
           <Link href={'/foundation/add'} className="card-button form-button">
             <Play className="stats-icon"/>
           </Link>
-          <Link href={'/foundation/edit/'+id} className="card-button form-button">
+          <Link href={'/foundation/'+id} className="card-button form-button">
             <Edit className="stats-icon"/>
           </Link>
-          <form className='w-full'>
-            <button className="card-button form-button" formAction={del}>
+          <form className='w-full' action={del}>
+            <button className="card-button form-button" type='submit'>
               <Delete className="stats-icon"/>
             </button>
           </form>

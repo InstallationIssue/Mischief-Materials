@@ -109,8 +109,10 @@ button:active {
   border-color: var(--foreground-hex)
 }
 
-.form > button {
+form > button {
   background-color: #647aa3 !important;
+  font-family: 'Play';
+  font-size: large;
 }
 
 .form-button {
@@ -128,8 +130,15 @@ button:active {
 
 /* Input */
 
+label {
+  font-family: 'Play';
+  font-size: large
+}
+
 input {
-  @apply rounded-lg text-black;
+  @apply rounded-lg text-black p-2;
+  font-family: 'Roboto';
+  font-size: medium;
 }
 
 input:placeholder-shown {
