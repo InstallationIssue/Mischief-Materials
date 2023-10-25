@@ -4,7 +4,7 @@ import Link from "next/link"
 export default async function Header({
     id, name, description
   }: {
-    id: number, name: string, description: string, foundation: number
+    id: number, name: string, description: string
   }) {
 
     return (
