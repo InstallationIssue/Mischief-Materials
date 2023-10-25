@@ -1,5 +1,10 @@
 import Button from "./button"
 import AlertMonster from "./alert-monster"
+import IcelandLupin from '/public/landscapes/Iceland-Lupin.svg'
+import MistyValley from '/public/landscapes/Misty-Valley.svg'
+import NeonCity from '/public/landscapes/Neon-City.svg'
+import NightMountains from '/public/landscapes/Night-Mountains.svg'
+import SunsetDesert from '/public/landscapes/Sunset-Desert.svg'
 
 export default async function DesignSystem(){
     
@@ -8,6 +13,15 @@ export default async function DesignSystem(){
             <div className="flex flex-row justify-between">
                 <h1 className="font-mono font-bold text-3xl">Developed Foundations</h1>
             </div>
+
+            <div className='flex flex-row'>
+                <IcelandLupin/>
+                <MistyValley/>
+                <NeonCity/>
+                <NightMountains/>
+                <SunsetDesert/>
+            </div>
+
             <div className="space-y-5 m-5">
                 <Button text={"Button"}/>
                 <hr/>

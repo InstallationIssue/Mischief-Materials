@@ -1,0 +1,64 @@
+.monster-radio label {
+    @apply block
+}
+
+/* Components */
+/* Monster Card */
+
+.monster-card {
+    @apply flex flex-row justify-center items-start self-stretch rounded-md border w-80 p-2;
+    height: 4.25rem;
+    border-color: var(--foreground-hex);
+    transition-property: height, width;
+    transition-duration: 1s;
+}
+  
+.monster-card:active {
+    height: 8.5rem;
+    width: 40rem;
+}
+  
+.stats {
+    @apply flex items-center gap-3 self-stretch;
+}
+  
+.stats div {
+    @apply flex flex-row gap-1 items-center;
+}
+  
+.stats-icon {
+    @apply aspect-square h-5;
+    pointer-events: all;
+    fill: var(--foreground-hex);
+}
+  
+.size-icon {
+    @apply h-full aspect-square;
+    fill: var(--foreground-hex)
+}
+  
+.health-circle {
+    @apply h-full aspect-square relative;
+}
+  
+.health-circle > div {
+    @apply flex rounded-full aspect-square h-full items-center justify-center;
+    background-color: var(--health-green);
+}
+  
+.health-circle .stats-icon {
+    @apply z-10 absolute left-0 bottom-0;
+    height: 40%;
+}
+  
+.health-circle h3 {
+    @apply flex rounded-full aspect-square h-5/6 justify-center items-center leading-none;
+    background-color: var(--background-hex);
+    color: var(--health-green);
+}
+  
+.health-circle > h5 {
+    @apply flex aspect-square z-20 absolute left-0 bottom-0 leading-none items-center justify-center;
+    color: var(--background-hex);
+    height: 40%;
+}

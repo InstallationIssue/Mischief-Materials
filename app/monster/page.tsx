@@ -14,7 +14,7 @@ export default async function Monster(){
                     <Plus className="stats-icon"/>
                 </Link>
             </div>
-            <div className="space-y-4">
+            <div className="flex flex-row flex-wrap gap-4">
                 {data.map((id, index) => (
                     <Header key={id.id} params={{
                         id: id.id,

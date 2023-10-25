@@ -12,6 +12,8 @@ import Hulking from '/public/icons/monsters/size-4.svg'
 import Colossal from '/public/icons/monsters/size-5.svg'
 import Boss from '/public/icons/monsters/size-final.svg'
 
+import styles from './styles.module.css'
+
 export default function AlertMonster ({
     params
   }: { 

@@ -14,15 +14,12 @@ model Foundation {
   id              Int       @id @default(autoincrement())
   name            String    @unique
   setting         String
-  scenarios       Scenario[]
 }
 
 model Scenario {
   id              Int         @id @default(autoincrement())
   name            String      @unique
-  description     String
-  foundation      Foundation  @relation(fields: [foundationId], references: [id])
-  foundationId    Int         
+  description     String       
 }
 
 model Location {
