@@ -109,8 +109,17 @@ button:active {
   border-color: var(--foreground-hex)
 }
 
-.form > button {
-  background-color: #647aa3 !important;
+button[type="submit"] {
+  background-color: var(--action-hex) !important;
+  font-family: 'Play';
+  font-size: large;
+}
+
+.cancel {
+  background-color: var(--background-hex);
+  border: solid 2px var(--action-hex) ;
+  font-family: 'Play';
+  font-size: large;
 }
 
 .form-button {
@@ -128,8 +137,15 @@ button:active {
 
 /* Input */
 
+label {
+  font-family: 'Play';
+  font-size: large
+}
+
 input {
-  @apply rounded-lg text-black;
+  @apply rounded-lg text-black p-2;
+  font-family: 'Roboto';
+  font-size: medium;
 }
 
 input:placeholder-shown {
@@ -255,4 +271,30 @@ input:required {
     100% {
         transform: translate3d(-100%,0,0);
     }
+}
+
+.monster-radio {
+  @apply flex flex-row h-min justify-between w-full;
+}
+
+.monster-radio label {
+  @apply block h-full w-full text-center cursor-pointer;
+}
+
+.form-icon {
+  @apply w-full aspect-square max-h-16;
+  fill: var(--foreground-hex);
+  transition: fill .15s ease-in-out, filter .15s ease-in-out;
+}
+
+input[type="radio"] {
+  @apply hidden;
+}
+
+input[type="radio"]:active ~ label .form-icon{
+  filter:drop-shadow(0px 0px 10px var(--action-hex));
+}
+
+input[type="radio"]:checked ~ label .form-icon {
+  fill: var(--highlight-hex)
 }

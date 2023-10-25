@@ -1,4 +1,4 @@
-import { getCharacterById } from "@/app/api/scripts/character"
+import { getCharacterById } from "@/prisma/scripts/character"
 export default async function Background({
     id,
 }: {

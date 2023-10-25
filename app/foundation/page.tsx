@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Card from "./card"
 import Plus from '/public/icons/system/clean-plus.svg'
-import { getFoundations } from "@/app/api/route"
+import { getFoundations } from "@/prisma/scripts/foundation";
+import { AddForm } from "./addForm";
 
 export default async function Foundation(){
     const data = await getFoundations();
@@ -14,6 +15,7 @@ export default async function Foundation(){
                     <Plus className="stats-icon"/>
                 </Link>
             </div>
+            {""/*<AddForm/>*/}
             <div className="flex flex-row h-full w-full flex-wrap">
                 {data.map((id) => (
                     <Card key={id.id} id={id.id} name={id.name} setting={id.setting}/>

@@ -1,5 +1,5 @@
-import { getFoundationById } from "@/app/api/route"
-import { updateFoundation } from "@/app/api/route"
+import { getFoundationById } from "@/prisma/scripts/foundation"
+import { updateFoundation } from "@/prisma/scripts/foundation"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"

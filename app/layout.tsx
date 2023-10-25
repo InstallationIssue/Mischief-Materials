@@ -13,8 +13,8 @@ import Magic from '/public/icons/sidebar/magic.svg'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Rats in Transit App',
-  description: 'Maze Rats Assistant Web App'
+  title: 'Rats in Transit',
+  description: 'Maze Rats Assistant'
 }
 
 function Sidebar () {

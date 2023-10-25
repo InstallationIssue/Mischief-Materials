@@ -1,4 +1,4 @@
-import { getScenarioById } from "@/app/api/scripts/scenario"
+import { getScenarioById } from "@/prisma/scripts/scenario"
 
 export default async function Scenario({
     params 
@@ -8,6 +8,9 @@ export default async function Scenario({
     const data = await getScenarioById(Number(params.id))
 
     return (
-        <div></div>
+      <div>
+        <h1>{data.name}</h1>
+        <p>{data.description}</p>
+      </div>
     )
 }

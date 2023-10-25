@@ -1,7 +1,7 @@
 import Header from "./card"
 import Link from "next/link"
 import Plus from '/public/icons/system/clean-plus.svg'
-import { getScenarios } from "@/app/api/scripts/scenario"
+import { getScenarios } from "@/prisma/scripts/scenario"
 
 export default async function Scenario(){
     const data = await getScenarios()
@@ -16,7 +16,7 @@ export default async function Scenario(){
             </div>
             <div className="space-y-4 my-2">
                 {data.map((id, index) => (
-                    <Header key={id.id} id={id.id} name={id.name} description={id.description} foundation={id.foundationId}/>
+                    <Header key={id.id} id={id.id} name={id.name} description={id.description}/>
                 ))}
             </div>
         </div>

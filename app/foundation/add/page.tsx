@@ -1,4 +1,4 @@
-import { createFoundation } from "@/app/api/route"
+import { createFoundation } from "@/prisma/scripts/foundation"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
@@ -10,6 +10,7 @@ const schema = z.object({
 
 export default async function Add() {
   
+  /*
   async function create(formData: FormData) {
     'use server'
 
@@ -28,9 +29,10 @@ export default async function Add() {
     revalidatePath('/foundation')
     redirect('/foundation')
   }
+  */
 
   return (
-      <form className="flex flex-col space-y-2 py-2" action={create}>
+      <form className="flex flex-col space-y-2 py-2" action={""/*create*/}>
         <label htmlFor='name'>Name</label>
         <input type="text" id="name" name='name'></input>
         <label htmlFor='setting'>Setting</label>
