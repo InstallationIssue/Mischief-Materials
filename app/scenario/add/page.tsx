@@ -5,8 +5,7 @@ import { revalidatePath } from "next/cache"
 
 const schema = z.object({
   name: z.string(),
-  background: z.string(),
-  foundationId: z.number()
+  background: z.string()
 })
 
 export default async function Add() {
@@ -16,12 +15,11 @@ export default async function Add() {
 
     const parsed = schema.parse({
       name: formData.get('name'),
-      background: formData.get('background'),
-      foundationId: formData.get('foundationId')
+      background: formData.get('background')
     })
 
     try {
-      const response = await createScenario(parsed.name, parsed.background, parsed.foundationId)
+      const response = await createScenario(parsed.name, parsed.background)
     }
     catch (e) {
       return { message: 'Failed to create' }
@@ -36,8 +34,6 @@ export default async function Add() {
         <input type="text" id="name" name='name'></input>
         <label htmlFor='background'>Background</label>
         <input type="text" id="background" name='background'></input>
-        <label htmlFor='foundation'>Foundation</label>
-        <input type="number" id="foundationId" name='foundationId'></input>
         <button type='submit'>Submit</button>
       </form>
   )
