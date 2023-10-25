@@ -3,12 +3,7 @@ import { Inter } from 'next/font/google'
 import Link from "next/link"
 import React from 'react'
 import Logo from '/public/icons/logo.svg'
-import Party from '/public/icons/sidebar/party.svg'
-import Location from '/public/icons/sidebar/location.svg'
-import Npc from '/public/icons/sidebar/npc.svg'
-import Monster from '/public/icons/sidebar/monster.svg'
-import Items from '/public/icons/sidebar/items.svg'
-import Magic from '/public/icons/sidebar/magic.svg'
+import Play from '/public/icons/system/action-play.svg'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,36 +12,28 @@ export const metadata = {
   description: 'Maze Rats Assistant'
 }
 
-function Sidebar () {
+function TopNav () {
   return (
-    <nav className='flex flex-col items-center w-20 my-2 h-full gap-2'>
-      <Link href={'/foundation'}>
-        <h1 className='title'>RiT</h1>
+    <nav className='flex flex-row justify-between items-center px-2 h-12 border-b-2 border-white'>
+      <Link className='nav-link' href={'/foundation'}>
+        <Logo className="w-8"/>
       </Link>
-      <Party className="sidebar-icon"/>
-      <Location className="sidebar-icon"/>
-      <Npc className="sidebar-icon"/>
-      <Monster className="sidebar-icon"/>
-      <Items className="sidebar-icon"/>
-      <Magic className="sidebar-icon"/>
-    </nav>
-  )
-}
 
-function Aside () {
-  return (
-    <aside>
-      <div>
-        <Link href="/foundation/all" className="font-mono font-bold px-4">Foundations</Link>
-        <Link href="/scenario/all" className="font-mono font-bold px-4">Scenarios</Link>
-        <Link href="/location/all" className="font-mono font-bold px-4">Locations</Link>
-        <Link href="/player/all" className="font-mono font-bold px-4">Players</Link>
-        <Link href="/npc/all" className="font-mono font-bold px-4">NPCs</Link>
-        <Link href="/monster/all" className="font-mono font-bold px-4">Monsters</Link>
-        <Link href="/item/all" className="font-mono font-bold px-4">Items</Link>
-        <Link href="/magic/all" className="font-mono font-bold px-4">Magic</Link>
+      <Link className="play" href={'/play'}>
+        <h4 className='line-clamp-1 leading-loose'>Ark of Cognizance</h4>
+        <Play className="h-full"/>
+      </Link>
+
+      <div className='flex flex-row items-center h-full'>
+        <Link href="/scenario" className="nav-link">Scenarios</Link>
+        <Link href="/location" className="nav-link">Locations</Link>
+        <Link href="/character" className="nav-link">Players</Link>
+        <Link href="/character" className="nav-link">NPCs</Link>
+        <Link href="/monster" className="nav-link">Monsters</Link>
+        <Link href="/item" className="nav-link">Items</Link>
+        <Link href="/magic" className="nav-link">Magic</Link>
       </div>
-    </aside>
+    </nav>
   )
 }
   
@@ -58,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
         <body className={inter.className}>
-          <Sidebar/>
+          <TopNav/>
           <main>{children}</main>
         </body>
     </html>

@@ -22,7 +22,7 @@
 }
 
 body {
-  @apply flex flex-row;
+  @apply flex flex-col;
   font-family: 'Roboto';
   color: var(--foreground-hex);
   background: linear-gradient(
@@ -34,7 +34,7 @@ body {
 }
 
 main {
-  @apply flex flex-col p-5 h-full w-full;
+  @apply flex flex-col p-4 h-full w-full;
 }
 
 /* Headers & Text */
@@ -160,10 +160,10 @@ input:required {
   @apply bg-gray-500;
 }
 
-/* Sidebar */
+/* Navigation */
 
 .sidebar-icon {
-  @apply rounded-r-md w-12 h-12;
+  @apply rounded-r-md;
   fill: var(--foreground-hex);
   transition: filter 0.5s, fill 0.2s;
 }
@@ -176,11 +176,36 @@ input:required {
   fill: var(--highlight-hex)
 }
 
-.title-icon {
-  @apply border border-white rounded-full w-10 h-10 mx-4 bg-white;
+.play {
+  @apply flex flex-row items-center rounded-full h-2/3 py-2 px-3 gap-2;
+  background-color: var(--action-hex);
+  fill: var(--foreground-hex);
+  transition: fill 0.15s, color 0.15s;
+}
+
+.play:active {
+  color: var(--highlight-hex);
+  fill: var(--highlight-hex);
 }
 
 /* Link */
+.nav-link {
+  @apply h-full px-4 flex items-center;
+  fill: var(--foreground-hex);
+  transition: fill 0.15s, color 0.15s;
+}
+
+.nav-link:hover, :focus {
+  @apply shadow-none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), var(--action-hex));
+}
+
+.nav-link:active {
+  @apply shadow-none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), var(--action-hex));
+  color: var(--highlight-hex);
+  fill: var(--highlight-hex);
+}
 
 .add-link {
   @apply flex items-center justify-center px-2 rounded-lg;
