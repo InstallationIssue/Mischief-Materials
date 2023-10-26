@@ -49,3 +49,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Vercel Deployment
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Useful Commands
+
+```bash
+npx prisma studio # Opens prisma studio
+
+npx prisma migrate dev # Updates database
+
+sqlite3 dev.db # Navigate to /prisma directory opens database with sqlite3 cli
+
+.output ./output.sql
+.dump table
+.exit # Outputs DB to file
+```
+

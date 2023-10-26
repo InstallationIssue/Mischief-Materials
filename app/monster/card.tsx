@@ -12,16 +12,13 @@ import Hulking from '/public/icons/monsters/size-4.svg'
 import Colossal from '/public/icons/monsters/size-5.svg'
 import Boss from '/public/icons/monsters/size-final.svg'
 
-import styles from './styles.module.css'
-
-export default function AlertMonster ({
+export default function MonsterCard ({
     params
   }: { 
     params: {
       id: number,
       name: string,
       health_max: number,
-      health_lost: number,
       armor: number,
       str: number,
       dex: number,
@@ -34,7 +31,7 @@ export default function AlertMonster ({
         <div className="flex flex-grow justify-center items-start self-stretch gap-2">
           <HealthCircle params={{
             health_max: params.health_max,
-            health_lost: params.health_lost,
+            health_lost: 0,
             armor: params.armor
           }}></HealthCircle>
           <div className="flex flex-col flex-grow self-stretch justify-between">

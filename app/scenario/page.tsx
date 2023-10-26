@@ -1,4 +1,4 @@
-import Header from "./card"
+import Card from "./card"
 import Link from "next/link"
 import Plus from '/public/icons/system/clean-plus.svg'
 import { getScenarios } from "@/prisma/scripts/scenario"
@@ -8,15 +8,20 @@ export default async function Scenario(){
 
     return (
         <div>
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-between mb-2">
                 <h2>Scenarios</h2>
                 <Link href={"scenario/add"}>
                     <Plus className="stats-icon"/>
                 </Link>
             </div>
-            <div className="space-y-4 my-2">
-                {data.map((id, index) => (
-                    <Header key={id.id} id={id.id} name={id.name} description={id.description}/>
+            <div className="flex flex-row flex-wrap gap-6">
+                {data.map((id) => (
+                    <Card key={id.id} params={{
+                        id: id.id, 
+                        name: id.name, 
+                        description: id.description, 
+                        image: id.image
+                    }}/>
                 ))}
             </div>
         </div>

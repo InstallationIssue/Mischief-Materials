@@ -5,30 +5,33 @@ export async function getScenarios(){
         select: {
             id: true,
             name: true,
-            description: true
+            description: true,
+            image: true
         }
     })
 }
 
-export async function createScenario(name: string, description: string){
+export async function createScenario(name: string, description: string, image: string){
 
     const scenario = await prisma.scenario.create({
         data: {
             name: name,
-            description: description
+            description: description,
+            image: image
         }
       })
     return scenario
 }
 
-export async function updateScenario(id: number, name?: string, description?: string) {
+export async function updateScenario(id: number, name?: string, description?: string, image?: string) {
     const scenario = await prisma.scenario.update({
         where: {
             id: id
         },
         data: {
             name: name,
-            description: description
+            description: description,
+            image: image
         }
     })
     return scenario
@@ -41,7 +44,8 @@ export async function getScenarioById(id: number){
         },
         select: {
             name: true,
-            description: true
+            description: true,
+            image: true
         }
     })
 }

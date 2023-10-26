@@ -10,29 +10,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Foundation {
+model Scenario {
   id              Int       @id @default(autoincrement())
   name            String    @unique
-  setting         String
-}
-
-model Scenario {
-  id              Int         @id @default(autoincrement())
-  name            String      @unique
-  description     String       
+  description     String    @default("")
+  image           String    @default("")
 }
 
 model Location {
   id              Int       @id @default(autoincrement())
   name            String    @unique
-  description     String
-  color           String    @default("#")
+  description     String    @default("")
+  color           String    @default("#D9D9D9")
+  icon            String    @default("")
 }
 
 model Character {
   id                Int       @id @default(autoincrement())
-  name              String    
-  background        String
+  name              String    @unique
+  background        String    @default("")
   xp                Int       @default(0)
   level             Int       @default(1)
   health_max        Int       @default(4)
@@ -47,29 +43,45 @@ model Character {
 
 model Monster {
   id              Int         @id @default(autoincrement())
-  name            String    
-  background      String
+  name            String      @unique
+  background      String      @default("")
   health_max      Int         @default(4)
-  health_lost     Int         @default(0)
   armor           Int         @default(6)
   str             Int         @default(0)
   dex             Int         @default(0)
   wil             Int         @default(0)
   size            String      @default("Typical")
   attack          Int         @default(0)
+  encounter       EncounterInstance[] 
+  encounterId     Int         @default(0)
+}
+
+model EncounterInstance {
+  id              Int         @id @default(autoincrement())
+  monster         Monster     @relation(fields: [monsterId], references: [id])
+  monsterId       Int
+  encounter       Encounter   @relation(fields: [encounterId], references: [id])
+  encounterId     Int
+  health_lost     Int         @default(0)
+}
+
+model Encounter {
+  id              Int         @id @default(autoincrement())
+  name            String      @unique @default("")
+  monsters        EncounterInstance[]
 }
 
 model Item {
   id              Int       @id @default(autoincrement())
   name            String    @unique
-  description     String
+  description     String    @default("")
   value           Int       @default(100)
 }
 
 model Spell {
   id              Int       @id @default(autoincrement())
-  name            String    
-  description     String
+  name            String    @unique
+  description     String    @default("")
   magic           Magic     @relation(fields: [magicId], references: [id])
   magicId         Int
 }
@@ -77,6 +89,7 @@ model Spell {
 model Magic {
   id              Int       @id @default(autoincrement())
   name            String    @unique
-  description     String
+  description     String    @default("")
+  medium          String    @default("")
   spells          Spell[]
 }

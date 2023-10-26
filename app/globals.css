@@ -5,13 +5,17 @@
 @tailwind utilities;
 
 :root {
-  --foreground-hex: #1a1a27;  /*Raisin-Black*/
-  --background-hex: #FFFFFF;  /*White*/
-  --action-hex: #647aa3;      /*Glaucous*/
-  --highlight-hex: #e75a7c;   /*Blush*/
-  --dim-gray: #6c756b;        /*Dim-gray*/
-  --health-green: #21cf4f;    /*Health-green*/
-  --fresh-orange: #e47e00;    /*Fresh-orange*/
+  --foreground-hex: #1a1a27;    /*Raisin-Black*/
+  --background-hex: #FFFFFF;    /*White*/
+  --action-light-hex: #647aa3;  /*Glaucous*/
+  --action-dark-hex: #647aa3;
+  --action-faint-hex: #647aa380;
+  --highlight-hex: #e75a7c;     /*Blush*/
+  --dim-gray: #6c756b;          /*Dim-gray*/
+  --health-green: #21cf4f;      /*Health-green*/
+  --fresh-orange: #e47e00;      /*Fresh-orange*/
+  --card-title: linear-gradient(#FFFFFF00 0%, var(--action-faint-hex) 20%, var(--action-light-hex) 100%);
+  --tab-bg: linear-gradient(#FFFFFF00, var(--action-light-hex));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,9 +32,9 @@ body {
   background: linear-gradient(
       to bottom,
       transparent,
-      #1a1a27
+      var(--background-hex)
     )
-    #1a1a27;
+    var(--background-hex);
 }
 
 main {
@@ -45,6 +49,7 @@ h1 {
 }
 
 h2 {
+  @apply leading-none;
   font-family: 'Play';
   font-size: xx-large;
   font-weight: bold;
@@ -89,15 +94,16 @@ label {
 
 button {
   @apply rounded-lg font-mono py-1 px-3 h-fit w-fit;
-  background-color: #647aa3;
+  background-color: var(--action-light-hex);
   transition: box-shadow 0.5s, background-color 0.2s;
-  color: #f2f5ea;
+  color: var(--foreground-hex);
+  fill: var(--foreground-hex);
   font-family: 'Play';
   pointer-events: all;
 }
 
 button:hover, :focus {
-  box-shadow: 0px 0px 5px 2px var(--action-hex);
+  box-shadow: 0px 0px 5px 2px var(--action-light-hex);
 }
 
 button:disabled {
@@ -110,14 +116,14 @@ button:active {
 }
 
 button[type="submit"] {
-  background-color: var(--action-hex) !important;
+  background-color: var(--action-light-hex) !important;
   font-family: 'Play';
   font-size: large;
 }
 
 .cancel {
   background-color: var(--background-hex);
-  border: solid 2px var(--action-hex) ;
+  border: solid 2px var(--action-light-hex) ;
   font-family: 'Play';
   font-size: large;
 }
@@ -129,10 +135,16 @@ button[type="submit"] {
 
 .card-button {
   @apply h-full w-1/3 rounded-none flex justify-center items-center;
+  fill: var(--foreground-hex);
 }
 
-.card-button:hover {
-  box-shadow: 0px 0px 10px 2px var(--action-hex);
+.card-button:hover, :focus {
+  box-shadow: 0px 0px 10px 2px var(--action-light-hex);
+}
+
+.card-button:active {
+  color: var(--highlight-hex);
+  fill: var(--highlight-hex);
 }
 
 /* Input */
@@ -169,7 +181,7 @@ input:required {
 }
 
 .sidebar-icon:hover, :focus {
-  filter:drop-shadow(0px 0px 10px var(--action-hex));
+  filter:drop-shadow(0px 0px 10px var(--action-light-hex));
 }
 
 .sidebar-icon:active {
@@ -178,7 +190,7 @@ input:required {
 
 .play {
   @apply flex flex-row items-center rounded-full h-2/3 py-2 px-3 gap-2;
-  background-color: var(--action-hex);
+  background-color: var(--action-light-hex);
   fill: var(--foreground-hex);
   transition: fill 0.15s, color 0.15s;
 }
@@ -197,12 +209,12 @@ input:required {
 
 .nav-link:hover, :focus {
   @apply shadow-none;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), var(--action-hex));
+  background-image: linear-gradient(rgba(255, 255, 255, 0), var(--action-light-hex));
 }
 
 .nav-link:active {
   @apply shadow-none;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), var(--action-hex));
+  background-image: var(--tab-bg);
   color: var(--highlight-hex);
   fill: var(--highlight-hex);
 }
@@ -212,7 +224,7 @@ input:required {
 }
 
 .add-link:hover, :focus {
-  box-shadow: 0px 0px 5px 2px var(--action-hex);
+  box-shadow: 0px 0px 5px 2px var(--action-light-hex);
 }
 
 .add-link:active {
@@ -280,23 +292,20 @@ input:required {
   height: 40%;
 }
 
+/* Scenario Card */
+.card-backing {
+  @apply w-full;
+}
+
+.card-icon {
+  @apply h-5 aspect-square;
+}
+
+.text-container {
+  background-image: var(--card-title);
+}
+
 /**/
-
-.scrolling-text {
-  @apply whitespace-nowrap text-clip w-fit;
-}
-
-.scrolling-text:hover {
-  @apply whitespace-nowrap text-clip w-fit;
-  animation: scrolling 4s linear 0s infinite;
-}
-
-@keyframes scrolling {
-    0% {}
-    100% {
-        transform: translate3d(-100%,0,0);
-    }
-}
 
 .monster-radio {
   @apply flex flex-row h-min justify-between w-full;
@@ -317,9 +326,29 @@ input[type="radio"] {
 }
 
 input[type="radio"]:active ~ label .form-icon{
-  filter:drop-shadow(0px 0px 10px var(--action-hex));
+  filter:drop-shadow(0px 0px 10px var(--action-light-hex));
 }
 
 input[type="radio"]:checked ~ label .form-icon {
   fill: var(--highlight-hex)
+}
+
+.scrolling-text {
+  @apply whitespace-nowrap text-clip;
+}
+
+.scrolling-text::-webkit-scrollbar{
+  display: none;
+}
+
+.scrolling-text:hover {
+  @apply whitespace-nowrap text-clip w-fit;
+  animation: scrolling 4s linear 0s infinite;
+}
+
+@keyframes scrolling {
+    0% {}
+    100% {
+        transform: translate3d(-110%,0,0);
+    }
 }
