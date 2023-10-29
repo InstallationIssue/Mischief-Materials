@@ -14,7 +14,7 @@ model Scenario {
   id              Int       @id @default(autoincrement())
   name            String    @unique
   description     String    @default("")
-  image           String    @default("")
+  image           String    @default("Default")
   locations       Location[]
   characters      Character[]
   encounters      Encounter[]

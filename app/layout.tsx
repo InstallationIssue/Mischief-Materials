@@ -4,13 +4,7 @@ import Link from "next/link"
 import React from 'react'
 import Logo from '/public/icons/logo.svg'
 import { PlayButton } from './components/play-button'
-
 const inter = Inter({ subsets: ['latin'] })
-
-export const metadata = {
-  title: 'Rats in Transit',
-  description: 'Maze Rats Assistant'
-}
 
 function TopNav () {
   return (
@@ -18,7 +12,6 @@ function TopNav () {
       <Link className='nav-link' href={'/'}>
         <Logo className="w-8"/>
       </Link>
-
       
       <div className='flex flex-row items-center h-full'>
         <Link href="/scenario" className="nav-link">Scenarios</Link>

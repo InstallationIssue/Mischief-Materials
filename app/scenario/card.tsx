@@ -6,6 +6,7 @@ import MistyValley from '/public/landscapes/Misty-Valley.svg'
 import NeonCity from '/public/landscapes/Neon-City.svg'
 import NightMountains from '/public/landscapes/Night-Mountains.svg'
 import SunsetDesert from '/public/landscapes/Sunset-Desert.svg'
+import Default from '/public/landscapes/Default.svg'
 
 export default async function ScenarioCard({
     params
@@ -26,7 +27,8 @@ export default async function ScenarioCard({
             {params.image == 'NeonCity' && <NeonCity className='card-backing'/>}
             {params.image == 'NightMountains' && <NightMountains className='card-backing'/>}
             {params.image == 'SunsetDesert' && <SunsetDesert className='card-backing'/>}
-            {params.image == '' && <MistyValley className='card-backing'/>}
+            {params.image == '' && <Default className='card-backing'/>}
+            {params.image == 'Default' && <Default className='card-backing'/>}
           </Link>
           <span className="text-container h-10 w-full px-2 absolute">
             <h3 className="scrolling-text capitalize">{params.name}</h3>
