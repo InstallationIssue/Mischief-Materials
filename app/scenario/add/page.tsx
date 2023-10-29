@@ -1,6 +1,7 @@
 import { createScenario } from "@/prisma/scripts/scenario"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
+import { redirect } from "next/navigation"
 
 
 const schema = z.object({
@@ -27,7 +28,8 @@ export default async function Add() {
       return { message: 'Failed to create' }
     }
     
-    return revalidatePath('/')
+    revalidatePath('/scenario')
+    redirect("/scenario");
   }
  
   return (
@@ -36,7 +38,7 @@ export default async function Add() {
         <input type="text" id="name" name='name'></input>
         <label htmlFor='description'>Description</label>
         <input type="text" id="description" name='description'></input>
-        <label htmlFor='image'>Description</label>
+        <label htmlFor='image'>Image</label>
         <input type="text" id="image" name='image'></input>
         <button type='submit'>Submit</button>
       </form>

@@ -1,7 +1,18 @@
-export default function Page() {
+import MagicCard from "./card"
+import Header from "../components/header"
+import { getMagic } from "@/prisma/scripts/magic"
+
+export default async function Page() {
+    const data = await getMagic()
+
     return (
         <div>
-            This is a stub
+            <Header title="Magics" link="/magic/add"></Header>
+            <div className="flex flex-row flex-wrap gap-4">
+                {data.map((id, index) => (
+                    <MagicCard key={id.id} id={id.id}/>
+                ))}
+            </div>
         </div>
     )
 }

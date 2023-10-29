@@ -1,6 +1,5 @@
 import MonsterCard from "./card"
-import Link from "next/link"
-import Plus from '/public/icons/system/clean-plus.svg'
+import Header from "../components/header"
 import { getMonsters } from "@/prisma/scripts/monster"
 
 export default async function Monster(){
@@ -8,12 +7,7 @@ export default async function Monster(){
 
     return (
         <div>
-            <div className="flex flex-row justify-between mb-2">
-                <h2>Monsters</h2>
-                <Link href={"monster/add"}>
-                    <Plus className="stats-icon"/>
-                </Link>
-            </div>
+            <Header title="Monsters" link="/monster/add"></Header>
             <div className="flex flex-row flex-wrap gap-4">
                 {data.map((id, index) => (
                     <MonsterCard key={id.id} id={id.id}/>

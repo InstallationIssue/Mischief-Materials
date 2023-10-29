@@ -1,6 +1,6 @@
 import prisma from "./main"
 
-export async function getMagics(){
+export async function getMagic(){
     return await prisma.magic.findMany({
         select: {
             id          : true,

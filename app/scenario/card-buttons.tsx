@@ -1,15 +1,18 @@
-'use client'
-
-import Play from '/public/icons/system/action-play.svg'
 import Edit from '/public/icons/system/action-edit.svg'
 import Delete from '/public/icons/system/action-bin.svg'
 
 import { useState, useEffect } from 'react'
+import { FormStatus } from 'react-dom'
 import Link from 'next/link'
-import { cache } from 'react'
-import { redirect } from "next/navigation"
 import { deleteScenario } from '@/prisma/scripts/scenario'
+import { z } from "zod"
 import { revalidatePath } from 'next/cache'
+import PlayButton from './playButton'
+import { redirect } from 'next/navigation'
+
+const schema = z.object({
+  id: z.string()
+})
 
 export default function CardButtons ({
     id
@@ -17,43 +20,36 @@ export default function CardButtons ({
     id: number
   }) {
 
-    /*
-    async function del() {
+    async function deleteItem(formData: FormData) {
       'use server'
+      
+      const parsed = schema.parse({
+        id: formData.get('id')
+      })
 
       try {
-        const response = await deleteScenario(id)
+        const response = await deleteScenario(Number(parsed.id))
+        console.log("response")
       }
       catch (e) {
         return { message: 'Failed to delete' }
       }
-  
-      revalidatePath('/scenario')
-    }
-    */
 
-    
-    function setPlay () {}
-    /*
-      const [scenario, setScenario] = useState([]);
-
-        useEffect(() => {
-        localStorage.setItem('scenario', JSON.stringify(scenario));
-    }, [scenario]);
+      return revalidatePath('/scenario');
     }
-    */
 
     return (
         <div className="flex flex-row flex-grow">
-          <button onClick={setPlay} className="card-button form-button">
-            <Play className="card-icon"/>
-          </button>
+          <PlayButton id={id}/>
           <Link href={'/scenario/'+id} className="card-button form-button">
             <Edit className="card-icon"/>
           </Link>
-          <button className="card-button form-button">
-            <Delete className="card-icon"/>
-          </button>
+          <form action={deleteItem} className='w-full'>
+            <input type="hidden" name="id" value={id} />
+            <button className="card-button form-button">
+              <Delete className="card-icon"/>
+            </button>
+          </form>
         </div>
     )
 }
