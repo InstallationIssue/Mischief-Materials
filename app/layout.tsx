@@ -15,7 +15,7 @@ export const metadata = {
 function TopNav () {
   return (
     <nav className='flex flex-row justify-between items-center px-2 h-12 border-b-2 border-white'>
-      <Link className='nav-link' href={'/foundation'}>
+      <Link className='nav-link' href={'/'}>
         <Logo className="w-8"/>
       </Link>
 
@@ -27,8 +27,7 @@ function TopNav () {
       <div className='flex flex-row items-center h-full'>
         <Link href="/scenario" className="nav-link">Scenarios</Link>
         <Link href="/location" className="nav-link">Locations</Link>
-        <Link href="/character" className="nav-link">Players</Link>
-        <Link href="/character" className="nav-link">NPCs</Link>
+        <Link href="/character" className="nav-link">Characters</Link>
         <Link href="/monster" className="nav-link">Monsters</Link>
         <Link href="/item" className="nav-link">Items</Link>
         <Link href="/magic" className="nav-link">Magic</Link>
@@ -46,7 +45,7 @@ export default function RootLayout({
     <html lang="en">
         <body className={inter.className}>
           <TopNav/>
-          <main>{children}</main>
+          <main className='flex flex-col h-full mx-4'>{children}</main>
         </body>
     </html>
   )

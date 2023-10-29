@@ -37,10 +37,6 @@ body {
     var(--background-hex);
 }
 
-main {
-  @apply flex flex-col p-4 h-full w-full;
-}
-
 /* Headers & Text */
 
 h1 {
@@ -93,7 +89,7 @@ label {
 /* Buttons */
 
 button {
-  @apply rounded-lg font-mono py-1 px-3 h-fit w-fit;
+  @apply rounded-lg py-1 px-3 h-fit w-fit;
   background-color: var(--action-light-hex);
   transition: box-shadow 0.5s, background-color 0.2s;
   color: var(--foreground-hex);
