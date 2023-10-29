@@ -15,6 +15,11 @@ model Scenario {
   name            String    @unique
   description     String    @default("")
   image           String    @default("")
+  locations       Location[]
+  characters      Character[]
+  encounters      Encounter[]
+  items           Item[]
+  magic           Magic[]
 }
 
 model Location {
@@ -23,6 +28,7 @@ model Location {
   description     String    @default("")
   color           String    @default("#D9D9D9")
   icon            String    @default("")
+  scenarios       Scenario[]
 }
 
 model Character {
@@ -39,6 +45,7 @@ model Character {
   wil               Int       @default(0)
   physical_features String    @default("")
   npc               Boolean   @default(true)
+  scenarios       Scenario[]
 }
 
 model Monster {
@@ -69,6 +76,7 @@ model Encounter {
   id              Int         @id @default(autoincrement())
   name            String      @unique @default("")
   monsters        EncounterInstance[]
+  scenarios       Scenario[]
 }
 
 model Item {
@@ -76,6 +84,7 @@ model Item {
   name            String    @unique
   description     String    @default("")
   value           Int       @default(100)
+  scenarios       Scenario[]
 }
 
 model Spell {
@@ -92,4 +101,5 @@ model Magic {
   description     String    @default("")
   medium          String    @default("")
   spells          Spell[]
+  scenarios       Scenario[]
 }

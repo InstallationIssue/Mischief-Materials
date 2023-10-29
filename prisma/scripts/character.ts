@@ -20,6 +20,48 @@ export async function getCharacters(){
     })
 }
 
+export async function getPlayers(){
+    return await prisma.character.findMany({
+        where: {
+            npc: false
+        },
+        select: {
+            name: true,
+            background: true,
+            xp: true,
+            level: true,
+            health_max: true,
+            health_lost: true,
+            armor: true,
+            str: true,
+            dex: true,
+            wil: true,
+            physical_features: true,
+        }
+    })
+}
+
+export async function getNpcs(){
+    return await prisma.character.findMany({
+        where: {
+            npc: true
+        },
+        select: {
+            name: true,
+            background: true,
+            xp: true,
+            level: true,
+            health_max: true,
+            health_lost: true,
+            armor: true,
+            str: true,
+            dex: true,
+            wil: true,
+            physical_features: true,
+        }
+    })
+}
+
 export async function createCharacter(name: string, background: string,
     str = 0, dex = 0, wil = 0, armor = 6, physical_features = "", npc = true){
 

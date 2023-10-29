@@ -12,19 +12,20 @@ export async function getLocations(){
     })
 }
 
-export async function createLocation(name: string, description: string, color: string){
+export async function createLocation(name: string, description: string, color: string, icon: string){
 
     const location = await prisma.location.create({
         data: {
             name: name,
             description: description,
-            color: color
+            color: color,
+            icon: icon
         }
       })
     return location
 }
 
-export async function updateLocation(id: number, name?: string, description?: string, color?: string) {
+export async function updateLocation(id: number, name?: string, description?: string, color?: string, icon?: string) {
     const location = await prisma.location.update({
         where: {
             id: id
@@ -32,7 +33,8 @@ export async function updateLocation(id: number, name?: string, description?: st
         data: {
             name: name,
             description: description,
-            color: color
+            color: color,
+            icon: icon
         }
     })
     return location
@@ -46,7 +48,8 @@ export async function getLocationById(id: number){
         select: {
             name: true,
             description: true,
-            color: true
+            color: true,
+            icon: true
         }
     })
 }

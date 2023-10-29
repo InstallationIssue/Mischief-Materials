@@ -45,7 +45,12 @@ export async function getScenarioById(id: number){
         select: {
             name: true,
             description: true,
-            image: true
+            image: true,
+            locations: true,
+            characters: true,
+            encounters: true,
+            items: true,
+            magic: true
         }
     })
 }

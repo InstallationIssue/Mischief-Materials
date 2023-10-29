@@ -7,7 +7,6 @@ export async function getMonsters(){
             name        : true,
             background  : true, 
             health_max  : true,
-            health_lost : true,
             armor       : true,
             str         : true,
             dex         : true,
@@ -26,7 +25,6 @@ export async function createMonster(name: string, background: string,
             name        : name,
             background  : background,
             health_max  : 4,
-            health_lost : 0,
             armor       : armor,
             str         : str,
             dex         : dex,
@@ -49,7 +47,6 @@ export async function updateMonster(id: number, name?: string, background?: stri
             name        : name,
             background  : background,
             health_max  : 4,
-            health_lost : 0,
             armor       : armor,
             str         : str,
             dex         : dex,
@@ -70,7 +67,6 @@ export async function getMonsterById(id: number){
             name        : true,
             background  : true, 
             health_max  : true,
-            health_lost : true,
             armor       : true,
             str         : true,
             dex         : true,
@@ -87,17 +83,4 @@ export async function deleteMonster(id: number){
             id: id
         }
     })
-}
-
-//Check for no health
-export async function LoseHealth(id: number, health_lost: number) {
-    const monster = await prisma.monster.update({
-        where: {
-            id: id
-        },
-        data: {
-            health_lost: health_lost
-        }
-    })
-    return monster
 }
