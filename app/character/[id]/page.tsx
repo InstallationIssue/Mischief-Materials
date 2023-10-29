@@ -1,34 +1,40 @@
-import Header from "../card"
-import Background from "../background"
-import Inventory from "../inventory"
-import Image from "next/image"
+import { getCharacterById } from "@/prisma/scripts/character"
+import ItemCard from "@/app/item/card";
 
-export default function Character({ 
+export default async function Character({ 
     params 
 }: { 
     params: { id: number } 
 }) {
+    const character = await getCharacterById(Number(params.id));
+
     return (
-        <div className="flex flex-col justify-around">
-            <Header id={Number(params.id)}/>
-            <div className="flex flex-row">
-                <div className="flex-grow m-2 w-1/3">
-                    <Image
-                        src="/images/androidhols.svg"
-                        alt="Vercel Logo"
-                        className="bg-white border border-white rounded-lg w-full"
-                        width={50}
-                        height={50}
-                        priority/>
-                </div>
-                <div className="flex-grow m-2 w-1/3">
-                </div>
-                <div className="flex-grow m-2 w-1/3">
-                    <Background id={Number(params.id)}/>
-                </div>
+        <div className="flex flex-row h-full w-full my-2 gap-2">
+            <div className="flex flex-col h-full w-1/4 border-construct">
+                <h4>{character.name}</h4>
+                <h4>Background</h4>
+                <p>{character.background}</p>
             </div>
-            <div className="flex-grow m-2 h-fit">
-                <Inventory/>
+            <div className="flex flex-col h-full w-1/2 border-construct">
+                <div className="flex flex-row">
+                    <div className="flex flex-col w-1/2"></div>
+                </div>
+                <h4>Stats</h4>
+                <p>Str: {character.str}</p>
+                <p>Dex: {character.dex}</p>
+                <p>Wil: {character.wil}</p>
+                <h4>Physical Features</h4>
+                <p>{character.physical_features}</p>
+                <h4>Items</h4>
+                <p>
+                    {character.items.map((id, index) => (
+                        <ItemCard key={id.id} id={id.id}/>
+                    ))}
+                </p>
+            </div>
+            <div className="flex flex-col h-full w-1/4 border-construct">
+                <h4>Relationships</h4>
+                <h4>Goals</h4>
             </div>
         </div>
     )

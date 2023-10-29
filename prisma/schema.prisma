@@ -45,7 +45,8 @@ model Character {
   wil               Int       @default(0)
   physical_features String    @default("")
   npc               Boolean   @default(true)
-  scenarios       Scenario[]
+  scenarios         Scenario[]
+  items             Item[]
 }
 
 model Monster {
@@ -85,6 +86,7 @@ model Item {
   description     String    @default("")
   value           Int       @default(100)
   scenarios       Scenario[]
+  characters      Character[]
 }
 
 model Spell {

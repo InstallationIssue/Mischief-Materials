@@ -5,7 +5,8 @@ export async function getItems(){
         select: {
             id          : true,
             name        : true,
-            description : true
+            description : true,
+            value       : true
         }
     })
 }
@@ -38,7 +39,8 @@ export async function getItemById(id: number){
         },
         select: {
             name        : true,
-            description : true
+            description : true,
+            value       : true
         }
     })
 }

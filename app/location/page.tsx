@@ -14,15 +14,9 @@ export default async function Location(){
                     <Plus className="stats-icon"/>
                 </Link>
             </div>
-            <div className="flex flex-row flex-wrap gap-6">
+            <div className="flex flex-row flex-wrap gap-3">
                 {data.map((id) => (
-                    <LocationCard key={id.id} params={{
-                        id: id.id, 
-                        name: id.name, 
-                        description: id.description, 
-                        color: id.color,
-                        icon: id.icon
-                    }}/>
+                    <LocationCard key={id.id} id={id.id}/>
                 ))}
             </div>
         </div>

@@ -86,6 +86,13 @@ label {
   font-family: 'Play';
 }
 
+/* Border */
+
+.border-construct {
+  @apply border rounded-lg p-2;
+  border-color: var(--foreground-hex);
+}
+
 /* Buttons */
 
 button {

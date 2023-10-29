@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import Link from "next/link"
 import React from 'react'
 import Logo from '/public/icons/logo.svg'
-import Play from '/public/icons/system/action-play.svg'
+import { PlayButton } from './components/play-button'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,11 +19,7 @@ function TopNav () {
         <Logo className="w-8"/>
       </Link>
 
-      <Link className="play" href={'/play'}>
-        <h4 className='line-clamp-1 leading-loose'>Ark of Cognizance</h4>
-        <Play className="h-full"/>
-      </Link>
-
+      
       <div className='flex flex-row items-center h-full'>
         <Link href="/scenario" className="nav-link">Scenarios</Link>
         <Link href="/location" className="nav-link">Locations</Link>

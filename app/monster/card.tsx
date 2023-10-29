@@ -1,3 +1,5 @@
+import { getMonsterById } from '@/prisma/scripts/monster'
+
 import HealthCircle from '../components/health-circle'
 
 import Strength from '/public/icons/stats/strength.svg'
@@ -12,56 +14,49 @@ import Hulking from '/public/icons/monsters/size-4.svg'
 import Colossal from '/public/icons/monsters/size-5.svg'
 import Boss from '/public/icons/monsters/size-final.svg'
 
-export default function MonsterCard ({
-    params
+export default async function MonsterCard ({
+    id
   }: { 
-    params: {
-      id: number,
-      name: string,
-      health_max: number,
-      armor: number,
-      str: number,
-      dex: number,
-      wil: number,
-      size: string,
-      attack: number
-  }}) {
+    id: number
+  }) {
+    const monster = await getMonsterById(id)
+
     return (
       <div className="monster-card">
         <div className="flex flex-grow justify-center items-start self-stretch gap-2">
           <HealthCircle params={{
-            health_max: params.health_max,
+            health_max: monster.health_max,
             health_lost: 0,
-            armor: params.armor
+            armor: monster.armor
           }}></HealthCircle>
           <div className="flex flex-col flex-grow self-stretch justify-between">
-            <h4>{params.name}</h4>
+            <h4>{monster.name}</h4>
             <div className="stats">
               <div>
                 <Strength className='stats-icon'/>
-                <h5>{params.str}</h5>
+                <h5>{monster.str}</h5>
               </div>
               <div>
                 <Dexterity className='stats-icon'/>
-                <h5>{params.dex}</h5>
+                <h5>{monster.dex}</h5>
               </div>
               <div>
                 <Willpower className='stats-icon'/>
-                <h5>{params.wil}</h5>
+                <h5>{monster.wil}</h5>
               </div>
               <div>
                 <Attack className='stats-icon'/>
-                <h5>{params.attack}</h5>
+                <h5>{monster.attack}</h5>
               </div>
             </div>
           </div>
         </div>
-        {params.size == 'Weak' && <Weak className='size-icon'/>}
-        {params.size == 'Typical' && <Typical className='size-icon'/>}
-        {params.size == 'Tough' && <Tough className='size-icon'/>}
-        {params.size == 'Hulking' && <Hulking className='size-icon'/>}
-        {params.size == 'Colossal' && <Colossal className='size-icon'/>}
-        {params.size == 'Boss' && <Boss className='size-icon'/>}
+        {monster.size == 'Weak' && <Weak className='size-icon'/>}
+        {monster.size == 'Typical' && <Typical className='size-icon'/>}
+        {monster.size == 'Tough' && <Tough className='size-icon'/>}
+        {monster.size == 'Hulking' && <Hulking className='size-icon'/>}
+        {monster.size == 'Colossal' && <Colossal className='size-icon'/>}
+        {monster.size == 'Boss' && <Boss className='size-icon'/>}
       </div>
     )
 }

@@ -1,19 +1,17 @@
 import Card from "./card"
-import Link from "next/link"
-import Plus from '/public/icons/system/clean-plus.svg'
+import Header from "../components/header"
 import { getScenarios } from "@/prisma/scripts/scenario"
+
+export const metadata = {
+    title: 'Scenarios'
+}
 
 export default async function Scenario(){
     const data = await getScenarios()
 
     return (
         <div>
-            <div className="flex flex-row justify-between mb-2">
-                <h2>Scenarios</h2>
-                <Link href={"scenario/add"}>
-                    <Plus className="stats-icon"/>
-                </Link>
-            </div>
+            <Header title={metadata.title} link="/scenario/add"/>
             <div className="flex flex-row flex-wrap gap-6">
                 {data.map((id) => (
                     <Card key={id.id} params={{

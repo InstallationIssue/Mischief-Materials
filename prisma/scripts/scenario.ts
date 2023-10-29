@@ -47,6 +47,17 @@ export async function getScenarioById(id: number){
             description: true,
             image: true,
             locations: true,
+        }
+    })
+}
+
+export async function getScenarioExtras(id: number){
+    return await prisma.scenario.findUniqueOrThrow({
+        where: {
+            id: id
+        },
+        select: {
+            locations: true,
             characters: true,
             encounters: true,
             items: true,

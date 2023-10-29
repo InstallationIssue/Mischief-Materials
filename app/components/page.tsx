@@ -11,7 +11,7 @@ export default async function DesignSystem(){
     return (
         <div className="flex flex-col justify-around p-5 w-full">
             <div className="flex flex-row justify-between">
-                <h1 className="font-mono font-bold text-3xl">Developed Foundations</h1>
+                <h1 className="">Design System</h1>
             </div>
 
             <div className='flex flex-row'>

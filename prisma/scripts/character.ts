@@ -121,7 +121,8 @@ export async function getCharacterById(id: number){
             dex: true,
             wil: true,
             physical_features: true,
-            npc: true
+            npc: true,
+            items: true
         }
     })
 }

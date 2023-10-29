@@ -1,0 +1,21 @@
+import Link from "next/link"
+import { getItemById } from "@/prisma/scripts/item"
+import Coins from "/public/icons/items/coins.svg"
+
+export default async function ItemCard({
+    id,
+  }: {
+    id: number
+  }) {
+    const item = await getItemById(Number(id))
+
+    return (
+        <Link href={`/item/${id}`} className="flex flex-row gap-2 h-10 w-80 items-center overflow-clip border-construct">
+            <span className="flex-grow whitespace-nowrap overflow-clip">
+              <h4 className="scrolling-text capitalize">{item.name}</h4>
+            </span>
+            <p>{item.value}</p>
+            <Coins className="stats-icon"/>
+        </Link>
+    )
+}

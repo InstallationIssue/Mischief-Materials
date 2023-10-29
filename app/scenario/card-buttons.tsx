@@ -1,7 +1,10 @@
+'use client'
+
 import Play from '/public/icons/system/action-play.svg'
 import Edit from '/public/icons/system/action-edit.svg'
 import Delete from '/public/icons/system/action-bin.svg'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { cache } from 'react'
 import { redirect } from "next/navigation"
@@ -14,6 +17,7 @@ export default function CardButtons ({
     id: number
   }) {
 
+    /*
     async function del() {
       'use server'
 
@@ -26,20 +30,30 @@ export default function CardButtons ({
   
       revalidatePath('/scenario')
     }
+    */
+
+    
+    function setPlay () {}
+    /*
+      const [scenario, setScenario] = useState([]);
+
+        useEffect(() => {
+        localStorage.setItem('scenario', JSON.stringify(scenario));
+    }, [scenario]);
+    }
+    */
 
     return (
         <div className="flex flex-row flex-grow">
-          <Link href={'/scenario/add'} className="card-button form-button">
+          <button onClick={setPlay} className="card-button form-button">
             <Play className="card-icon"/>
-          </Link>
+          </button>
           <Link href={'/scenario/'+id} className="card-button form-button">
             <Edit className="card-icon"/>
           </Link>
-          <form className='w-full' action={del}>
-            <button className="card-button form-button" type='submit'>
-              <Delete className="card-icon"/>
-            </button>
-          </form>
+          <button className="card-button form-button">
+            <Delete className="card-icon"/>
+          </button>
         </div>
     )
 }

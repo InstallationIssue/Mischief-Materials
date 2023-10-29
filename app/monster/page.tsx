@@ -8,7 +8,7 @@ export default async function Monster(){
 
     return (
         <div>
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-between mb-2">
                 <h2>Monsters</h2>
                 <Link href={"monster/add"}>
                     <Plus className="stats-icon"/>
@@ -16,16 +16,7 @@ export default async function Monster(){
             </div>
             <div className="flex flex-row flex-wrap gap-4">
                 {data.map((id, index) => (
-                    <MonsterCard key={id.id} params={{
-                        id: id.id,
-                        name: id.name, 
-                        health_max: id.health_max, 
-                        armor: id.armor,
-                        str: id.str, 
-                        dex: id.dex, 
-                        wil: id.wil, 
-                        size: id.size,
-                        attack: id.attack}}/>
+                    <MonsterCard key={id.id} id={id.id}/>
                 ))}
             </div>
         </div>
