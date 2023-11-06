@@ -166,7 +166,7 @@ const COMMON_SURNAMES = [
     "Rumbold", "Rummage", "Sallow", "Saltmarsh", "Silverless", "Skitter",
     "Slee", "Slitherly", "Stoker", "Tarwater", "Tumbler", "Villin"
 ]
-const NPC_ASSETS = [
+const CHAR_ASSETS = [
     "Authority", "Avoids detection", "Calls in favors", "Charming", "Cooks the books", "Erases evidence",
     "Excellent liar", "Extremely rich", "Faction leader", "Faction member", "Feared", "Fortified base",
     "Gorgeous", "Hears rumors", "Huge family", "Huge library", "Impersonator", "Interrogator",
@@ -174,7 +174,7 @@ const NPC_ASSETS = [
     "Loyal henchman", "Middling oracle", "Nothing to lose", "Owns the guards", "Powerful spouse", "Procures gear",
     "Pulls the strings", "Secret lab", "Sells contraband", "Smuggles goods", "Spy network", "War hero"
 ]
-const NPC_LIABILITIES = [
+const CHAR_LIABILITIES = [
     "Addiction", "Alcoholic", "Corrupt ally", "Coward", "Decadent", "Forbidden love",
     "Gambler", "Glutton", "Greedy", "Heretic", "Huge debts", "Imposter",
     "Insanity", "Jealous", "Leaves evidence", "Many enemies", "Misinformed", "Money trail",
@@ -182,15 +182,15 @@ const NPC_LIABILITIES = [
     "Protective", "Scandalous", "Softhearted", "Strict routines", "Superstitious", "Suspicious",
     "Temper", "Trusting", "Vulnerable base", "Wanted", "Weak-willed", "Widely despised"
 ]
-const NPC_GOALS = [
+const CHAR_GOALS = [
     "A better life", "Acceptance", "Acquire item", "Craft item", "Destroy faction", "Destroy item",
-    "Enlightenment", "Fame", "Found faction", "Freedom", "Glory", "Impress NPC",
-    "Infamy", "Infiltrate faction", "Justice", "Kidnap NPC", "Lead faction", "Learning",
-    "Locate NPC", "Love", "Mastery", "Power", "Reach location", "Rescue NPC",
+    "Enlightenment", "Fame", "Found faction", "Freedom", "Glory", "Impress Character",
+    "Infamy", "Infiltrate faction", "Justice", "Kidnap Character", "Lead faction", "Learning",
+    "Locate Character", "Love", "Mastery", "Power", "Reach location", "Rescue Character",
     "Resolve dispute", "Restore faction", "Reveal a secret", "Revenge", "Sabotage faction", "Serve a deity",
     "Serve evil", "Serve faction", "Serve ideology", "Serve leader", "Serve the needy", "Wealth"
 ]
-const NPC_MISFORTUNES = [
+const CHAR_MISFORTUNES = [
     "Abandoned", "Addicted", "Arrested", "Blackmailed", "Burgled", "Challenged",
     "Condemnede", "Crippled", "Cursed", "Defrauded", "Demoted", "Depressed",
     "Discredited", "Dismissed", "Disowned", "Exiled", "Famished", "Forgotten",
@@ -198,7 +198,7 @@ const NPC_MISFORTUNES = [
     "Mobbed", "Mutilated", "Overworked", "Poisoned", "Pursued", "Rejected",
     "Replace", "Robbed", "Sick", "Sued", "Suspected", "Transformed"
 ]
-const NPC_MISSIONS = [
+const CHAR_MISSIONS = [
     "Apprehend", "Assassinate", "Blackmail", "Burgle", "Chart", "Convince",
     "Deface", "Defraud", "Deliver", "Destroy", "Discredit", "Escort",
     "Exfiltrate", "Extort", "Follow", "Frame", "Impersonate", "Impress",
@@ -206,7 +206,7 @@ const NPC_MISSIONS = [
     "Protect", "Raid", "Replace", "Retrieve", "Rob", "Ruin",
     "Sabotage", "Smuggle", "Surveil", "Take over", "Terrorize", "Threaten"
 ]
-const NPC_METHODS = [
+const CHAR_METHODS = [
     "Alchemy", "Blacmail", "Bluster", "Bribery", "Bullying", "Bureaucracy",
     "Charm", "Commerce", "Cronies", "Debate", "Deceit", "Deduction",
     "Eloquence", "Espionage", "Fast-talking", "Favors", "Hard work", "Humor",
@@ -214,15 +214,15 @@ const NPC_METHODS = [
     "Negotiation", "Persistence", "Piety", "Preparation", "Quick wit", "Research",
     "Rumors", "Sabotage", "Teamwork", "Theft", "Threats", "Violence"
 ]
-const NPC_SECRETS = [
+const CHAR_SECRETS = [
     "Addicted", "Artificial", "Assassin", "Bankrupt", "Beholden", "Counterspy",
     "Cultist", "Demigod", "Evil lineage", "Exile", "Fence", "Fugitive",
     "Ghost", "Has a child", "Heretic", "High born", "Huge fortune", "Illusion",
     "Insurrectionist", "Low born", "Married", "Mind-controlled", "Misfortune", "Monster hunter",
-    "Non-human", "NPC", "Polygamist", "Protects relic", "Scandalous birth", "Secret police",
+    "Non-human", "Job", "Polygamist", "Protects relic", "Scandalous birth", "Secret police",
     "Serial killer", "Smuggler", "Spy", "Time traveller", "Transformed", "War criminal"
 ]
-const NPC_REPUTATIONS = [
+const CHAR_REPUTATIONS = [
     "Ambitious", "Authoritative", "Boor", "Borrower", "Celebrity", "Charitable",
     "Cheat", "Dangerous", "Entertainer", "Gossip", "Hardworking", "Holy",
     "Honest", "Hypochondriac", "Idiot", "Influential", "Layabout", "Leader",
@@ -230,7 +230,7 @@ const NPC_REPUTATIONS = [
     "Partyer", "Pious", "Proper", "Prophet of doom", "Repulsive", "Respected",
     "Riffraff", "Scandalous", "Slime ball", "Terrifying", "Weirdo", "Wise"
 ]
-const NPC_HOBBIES = [
+const CHAR_HOBBIES = [
     "Archaeology", "Art collecting", "Bad fiction", "Calligraphy", "Card games", "Clockwork",
     "Collecting cats", "Cuisine", "Dark lore", "Dog breeding", "Embroidery", "Exercise",
     "Falconry", "Fashion", "Fishing", "Foreign cultures", "Gardening", "History",
@@ -238,7 +238,7 @@ const NPC_HOBBIES = [
     "Opera", "Painting", "Poetry", "Puzzle-solving", "Riddling", "Science",
     "Sculpture", "Sketching", "Smoking", "Theater", "Weaving", "Whiskey"
 ]
-const NPC_RELATIONSHIPS = [
+const CHAR_RELATIONSHIPS = [
     "Adviser", "Blackmailer", "Business partner", "Business rival", "Buyer", "Captor",
     "Client", "Confidant", "Debtor", "Disciple", "Guardian", "Henchman",
     "Idol", "Informant", "Master", "Mentor", "Nemesis", "Offspring",
@@ -250,7 +250,7 @@ const DIVINE_DOMAINS = [
     "Animal", "Balance", "Betrayal", "Chance", "Chaos", "Conquest",
     "Cycles", "Death", "Destiny", "Dreams", "Element", "Gateways",
     "Judgement", "Love", "Memory", "Monsters", "Moon", "Motherhood",
-    "NPC", "Oaths", "Order", "Plague", "Purification", "Reason",
+    "Character", "Oaths", "Order", "Plague", "Purification", "Reason",
     "Schemes", "Secrets", "Storms", "Summer", "Sun", "The Forge",
     "The Sea", "The Wild", "Time", "Underworld", "Wealth", "Winter"
 ]
@@ -353,12 +353,24 @@ export function getJobCivilised() {return CIVILIZED_JOBS[num(CIVILIZED_JOBS.leng
 export function getJobUnderworld() {return UNDERWORLD_JOBS[num(UNDERWORLD_JOBS.length)]}
 export function getJobWilderness() {return WILDERNESS_JOBS[num(WILDERNESS_JOBS.length)]}
 
-// Char Getters
+// Character Getters
 export function getCharAppearance() {return CHAR_APPEARANCES[num(CHAR_APPEARANCES.length)]}
 export function getCharPhysicalDetail() {return CHAR_PHYSICAL_DETAILS[num(CHAR_PHYSICAL_DETAILS.length)]}
 export function getCharClothing() {return CHAR_CLOTHES[num(CHAR_CLOTHES.length)]}
 export function getCharPersonality() {return CHAR_PERSONALITIES[num(CHAR_PERSONALITIES.length)]}
 export function getCharMannerism() {return CHAR_MANNERISMS[num(CHAR_MANNERISMS.length)]}
+export function getCharAsset() {return CHAR_ASSETS[num(CHAR_ASSETS.length)]}
+export function getCharLiability() {return CHAR_LIABILITIES[num(CHAR_LIABILITIES.length)]}
+export function getCharGoal() {return CHAR_GOALS[num(CHAR_GOALS.length)]}
+export function getCharMisfortune() {return CHAR_MISFORTUNES[num(CHAR_MISFORTUNES.length)]}
+export function getCharMission() {return CHAR_MISSIONS[num(CHAR_MISSIONS.length)]}
+export function getCharMethod() {return CHAR_METHODS[num(CHAR_METHODS.length)]}
+export function getCharSecret() {return CHAR_SECRETS[num(CHAR_SECRETS.length)]}
+export function getCharReputation() {return CHAR_REPUTATIONS[num(CHAR_REPUTATIONS.length)]}
+export function getCharHobby() {return CHAR_HOBBIES[num(CHAR_HOBBIES.length)]}
+export function getCharRelationship() {return CHAR_RELATIONSHIPS[num(CHAR_RELATIONSHIPS.length)]}
+export function getDivineDomain() {return DIVINE_DOMAINS[num(DIVINE_DOMAINS.length)]}
+export function getAfterPartyDisaster() {return AFTER_PARTY_DISASTERS[num(AFTER_PARTY_DISASTERS.length)]}
 
 // Animal Getters
 export function getAnimalAerial() {return AERIAL_ANIMAL[num(AERIAL_ANIMAL.length)]}
@@ -379,20 +391,6 @@ export function getNameMasculine() {return MASCULINE_NAMES[num(MASCULINE_NAMES.l
 export function getNameFeminine() {return FEMININE_NAMES[num(FEMININE_NAMES.length)]}
 export function getSurnameCommon() {return COMMON_SURNAMES[num(COMMON_SURNAMES.length)]}
 export function getSurnameNoble() {return NOBLE_SURNAMES[num(NOBLE_SURNAMES.length)]}
-
-// NPC Getters
-export function getNpcAsset() {return NPC_ASSETS[num(NPC_ASSETS.length)]}
-export function getNpcLiability() {return NPC_LIABILITIES[num(NPC_LIABILITIES.length)]}
-export function getNpcGoal() {return NPC_GOALS[num(NPC_GOALS.length)]}
-export function getNpcMisfortune() {return NPC_MISFORTUNES[num(NPC_MISFORTUNES.length)]}
-export function getNpcMission() {return NPC_MISSIONS[num(NPC_MISSIONS.length)]}
-export function getNpcMethod() {return NPC_METHODS[num(NPC_METHODS.length)]}
-export function getNpcSecret() {return NPC_SECRETS[num(NPC_SECRETS.length)]}
-export function getNpcReputation() {return NPC_REPUTATIONS[num(NPC_REPUTATIONS.length)]}
-export function getNpcHobby() {return NPC_HOBBIES[num(NPC_HOBBIES.length)]}
-export function getNpcRelationship() {return NPC_RELATIONSHIPS[num(NPC_RELATIONSHIPS.length)]}
-export function getDivineDomain() {return DIVINE_DOMAINS[num(DIVINE_DOMAINS.length)]}
-export function getAfterPartyDisaster() {return AFTER_PARTY_DISASTERS[num(AFTER_PARTY_DISASTERS.length)]}
 
 // Spell Getters
 export function getPhysicalEffect() {return PHYSICAL_EFFECT[num(PHYSICAL_EFFECT.length)]}
@@ -516,28 +514,28 @@ export function newMonster (){
     return monster
 }
 
-export function randomCriminalNpc (){
+export function randomCriminalChar (){
     let character = newCharacter()
 
-    let npc: Prisma.NpcCreateInput = {
-        asset: getNpcAsset(),
-        liability: getNpcLiability(),
-        goal: getNpcGoal(),
-        misfortune: getNpcMisfortune(),
-        mission: getNpcMission(),
-        method: getNpcMethod(),
+    let char: Prisma.CharCreateInput = {
+        asset: getCharAsset(),
+        liability: getCharLiability(),
+        goal: getCharGoal(),
+        misfortune: getCharMisfortune(),
+        mission: getCharMission(),
+        method: getCharMethod(),
         character: {
             create: character
         }
     }
     
-    return npc
+    return char
 }
 // Fix this
-export function randomNobleNPC (){
-    let npc = randomCriminalNpc()
+export function randomNobleChar (){
+    let char = randomCriminalChar()
 
-    return npc
+    return char
 }
 
 */

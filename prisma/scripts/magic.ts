@@ -5,7 +5,8 @@ export async function getMagic(){
         select: {
             id          : true,
             name        : true,
-            description : true
+            description : true,
+            medium      : true
         }
     })
 }
@@ -38,7 +39,8 @@ export async function getMagicById(id: number){
         },
         select: {
             name        : true,
-            description : true
+            description : true,
+            medium      : true
         }
     })
 }

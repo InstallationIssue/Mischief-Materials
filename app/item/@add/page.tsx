@@ -1,13 +1,12 @@
-import { createScenario } from "@/prisma/scripts/scenario"
+import { createItem } from "@/prisma/scripts/item"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
-
 const schema = z.object({
   name: z.string(),
   description: z.string(),
-  image: z.string()
+  value: z.string()
 })
 
 export default async function Add() {
@@ -18,18 +17,18 @@ export default async function Add() {
     const parsed = schema.parse({
       name: formData.get('name'),
       description: formData.get('description'),
-      image: formData.get('image')
+      value: formData.get('value')
     })
 
     try {
-      const response = await createScenario(parsed.name, parsed.description, parsed.image)
+      const response = await createItem(parsed.name, parsed.description, Number(parsed.value))
     }
     catch (e) {
       return { message: 'Failed to create' }
     }
     
-    revalidatePath('/scenario')
-    redirect("/scenario");
+    revalidatePath('/item')
+    redirect("/item");
   }
  
   return (
@@ -38,8 +37,8 @@ export default async function Add() {
         <input type="text" id="name" name='name'></input>
         <label htmlFor='description'>Description</label>
         <input type="text" id="description" name='description'></input>
-        <label htmlFor='image'>Image</label>
-        <input type="text" id="image" name='image'></input>
+        <label htmlFor='value'>Value</label>
+        <input type="text" id="value" name='value'></input>
         <button type='submit'>Submit</button>
       </form>
   )

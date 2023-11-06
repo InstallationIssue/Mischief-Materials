@@ -1,6 +1,9 @@
+'use client'
+
 import { createMonster } from "@/prisma/scripts/monster"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
+
 import Weak from '/public/icons/monsters/size-1.svg'
 import Typical from '/public/icons/monsters/size-2.svg'
 import Tough from '/public/icons/monsters/size-3.svg'
@@ -13,10 +16,8 @@ const schema = z.object({
   name: z.string(),
   background: z.string()
 })
-
-export default async function Add() {
-  
-  async function create(formData: FormData) {
+/*
+async function create(formData: FormData) {
     'use server'
 
     const parsed = schema.parse({
@@ -33,7 +34,11 @@ export default async function Add() {
     
     return revalidatePath('/')
   }
- 
+*/
+
+function create () {}
+
+export default async function AddMonster() {
   return (
       <form className="flex flex-col space-y-2 py-2" action={create}>
         <label htmlFor='name'>Name</label>

@@ -31,11 +31,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+      <html lang="en">
         <body className={inter.className}>
           <TopNav/>
           <main className='flex flex-col h-full mx-4'>{children}</main>
         </body>
-    </html>
+      </html>
   )
 }

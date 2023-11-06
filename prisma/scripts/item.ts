@@ -11,22 +11,26 @@ export async function getItems(){
     })
 }
 
-export async function createItem(name: string){
+export async function createItem(name: string, description: string, value: number){
     const item = await prisma.item.create({
         data: {
-            name        : name
+            name        : name,
+            description : description,
+            value       : value
         }
       })
     return item
 }
 
-export async function updateItem(id: number, name?: string) {
+export async function updateItem(id: number, name?: string, description?: string, value?: number) {
     const item = await prisma.item.update({
         where: {
             id: id
         },
         data: {
-            name        : name
+            name        : name,
+            description : description,
+            value       : value
         }
     })
     return item
