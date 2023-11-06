@@ -23,7 +23,7 @@ export default async function SingleLineText ({
                 </div>
             </div>
             <button onClick={randomise}>
-                <Dice className='aspect-square h-[45px] relative icon'/>
+                <Dice className='aspect-square h-10 relative icon'/>
             </button>
         </div>
     )

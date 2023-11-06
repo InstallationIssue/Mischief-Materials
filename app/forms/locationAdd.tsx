@@ -5,6 +5,9 @@ import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
+import SingleLineText from "../form-fields/singleLineText"
+import Color from "../form-fields/color"
+import FormButtons from "../form-fields/formButtons"
 import IconSelect from "./iconSelect"
 
 const schema = z.object({
@@ -41,16 +44,13 @@ function create() {}
 
 export default async function AddLocation(){
     return (
-        <div className="w-3/4">
+        <div>
             <form className="flex flex-col space-y-2 py-2" action={create}>
-                <label htmlFor='name'>Name</label>
-                <input type="text" id="name" name='name'></input>
-                <label htmlFor='description'>Description</label>
-                <input type="text" id="description" name='description'></input>
-                <label htmlFor='color'>Color</label>
-                <input type="color" id="color" name='color'></input>
-                <IconSelect/>
-                <button type='submit'>Submit</button>
+              <SingleLineText id="name"/>
+              <SingleLineText id="description"/>
+              <Color/>
+              <IconSelect/>
+              <FormButtons/>
             </form>
         </div>
     )

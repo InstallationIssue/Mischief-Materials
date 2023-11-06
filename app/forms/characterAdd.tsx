@@ -3,7 +3,8 @@
 import { createCharacter } from "@/prisma/scripts/character"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
-
+import SingleLineText from "../form-fields/singleLineText"
+import FormButtons from "../form-fields/formButtons"
 
 const schema = z.object({
   name: z.string(),
@@ -35,11 +36,9 @@ function create () {}
 export default async function AddCharacter() {
   return (
       <form className="flex flex-col space-y-2 py-2" action={create}>
-        <label htmlFor='name'>Name</label>
-        <input type="text" id="name" name='name'></input>
-        <label htmlFor='setting'>Setting</label>
-        <input type="text" id="setting" name='setting'></input>
-        <button type='submit'>Submit</button>
+        <SingleLineText id="name"/>
+        <SingleLineText id="background"/>
+        <FormButtons/>
       </form>
   )
 }

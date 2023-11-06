@@ -54,9 +54,9 @@ function selectIcon(select, index: string) {
 
 export default async function IconSelect(){
     return (
-        <div>
+        <div className='p-2'>
             <label htmlFor='locationIcon'></label>
-            <select id="locationIcon" name="locationIcon" className="locationIcon">
+            <select id="locationIcon" name="locationIcon" className="locationIcon hidden">
                 <option>boat</option>
                 <option>building</option>
                 <option>campground</option>
@@ -78,7 +78,7 @@ export default async function IconSelect(){
                 <option>warehouse</option>
                 <option>worship</option>
             </select>
-            <span className="flex flex-row gap-3 icon-row">
+            <span className="flex flex-row gap-3 icon-row icon h-8 justify-between">
                 <Boat/>
                 <Building/>
                 <Campground/>

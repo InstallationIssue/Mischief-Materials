@@ -7,8 +7,7 @@ import AddItem from "./itemAdd";
 export default async function forms () {
     return (
     <div className="flex flex-col">
-        <AddScenario/>
-        {/*<AddItem/>*/}
+        <AddCharacter/>
     </div>
     )
 }
