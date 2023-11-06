@@ -31,6 +31,11 @@ model Location {
   scenarios       Scenario[]
 }
 
+model Event {
+  id                Int       @id @default(autoincrement())
+  name              String    @unique
+}
+
 model Character {
   id                Int       @id @default(autoincrement())
   name              String    @unique
@@ -43,8 +48,22 @@ model Character {
   str               Int       @default(0)
   dex               Int       @default(0)
   wil               Int       @default(0)
-  physical_features String    @default("")
+  profession        String    @default("")
+  appearance        String    @default("")
+  physical_detail   String    @default("")
+  clothing          String    @default("")
+  personality       String    @default("")
+  mannerism         String    @default("")
   npc               Boolean   @default(true)
+  assets            String    @default("")
+  liabilities       String    @default("")
+  goals             String    @default("")
+  misfortunes       String    @default("")
+  missions          String    @default("")
+  secrets           String    @default("")
+  reputations       String    @default("")
+  hobbies           String    @default("")
+  relationships     String    @default("")
   scenarios         Scenario[]
   items             Item[]
 }
@@ -60,6 +79,9 @@ model Monster {
   wil             Int         @default(0)
   size            String      @default("Typical")
   attack          Int         @default(0)
+  tactics         String      @default("")
+  personality     String      @default("")
+  weakness        String      @default("")
   encounter       EncounterInstance[] 
   encounterId     Int         @default(0)
 }
@@ -94,7 +116,7 @@ model Spell {
   name            String    @unique
   description     String    @default("")
   magic           Magic     @relation(fields: [magicId], references: [id])
-  magicId         Int
+  magicId         Int       @default(0)
 }
 
 model Magic {
