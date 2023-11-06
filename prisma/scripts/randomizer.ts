@@ -1,3 +1,5 @@
+import { Prisma } from "@prisma/client"
+
 const CIVILIZED_JOBS = [
     "Acolyte", "Actor", "Apothecary", "Baker", "Barber", "Blacksmith",
     "Brewer", "Bureaucrat", "Butcher", "Carpenter", "Clockmaker", "Courier",
@@ -405,10 +407,28 @@ export function getOmen() {return OMENS[num(OMENS.length)]}
 
 // Other Getters
 export function getCharAbilitySet() {return CHAR_ABILITIES[num(CHAR_ABILITIES.length)]}
+
+export function getCharProfession() {
+    let profession = "",
+    choice = num(3)
+
+    if (choice == 1) {
+        profession = getJobCivilised()
+    }
+    else if (choice == 2) {
+        profession = getJobWilderness()
+    }
+    else {
+        profession = getJobUnderworld()
+    }
+
+    return profession
+}
+
 export function getMonsterHealth(size = 'Typical') {return num(HEALTH_WEIGHTING[MONSTER_SIZES.indexOf(size)] * 6);}
 
 // Constructor functions
-export function commonName (){
+export function randCommonName (){
     let name = ''
 
     if (num(2) == 1){
@@ -422,7 +442,7 @@ export function commonName (){
     return name
 }
 
-export function nobleName (){
+export function randNobleName (){
     let name = ''
 
     if (num(2) == 1){
@@ -450,92 +470,74 @@ export function monsterAbilities (){
     return attributes
 }
 
-/*
-export function newCreature (){
-    let animal = TERRESTRIAL_ANIMAL[num(TERRESTRIAL_ANIMAL.length)]
-
-    let creature: Prisma.CreatureCreateInput = {
-        name: animal,
-        description: 'Typical creature',
-        str: 0,
-        dex: 0,
-        wil: 0,
-        armor: 6,
-        health_max: 4,
-        health_lost: 0
-    }
-    return creature
-}
-
-export function newCharacter (){
-    let creature = newCreature()
+export function randCharacter (){
     let abilities = getCharAbilitySet()
 
-    creature.name = commonName()
-    creature.description = ''
-    creature.str = abilities[0]
-    creature.dex = abilities[1]
-    creature.wil = abilities[2]
-
-    let player: Prisma.CharacterCreateInput = {
+    let character: Prisma.CharacterCreateInput = {
+        name: randCommonName(),
+        background: "",
         xp: 0,
         level: 1,
-        background: getJobUnderworld(),
+        health_max: 4,
+        health_lost: 0,
+        armor: 6,
+        str: abilities[0],
+        dex: abilities[1],
+        wil: abilities[2],
+        profession: getCharProfession(),
         appearance: getCharAppearance(),
         physical_detail: getCharPhysicalDetail(),
         clothing: getCharClothing(),
         personality: getCharPersonality(),
         mannerism: getCharMannerism(),
-        creature: {
-            create: creature,
-        }
+        npc: true,
+        assets: getCharAsset(),
+        liabilities: getCharLiability(),
+        goals: getCharGoal(),
+        misfortunes: getCharMisfortune(),
+        missions: getCharMission(),
+        secrets: getCharSecret(),
+        reputations: getCharReputation(),
+        hobbies: getCharHobby(),
+        relationships: getCharRelationship(),
     }
-    return player
+    return character
 }
 
-export function newMonster (){
-    let creature = newCreature()
+export function randMonster (){
     let abilities = monsterAbilities()
     let size = getMonsterSize()
 
-    creature.str = abilities[2]
-    creature.dex = abilities[3]
-    creature.wil = abilities[4]
-    creature.health_max = getMonsterHealth(size)
-
     let monster: Prisma.MonsterCreateInput = {
-        power: abilities[0],
+        name: "",
+        background: "",
+        health_max: getMonsterHealth(size),
+        armor: 6,
+        str: abilities[1],
+        dex: abilities[2],
+        wil: abilities[3],
         size: size,
-        attack: abilities[1],
-        creature: {
-            create: creature
-        }
+        attack: abilities[4],
+        tactics: getMonsterTactic(),
+        personality: getMonsterPersonality(),
+        weakness: getMonsterWeakness()
     }
     return monster
 }
 
 export function randomCriminalChar (){
-    let character = newCharacter()
+    let character = randCharacter()
 
-    let char: Prisma.CharCreateInput = {
-        asset: getCharAsset(),
-        liability: getCharLiability(),
-        goal: getCharGoal(),
-        misfortune: getCharMisfortune(),
-        mission: getCharMission(),
-        method: getCharMethod(),
-        character: {
-            create: character
-        }
-    }
+    character.profession = getJobUnderworld()
     
-    return char
+    return character
 }
-// Fix this
+
 export function randomNobleChar (){
-    let char = randomCriminalChar()
+    let character = randomCriminalChar()
 
-    return char
+    character.name = randNobleName()
+    character.profession = getJobCivilised()
+
+    return character
 }
-
-*/
