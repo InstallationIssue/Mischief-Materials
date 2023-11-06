@@ -31,33 +31,33 @@ export default async function LocationCard({
     const location = await getLocationById(id);
 
     return (
-        <Link href={`/location/${id}`} className="flex flex-row items-center border rounded p-1 gap-2 w-72 h-10">
+        <Link href={`/location/${id}`} className="flex flex-row items-center border rounded-lg p-2 gap-2 w-72 h-12">
           <svg className="h-full aspect-square" fill={location.color} viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="40"></circle>
           </svg>
           <span className="flex-grow whitespace-nowrap overflow-clip">
             <h4 className="scrolling-text capitalize">{location.name}</h4>
           </span>
-          {location.icon == 'boat' && <Boat className='size-icon'/>}
-          {location.icon == 'building' && <Building className='size-icon'/>}
-          {location.icon == 'campground' && <Campground className='size-icon'/>}
-          {location.icon == 'city' && <City className='size-icon'/>}
-          {location.icon == 'dungeon' && <Dungeon className='size-icon'/>}
-          {location.icon == 'entrance' && <Entrance className='size-icon'/>}
-          {location.icon == 'factory' && <Factory className='size-icon'/>}
-          {location.icon == 'headquarters' && <Headquarters className='size-icon'/>}
-          {location.icon == 'hospital' && <Hospital className='size-icon'/>}
-          {location.icon == 'institution' && <Institution className='size-icon'/>}
-          {location.icon == 'landmark' && <Landmark className='size-icon'/>}
-          {location.icon == 'medical-house' && <MedicalHouse className='size-icon'/>}
-          {location.icon == 'mountain-city' && <MountainCity className='size-icon'/>}
-          {location.icon == 'mountain' && <Mountain className='size-icon'/>}
-          {location.icon == 'outpost' && <Outpost className='size-icon'/>}
-          {location.icon == 'store' && <Store className='size-icon'/>}
-          {location.icon == 'tent' && <Tent className='size-icon'/>}
-          {location.icon == 'volcano' && <Volcano className='size-icon'/>}
-          {location.icon == 'warehouse' && <Warehouse className='size-icon'/>}
-          {location.icon == 'worship' && <Worship className='size-icon'/>}
+          {location.icon == 'boat' && <Boat className='h-full aspect-square icon'/>}
+          {location.icon == 'building' && <Building className='h-full aspect-square icon'/>}
+          {location.icon == 'campground' && <Campground className='h-full aspect-square icon'/>}
+          {location.icon == 'city' && <City className='h-full aspect-square icon'/>}
+          {location.icon == 'dungeon' && <Dungeon className='h-full aspect-square icon'/>}
+          {location.icon == 'entrance' && <Entrance className='h-full aspect-square icon'/>}
+          {location.icon == 'factory' && <Factory className='h-full aspect-square icon'/>}
+          {location.icon == 'headquarters' && <Headquarters className='h-full aspect-square icon'/>}
+          {location.icon == 'hospital' && <Hospital className='h-full aspect-square icon'/>}
+          {location.icon == 'institution' && <Institution className='h-full aspect-square icon'/>}
+          {location.icon == 'landmark' && <Landmark className='h-full aspect-square icon'/>}
+          {location.icon == 'medical-house' && <MedicalHouse className='h-full aspect-square icon'/>}
+          {location.icon == 'mountain-city' && <MountainCity className='h-full aspect-square icon'/>}
+          {location.icon == 'mountain' && <Mountain className='h-full aspect-square icon'/>}
+          {location.icon == 'outpost' && <Outpost className='h-full aspect-square icon'/>}
+          {location.icon == 'store' && <Store className='h-full aspect-square icon'/>}
+          {location.icon == 'tent' && <Tent className='h-full aspect-square icon'/>}
+          {location.icon == 'volcano' && <Volcano className='h-full aspect-square icon'/>}
+          {location.icon == 'warehouse' && <Warehouse className='h-full aspect-square icon'/>}
+          {location.icon == 'worship' && <Worship className='h-full aspect-square icon'/>}
         </Link>
     )
 }

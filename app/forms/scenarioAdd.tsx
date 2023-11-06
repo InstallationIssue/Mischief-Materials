@@ -4,6 +4,8 @@ import { createScenario } from "@/prisma/scripts/scenario"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
+import SingleLineText from "../form-fields/singleLineText"
+import Image from "../form-fields/image"
 import FormButtons from "../form-fields/formButtons"
 
 const schema = z.object({
@@ -39,13 +41,10 @@ function create () {}
 export default async function AddScenario() {
  
   return (
-      <form className="flex flex-col space-y-2 py-2" action={create}>
-        <label htmlFor='name'>Name</label>
-        <input type="text" id="name" name='name'></input>
-        <label htmlFor='description'>Description</label>
-        <input type="text" id="description" name='description'></input>
-        <label htmlFor='image'>Image</label>
-        <input type="option" id="image" name='image'></input>
+      <form className="flex flex-col space-y-2 py-2 items-center" action={create}>
+        <SingleLineText id="name"/>
+        <SingleLineText id="description"/>
+        <Image/>
         <FormButtons/>
       </form>
   )

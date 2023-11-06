@@ -1,26 +1,13 @@
+'use client'
+
+import Play from '/public/icons/system/action-play.svg'
 import Edit from '/public/icons/system/action-edit.svg'
 import Delete from '/public/icons/system/action-bin.svg'
 
-import { useState, useEffect } from 'react'
-import { FormStatus } from 'react-dom'
-import Link from 'next/link'
-import { deleteScenario } from '@/prisma/scripts/scenario'
-import { z } from "zod"
-import { revalidatePath } from 'next/cache'
-import PlayButton from './playButton'
 import { redirect } from 'next/navigation'
 
-const schema = z.object({
-  id: z.string()
-})
-
-export default function CardButtons ({
-    id
-  }: { 
-    id: number
-  }) {
-
-    async function deleteItem(formData: FormData) {
+/*
+async function deleteItem(formData: FormData) {
       'use server'
       
       const parsed = schema.parse({
@@ -36,20 +23,36 @@ export default function CardButtons ({
       }
 
       return revalidatePath('/scenario');
+}
+*/
+
+export default function CardButtons ({
+    id
+  }: { 
+    id: number
+  }) {
+    
+    function playItem () {
+      redirect('/play')
     }
 
+    function editItem () {
+      redirect(`/scenario/${id}`)
+    }
+
+    function deleteItem () {}
+
     return (
-        <div className="flex flex-row flex-grow">
-          <PlayButton id={id}/>
-          <Link href={'/scenario/'+id} className="card-button form-button">
-            <Edit className="card-icon"/>
-          </Link>
-          <form action={deleteItem} className='w-full'>
-            <input type="hidden" name="id" value={id} />
-            <button className="card-button form-button">
-              <Delete className="card-icon"/>
-            </button>
-          </form>
+        <div className="flex flex-row h-10 w-full justify-between">
+          <button onClick={playItem} className='flex h-full w-full items-center justify-center'>
+            <Play className="h-5 aspect-square icon"/>
+          </button>
+          <button onClick={editItem} className='flex h-full w-full items-center justify-center'>
+            <Edit className="h-5 aspect-square icon"/>
+          </button>
+          <button onClick={deleteItem} className='flex h-full w-full items-center justify-center'>
+            <Delete className="h-5 aspect-square icon"/>
+          </button>
         </div>
     )
 }

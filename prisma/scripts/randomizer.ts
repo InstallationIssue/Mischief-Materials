@@ -525,7 +525,7 @@ export function randMonster (){
     return monster
 }
 
-export function randomCriminalChar (){
+export function randCriminalChar (){
     let character = randCharacter()
 
     character.profession = getJobUnderworld()
@@ -533,11 +533,21 @@ export function randomCriminalChar (){
     return character
 }
 
-export function randomNobleChar (){
-    let character = randomCriminalChar()
+export function randNobleChar (){
+    let character = randCharacter()
 
     character.name = randNobleName()
     character.profession = getJobCivilised()
 
     return character
+}
+
+export function randItem (){
+    let item: Prisma.ItemCreateInput = {
+        name: "",
+        description: "",
+        value: 10
+    }
+
+    return item
 }

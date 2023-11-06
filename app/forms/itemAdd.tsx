@@ -4,6 +4,8 @@ import { createItem } from "@/prisma/scripts/item"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
+import SingleLineText from "../form-fields/singleLineText"
+import Value from "../form-fields/value"
 import FormButtons from "../form-fields/formButtons"
 
 const schema = z.object({
@@ -46,16 +48,17 @@ function create(formData: FormData) {
     console.log(true)
 }
 
+function randomise() {}
+
 export default async function AddItem(){
     return (
-        <div className="w-fit">
-            <form className="flex flex-col space-y-2 p-2" action={create}>
-                <label htmlFor='name'>Name</label>
-                <input type="text" id="name" name='name'></input>
-                <label htmlFor='description'>Description</label>
-                <input type="text" id="description" name='description'></input>
-                <label htmlFor='value'>Value</label>
-                <input inputMode="numeric" id="value" name='value'></input>
+        <div className="w-3/4">
+            <form className="flex flex-col gap-2 p-2" action={create}>
+                <span className="w-full flex flex-row gap-2">
+                    <SingleLineText id={'name'}/>
+                    <Value/>
+                </span>
+                <SingleLineText id={'description'}/>
                 <FormButtons/>
             </form>
         </div>
