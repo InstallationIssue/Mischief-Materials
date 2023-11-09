@@ -498,8 +498,7 @@ export function randCharacter (){
         missions: getCharMission(),
         secrets: getCharSecret(),
         reputations: getCharReputation(),
-        hobbies: getCharHobby(),
-        relationships: getCharRelationship(),
+        hobbies: getCharHobby()
     }
     return character
 }
