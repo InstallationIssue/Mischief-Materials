@@ -3,7 +3,7 @@ import HealthCircle from "./vitality"
 import Strength from '/public/icons/stats/strength.svg'
 import Dexterity from '/public/icons/stats/dexterity.svg'
 import Willpower from '/public/icons/stats/willpower.svg'
-import Attack from '/public/icons/monsters/attack.svg'
+import Attack from '/public/icons/stats/attack.svg'
 
 import Weak from '/public/icons/monsters/size-1.svg'
 import Typical from '/public/icons/monsters/size-2.svg'
@@ -34,7 +34,8 @@ export default function AlertMonster ({
           <HealthCircle params={{
             health_max: params.health_max,
             health_lost: params.health_lost,
-            armor: params.armor
+            armor: params.armor,
+            dimensions: 64
           }}></HealthCircle>
           <div className="flex flex-col flex-grow self-stretch justify-between">
             <p>{params.name}</p>

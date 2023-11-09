@@ -1,4 +1,3 @@
-import Button from "./button"
 import AlertMonster from "./alertMonster"
 import IcelandLupin from '/public/landscapes/Iceland-Lupin.svg'
 import MistyValley from '/public/landscapes/Misty-Valley.svg'
@@ -23,8 +22,6 @@ export default async function DesignSystem(){
             </div>
 
             <div className="space-y-5 m-5">
-                <Button text={"Button"}/>
-                <hr/>
                 <AlertMonster params={{
                     id: 1,
                     name: "The Throngler",
