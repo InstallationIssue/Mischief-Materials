@@ -1,4 +1,4 @@
-import PlayerCard from "./card"
+import PlayerCard from "../cards/characterCard"
 import Header from "../components/header"
 import { getCharacters } from "@/prisma/scripts/character"
 

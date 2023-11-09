@@ -1,4 +1,4 @@
-import CardButtons from "./card-buttons"
+import CardButtons from "../components/card-buttons"
 import Link from "next/link"
 import IcelandLupin from '/public/landscapes/Iceland-Lupin.svg'
 import MistyValley from '/public/landscapes/Misty-Valley.svg'
