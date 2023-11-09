@@ -56,7 +56,7 @@ export default async function AddItem(){
             <form className="flex flex-col gap-2 p-2" action={create}>
                 <span className="w-full flex flex-row gap-2">
                     <SingleLineText id={'name'}/>
-                    <Value/>
+                    <Value id={"value"}/>
                 </span>
                 <SingleLineText id={'description'}/>
                 <FormButtons/>

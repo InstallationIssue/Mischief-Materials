@@ -44,7 +44,7 @@ export default async function AddScenario() {
       <form className="flex flex-col space-y-2 py-2 items-center" action={create}>
         <SingleLineText id="name"/>
         <SingleLineText id="description"/>
-        <Image/>
+        <Image id={"landscape"}/>
         <FormButtons/>
       </form>
   )
