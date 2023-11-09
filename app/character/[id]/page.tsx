@@ -1,5 +1,5 @@
 import { getCharacterById } from "@/prisma/scripts/character"
-import ItemCard from "@/app/item/card";
+import ItemCard from "@/app/cards/itemCard";
 
 export default async function Character({ 
     params 

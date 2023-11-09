@@ -5,7 +5,7 @@ import HealthCircle from '../components/vitality'
 import Strength from '/public/icons/stats/strength.svg'
 import Dexterity from '/public/icons/stats/dexterity.svg'
 import Willpower from '/public/icons/stats/willpower.svg'
-import Attack from '/public/icons/monsters/attack.svg'
+import Attack from '/public/icons/stats/attack.svg'
 
 import Weak from '/public/icons/monsters/size-1.svg'
 import Typical from '/public/icons/monsters/size-2.svg'
@@ -27,7 +27,8 @@ export default async function MonsterCard ({
           <HealthCircle params={{
             health_max: monster.health_max,
             health_lost: 0,
-            armor: monster.armor
+            armor: monster.armor,
+            dimensions: 64
           }}></HealthCircle>
           <div className="flex flex-col flex-grow self-stretch justify-between">
             <p>{monster.name}</p>

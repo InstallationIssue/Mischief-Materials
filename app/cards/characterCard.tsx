@@ -5,6 +5,7 @@ import HealthCircle from '../components/vitality'
 import Strength from '/public/icons/stats/strength.svg'
 import Dexterity from '/public/icons/stats/dexterity.svg'
 import Willpower from '/public/icons/stats/willpower.svg'
+import Attack from '/public/icons/stats/attack.svg'
 import { getCharacterById } from "@/prisma/scripts/character"
 
 export default async function CharacterCard({
@@ -26,17 +27,21 @@ export default async function CharacterCard({
                 <div className="flex flex-col flex-grow self-stretch justify-between">
                     <p className="line-clamp-1 text-clip">{character.name}</p>
                     <div className="flex items-center gap-3 self-stretch">
-                    <div>
+                    <div className='flex flex-row gap-1 items-center'>
                         <Strength className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
                         <p>{character.str}</p>
                     </div>
-                    <div>
+                    <div className='flex flex-row gap-1 items-center'>
                         <Dexterity className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
                         <p>{character.dex}</p>
                     </div>
-                    <div>
+                    <div className='flex flex-row gap-1 items-center'>
                         <Willpower className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
                         <p>{character.wil}</p>
+                    </div>
+                    <div className='flex flex-row gap-1 items-center'>
+                        <Attack className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                        <p>{character.att}</p>
                     </div>
                 </div>
             </div>
