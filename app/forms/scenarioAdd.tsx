@@ -4,9 +4,9 @@ import { createScenario } from "@/prisma/scripts/scenario"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
-import SingleLineText from "../form-fields/singleLineText"
-import Image from "../form-fields/image"
-import FormButtons from "../form-fields/formButtons"
+import SingleLineText from "../formFields/singleLineText"
+import Image from "../formFields/image"
+import FormButtons from "../formFields/formButtons"
 
 const schema = z.object({
   name: z.string(),

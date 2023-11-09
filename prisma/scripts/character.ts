@@ -5,7 +5,6 @@ export async function getCharacters(){
         select: {
             id: true,
             name: true,
-            background: true,
             xp: true,
             level: true,
             health_max: true,
@@ -14,7 +13,7 @@ export async function getCharacters(){
             str: true,
             dex: true,
             wil: true,
-            physical_features: true,
+            att: true,
             npc: true
         }
     })
@@ -26,8 +25,8 @@ export async function getPlayers(){
             npc: false
         },
         select: {
+            id: true,
             name: true,
-            background: true,
             xp: true,
             level: true,
             health_max: true,
@@ -36,7 +35,7 @@ export async function getPlayers(){
             str: true,
             dex: true,
             wil: true,
-            physical_features: true,
+            att: true,
         }
     })
 }
@@ -47,8 +46,8 @@ export async function getNpcs(){
             npc: true
         },
         select: {
+            id: true,
             name: true,
-            background: true,
             xp: true,
             level: true,
             health_max: true,
@@ -57,34 +56,79 @@ export async function getNpcs(){
             str: true,
             dex: true,
             wil: true,
-            physical_features: true,
+            att: true,
         }
     })
 }
 
-export async function createCharacter(name: string, background: string,
-    str = 0, dex = 0, wil = 0, armor = 6, physical_features = "", npc = true){
+export async function createCharacter(
+    name: string, 
+    background?: string,
+    level?: number,
+    health_max?: number,
+    str?: number, 
+    dex?: number, 
+    wil?: number, 
+    att?: number, 
+    armor?: number, 
+    npc?: boolean,
+    assets?: string,
+    liabilities?: string,
+    goals?: string,
+    misfortunes?: string,
+    missions?: string,
+    secrets?: string,
+    reputations?: string,
+    hobbies?: string
+    ){
 
     const character = await prisma.character.create({
         data: {
             name: name,
             background: background,
             xp: 0,
-            level: 1,
+            level: level,
+            health_max: health_max,
+            health_lost: 0,
             armor: armor,
             str: str,
             dex: dex,
             wil: wil,
-            physical_features: physical_features,
-            npc: npc
+            att: att,
+            npc: npc,
+            assets: assets,
+            liabilities: liabilities,
+            goals: goals,
+            misfortunes: misfortunes,
+            missions: missions,
+            secrets: secrets,
+            reputations: reputations,
+            hobbies: hobbies
         }
       })
     return character
 }
 
-export async function updateCharacter(id: number, name?: string, background?: string,
-    armor?: number, str?: number, dex?: number, wil?: number, physical_features?: string,
-    npc?: boolean
+export async function updateCharacter(
+    id: number, 
+    name?: string, 
+    background?: string,
+    level?: number,
+    health_max?: number,
+    str?: number, 
+    dex?: number, 
+    wil?: number, 
+    att?: number, 
+    armor?: number, 
+    npc?: boolean,
+    assets?: string,
+    liabilities?: string,
+    goals?: string,
+    misfortunes?: string,
+    missions?: string,
+    secrets?: string,
+    reputations?: string,
+    hobbies?: string
     ) {
     const character = await prisma.character.update({
         where: {
@@ -93,16 +137,34 @@ export async function updateCharacter(id: number, name?: string, background?: st
         data: {
             name: name,
             background: background,
+            xp: 0,
+            level: level,
+            health_max: health_max,
+            health_lost: 0,
             armor: armor,
             str: str,
             dex: dex,
             wil: wil,
-            physical_features: physical_features,
-            npc: npc
+            att: att,
+            npc: npc,
+            assets: assets,
+            liabilities: liabilities,
+            goals: goals,
+            misfortunes: misfortunes,
+            missions: missions,
+            secrets: secrets,
+            reputations: reputations,
+            hobbies: hobbies
         }
     })
     return character
 }
+
+export async function addRelationship(character_id: number, name: string, description: string){}
+
+export async function addScenario(character_id: number, scenario_id: number){}
+
+export async function addItem(character_id: number, item_id: number){}
 
 export async function getCharacterById(id: number){
     return await prisma.character.findUniqueOrThrow({
@@ -120,8 +182,18 @@ export async function getCharacterById(id: number){
             str: true,
             dex: true,
             wil: true,
-            physical_features: true,
+            att: true,
             npc: true,
+            assets: true,
+            liabilities: true,
+            goals: true,
+            misfortunes: true,
+            missions: true,
+            secrets: true,
+            reputations: true,
+            hobbies: true,
+            relationships: true,
+            scenarios: true,
             items: true
         }
     })
@@ -156,7 +228,6 @@ export async function addXp(id: number, xp: number){
     return character
 }
 
-//Check for no health
 export async function LoseHealth(id: number, health_lost: number) {
     const character = await prisma.character.update({
         where: {

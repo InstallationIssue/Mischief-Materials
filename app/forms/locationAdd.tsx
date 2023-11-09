@@ -5,9 +5,9 @@ import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
-import SingleLineText from "../form-fields/singleLineText"
-import Color from "../form-fields/color"
-import FormButtons from "../form-fields/formButtons"
+import SingleLineText from "../formFields/singleLineText"
+import Color from "../formFields/color"
+import FormButtons from "../formFields/formButtons"
 import IconSelect from "./iconSelect"
 
 const schema = z.object({

@@ -23,8 +23,6 @@ export default async function Character({
                 <p>Str: {character.str}</p>
                 <p>Dex: {character.dex}</p>
                 <p>Wil: {character.wil}</p>
-                <h4>Physical Features</h4>
-                <p>{character.physical_features}</p>
                 <h4>Items</h4>
                 <p>
                     {character.items.map((id, index) => (

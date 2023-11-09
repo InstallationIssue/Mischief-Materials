@@ -3,8 +3,8 @@
 import { createCharacter } from "@/prisma/scripts/character"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
-import SingleLineText from "../form-fields/singleLineText"
-import FormButtons from "../form-fields/formButtons"
+import SingleLineText from "../formFields/singleLineText"
+import FormButtons from "../formFields/formButtons"
 
 const schema = z.object({
   name: z.string(),

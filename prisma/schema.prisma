@@ -48,6 +48,7 @@ model Character {
   str               Int       @default(0)
   dex               Int       @default(0)
   wil               Int       @default(0)
+  att               Int       @default(0)
   profession        String    @default("")
   appearance        String    @default("")
   physical_detail   String    @default("")
@@ -63,9 +64,17 @@ model Character {
   secrets           String    @default("")
   reputations       String    @default("")
   hobbies           String    @default("")
-  relationships     String    @default("")
+  relationships     Relationship[]
   scenarios         Scenario[]
   items             Item[]
+}
+
+model Relationship {
+  id                Int       @id @default(autoincrement())
+  name              String    @default("")
+  description       String    @default("")
+  character         Character @relation(fields: [character_id], references: [id])
+  character_id      Int
 }
 
 model Monster {
@@ -82,16 +91,15 @@ model Monster {
   tactics         String      @default("")
   personality     String      @default("")
   weakness        String      @default("")
-  encounter       EncounterInstance[] 
-  encounterId     Int         @default(0)
+  encounter       EncounterInstance[]
 }
 
 model EncounterInstance {
   id              Int         @id @default(autoincrement())
-  monster         Monster     @relation(fields: [monsterId], references: [id])
-  monsterId       Int
-  encounter       Encounter   @relation(fields: [encounterId], references: [id])
-  encounterId     Int
+  monster         Monster     @relation(fields: [monster_id], references: [id])
+  monster_id       Int
+  encounter       Encounter   @relation(fields: [encounter_id], references: [id])
+  encounter_id     Int
   health_lost     Int         @default(0)
 }
 
@@ -115,8 +123,8 @@ model Spell {
   id              Int       @id @default(autoincrement())
   name            String    @unique
   description     String    @default("")
-  magic           Magic     @relation(fields: [magicId], references: [id])
-  magicId         Int       @default(0)
+  magic           Magic     @relation(fields: [magic_id], references: [id])
+  magic_id         Int
 }
 
 model Magic {

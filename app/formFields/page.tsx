@@ -14,7 +14,7 @@ import IconsMagic from "./iconsMagic"
 import IconsSize from "./iconsSize"
 import Relation from "./relation"
 import Attributes from "./attributes"
-import VitalityLevel from "./VitalityLevel"
+import VitalityLevel from "./vitalityLevel"
 
 export default async function Page (){
 
