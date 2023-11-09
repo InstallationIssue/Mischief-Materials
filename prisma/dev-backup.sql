@@ -10,32 +10,33 @@ CREATE TABLE IF NOT EXISTS "_prisma_migrations" (
     "started_at"            DATETIME NOT NULL DEFAULT current_timestamp,
     "applied_steps_count"   INTEGER UNSIGNED NOT NULL DEFAULT 0
 );
-INSERT INTO _prisma_migrations VALUES('c80f452a-2bc4-49ae-b332-397e84ae7399','9bf2607121744df57be3691426d18a0ae4ad17eddf071f86b8b76d01cb7470f4',1687929845467,'20230628052405_init',NULL,NULL,1687929845462,1);
-INSERT INTO _prisma_migrations VALUES('8d37a7a7-1657-40b7-9cc8-08e6b03670a6','4049143e9c07d422323d1b1874786e6c83c5e31c93cbab0f532dc97e50ed8d21',1687930185666,'20230628052945_add_relations',NULL,NULL,1687930185658,1);
-INSERT INTO _prisma_migrations VALUES('4aef87b9-1c23-40c6-a87f-272b5b3e07aa','23a75153d2176d0f017a9a284b524a9a4cfead7df497fb9876c3b90d09a28c96',1687966323606,'20230628153203_changed_monster_size_to_string',NULL,NULL,1687966323600,1);
-INSERT INTO _prisma_migrations VALUES('ebb10bec-0bdd-49cb-b692-4ad922733e6c','ba510e5b923da3957538b2061fd7501556494ca3d3dffc9495e93ae908120eb9',1687969188131,'20230628161948_added_npcs',NULL,NULL,1687969188128,1);
-INSERT INTO _prisma_migrations VALUES('5d8eee43-80b8-46c5-a504-95ebfe040ef2','8a970cb3cc4479476b5680ee094c9d651655fe85ab4f4ca43097f59b3c76a42d',1696233037988,'20231002075037_review_oct_23',NULL,NULL,1696233037970,1);
-INSERT INTO _prisma_migrations VALUES('0ad4519c-4def-4325-9956-a6a79b0f3b11','89ba78348494eecfc334869194e46c8e3cddd43af29718bbe3c440c1d6c271b6',1696233278823,'20231002075438_messing',NULL,NULL,1696233278818,1);
-INSERT INTO _prisma_migrations VALUES('b734f5be-56ea-4cb8-976a-d432b29655d9','a7be6cd4e09737e86d01f92477ae68d03d854e0e0ce048a945babbc319796f68',1696256852498,'20231002142732_restructure',NULL,NULL,1696256852475,1);
-INSERT INTO _prisma_migrations VALUES('17ab81d7-ba41-4f12-bb56-11e4f744938b','271e54585db979d581ee0a1517313b3aaf02d8f6d47cdffc046e0a0e55487459',1696257305061,'20231002143505_combining_npc_and_player',NULL,NULL,1696257305056,1);
-INSERT INTO _prisma_migrations VALUES('4e1ed268-3858-4192-b49f-979d9d67f179','d128b63ee63069a6c3df2e2d65b9d644efccb03e43cdeddd3cc4e53732f8f760',1696520138465,'20231005153538_new_monster',NULL,NULL,1696520138459,1);
-INSERT INTO _prisma_migrations VALUES('4a2d46d6-7265-4a5d-89e2-646f754c2317','c0cfc9fb8daada78c5443d8a52c0f91d37cf4070981bbdf924fea3f06b325958',1696859527766,'20231009135207_added_spells',NULL,NULL,1696859527754,1);
-INSERT INTO _prisma_migrations VALUES('765be864-bf6b-4dba-90ae-ebc741be7e4f','619ff427dc7b82e7253597d7599a1b58249e23b28b76de1683b48de32d86be94',1696945697384,'20231010134817_removing_unique_tags',NULL,NULL,1696945697381,1);
-INSERT INTO _prisma_migrations VALUES('f4e69f04-fa50-4cf8-88ed-58aec369bc7d','cb5ab83dfaabcb5924e200517bf509cb90454c70b8eb3b54870b07518a3ef2d2',1698246229079,'20231025150349_removing_foundation_link_with_scenario',NULL,NULL,1698246229073,1);
-INSERT INTO _prisma_migrations VALUES('0444df25-1c55-4fda-8257-f1c747cfa3d9','958400f15525e3a1c36e688f31a1bb7dd54efa02246b3efa1cfa817e20173e61',1698324998282,'20231026125638_adding_encounters',NULL,NULL,1698324998252,1);
-INSERT INTO _prisma_migrations VALUES('03cfc152-f85e-497b-aa01-b2e4365ba554','a056908c80ff88d2cd20ff294621e8dce375ceffe9e573a50be972febe458629',1698325197964,'20231026125957_removed_foundation',NULL,NULL,1698325197961,1);
-INSERT INTO _prisma_migrations VALUES('4132190d-2e6c-4070-9777-24f466d091f0','2fe0d406e2bbee32896ba41d49346698fa9e70184df4df6be9e70403c2c06943',1698326062282,'20231026131422_clearing_monsters',NULL,NULL,1698326062278,1);
-INSERT INTO _prisma_migrations VALUES('313ea209-52c4-4d76-829c-d549c64d7966','a282a77d7833ca5143dce4bf60fc33957da8c908c1057752a15926963e2c8ede',1698326101225,'20231026131501_returned_monster_and_encounter_tables',NULL,NULL,1698326101221,1);
-INSERT INTO _prisma_migrations VALUES('ea47a26c-e5d7-416d-b960-150fa4372c62','170fdd509d9b40238e0c40fe3c3606be61d56c5bc8bb340692f06f1cc1584fe3',1698327353655,'20231026133553_monster_encounter_bridge',NULL,NULL,1698327353648,1);
-INSERT INTO _prisma_migrations VALUES('545a4109-ad5f-4231-a594-a85519a1c7f8','98a6c8aff9550ddf27805b0bc45dd9d7fe004c6d217f7fb8e1bbf872c525998b',1698327402720,'20231026133642_moved_lost_health_to_enc_instance',NULL,NULL,1698327402711,1);
-INSERT INTO _prisma_migrations VALUES('bddf085a-330b-41b6-842c-26a4af0f2806','25e8382c429840bbb5ca7b7f076d4f4224b32a216a322275d949e1a76c5e923d',1698327568899,'20231026133928_moved_name_to_encounter',NULL,NULL,1698327568889,1);
-INSERT INTO _prisma_migrations VALUES('651c2c4b-77f3-47f7-bf16-1f8f48a2dbb9','00dc48497608278fa7111d6fd2374119b83ebb1208893813135ba46320e25595',1698555794716,'20231029050314_new_relations',NULL,NULL,1698555794704,1);
-INSERT INTO _prisma_migrations VALUES('5cdfca8c-7afe-446b-a4b7-badce4990dba','1da499a1596e1af6268b1b8eb3168c01bf35ff9a941783b97fe2a0cc605ae6f6',1698565338440,'20231029074218_added_items_to_characters',NULL,NULL,1698565338437,1);
-INSERT INTO _prisma_migrations VALUES('ed32eca1-43af-4335-99d5-c778eefd0054','5086edb433c4918e07c7221460c323692cba49761c4ed20da891d98961adc6ee',1698586042270,'20231029132722_adding_image_default',NULL,NULL,1698586042262,1);
-INSERT INTO _prisma_migrations VALUES('0c12f938-cd3e-4fa0-b8cd-f02bb33b2229','c1e0c8d7432dbca5cedf189c00601f56af563a86ef7945bf94f792cda91e7e8c',1699196970688,'20231105150930_adding_fields',NULL,NULL,1699196970672,1);
-INSERT INTO _prisma_migrations VALUES('8379edde-719b-48cc-bc38-7bbd10adcd64','ac8cbee64a044b7a7ca9100840bce822f8c69c416da714716850f934a174671f',1699260177256,'20231106084257_added_events',NULL,NULL,1699260177252,1);
-INSERT INTO _prisma_migrations VALUES('60033bed-4ba4-4dea-826c-68f945840689','e262945920be1d5a4358a9a5f2c02fd5bca5da65b2782b3ed1d7aac6ef001f3a',1699525747087,'20231109102907_added_char_attack',NULL,NULL,1699525747079,1);
-INSERT INTO _prisma_migrations VALUES('d7bebe87-fbb8-4dbd-90b1-d28c9e99a0b3','ba7a7c427aa4ea307fefaf5b7dfcb11fdf34cd7757a67986558b5a2fb458f889',1699526536504,'20231109104216_added_character_relationship',NULL,NULL,1699526536501,1);
+INSERT INTO _prisma_migrations VALUES('4e248410-362f-4eca-9b8d-a288d4697937','9bf2607121744df57be3691426d18a0ae4ad17eddf071f86b8b76d01cb7470f4',1699529119136,'20230628052405_init',NULL,NULL,1699529119130,1);
+INSERT INTO _prisma_migrations VALUES('fd4eff01-e6f2-4ba5-9a33-c8c4a972879a','4049143e9c07d422323d1b1874786e6c83c5e31c93cbab0f532dc97e50ed8d21',1699529119144,'20230628052945_add_relations',NULL,NULL,1699529119137,1);
+INSERT INTO _prisma_migrations VALUES('3fa2d23c-666e-415c-a4db-c25765c25fa6','23a75153d2176d0f017a9a284b524a9a4cfead7df497fb9876c3b90d09a28c96',1699529119148,'20230628153203_changed_monster_size_to_string',NULL,NULL,1699529119144,1);
+INSERT INTO _prisma_migrations VALUES('cead4221-a1c1-441f-9772-a9a5ebd01b4f','ba510e5b923da3957538b2061fd7501556494ca3d3dffc9495e93ae908120eb9',1699529119150,'20230628161948_added_npcs',NULL,NULL,1699529119149,1);
+INSERT INTO _prisma_migrations VALUES('3c731268-e38f-4fc6-a0f9-9f47eb323b4d','8a970cb3cc4479476b5680ee094c9d651655fe85ab4f4ca43097f59b3c76a42d',1699529119170,'20231002075037_review_oct_23',NULL,NULL,1699529119151,1);
+INSERT INTO _prisma_migrations VALUES('897a5c2d-dfc4-4fe9-96a8-f5e372eed32a','89ba78348494eecfc334869194e46c8e3cddd43af29718bbe3c440c1d6c271b6',1699529119175,'20231002075438_messing',NULL,NULL,1699529119171,1);
+INSERT INTO _prisma_migrations VALUES('d06bc6a2-9f90-4b05-aba9-0f19c8906165','a7be6cd4e09737e86d01f92477ae68d03d854e0e0ce048a945babbc319796f68',1699529119197,'20231002142732_restructure',NULL,NULL,1699529119175,1);
+INSERT INTO _prisma_migrations VALUES('2575766d-516b-469b-9dac-565dac28ab26','271e54585db979d581ee0a1517313b3aaf02d8f6d47cdffc046e0a0e55487459',1699529119200,'20231002143505_combining_npc_and_player',NULL,NULL,1699529119198,1);
+INSERT INTO _prisma_migrations VALUES('98a644e0-41da-4dd3-adb8-1c2c7f26232f','d128b63ee63069a6c3df2e2d65b9d644efccb03e43cdeddd3cc4e53732f8f760',1699529119204,'20231005153538_new_monster',NULL,NULL,1699529119201,1);
+INSERT INTO _prisma_migrations VALUES('76a12015-f213-41f1-a930-d9afb1c4fc76','c0cfc9fb8daada78c5443d8a52c0f91d37cf4070981bbdf924fea3f06b325958',1699529119212,'20231009135207_added_spells',NULL,NULL,1699529119205,1);
+INSERT INTO _prisma_migrations VALUES('64ea5fe2-ac7b-4535-a221-5f6238dd8449','619ff427dc7b82e7253597d7599a1b58249e23b28b76de1683b48de32d86be94',1699529119214,'20231010134817_removing_unique_tags',NULL,NULL,1699529119212,1);
+INSERT INTO _prisma_migrations VALUES('7ad53c10-b5d6-4fb3-a871-ddd7c4c28a13','cb5ab83dfaabcb5924e200517bf509cb90454c70b8eb3b54870b07518a3ef2d2',1699529119218,'20231025150349_removing_foundation_link_with_scenario',NULL,NULL,1699529119215,1);
+INSERT INTO _prisma_migrations VALUES('670d87bb-faa4-4c12-aab7-1b788d85f051','958400f15525e3a1c36e688f31a1bb7dd54efa02246b3efa1cfa817e20173e61',1699529119244,'20231026125638_adding_encounters',NULL,NULL,1699529119218,1);
+INSERT INTO _prisma_migrations VALUES('9f5bd015-bc56-4d4f-814a-4b8c216bd7d1','a056908c80ff88d2cd20ff294621e8dce375ceffe9e573a50be972febe458629',1699529119246,'20231026125957_removed_foundation',NULL,NULL,1699529119244,1);
+INSERT INTO _prisma_migrations VALUES('6daccc49-f64a-44b6-bc45-f01296713594','2fe0d406e2bbee32896ba41d49346698fa9e70184df4df6be9e70403c2c06943',1699529119249,'20231026131422_clearing_monsters',NULL,NULL,1699529119247,1);
+INSERT INTO _prisma_migrations VALUES('9438811a-df43-47ac-91ea-c38dcb58f09e','a282a77d7833ca5143dce4bf60fc33957da8c908c1057752a15926963e2c8ede',1699529119251,'20231026131501_returned_monster_and_encounter_tables',NULL,NULL,1699529119249,1);
+INSERT INTO _prisma_migrations VALUES('1fb24d0c-1f23-44c8-bcf0-659d96ec03ad','170fdd509d9b40238e0c40fe3c3606be61d56c5bc8bb340692f06f1cc1584fe3',1699529119257,'20231026133553_monster_encounter_bridge',NULL,NULL,1699529119252,1);
+INSERT INTO _prisma_migrations VALUES('ad607d89-0cdb-49db-a2d4-3da339bc35ad','98a6c8aff9550ddf27805b0bc45dd9d7fe004c6d217f7fb8e1bbf872c525998b',1699529119264,'20231026133642_moved_lost_health_to_enc_instance',NULL,NULL,1699529119257,1);
+INSERT INTO _prisma_migrations VALUES('25ab3db5-fc0a-42ed-bf49-eab544569659','25e8382c429840bbb5ca7b7f076d4f4224b32a216a322275d949e1a76c5e923d',1699529119271,'20231026133928_moved_name_to_encounter',NULL,NULL,1699529119265,1);
+INSERT INTO _prisma_migrations VALUES('d76bb190-75a9-4078-8a29-de0334c3d912','00dc48497608278fa7111d6fd2374119b83ebb1208893813135ba46320e25595',1699529119281,'20231029050314_new_relations',NULL,NULL,1699529119272,1);
+INSERT INTO _prisma_migrations VALUES('45b850e2-5764-4385-a469-f4fb721c6244','1da499a1596e1af6268b1b8eb3168c01bf35ff9a941783b97fe2a0cc605ae6f6',1699529119283,'20231029074218_added_items_to_characters',NULL,NULL,1699529119281,1);
+INSERT INTO _prisma_migrations VALUES('8e803355-94a6-424b-8dcc-ee6acf11442d','5086edb433c4918e07c7221460c323692cba49761c4ed20da891d98961adc6ee',1699529119288,'20231029132722_adding_image_default',NULL,NULL,1699529119284,1);
+INSERT INTO _prisma_migrations VALUES('6143f105-779c-470c-a0b6-d9b6b033967f','c1e0c8d7432dbca5cedf189c00601f56af563a86ef7945bf94f792cda91e7e8c',1699529119301,'20231105150930_adding_fields',NULL,NULL,1699529119288,1);
+INSERT INTO _prisma_migrations VALUES('5ac81c0c-bcdb-4496-9735-755d6d94607c','ac8cbee64a044b7a7ca9100840bce822f8c69c416da714716850f934a174671f',1699529119303,'20231106084257_added_events',NULL,NULL,1699529119301,1);
+INSERT INTO _prisma_migrations VALUES('df60890a-4b26-4893-88ab-8bcefc70fea9','e262945920be1d5a4358a9a5f2c02fd5bca5da65b2782b3ed1d7aac6ef001f3a',1699529119308,'20231109102907_added_char_attack',NULL,NULL,1699529119303,1);
+INSERT INTO _prisma_migrations VALUES('44634123-184a-46b5-b681-481091a27997','ba7a7c427aa4ea307fefaf5b7dfcb11fdf34cd7757a67986558b5a2fb458f889',1699529119310,'20231109104216_added_character_relationship',NULL,NULL,1699529119309,1);
+INSERT INTO _prisma_migrations VALUES('12b1af90-d5cd-4b8a-b89b-13b7daae3c19','aff5eafa6587225d0e7eaa1a9ba86f4fa479da9aa67fc751386710ba0aa49c57',1699529119328,'20231109105100_renaming_columns_db',NULL,NULL,1699529119311,1);
 CREATE TABLE IF NOT EXISTS "Magic" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "name" TEXT NOT NULL,
@@ -90,20 +91,6 @@ CREATE TABLE IF NOT EXISTS "Encounter" (
 INSERT INTO Encounter VALUES(1,'Arid Fields Lencers');
 INSERT INTO Encounter VALUES(2,'Throngler Appears');
 INSERT INTO Encounter VALUES(3,'Porpeosie Attack');
-CREATE TABLE IF NOT EXISTS "EncounterInstance" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "monsterId" INTEGER NOT NULL,
-    "encounterId" INTEGER NOT NULL,
-    "health_lost" INTEGER NOT NULL DEFAULT 0,
-    CONSTRAINT "EncounterInstance_monsterId_fkey" FOREIGN KEY ("monsterId") REFERENCES "Monster" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT "EncounterInstance_encounterId_fkey" FOREIGN KEY ("encounterId") REFERENCES "Encounter" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
-);
-INSERT INTO EncounterInstance VALUES(1,4,1,0);
-INSERT INTO EncounterInstance VALUES(2,4,1,1);
-INSERT INTO EncounterInstance VALUES(3,1,2,0);
-INSERT INTO EncounterInstance VALUES(4,3,3,0);
-INSERT INTO EncounterInstance VALUES(5,3,3,0);
-INSERT INTO EncounterInstance VALUES(6,3,3,0);
 CREATE TABLE IF NOT EXISTS "_LocationToScenario" (
     "A" INTEGER NOT NULL,
     "B" INTEGER NOT NULL,
@@ -189,32 +176,23 @@ INSERT INTO Scenario VALUES(28,'MR6 - Legacy','4 Terrorists','SunsetDesert');
 INSERT INTO Scenario VALUES(29,'Tornadus World','Cyclosis','MistyValley');
 INSERT INTO Scenario VALUES(30,'Scale Distributed Portals','Here come the test results: You are a horrible person','IcelandLupin');
 INSERT INTO Scenario VALUES(46,'tyui','oiuy','');
-CREATE TABLE IF NOT EXISTS "Monster" (
+CREATE TABLE IF NOT EXISTS "Event" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "name" TEXT NOT NULL,
-    "background" TEXT NOT NULL DEFAULT '',
-    "health_max" INTEGER NOT NULL DEFAULT 4,
-    "armor" INTEGER NOT NULL DEFAULT 6,
-    "str" INTEGER NOT NULL DEFAULT 0,
-    "dex" INTEGER NOT NULL DEFAULT 0,
-    "wil" INTEGER NOT NULL DEFAULT 0,
-    "size" TEXT NOT NULL DEFAULT 'Typical',
-    "attack" INTEGER NOT NULL DEFAULT 0,
-    "tactics" TEXT NOT NULL DEFAULT '',
-    "personality" TEXT NOT NULL DEFAULT '',
-    "weakness" TEXT NOT NULL DEFAULT '',
-    "encounterId" INTEGER NOT NULL DEFAULT 0
+    "name" TEXT NOT NULL
 );
-INSERT INTO Monster VALUES(1,'The Throngler','Deep in the sands',27,9,4,2,2,'Colossal',2,'','','',1);
-INSERT INTO Monster VALUES(2,'Ethereal Stag','he Ethereal Stag is one of the ethereal conglomerates known to the people of Zephyr, it is incorporeal and appears a purple tinged outline of a stag. It often disappears into shadows and can duck into darkness to reappear elsewhere.  It cannot be hit by mundane weapons.',11,7,2,3,2,'Tough',2,'','','',1);
-INSERT INTO Monster VALUES(3,'Porpeoisie','Dolphin-like creatures that rapidly burrow through the shifting grains using 2 chitinous appendages that extend from their long mouths lined with sharp teeth like prehensile tusks. Porpeoisie are blind and communicate and see through echolocation.  Their eyes are barely visible and almost entirely useless.  When attacking with magic, a green light emanates from holes going down their back and hurts the person they’re aiming at. Takes a turn to charge.',9,7,1,2,0,'Typical',1,'','','',1);
-INSERT INTO Monster VALUES(4,'Lencer','Downy feathers in plumes behind them that sting their prey  Alcohol or piss is their weakness, it denatures their stings',2,6,0,3,0,'Weak',0,'','','',1);
+CREATE TABLE IF NOT EXISTS "Relationship" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL DEFAULT '',
+    "description" TEXT NOT NULL DEFAULT '',
+    "character_id" INTEGER NOT NULL,
+    CONSTRAINT "Relationship_character_id_fkey" FOREIGN KEY ("character_id") REFERENCES "Character" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
 CREATE TABLE IF NOT EXISTS "Spell" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL DEFAULT '',
-    "magicId" INTEGER NOT NULL DEFAULT 0,
-    CONSTRAINT "Spell_magicId_fkey" FOREIGN KEY ("magicId") REFERENCES "Magic" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+    "magic_id" INTEGER NOT NULL,
+    CONSTRAINT "Spell_magic_id_fkey" FOREIGN KEY ("magic_id") REFERENCES "Magic" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 INSERT INTO Spell VALUES(1,'Pisstallization','',2);
 INSERT INTO Spell VALUES(2,'Flaming Phosphor','',2);
@@ -243,10 +221,25 @@ INSERT INTO Spell VALUES(24,'Violent upheaval','Practitioner may use all their m
 INSERT INTO Spell VALUES(25,'Hyperemesis','Practitioner may store 1 more meal in their stomach',1);
 INSERT INTO Spell VALUES(26,'Esophageal Resilience','Practitioner’s throat cannot be damaged by mundane means',1);
 INSERT INTO Spell VALUES(27,'Gastric purge','Practitioner can completely empty their stomach to purge toxins',1);
-CREATE TABLE IF NOT EXISTS "Event" (
+CREATE TABLE IF NOT EXISTS "Monster" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "name" TEXT NOT NULL
+    "name" TEXT NOT NULL,
+    "background" TEXT NOT NULL DEFAULT '',
+    "health_max" INTEGER NOT NULL DEFAULT 4,
+    "armor" INTEGER NOT NULL DEFAULT 6,
+    "str" INTEGER NOT NULL DEFAULT 0,
+    "dex" INTEGER NOT NULL DEFAULT 0,
+    "wil" INTEGER NOT NULL DEFAULT 0,
+    "size" TEXT NOT NULL DEFAULT 'Typical',
+    "attack" INTEGER NOT NULL DEFAULT 0,
+    "tactics" TEXT NOT NULL DEFAULT '',
+    "personality" TEXT NOT NULL DEFAULT '',
+    "weakness" TEXT NOT NULL DEFAULT ''
 );
+INSERT INTO Monster VALUES(1,'The Throngler','Deep in the sands',27,9,4,2,2,'Colossal',2,'','','');
+INSERT INTO Monster VALUES(2,'Ethereal Stag','he Ethereal Stag is one of the ethereal conglomerates known to the people of Zephyr, it is incorporeal and appears a purple tinged outline of a stag. It often disappears into shadows and can duck into darkness to reappear elsewhere.  It cannot be hit by mundane weapons.',11,7,2,3,2,'Tough',2,'','','');
+INSERT INTO Monster VALUES(3,'Porpeoisie','Dolphin-like creatures that rapidly burrow through the shifting grains using 2 chitinous appendages that extend from their long mouths lined with sharp teeth like prehensile tusks. Porpeoisie are blind and communicate and see through echolocation.  Their eyes are barely visible and almost entirely useless.  When attacking with magic, a green light emanates from holes going down their back and hurts the person they’re aiming at. Takes a turn to charge.',9,7,1,2,0,'Typical',1,'','','');
+INSERT INTO Monster VALUES(4,'Lencer','Downy feathers in plumes behind them that sting their prey  Alcohol or piss is their weakness, it denatures their stings',2,6,0,3,0,'Weak',0,'','','');
 CREATE TABLE IF NOT EXISTS "Character" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "name" TEXT NOT NULL,
@@ -274,36 +267,44 @@ CREATE TABLE IF NOT EXISTS "Character" (
     "missions" TEXT NOT NULL DEFAULT '',
     "secrets" TEXT NOT NULL DEFAULT '',
     "reputations" TEXT NOT NULL DEFAULT '',
-    "hobbies" TEXT NOT NULL DEFAULT '',
-    "relationships" TEXT NOT NULL DEFAULT ''
+    "hobbies" TEXT NOT NULL DEFAULT ''
 );
-INSERT INTO Character VALUES(1,'Bozo Billby','Was a small rodent before becomingan adventurer',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(2,'Papa Golochevsky (Papa G)','hired to do a hit on the Amba brotherhood by the golden penalty, it went wrong. Being hunted by both parties now and in hiding',0,1,4,0,6,0,0,0,0,'','','','','','',0,'','','','','','','','','');
-INSERT INTO Character VALUES(3,'Eufrásio Villapalos (Eufrásio)','fed a bad worm by the Amba gang part of initiation gone wrong and contract celebration gone wrong trans man',0,1,4,0,6,0,0,0,0,'','','','','','',0,'','','','','','','','','');
-INSERT INTO Character VALUES(4,'Angussy (Gussy)','gullible male stripper who entered highway robbery to earn more money perfect distraction has no testicles',0,1,4,0,6,0,0,0,0,'','','','','','',0,'','','','','','','','','');
-INSERT INTO Character VALUES(5,'Mohammed Mehmed Sigmalat (Meth Cigs)','pissé stockpiler, a firm believer in the curative powers of powdered urine always has a box on hand',0,1,4,0,6,0,0,0,0,'','','','','','',0,'','','','','','','','','');
-INSERT INTO Character VALUES(6,'Lucretia Nihilo','Lucretia is an elegant woman, adorned with hundreds of wooden beads',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(7,'Bump Roberts','Long time lieutenant in the Amba Brotherhood',0,1,4,0,6,1,0,2,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(8,'Lichen Loboski','Born into the last Mosswolf family, Lichen has strived to reach capitalist success in Zephyr while maintaining the secret of his birth.',0,1,12,0,8,4,2,1,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(9,'The Tarnished Nomad','',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(10,'Skeev Hanson','',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(11,'Captain Nix Olshe','',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(12,'Actaeon Irving','',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(13,'Queen Harlouse','A master tactician and food enthusiast, after  defeating the Prince, she began looking for ways to expand her kingdom, she believes the Prince''s collection may hold some powerful tools.',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(14,'The Twisted Prince','A powerful lich who collected objects both magical and mundane for centuries prior to trying to conquer the kingdom. Though defeated at the battle of ''corpses in a coffin'', his phylactery remains somewhere within his Stronghold.  Originally a grave robber who gathered trophies from his exploits, he happened upon the grave of an ancient lich and found texts detailing death magics. Practicing these while maintaining his old hobby, the Prince managed to accumulate a great mass of intriguing artifacts.',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(15,'The Builder','Hired by a merchant to build a tavern and mercantile. Eager to talk',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(16,'Aimane Sonet','A Grizzled Warrior. After being injured early on in the Queen’s campaign against The Prince, this warrior is nevertheless a veteran and wants to prove himself by clearing the Prince’s Stronghold.',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(17,'Kapitan','Captain in army, furious after losing men to anomaly. Eager to send in prisoners instead and will not hesitate to shoot deserters or escaping prisoners.',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(18,'President Traitorous','Dictator of Megbellistan, survived through tactical backstabbing until overthrown by an alliance of his past enemies. Secretly captured by the CIA to be used in future government overthrow, but use has passed',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(19,'Valeriya Usmedivich','War Journalist, was documenting the war in Megbellistan when she was caught by soldiers testing biological weapons on civilians.',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(20,'Martin (Marty) Christ','Con man and alleged direct descendant of Jesus. Considered too dangerous to be in the world at large, has started several cults',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(21,'Robert Jr','Bad omen for ending',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-INSERT INTO Character VALUES(22,'Hank Schrader','American Spy, found documents proving Putin’s sexually charged relationship with Lukashenko, very patriotic',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','','');
-CREATE TABLE IF NOT EXISTS "Relationship" (
+INSERT INTO Character VALUES(1,'Bozo Billby','Was a small rodent before becoming an adventurer',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(2,'Papa Golochevsky (Papa G)','hired to do a hit on the Amba brotherhood by the golden penalty, it went wrong. Being hunted by both parties now and in hiding',0,1,4,0,6,0,0,0,0,'','','','','','',0,'','','','','','','','');
+INSERT INTO Character VALUES(3,'Eufrásio Villapalos (Eufrásio)','fed a bad worm by the Amba gang part of initiation gone wrong and contract celebration gone wrong trans man',0,1,4,0,6,0,0,0,0,'','','','','','',0,'','','','','','','','');
+INSERT INTO Character VALUES(4,'Angussy (Gussy)','gullible male stripper who entered highway robbery to earn more money perfect distraction has no testicles',0,1,4,0,6,0,0,0,0,'','','','','','',0,'','','','','','','','');
+INSERT INTO Character VALUES(5,'Mohammed Mehmed Sigmalat (Meth Cigs)','pissé stockpiler, a firm believer in the curative powers of powdered urine always has a box on hand',0,1,4,0,6,0,0,0,0,'','','','','','',0,'','','','','','','','');
+INSERT INTO Character VALUES(6,'Lucretia Nihilo','Lucretia is an elegant woman, adorned with hundreds of wooden beads',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(7,'Bump Roberts','Long time lieutenant in the Amba Brotherhood',0,1,4,0,6,1,0,2,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(8,'Lichen Loboski','Born into the last Mosswolf family, Lichen has strived to reach capitalist success in Zephyr while maintaining the secret of his birth.',0,1,12,0,8,4,2,1,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(9,'The Tarnished Nomad','',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(10,'Skeev Hanson','',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(11,'Captain Nix Olshe','',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(12,'Actaeon Irving','',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(13,'Queen Harlouse','A master tactician and food enthusiast, after  defeating the Prince, she began looking for ways to expand her kingdom, she believes the Prince''s collection may hold some powerful tools.',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(14,'The Twisted Prince','A powerful lich who collected objects both magical and mundane for centuries prior to trying to conquer the kingdom. Though defeated at the battle of ''corpses in a coffin'', his phylactery remains somewhere within his Stronghold.  Originally a grave robber who gathered trophies from his exploits, he happened upon the grave of an ancient lich and found texts detailing death magics. Practicing these while maintaining his old hobby, the Prince managed to accumulate a great mass of intriguing artifacts.',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(15,'The Builder','Hired by a merchant to build a tavern and mercantile. Eager to talk',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(16,'Aimane Sonet','A Grizzled Warrior. After being injured early on in the Queen’s campaign against The Prince, this warrior is nevertheless a veteran and wants to prove himself by clearing the Prince’s Stronghold.',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(17,'Kapitan','Captain in army, furious after losing men to anomaly. Eager to send in prisoners instead and will not hesitate to shoot deserters or escaping prisoners.',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(18,'President Traitorous','Dictator of Megbellistan, survived through tactical backstabbing until overthrown by an alliance of his past enemies. Secretly captured by the CIA to be used in future government overthrow, but use has passed',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(19,'Valeriya Usmedivich','War Journalist, was documenting the war in Megbellistan when she was caught by soldiers testing biological weapons on civilians.',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(20,'Martin (Marty) Christ','Con man and alleged direct descendant of Jesus. Considered too dangerous to be in the world at large, has started several cults',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(21,'Robert Jr','Bad omen for ending',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+INSERT INTO Character VALUES(22,'Hank Schrader','American Spy, found documents proving Putin’s sexually charged relationship with Lukashenko, very patriotic',0,1,4,0,6,0,0,0,0,'','','','','','',1,'','','','','','','','');
+CREATE TABLE IF NOT EXISTS "EncounterInstance" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "name" TEXT NOT NULL DEFAULT '',
-    "description" TEXT NOT NULL DEFAULT ''
+    "monster_id" INTEGER NOT NULL,
+    "encounter_id" INTEGER NOT NULL,
+    "health_lost" INTEGER NOT NULL DEFAULT 0,
+    CONSTRAINT "EncounterInstance_monster_id_fkey" FOREIGN KEY ("monster_id") REFERENCES "Monster" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "EncounterInstance_encounter_id_fkey" FOREIGN KEY ("encounter_id") REFERENCES "Encounter" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
+INSERT INTO EncounterInstance VALUES(1,4,1,0);
+INSERT INTO EncounterInstance VALUES(2,4,1,1);
+INSERT INTO EncounterInstance VALUES(3,1,2,0);
+INSERT INTO EncounterInstance VALUES(4,3,3,0);
+INSERT INTO EncounterInstance VALUES(5,3,3,0);
+INSERT INTO EncounterInstance VALUES(6,3,3,0);
 DELETE FROM sqlite_sequence;
 INSERT INTO sqlite_sequence VALUES('Magic',5);
 INSERT INTO sqlite_sequence VALUES('Item',13);
@@ -331,8 +332,8 @@ CREATE INDEX "_MagicToScenario_B_index" ON "_MagicToScenario"("B");
 CREATE UNIQUE INDEX "_CharacterToItem_AB_unique" ON "_CharacterToItem"("A", "B");
 CREATE INDEX "_CharacterToItem_B_index" ON "_CharacterToItem"("B");
 CREATE UNIQUE INDEX "Scenario_name_key" ON "Scenario"("name");
-CREATE UNIQUE INDEX "Monster_name_key" ON "Monster"("name");
-CREATE UNIQUE INDEX "Spell_name_key" ON "Spell"("name");
 CREATE UNIQUE INDEX "Event_name_key" ON "Event"("name");
+CREATE UNIQUE INDEX "Spell_name_key" ON "Spell"("name");
+CREATE UNIQUE INDEX "Monster_name_key" ON "Monster"("name");
 CREATE UNIQUE INDEX "Character_name_key" ON "Character"("name");
 COMMIT;

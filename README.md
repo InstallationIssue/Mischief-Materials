@@ -60,7 +60,7 @@ npx prisma migrate dev # Updates database
 sqlite3 dev.db # Navigate to /prisma directory opens database with sqlite3 cli
 
 .output ./output.sql
-.dump table
+.dump table # Optional, ignore table to dump full database
 .exit # Outputs DB to file
 ```
 
