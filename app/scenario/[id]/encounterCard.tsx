@@ -9,7 +9,7 @@ export default async function EncounterCard({
 
     return (
         <div>
-            <h4>{encounter.name}</h4>
+            <p>{encounter.name}</p>
             <p></p>
         </div>
     )

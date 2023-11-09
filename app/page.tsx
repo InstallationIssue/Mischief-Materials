@@ -11,19 +11,19 @@ export default function Page() {
   return (
     <div className='flex flex-col items-center w-full'>
       <span className='flex flex-row w-full justify-center'>
-        <h1>Rats in Transit</h1>
+        <p>Rats in Transit</p>
       </span>
       <p className='w-2/3'>Welcome to my Rats in Transit Web app. This is designed to be a companion app to the table top game maze rats. Please choose either of the options below to begin playing</p>
       <div className='flex flex-row justify-center w-full items-center my-4'>
         <Link href='/scenario' className=' rounded-s-full flex flex-col items-center h-40 text-center justify-center border-2 border-slate-300 bg-opacity-70 bg-vermillion px-4'>
-          <h2>
+          <p>
             Dungeon Master
-          </h2>
+          </p>
         </Link>
         <Link href='/character' className='rounded-e-full flex flex-col items-center h-40 bg-teal-800 text-center justify-center border-2 border-slate-300 border-s-0 bg-opacity-70 bg-pale-azure px-4'>
-          <h2>
+          <p>
             Character
-          </h2>
+          </p>
         </Link>
       </div>
     </div>

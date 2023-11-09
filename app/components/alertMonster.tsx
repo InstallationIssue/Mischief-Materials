@@ -37,33 +37,33 @@ export default function AlertMonster ({
             armor: params.armor
           }}></HealthCircle>
           <div className="flex flex-col flex-grow self-stretch justify-between">
-            <h4>{params.name}</h4>
-            <div className="stats">
+            <p>{params.name}</p>
+            <div className="flex items-center gap-3 self-stretch">
               <div>
-                <Strength className='stats-icon'/>
-                <h5>{params.str}</h5>
+                <Strength className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <p>{params.str}</p>
               </div>
               <div>
-                <Dexterity className='stats-icon'/>
-                <h5>{params.dex}</h5>
+                <Dexterity className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <p>{params.dex}</p>
               </div>
               <div>
-                <Willpower className='stats-icon'/>
-                <h5>{params.wil}</h5>
+                <Willpower className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <p>{params.wil}</p>
               </div>
               <div>
-                <Attack className='stats-icon'/>
-                <h5>{params.attack}</h5>
+                <Attack className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <p>{params.attack}</p>
               </div>
             </div>
           </div>
         </div>
-        {params.size == 'Weak' && <Weak className='size-icon'/>}
-        {params.size == 'Typical' && <Typical className='size-icon'/>}
-        {params.size == 'Tough' && <Tough className='size-icon'/>}
-        {params.size == 'Hulking' && <Hulking className='size-icon'/>}
-        {params.size == 'Colossal' && <Colossal className='size-icon'/>}
-        {params.size == 'Boss' && <Boss className='size-icon'/>}
+        {params.size == 'Weak' && <Weak className='h-full aspect-square fill-[--primary-dark]'/>}
+        {params.size == 'Typical' && <Typical className='h-full aspect-square fill-[--primary-dark]'/>}
+        {params.size == 'Tough' && <Tough className='h-full aspect-square fill-[--primary-dark]'/>}
+        {params.size == 'Hulking' && <Hulking className='h-full aspect-square fill-[--primary-dark]'/>}
+        {params.size == 'Colossal' && <Colossal className='h-full aspect-square fill-[--primary-dark]'/>}
+        {params.size == 'Boss' && <Boss className='h-full aspect-square fill-[--primary-dark]'/>}
       </div>
     )
 }

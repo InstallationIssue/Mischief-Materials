@@ -22,7 +22,7 @@ export function PlayButton () {
     if ("" != ''){
         play = (
             <Link className="play" href={'/play'}>
-            <h4 className='line-clamp-1 leading-loose'>Ark of Cognizance</h4>
+            <p className='line-clamp-1 leading-loose'>Ark of Cognizance</p>
             <Play className="h-full"/>
         </Link>
         )

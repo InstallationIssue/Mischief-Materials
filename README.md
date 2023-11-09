@@ -64,3 +64,6 @@ sqlite3 dev.db # Navigate to /prisma directory opens database with sqlite3 cli
 .exit # Outputs DB to file
 ```
 
+For VS Code
+command [ ] - indenting
+command k command 0 - fold all

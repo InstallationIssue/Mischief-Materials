@@ -30,33 +30,33 @@ export default async function MonsterCard ({
             armor: monster.armor
           }}></HealthCircle>
           <div className="flex flex-col flex-grow self-stretch justify-between">
-            <h4>{monster.name}</h4>
-            <div className="stats">
+            <p>{monster.name}</p>
+            <div className="flex items-center gap-3 self-stretch">
               <div>
-                <Strength className='stats-icon'/>
-                <h5>{monster.str}</h5>
+                <Strength className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <p>{monster.str}</p>
               </div>
               <div>
-                <Dexterity className='stats-icon'/>
-                <h5>{monster.dex}</h5>
+                <Dexterity className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <p>{monster.dex}</p>
               </div>
               <div>
-                <Willpower className='stats-icon'/>
-                <h5>{monster.wil}</h5>
+                <Willpower className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <p>{monster.wil}</p>
               </div>
               <div>
-                <Attack className='stats-icon'/>
-                <h5>{monster.attack}</h5>
+                <Attack className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <p>{monster.attack}</p>
               </div>
             </div>
           </div>
         </div>
-        {monster.size == 'Weak' && <Weak className='size-icon'/>}
-        {monster.size == 'Typical' && <Typical className='size-icon'/>}
-        {monster.size == 'Tough' && <Tough className='size-icon'/>}
-        {monster.size == 'Hulking' && <Hulking className='size-icon'/>}
-        {monster.size == 'Colossal' && <Colossal className='size-icon'/>}
-        {monster.size == 'Boss' && <Boss className='size-icon'/>}
+        {monster.size == 'Weak' && <Weak className='h-full aspect-square fill-[--primary-dark]'/>}
+        {monster.size == 'Typical' && <Typical className='h-full aspect-square fill-[--primary-dark]'/>}
+        {monster.size == 'Tough' && <Tough className='h-full aspect-square fill-[--primary-dark]'/>}
+        {monster.size == 'Hulking' && <Hulking className='h-full aspect-square fill-[--primary-dark]'/>}
+        {monster.size == 'Colossal' && <Colossal className='h-full aspect-square fill-[--primary-dark]'/>}
+        {monster.size == 'Boss' && <Boss className='h-full aspect-square fill-[--primary-dark]'/>}
       </div>
     )
 }

@@ -36,7 +36,7 @@ export default async function LocationCard({
             <circle cx="50" cy="50" r="40"></circle>
           </svg>
           <span className="flex-grow whitespace-nowrap overflow-clip">
-            <h4 className="scrolling-text capitalize">{location.name}</h4>
+            <p className="scrolling-text capitalize">{location.name}</p>
           </span>
           {location.icon == 'boat' && <Boat className='h-full aspect-square icon'/>}
           {location.icon == 'building' && <Building className='h-full aspect-square icon'/>}

@@ -15,10 +15,10 @@ export default async function Play() {
 
     return (
       <div className="w-full">
-        <h1 className="mb-2">{scenario.name}</h1>
+        <p className="mb-2">{scenario.name}</p>
         <div className="flex flex-row h-full gap-4">
           <div className="flex flex-col h-full w-1/3 gap-2">
-            <h3>Description</h3>
+            <p>Description</p>
             <div className="relative">
               {scenario.image == 'IcelandLupin' && <IcelandLupin className='card-backing'/>}
               {scenario.image == 'MistyValley' && <MistyValley className='card-backing'/>}
@@ -28,7 +28,7 @@ export default async function Play() {
               {scenario.image == '' && <MistyValley className='card-backing'/>}
               <p className="w-full h-full absolute top-0 bg-slate-500 bg-opacity-60 invisible">{scenario.description}</p>
             </div>
-            <h3>Story Threads</h3>
+            <p>Story Threads</p>
           </div>
         </div>
       </div>

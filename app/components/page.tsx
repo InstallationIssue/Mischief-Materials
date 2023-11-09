@@ -11,7 +11,7 @@ export default async function DesignSystem(){
     return (
         <div className="flex flex-col justify-around p-5 w-full">
             <div className="flex flex-row justify-between">
-                <h1 className="">Design System</h1>
+                <p className="">Design System</p>
             </div>
 
             <div className='flex flex-row'>
@@ -57,12 +57,12 @@ export default async function DesignSystem(){
                     </tbody>
                 </table>
                 <hr/>
-                <h1>Header 1</h1>
-                <h2>Header 2</h2>
-                <h3>Header 3</h3>
-                <h4>Header 4</h4>
-                <h5>Header 5</h5>
-                <h6>Header 6</h6>
+                <p>Header 1</p>
+                <p>Header 2</p>
+                <p>Header 3</p>
+                <p>Header 4</p>
+                <p>Header 5</p>
+                <p>Header 6</p>
                 <p>Paragraph</p>
             </div>
         </div>

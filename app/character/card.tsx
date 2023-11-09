@@ -20,22 +20,23 @@ export default async function CharacterCard({
                 <HealthCircle params={{
                     health_max: character.health_max,
                     health_lost: 0,
-                    armor: character.armor
+                    armor: character.armor,
+                    dimensions: 64
                 }}></HealthCircle>
                 <div className="flex flex-col flex-grow self-stretch justify-between">
-                    <h4 className="line-clamp-1 text-clip">{character.name}</h4>
-                    <div className="stats">
+                    <p className="line-clamp-1 text-clip">{character.name}</p>
+                    <div className="flex items-center gap-3 self-stretch">
                     <div>
-                        <Strength className='stats-icon'/>
-                        <h5>{character.str}</h5>
+                        <Strength className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                        <p>{character.str}</p>
                     </div>
                     <div>
-                        <Dexterity className='stats-icon'/>
-                        <h5>{character.dex}</h5>
+                        <Dexterity className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                        <p>{character.dex}</p>
                     </div>
                     <div>
-                        <Willpower className='stats-icon'/>
-                        <h5>{character.wil}</h5>
+                        <Willpower className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                        <p>{character.wil}</p>
                     </div>
                 </div>
             </div>

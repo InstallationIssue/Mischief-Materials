@@ -1,5 +1,3 @@
-'use client'
-
 import Boat from '/public/icons/locations/boat.svg'
 import Building from '/public/icons/locations/building.svg'
 import Campground from '/public/icons/locations/campground.svg'
@@ -21,40 +19,13 @@ import Volcano from '/public/icons/locations/volcano.svg'
 import Warehouse from '/public/icons/locations/warehouse.svg'
 import Worship from '/public/icons/locations/worship.svg'
 
-/*
-const locationIcon = document.getElementById("locationIcon"),
-strength = document.querySelectorAll("#locationIcon");
-*/
-/*
-function selectIcon(select, index: string) {
-
-    // And we need the whole list of options
-    const optionList = select.querySelectorAll(".att-path-s");
-
-    try {
-      locationIcon.selectedIndex = index;  
-    } catch (error) {
-      
-    }
-    
-   
-    console.log("value: " + index)
-
-
-    // We remove the highlight from all options
-    optionList.forEach((other) => {
-        other.classList.remove("selected");
-    });
-
-
-    // We highlight the right option
-    optionList[index].classList.add("selected");
-}
-*/
-
-export default async function IconSelect(){
+export default async function IconsLocation ({
+    id
+}: { 
+    id: string
+}){
     return (
-        <div className='p-2'>
+        <div className="w-96 px-5 py-2.5 rounded-lg justify-between items-center inline-flex">
             <label htmlFor='locationIcon'></label>
             <select id="locationIcon" name="locationIcon" className="locationIcon hidden">
                 <option>boat</option>
@@ -78,28 +49,30 @@ export default async function IconSelect(){
                 <option>warehouse</option>
                 <option>worship</option>
             </select>
-            <span className="flex flex-row gap-3 icon-row icon h-8 justify-between">
-                <Boat/>
-                <Building/>
-                <Campground/>
-                <City/>
-                <Dungeon/>
-                <Entrance/>
-                <Factory/>
-                <Headquarters/>
-                <Hospital/>
-                <Institution/>
-                <Landmark/>
-                <MedicalHouse/>
-                <MountainCity/>
-                <Mountain/>
-                <Outpost/>
-                <Store/>
-                <Tent/>
-                <Volcano/>
-                <Warehouse/>
-                <Worship/>
+            <span className="flex flex-row flex-wrap gap-3 icon justify-between">
+                <Boat className="h-8"/>
+                <Building className="h-8"/>
+                <Campground className="h-8"/>
+                <City className="h-8"/>
+                <Dungeon className="h-8"/>
+                <Entrance className="h-8"/>
+                <Factory className="h-8"/>
+                <Headquarters className="h-8"/>
+                <Hospital className="h-8"/>
+                <Institution className="h-8"/>
+                <Landmark className="h-8"/>
+                <MedicalHouse className="h-8"/>
+                <MountainCity className="h-8"/>
+                <Mountain className="h-8"/>
+                <Outpost className="h-8"/>
+                <Store className="h-8"/>
+                <Tent className="h-8"/>
+                <Volcano className="h-8"/>
+                <Warehouse className="h-8"/>
+                <Worship className="h-8"/>
             </span>
         </div>
     )
 }
+
+

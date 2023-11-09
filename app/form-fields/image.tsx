@@ -11,7 +11,6 @@ export default async function Image ({
     id: string
 }) {
     var image = 'Default'
-    
     return (
         <div className="w-60 h-44 rounded-lg overflow-clip relative flex items-center justify-center">
             <button className="w-fit h-fit p-2 rounded backdrop-blur-lg text-center z-10">Choose Image</button>

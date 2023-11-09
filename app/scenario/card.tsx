@@ -27,7 +27,7 @@ export default async function ScenarioCard({
           {params.image == '' && <Default className='w-60'/>}
           {params.image == 'Default' && <Default className='w-60'/>}
           <div className="w-full px-2 absolute backdrop-blur-xl">
-            <h3 className="scrolling-text capitalize w-full text-center">{params.name}</h3>
+            <p className="scrolling-text capitalize w-full text-center">{params.name}</p>
             <CardButtons id={params.id}/>
           </div>
       </Link>

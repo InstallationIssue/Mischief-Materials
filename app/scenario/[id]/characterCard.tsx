@@ -9,7 +9,7 @@ export default async function CharacterCard({
 
     return (
         <div className="border rounded-lg flex flex-grow justify-start items-start self-stretch gap-2 p-2">
-            <h4 className="line-clamp-1 text-clip">{character.name}</h4>
+            <p className="line-clamp-1 text-clip">{character.name}</p>
         </div>
     )
 }

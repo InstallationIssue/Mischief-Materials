@@ -22,19 +22,19 @@ export default async function MagicCard({
 
     return (
         <Link href={`/magic/${id}`} className="flex flex-row gap-2 h-10 w-80 magics-center overflow-clip border-construct">
-            {magic.medium == 'Flame' && <Flame className='size-icon'/>}
-            {magic.medium == 'Flask' && <Flask className='size-icon'/>}
-            {magic.medium == 'Electricity' && <Electricity className='size-icon'/>}
-            {magic.medium == 'Golem' && <Golem className='size-icon'/>}
-            {magic.medium == 'Homunculus' && <Homunculus className='size-icon'/>}
-            {magic.medium == 'Ice' && <Ice className='size-icon'/>}
-            {magic.medium == 'Liquid' && <Ice className='size-icon'/>}
-            {magic.medium == 'Robot' && <Ice className='size-icon'/>}
-            {magic.medium == 'Sick' && <Ice className='size-icon'/>}
-            {magic.medium == 'Summon' && <Ice className='size-icon'/>}
-            {magic.medium == 'Wind' && <Ice className='size-icon'/>}
+            {magic.medium == 'Flame' && <Flame className='h-full aspect-square fill-[--primary-dark]'/>}
+            {magic.medium == 'Flask' && <Flask className='h-full aspect-square fill-[--primary-dark]'/>}
+            {magic.medium == 'Electricity' && <Electricity className='h-full aspect-square fill-[--primary-dark]'/>}
+            {magic.medium == 'Golem' && <Golem className='h-full aspect-square fill-[--primary-dark]'/>}
+            {magic.medium == 'Homunculus' && <Homunculus className='h-full aspect-square fill-[--primary-dark]'/>}
+            {magic.medium == 'Ice' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
+            {magic.medium == 'Liquid' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
+            {magic.medium == 'Robot' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
+            {magic.medium == 'Sick' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
+            {magic.medium == 'Summon' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
+            {magic.medium == 'Wind' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
             <span className="whitespace-nowrap overflow-clip">
-              <h4 className="scrolling-text capitalize">{magic.name}</h4>
+              <p className="scrolling-text capitalize">{magic.name}</p>
             </span>
         </Link>
     )

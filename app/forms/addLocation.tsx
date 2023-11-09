@@ -5,10 +5,11 @@ import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
-import SingleLineText from "../formFields/singleLineText"
-import Color from "../formFields/color"
-import FormButtons from "../formFields/formButtons"
-import IconSelect from "./iconSelect"
+import SingleLineText from "../form-fields/singleLineText"
+import MultiLineText from "../form-fields/multiLineText"
+import Color from "../form-fields/color"
+import FormButtons from "../form-fields/formButtons"
+import IconsLocation from "../form-fields/iconsLocation"
 
 const schema = z.object({
     name: z.string(),
@@ -45,11 +46,11 @@ function create() {}
 export default async function AddLocation(){
     return (
         <div>
-            <form className="flex flex-col space-y-2 py-2" action={create}>
+            <form className="flex flex-col space-y-2 py-2 w-fit" action={create}>
               <SingleLineText id="name"/>
-              <SingleLineText id="description"/>
+              <MultiLineText id="description"/>
               <Color id={"color"}/>
-              <IconSelect/>
+              <IconsLocation id={"icon"}/>
               <FormButtons/>
             </form>
         </div>

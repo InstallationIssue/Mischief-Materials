@@ -15,7 +15,7 @@ export default async function SingleLineText ({
     id: string
 }) {
     return (
-        <div className="w-full px-4 py-2.5 bg-gray-800 rounded-lg justify-start items-start gap-1 inline-flex">
+        <div className="w-full h-full px-4 py-2.5 bg-[--primary-dark-grey] rounded-lg justify-start items-center gap-1 inline-flex">
             <div className="grow shrink basis-0 flex-col justify-start items-start gap-1 inline-flex">
                 <div className="capitalize">{id}</div>
                 <div className="self-stretch justify-start items-start gap-1 inline-flex">

@@ -12,10 +12,10 @@ export default async function ItemCard({
     return (
         <Link href={`/item/${id}`} className="flex flex-row gap-2 h-10 w-80 items-center overflow-clip border-construct">
             <span className="flex-grow whitespace-nowrap overflow-clip">
-              <h4 className="scrolling-text capitalize">{item.name}</h4>
+              <p className="scrolling-text capitalize">{item.name}</p>
             </span>
             <p>{item.value}</p>
-            <Coins className="stats-icon"/>
+            <Coins className="aspect-square h-5 fill-[--primary-dark] cursor-pointer"/>
         </Link>
     )
 }
