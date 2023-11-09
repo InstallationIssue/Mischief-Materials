@@ -1,5 +1,5 @@
 import Button from "./button"
-import AlertMonster from "./alert-monster"
+import AlertMonster from "./alertMonster"
 import IcelandLupin from '/public/landscapes/Iceland-Lupin.svg'
 import MistyValley from '/public/landscapes/Misty-Valley.svg'
 import NeonCity from '/public/landscapes/Neon-City.svg'

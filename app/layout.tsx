@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import Link from "next/link"
 import React from 'react'
 import Logo from '/public/icons/logo.svg'
-import { PlayButton } from './components/play-button'
+import { PlayButton } from './components/playButton'
 const inter = Inter({ subsets: ['latin'] })
 
 function TopNav () {
@@ -34,7 +34,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <TopNav/>
-          <main className='flex flex-col h-full mx-4'>{children}</main>
+          <main className='flex flex-col h-full m-2'>{children}</main>
         </body>
       </html>
   )

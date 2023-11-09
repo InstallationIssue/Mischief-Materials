@@ -1,4 +1,4 @@
-import HealthCircle from "./health-circle"
+import HealthCircle from "./vitality"
 
 import Strength from '/public/icons/stats/strength.svg'
 import Dexterity from '/public/icons/stats/dexterity.svg'

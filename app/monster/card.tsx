@@ -1,6 +1,6 @@
 import { getMonsterById } from '@/prisma/scripts/monster'
 
-import HealthCircle from '../components/health-circle'
+import HealthCircle from '../components/vitality'
 
 import Strength from '/public/icons/stats/strength.svg'
 import Dexterity from '/public/icons/stats/dexterity.svg'

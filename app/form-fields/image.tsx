@@ -5,20 +5,24 @@ import NightMountains from '/public/landscapes/Night-Mountains.svg'
 import SunsetDesert from '/public/landscapes/Sunset-Desert.svg'
 import Default from '/public/landscapes/Default.svg'
 
-export default async function Image (){
+export default async function Image ({
+    id
+}: { 
+    id: string
+}) {
     var image = 'Default'
-
+    
     return (
-        <div className="w-fit rounded-lg overflow-clip relative">
-            <button className="w-fit h-fit p-2 rounded backdrop-blur-lg absolute text-center text-lg font-play">Choose Image</button>
+        <div className="w-60 h-44 rounded-lg overflow-clip relative flex items-center justify-center">
+            <button className="w-fit h-fit p-2 rounded backdrop-blur-lg text-center z-10">Choose Image</button>
             
-            {image == 'IcelandLupin' && <IcelandLupin className='w-60'/>}
-            {image == 'MistyValley' && <MistyValley className='w-60'/>}
-            {image == 'NeonCity' && <NeonCity className='w-60'/>}
-            {image == 'NightMountains' && <NightMountains className='w-60'/>}
-            {image == 'SunsetDesert' && <SunsetDesert className='w-60'/>}
-            {image == '' && <Default className='w-60'/>}
-            {image == 'Default' && <Default className='w-60'/>}
+            {image == 'IcelandLupin' && <IcelandLupin className='w-60 absolute'/>}
+            {image == 'MistyValley' && <MistyValley className='w-60 absolute'/>}
+            {image == 'NeonCity' && <NeonCity className='w-60 absolute'/>}
+            {image == 'NightMountains' && <NightMountains className='w-60 absolute'/>}
+            {image == 'SunsetDesert' && <SunsetDesert className='w-60 absolute'/>}
+            {image == '' && <Default className='w-60 absolute'/>}
+            {image == 'Default' && <Default className='w-60 absolute'/>}
         </div>
     )
 }
