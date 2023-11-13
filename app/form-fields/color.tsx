@@ -1,19 +1,22 @@
+'use client'
 import Swatch from '/public/icons/system/swatchbook.svg'
 
 export default function Color ({
-    id
+    id, name
 }: { 
-    id: string
+    id: string, name: string
 }) {
-    var color = '#FFB800'
+    function colors () {}
 
     return (
-        <div className="w-full h-11 bg-[--primary-dark-grey] p-2.5 px-4 gap-4 rounded-lg justify-between items-center inline-flex">
+        <div className="w-full bg-[--primary-dark-grey] p-2.5 px-4 gap-4 rounded-lg justify-between items-center inline-flex font-play bg-primary-dark-grey">
             <div className='w-fit'>
                 Select Color
             </div>
-            <div className='flex grow h-10 bg-orange-300 ms-20'></div>
-            <Swatch className="h-8 aspect-square"/>
+            <input id={id} name={name} defaultValue={'#FFB800'} type='color' className='flex grow ms-20 bg-transparent'/>
+            <button onClick={colors}>
+                <Swatch className="h-6 aspect-square"/>
+            </button>
         </div>
     )
 }

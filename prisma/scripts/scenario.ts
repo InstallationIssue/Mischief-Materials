@@ -3,7 +3,6 @@
 import prisma from './db'
 import { revalidatePath } from 'next/cache'
 import { z } from 'zod'
-import { redirect } from 'next/navigation'
 
 export async function createScenario(prevState: any, formData: FormData) {
     const schema = z.object({
@@ -27,9 +26,8 @@ export async function createScenario(prevState: any, formData: FormData) {
             }
         })
         revalidatePath('/scenario')
-        redirect("/scenario")
-        return { message: `Added todo ${scenario.id}` }
+        return { message: `Added scenario ${scenario.id}` }
     } catch (e) {
-        return { message: 'Failed to create todo' }
+        return { message: 'Failed to create scenario' }
     }
-  }
+}

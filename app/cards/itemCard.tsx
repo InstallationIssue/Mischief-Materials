@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { getItemById } from "@/app/api/item/item"
+import { getItemById } from "@/prisma/scripts/api/item/item"
 import Coins from "/public/icons/items/coins.svg"
 
 export default async function ItemCard({

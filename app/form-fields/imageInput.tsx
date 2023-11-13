@@ -1,4 +1,4 @@
-'use-client'
+'use client'
 
 import { useState } from 'react'
 
@@ -9,7 +9,7 @@ import NightMountains from '/public/landscapes/Night-Mountains.svg'
 import SunsetDesert from '/public/landscapes/Sunset-Desert.svg'
 import Default from '/public/landscapes/Default.svg'
 
-export default function Image ({
+export default function ImageInput ({
     id, name
 }: { 
     id: string, name: string

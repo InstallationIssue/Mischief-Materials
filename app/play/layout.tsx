@@ -1,4 +1,4 @@
-import { getScenarioExtras } from "@/app/api/scenario/scenario"
+import { getScenarioExtras } from "@/prisma/scripts/api/scenario/scenario"
 
 import LocationCard from "@/app/cards/locationCard"
 import CharacterCard from "../scenario/[id]/characterCard"

@@ -1,4 +1,4 @@
-import { createItem } from "@/app/api/item/item"
+import { createItem } from "@/prisma/scripts/api/item/item"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"

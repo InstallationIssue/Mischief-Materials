@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { getMagicById } from "@/app/api/magic/magic"
+import { getMagicById } from "@/prisma/scripts/api/magic/magic"
 import Magic from "/public/icons/sidebar/magic.svg"
 import Flame from "/public/icons/magic/flame.svg"
 import Electricity from "/public/icons/magic/electricity.svg"

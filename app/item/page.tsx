@@ -1,6 +1,6 @@
 import ItemCard from "../cards/itemCard"
 import Header from "../components/header"
-import { getItems } from "@/app/api/item/item"
+import { getItems } from "@/prisma/scripts/api/item/item"
 
 export default async function Page(props: {
     // ...

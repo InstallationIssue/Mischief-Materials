@@ -1,4 +1,4 @@
-import { getLocationById } from "@/app/api/location/location"
+import { getLocationById } from "@/prisma/scripts/api/location/location"
 
 import Link from "next/link"
 

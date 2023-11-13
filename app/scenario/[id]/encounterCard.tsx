@@ -1,4 +1,4 @@
-import { getEncounterById } from "@/app/api/encounter/encounter"
+import { getEncounterById } from "@/prisma/scripts/api/encounter/encounter"
 
 export default async function EncounterCard({
     id

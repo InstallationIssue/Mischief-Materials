@@ -3,9 +3,9 @@
 import { useFormState, useFormStatus } from "react-dom"
 import SingleLineText from "../form-fields/singleLineText"
 import MultiLineText from "../form-fields/multiLineText"
-import Image from "../form-fields/image"
+import ImageInput from "../form-fields/imageInput"
 import FormButtons from "../form-fields/formButtons"
-import { createScenario } from "../actions"
+import { createScenario } from "../../prisma/scripts/scenario"
 
 const initialState = {
   message: null,
@@ -18,7 +18,7 @@ export default function AddScenario() {
       <form className="flex flex-col space-y-2 py-2 items-center w-fit" action={formAction}>
         <SingleLineText id="name" name="name" showRandom={false}/>
         <MultiLineText id="description" name="description"/>
-        <Image id="image" name="image"/>
+        <ImageInput id="image" name="image"/>
         <FormButtons showRandom={false}/>
         <p aria-live="polite" className="sr-only" role="status">
         {state?.message}

@@ -1,6 +1,6 @@
 'use client'
 
-import { createCharacter } from "@/app/api/character/character"
+import { createCharacter } from "@/prisma/scripts/api/character/character"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import SingleLineText from "../form-fields/singleLineText"
@@ -39,21 +39,21 @@ async function create(formData: FormData) {
 
 function create () {}
 
-export default async function AddCharacter() {
+export default function AddCharacter() {
   return (
       <form className="flex flex-col py-2 gap-2" action={create}>
         <div className="flex flex-row">
-          <SingleLineText id={"name"}/>
+          <SingleLineText id={"name"} name={""} showRandom={false}/>
           <SwitchField id={"NPC"}/>
         </div>
         <div className="flex flex-row">
-          <MultiLineText id="background"/>
+          <MultiLineText id="background" name={""}/>
           <VitalityLevel id={""}/>
         </div>
         <TraitsCharacter id={""} clothing={"Clothing"} appearance={"Appearance"} physical_detail={"Physical Detail"} personality={"Personality"} mannerism={"Mannerism"} hobby={"Hobby"}/>
         <Details id={""} profession={""} reputation={""} misfortune={""} goal={""} secret={""} asset={""} liability={""}/>
-        <Attributes id={""}/>
-        <FormButtons/>
+        <Attributes idArmor={""} idLevel={""}/>
+        <FormButtons showRandom={false}/>
       </form>
   )
 }

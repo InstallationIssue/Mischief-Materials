@@ -1,6 +1,6 @@
 import PlayerCard from "../cards/characterCard"
 import Header from "../components/header"
-import { getCharacters } from "@/app/api/character/character"
+import { getCharacters } from "@/prisma/scripts/api/character/character"
 
 export default async function Character(){
     const data = await getCharacters()

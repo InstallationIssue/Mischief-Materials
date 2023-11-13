@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from 'react'
+
 import Boat from '/public/icons/locations/boat.svg'
 import Building from '/public/icons/locations/building.svg'
 import Campground from '/public/icons/locations/campground.svg'
@@ -9,8 +13,8 @@ import Headquarters from '/public/icons/locations/headquarters.svg'
 import Hospital from '/public/icons/locations/hospital.svg'
 import Institution from '/public/icons/locations/institution.svg'
 import Landmark from '/public/icons/locations/landmark.svg'
-import MedicalHouse from '/public/icons/locations/medical-house.svg'
-import MountainCity from '/public/icons/locations/mountain-city.svg'
+import Medical from '/public/icons/locations/medical.svg'
+import Mountown from '/public/icons/locations/mountown.svg'
 import Mountain from '/public/icons/locations/mountain.svg'
 import Outpost from '/public/icons/locations/outpost.svg'
 import Store from '/public/icons/locations/store.svg'
@@ -20,15 +24,21 @@ import Warehouse from '/public/icons/locations/warehouse.svg'
 import Worship from '/public/icons/locations/worship.svg'
 
 export default function IconsLocation ({
-    id
+    id, name
 }: { 
-    id: string
+    id: string, name: string
 }){
+    const icons = ['boat', 'building', 'campground', 'city', 'dungeon', 'entrance', 'factory', 'headquarters', 'hospital', 'institution', 'landmark', 'medical', 'mountown', 'mountain', 'outpost', 'store', 'tent', 'volcano', 'warehouse', 'worship']
+    const [icon, setIcon] = useState('building')
+
     return (
         <div className="w-96 px-5 py-2.5 rounded-lg justify-between items-center inline-flex">
-            <label htmlFor='locationIcon'></label>
-            <select id="locationIcon" name="locationIcon" className="locationIcon hidden">
-                <option>boat</option>
+            <label htmlFor={name}></label>
+            <select id={id} name={name} value={icon} onChange={(e) => {
+                e.preventDefault() 
+                setIcon(e.target.value)
+                }}>
+                <input type='radio' value='boat'></input>
                 <option>building</option>
                 <option>campground</option>
                 <option>city</option>
@@ -39,8 +49,8 @@ export default function IconsLocation ({
                 <option>hospital</option>
                 <option>institution</option>
                 <option>landmark</option>
-                <option>medical-house</option>
-                <option>mountain-city</option>
+                <option>medical</option>
+                <option>mountown</option>
                 <option>mountain</option>
                 <option>outpost</option>
                 <option>store</option>
@@ -61,8 +71,8 @@ export default function IconsLocation ({
                 <Hospital className="h-8"/>
                 <Institution className="h-8"/>
                 <Landmark className="h-8"/>
-                <MedicalHouse className="h-8"/>
-                <MountainCity className="h-8"/>
+                <Medical className="h-8"/>
+                <Mountown className="h-8"/>
                 <Mountain className="h-8"/>
                 <Outpost className="h-8"/>
                 <Store className="h-8"/>

@@ -1,6 +1,6 @@
 import LocationCard from "../cards/locationCard"
 import Header from "../components/header"
-import { getLocations } from "@/app/api/location/location"
+import { getLocations } from "@/prisma/scripts/api/location/location"
 
 export default async function Location(){
     const data = await getLocations()

@@ -1,6 +1,6 @@
 'use client'
 
-import { createLocation } from "@/app/api/location/location"
+import { createLocation } from "@/prisma/scripts/api/location/location"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
@@ -43,15 +43,15 @@ async function create(formData: FormData) {
 
 function create() {}
 
-export default async function AddLocation(){
+export default function AddLocation(){
     return (
         <div>
             <form className="flex flex-col space-y-2 py-2 w-fit" action={create}>
-              <SingleLineText id="name"/>
-              <MultiLineText id="description"/>
-              <Color id={"color"}/>
-              <IconsLocation id={"icon"}/>
-              <FormButtons/>
+              <SingleLineText id="name" name={""} showRandom={false}/>
+              <MultiLineText id="description" name={""}/>
+              <Color id={"color"} name={""}/>
+              <IconsLocation id={"icon"} name={""}/>
+              <FormButtons showRandom={false}/>
             </form>
         </div>
     )

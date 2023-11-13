@@ -1,4 +1,4 @@
-import { getScenarioById, updateScenario } from "@/app/api/scenario/scenario"
+import { getScenarioById, updateScenario } from "@/prisma/scripts/api/scenario/scenario"
 
 import { z } from "zod"
 import { revalidatePath } from "next/cache"

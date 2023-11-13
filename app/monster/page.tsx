@@ -1,6 +1,6 @@
 import MonsterCard from "../cards/monsterCard"
 import Header from "../components/header"
-import { getMonsters } from "@/app/api/monster/monster"
+import { getMonsters } from "@/prisma/scripts/api/monster/monster"
 
 export default async function Monster(){
     const data = await getMonsters()

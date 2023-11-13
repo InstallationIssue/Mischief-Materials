@@ -1,6 +1,6 @@
 'use client'
 
-import { createItem } from "@/app/api/item/item"
+import { createItem } from "@/prisma/scripts/api/item/item"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
@@ -49,15 +49,15 @@ function create(formData: FormData) {
     console.log(true)
 }
 
-export default async function AddItem(){
+export default function AddItem(){
   return (
     <form className="flex flex-col gap-2 p-2" action={create}>
       <span className="w-full flex flex-row gap-2">
-        <SingleLineText id={'name'}/>
+        <SingleLineText id={'name'} name={""} showRandom={false}/>
         <Value id={"value"}/>
       </span>
-      <MultiLineText id={'description'}/>
-      <FormButtons/>
+      <MultiLineText id={'description'} name={""}/>
+      <FormButtons showRandom={false}/>
     </form>
    )
 }
