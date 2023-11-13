@@ -1,6 +1,6 @@
 import Coins from '/public/icons/items/coins.svg'
 
-export default async function Value ({
+export default function Value ({
     id
 }: { 
     id: string
@@ -12,7 +12,7 @@ export default async function Value ({
                     <div className="capitalize">{id}</div>
                     <div className="">100...</div>
                 </div>
-                <Coins className="h-10 icon"/>
+                <Coins className="h-10"/>
             </div>
         </div>
     )

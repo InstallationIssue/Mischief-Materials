@@ -1,4 +1,4 @@
-import { getScenarioById } from "@/prisma/scripts/scenario"
+import { getScenarioById } from "@/app/api/scenario/scenario"
 
 import IcelandLupin from '/public/landscapes/Iceland-Lupin.svg'
 import MistyValley from '/public/landscapes/Misty-Valley.svg'

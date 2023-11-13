@@ -2,7 +2,7 @@ import Level from "../components/level"
 import Armor from "../components/armor"
 import HealthCircle from "../components/vitality"
 
-export default async function VitalityLevel ({
+export default function VitalityLevel ({
     id
 }: { 
     id: string

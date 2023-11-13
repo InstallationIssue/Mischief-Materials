@@ -1,6 +1,6 @@
 'use client'
 
-import { createMonster } from "@/prisma/scripts/monster"
+import { createMonster } from "@/app/api/monster/monster"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import SingleLineText from "../form-fields/singleLineText"
@@ -38,11 +38,11 @@ function create () {}
 export default async function AddMonster() {
   return (
       <form className="w-[660px] flex flex-col gap-2 py-2" action={create}>
-        <SingleLineText id={"name"}/>
+        <SingleLineText id={"name"} showRandom={false}/>
         <MultiLineText id={"background"}/>
-        <TraitsMonster id={""} personality={"Personality"} tactic={"Tactic"} weakness={"Weakness"}/>
-        <IconsSize id={""}/>
-        <Attributes id={""}/>
+        <TraitsMonster id={"traits"} personality={"Personality"} tactic={"Tactic"} weakness={"Weakness"}/>
+        <IconsSize id={"size"}/>
+        <Attributes idArmor={"armor"} idLevel={"level"}/>
       </form>
   )
 }

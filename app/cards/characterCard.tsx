@@ -6,7 +6,7 @@ import Strength from '/public/icons/stats/strength.svg'
 import Dexterity from '/public/icons/stats/dexterity.svg'
 import Willpower from '/public/icons/stats/willpower.svg'
 import Attack from '/public/icons/stats/attack.svg'
-import { getCharacterById } from "@/prisma/scripts/character"
+import { getCharacterById } from "@/app/api/character/character"
 
 export default async function CharacterCard({
     id,

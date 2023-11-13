@@ -1,4 +1,4 @@
-export default async function Relation ({
+export default function Relation ({
     id
 }: { 
     id: string

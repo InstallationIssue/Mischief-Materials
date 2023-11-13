@@ -1,6 +1,6 @@
 'use client'
 
-import { createLocation } from "@/prisma/scripts/location"
+import { createLocation } from "@/app/api/location/location"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"

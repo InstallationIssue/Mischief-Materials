@@ -1,4 +1,4 @@
-export default async function Details ({
+export default function Details ({
   id, profession, reputation, misfortune, goal, secret, asset, liability
 }: { 
   id: string, profession: string, reputation: string, misfortune: string, goal: string, secret: string, asset: string, liability: string

@@ -1,4 +1,4 @@
-import prisma from "./main"
+import prisma from "../main"
 
 export async function getMagic(){
     return await prisma.magic.findMany({

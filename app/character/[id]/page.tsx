@@ -1,4 +1,4 @@
-import { getCharacterById } from "@/prisma/scripts/character"
+import { getCharacterById } from "@/app/api/character/character"
 import ItemCard from "@/app/cards/itemCard";
 
 export default async function Character({ 
@@ -10,12 +10,12 @@ export default async function Character({
 
     return (
         <div className="flex flex-row h-full w-full my-2 gap-2">
-            <div className="flex flex-col h-full w-1/4 border-construct">
+            <div className="flex flex-col h-full w-1/4 border rounded-lg p-2 border-primary-light">
                 <p>{character.name}</p>
                 <p>Background</p>
                 <p>{character.background}</p>
             </div>
-            <div className="flex flex-col h-full w-1/2 border-construct">
+            <div className="flex flex-col h-full w-1/2 border rounded-lg p-2 border-primary-light">
                 <div className="flex flex-row">
                     <div className="flex flex-col w-1/2"></div>
                 </div>
@@ -30,7 +30,7 @@ export default async function Character({
                     ))}
                 </p>
             </div>
-            <div className="flex flex-col h-full w-1/4 border-construct">
+            <div className="flex flex-col h-full w-1/4 border rounded-lg p-2 border-primary-light">
                 <p>Relationships</p>
                 <p>Goals</p>
             </div>

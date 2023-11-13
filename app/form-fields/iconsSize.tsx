@@ -5,7 +5,7 @@ import Hulking from '/public/icons/monsters/size-4.svg'
 import Colossal from '/public/icons/monsters/size-5.svg'
 import Gargantuan from '/public/icons/monsters/size-final.svg'
 
-export default async function IconsSize ({
+export default function IconsSize ({
   id
 }: { 
   id: string

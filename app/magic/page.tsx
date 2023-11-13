@@ -1,6 +1,6 @@
 import MagicCard from "../cards/magicCard"
 import Header from "../components/header"
-import { getMagic } from "@/prisma/scripts/magic"
+import { getMagic } from "@/app/api/magic/magic"
 
 export default async function Page() {
     const data = await getMagic()

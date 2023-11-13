@@ -29,7 +29,7 @@ export default function AlertMonster ({
       attack: number
   }}) {
     return (
-      <div className="monster-card">
+      <div className="flex flex-row justify-center items-start self-stretch rounded-md border w-80 p-2 h-20 border-primary-dark">
         <div className="flex flex-grow justify-center items-start self-stretch gap-2">
           <HealthCircle params={{
             health_max: params.health_max,

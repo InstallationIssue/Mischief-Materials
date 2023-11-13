@@ -1,4 +1,4 @@
-import { getLocationById } from "@/prisma/scripts/location"
+import { getLocationById } from "@/app/api/location/location"
 
 import Link from "next/link"
 
@@ -38,26 +38,26 @@ export default async function LocationCard({
           <span className="flex-grow whitespace-nowrap overflow-clip">
             <p className="scrolling-text capitalize">{location.name}</p>
           </span>
-          {location.icon == 'boat' && <Boat className='h-full aspect-square icon'/>}
-          {location.icon == 'building' && <Building className='h-full aspect-square icon'/>}
-          {location.icon == 'campground' && <Campground className='h-full aspect-square icon'/>}
-          {location.icon == 'city' && <City className='h-full aspect-square icon'/>}
-          {location.icon == 'dungeon' && <Dungeon className='h-full aspect-square icon'/>}
-          {location.icon == 'entrance' && <Entrance className='h-full aspect-square icon'/>}
-          {location.icon == 'factory' && <Factory className='h-full aspect-square icon'/>}
-          {location.icon == 'headquarters' && <Headquarters className='h-full aspect-square icon'/>}
-          {location.icon == 'hospital' && <Hospital className='h-full aspect-square icon'/>}
-          {location.icon == 'institution' && <Institution className='h-full aspect-square icon'/>}
-          {location.icon == 'landmark' && <Landmark className='h-full aspect-square icon'/>}
-          {location.icon == 'medical-house' && <MedicalHouse className='h-full aspect-square icon'/>}
-          {location.icon == 'mountain-city' && <MountainCity className='h-full aspect-square icon'/>}
-          {location.icon == 'mountain' && <Mountain className='h-full aspect-square icon'/>}
-          {location.icon == 'outpost' && <Outpost className='h-full aspect-square icon'/>}
-          {location.icon == 'store' && <Store className='h-full aspect-square icon'/>}
-          {location.icon == 'tent' && <Tent className='h-full aspect-square icon'/>}
-          {location.icon == 'volcano' && <Volcano className='h-full aspect-square icon'/>}
-          {location.icon == 'warehouse' && <Warehouse className='h-full aspect-square icon'/>}
-          {location.icon == 'worship' && <Worship className='h-full aspect-square icon'/>}
+          {location.icon == 'boat' && <Boat className='h-full aspect-square'/>}
+          {location.icon == 'building' && <Building className='h-full aspect-square'/>}
+          {location.icon == 'campground' && <Campground className='h-full aspect-square'/>}
+          {location.icon == 'city' && <City className='h-full aspect-square'/>}
+          {location.icon == 'dungeon' && <Dungeon className='h-full aspect-square'/>}
+          {location.icon == 'entrance' && <Entrance className='h-full aspect-square'/>}
+          {location.icon == 'factory' && <Factory className='h-full aspect-square'/>}
+          {location.icon == 'headquarters' && <Headquarters className='h-full aspect-square'/>}
+          {location.icon == 'hospital' && <Hospital className='h-full aspect-square'/>}
+          {location.icon == 'institution' && <Institution className='h-full aspect-square'/>}
+          {location.icon == 'landmark' && <Landmark className='h-full aspect-square'/>}
+          {location.icon == 'medical-house' && <MedicalHouse className='h-full aspect-square'/>}
+          {location.icon == 'mountain-city' && <MountainCity className='h-full aspect-square'/>}
+          {location.icon == 'mountain' && <Mountain className='h-full aspect-square'/>}
+          {location.icon == 'outpost' && <Outpost className='h-full aspect-square'/>}
+          {location.icon == 'store' && <Store className='h-full aspect-square'/>}
+          {location.icon == 'tent' && <Tent className='h-full aspect-square'/>}
+          {location.icon == 'volcano' && <Volcano className='h-full aspect-square'/>}
+          {location.icon == 'warehouse' && <Warehouse className='h-full aspect-square'/>}
+          {location.icon == 'worship' && <Worship className='h-full aspect-square'/>}
         </Link>
     )
 }

@@ -1,4 +1,4 @@
-import { getMonsterById } from '@/prisma/scripts/monster'
+import { getMonsterById } from '@/app/api/monster/monster'
 
 import HealthCircle from '../components/vitality'
 
@@ -22,7 +22,7 @@ export default async function MonsterCard ({
     const monster = await getMonsterById(id)
 
     return (
-      <div className="monster-card">
+      <div className="flex flex-row justify-center items-start self-stretch rounded-md border w-80 p-2 h-20 border-primary-dark">
         <div className="flex flex-grow justify-center items-start self-stretch gap-2">
           <HealthCircle params={{
             health_max: monster.health_max,

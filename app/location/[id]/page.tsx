@@ -1,4 +1,4 @@
-import { getLocationById, updateLocation } from "@/prisma/scripts/location"
+import { getLocationById, updateLocation } from "@/app/api/location/location"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"

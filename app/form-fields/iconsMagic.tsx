@@ -1,4 +1,4 @@
-export default async function IconsMagic ({
+export default function IconsMagic ({
     id
 }: { 
     id: string

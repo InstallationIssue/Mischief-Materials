@@ -21,7 +21,7 @@ export function PlayButton () {
     
     if ("" != ''){
         play = (
-            <Link className="play" href={'/play'}>
+            <Link className="flex flex-row items-center rounded-full h-2/3 py-2 px-3 gap-2 bg-secondary-light transition active:text-highlight-light active:fill-highlight-light" href={'/play'}>
             <p className='line-clamp-1 leading-loose'>Ark of Cognizance</p>
             <Play className="h-full"/>
         </Link>

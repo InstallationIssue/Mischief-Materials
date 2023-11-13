@@ -1,4 +1,4 @@
-export default async function SwitchField ({
+export default function SwitchField ({
     id
 }: { 
     id: string

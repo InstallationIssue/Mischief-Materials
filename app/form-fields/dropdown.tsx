@@ -1,4 +1,4 @@
-export default async function Dropdown ({
+export default function Dropdown ({
     id
 }: { 
     id: string

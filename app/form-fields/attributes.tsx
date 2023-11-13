@@ -2,10 +2,10 @@ import Loader from '/public/attributes/loader.svg'
 import Count from '../components/count'
 import Battery from '../components/battery'
 
-export default async function Attributes ({
-    id
+export default function Attributes ({
+    idArmor, idLevel
 }: { 
-    id: string
+    idArmor: string, idLevel: string
 }) {
     return (
         <div className="w-fit h-fit p-5 bg-[--primary-dark-grey] rounded-lg flex-col justify-start items-center inline-flex">

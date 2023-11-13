@@ -19,7 +19,7 @@ import Volcano from '/public/icons/locations/volcano.svg'
 import Warehouse from '/public/icons/locations/warehouse.svg'
 import Worship from '/public/icons/locations/worship.svg'
 
-export default async function IconsLocation ({
+export default function IconsLocation ({
     id
 }: { 
     id: string

@@ -20,7 +20,7 @@ export default async function Page (){
 
     return (
         <div className="w-3/4 rounded-lg overflow-clip flex flex-col p-2 gap-2">
-            <SingleLineText id={"name"}/>
+            <SingleLineText id={"name"} showRandom={false}/>
             <MultiLineText id={"description"}/>
             <TraitsCharacter id={"traits-character"} clothing={"Clothing"} appearance={"Appearance"} physical_detail={"Physical Detail"} personality={"Personality"} mannerism={"Mannerism"} hobby={"Hobby"}/>
             <Details id={"details"} profession={"Profession"} reputation={"Reputation"} misfortune={"Misfortune"} goal={"Goal"} secret={"Secret"} asset={"Asset"} liability={"Liability"}/>
@@ -30,12 +30,12 @@ export default async function Page (){
             <Image id={"image"}/>
             <SwitchField id={"npc"}/>
             <Value id={"Value"}/>
-            <FormButtons/>
+            <FormButtons showRandom={false}/>
             <IconsLocation id={"icon"}/>
             <IconsMagic id={"icon"}/>
             <IconsSize id={"size"}/>
             <Relation id={""}/>
-            <Attributes id={""}/>
+            <Attributes idArmor={""} idLevel={""} />
             <VitalityLevel id={""}/>
         </div>
     )

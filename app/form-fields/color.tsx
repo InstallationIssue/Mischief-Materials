@@ -1,6 +1,6 @@
 import Swatch from '/public/icons/system/swatchbook.svg'
 
-export default async function Color ({
+export default function Color ({
     id
 }: { 
     id: string
@@ -13,7 +13,7 @@ export default async function Color ({
                 Select Color
             </div>
             <div className='flex grow h-10 bg-orange-300 ms-20'></div>
-            <Swatch className="h-8 aspect-square icon"></Swatch>
+            <Swatch className="h-8 aspect-square"/>
         </div>
     )
 }

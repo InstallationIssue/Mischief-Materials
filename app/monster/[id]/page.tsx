@@ -1,4 +1,4 @@
-import { getMonsterById } from "@/prisma/scripts/monster"
+import { getMonsterById } from "@/app/api/monster/monster"
 
 export default async function Monster({
     params 

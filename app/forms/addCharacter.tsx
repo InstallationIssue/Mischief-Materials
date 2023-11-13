@@ -1,6 +1,6 @@
 'use client'
 
-import { createCharacter } from "@/prisma/scripts/character"
+import { createCharacter } from "@/app/api/character/character"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import SingleLineText from "../form-fields/singleLineText"

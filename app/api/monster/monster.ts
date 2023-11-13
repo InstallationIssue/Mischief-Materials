@@ -1,4 +1,4 @@
-import prisma from "./main"
+import prisma from "../main"
 
 export async function getMonsters(){
     return await prisma.monster.findMany({

@@ -1,4 +1,4 @@
-export default async function TraitsCharacter ({
+export default function TraitsCharacter ({
     id, clothing, appearance, physical_detail, personality, mannerism, hobby
 }: { 
     id: string, clothing: string, appearance: string, physical_detail: string, personality: string, mannerism: string, hobby: string

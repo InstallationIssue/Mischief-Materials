@@ -1,4 +1,4 @@
-import prisma from "./main"
+import prisma from "../main"
 
 export async function getScenarios(){
     return await prisma.scenario.findMany({

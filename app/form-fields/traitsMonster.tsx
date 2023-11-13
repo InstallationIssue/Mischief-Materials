@@ -1,4 +1,4 @@
-export default async function TraitsMonster ({
+export default function TraitsMonster ({
     id, personality, tactic, weakness
 }: { 
     id: string, personality: string, tactic: string, weakness: string

@@ -7,6 +7,7 @@ export default prisma;
 async function main() {
 }
 
+/*
 main()
   .then(async () => {
     await prisma.$disconnect()
@@ -15,3 +16,5 @@ main()
     console.error(e)
     await prisma.$disconnect()
   })
+
+  */

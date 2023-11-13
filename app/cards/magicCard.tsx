@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { getMagicById } from "@/prisma/scripts/magic"
-import Magic from "/public/icons/magic/magic.svg"
+import { getMagicById } from "@/app/api/magic/magic"
+import Magic from "/public/icons/sidebar/magic.svg"
 import Flame from "/public/icons/magic/flame.svg"
 import Electricity from "/public/icons/magic/electricity.svg"
 import Flask from "/public/icons/magic/flask.svg"
@@ -21,18 +21,19 @@ export default async function MagicCard({
     const magic = await getMagicById(Number(id))
 
     return (
-        <Link href={`/magic/${id}`} className="flex flex-row gap-2 h-10 w-80 magics-center overflow-clip border-construct">
-            {magic.medium == 'Flame' && <Flame className='h-full aspect-square fill-[--primary-dark]'/>}
-            {magic.medium == 'Flask' && <Flask className='h-full aspect-square fill-[--primary-dark]'/>}
-            {magic.medium == 'Electricity' && <Electricity className='h-full aspect-square fill-[--primary-dark]'/>}
-            {magic.medium == 'Golem' && <Golem className='h-full aspect-square fill-[--primary-dark]'/>}
-            {magic.medium == 'Homunculus' && <Homunculus className='h-full aspect-square fill-[--primary-dark]'/>}
-            {magic.medium == 'Ice' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
-            {magic.medium == 'Liquid' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
-            {magic.medium == 'Robot' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
-            {magic.medium == 'Sick' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
-            {magic.medium == 'Summon' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
-            {magic.medium == 'Wind' && <Ice className='h-full aspect-square fill-[--primary-dark]'/>}
+        <Link href={`/magic/${id}`} className="flex flex-row gap-2 h-10 w-80 magics-center overflow-clip border rounded-lg p-2 border-primary-light">
+            {magic.medium == 'magic' && <Magic className='h-full aspect-square'/>}
+            {magic.medium == 'flame' && <Flame className='h-full aspect-square'/>}
+            {magic.medium == 'flask' && <Flask className='h-full aspect-square'/>}
+            {magic.medium == 'electricity' && <Electricity className='h-full aspect-square'/>}
+            {magic.medium == 'golem' && <Golem className='h-full aspect-square'/>}
+            {magic.medium == 'homunculus' && <Homunculus className='h-full aspect-square'/>}
+            {magic.medium == 'ice' && <Ice className='h-full aspect-square'/>}
+            {magic.medium == 'liquid' && <Liquid className='h-full aspect-square'/>}
+            {magic.medium == 'robot' && <Robot className='h-full aspect-square'/>}
+            {magic.medium == 'sick' && <Sick className='h-full aspect-square'/>}
+            {magic.medium == 'summon' && <Summon className='h-full aspect-square'/>}
+            {magic.medium == 'wind' && <Wind className='h-full aspect-square'/>}
             <span className="whitespace-nowrap overflow-clip">
               <p className="scrolling-text capitalize">{magic.name}</p>
             </span>

@@ -1,4 +1,4 @@
-import { getCharacterById } from "@/prisma/scripts/character"
+import { getCharacterById } from "@/app/api/character/character"
 
 export default async function CharacterCard({
     id,

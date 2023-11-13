@@ -1,4 +1,4 @@
-import prisma from "./main"
+import prisma from "../main"
 
 export async function getSpells(){
     return await prisma.spell.findMany({
@@ -13,8 +13,8 @@ export async function getSpells(){
 export async function createSpell(name: string, magic: number){
     const spell = await prisma.spell.create({
         data: {
-            name    : name,
-            magicId   : magic
+            name    : name, 
+            magic_id: magic
         }
       })
     return spell
