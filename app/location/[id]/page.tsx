@@ -14,8 +14,8 @@ import Headquarters from '/public/icons/locations/headquarters.svg'
 import Hospital from '/public/icons/locations/hospital.svg'
 import Institution from '/public/icons/locations/institution.svg'
 import Landmark from '/public/icons/locations/landmark.svg'
-import MedicalHouse from '/public/icons/locations/medical-house.svg'
-import MountainCity from '/public/icons/locations/mountain-city.svg'
+import MedicalHouse from '/public/icons/locations/medical.svg'
+import MountainCity from '/public/icons/locations/mountown.svg'
 import Mountain from '/public/icons/locations/mountain.svg'
 import Outpost from '/public/icons/locations/outpost.svg'
 import Store from '/public/icons/locations/store.svg'
@@ -85,8 +85,8 @@ export default async function Location({
           {data.icon == 'hospital' && <Hospital className='h-full aspect-square fill-[--primary-dark]'/>}
           {data.icon == 'institution' && <Institution className='h-full aspect-square fill-[--primary-dark]'/>}
           {data.icon == 'landmark' && <Landmark className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'medical-house' && <MedicalHouse className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'mountain-city' && <MountainCity className='h-full aspect-square fill-[--primary-dark]'/>}
+          {data.icon == 'medical' && <MedicalHouse className='h-full aspect-square fill-[--primary-dark]'/>}
+          {data.icon == 'mountown' && <MountainCity className='h-full aspect-square fill-[--primary-dark]'/>}
           {data.icon == 'mountain' && <Mountain className='h-full aspect-square fill-[--primary-dark]'/>}
           {data.icon == 'outpost' && <Outpost className='h-full aspect-square fill-[--primary-dark]'/>}
           {data.icon == 'store' && <Store className='h-full aspect-square fill-[--primary-dark]'/>}
