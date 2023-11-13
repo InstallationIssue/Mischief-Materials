@@ -7,9 +7,12 @@ import ImageInput from "../form-fields/imageInput"
 import FormButtons from "../form-fields/formButtons"
 import { createScenario } from "../../prisma/scripts/scenario"
 
-const initialState = {
-  message: null,
+interface IAppState {
+  message: string;
 }
+const initialState: IAppState = {
+  message: ""
+};
 
 export default function AddScenario() {
   const [state, formAction] = useFormState(createScenario, initialState)
