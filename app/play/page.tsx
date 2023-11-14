@@ -1,14 +1,10 @@
-import { getScenarioById } from "@/prisma/scripts/api/scenario/scenario"
+import { getScenarioById } from "@/prisma/scripts/scenario"
 
 import IcelandLupin from '/public/landscapes/Iceland-Lupin.svg'
 import MistyValley from '/public/landscapes/Misty-Valley.svg'
 import NeonCity from '/public/landscapes/Neon-City.svg'
 import NightMountains from '/public/landscapes/Night-Mountains.svg'
 import SunsetDesert from '/public/landscapes/Sunset-Desert.svg'
-
-export const metadata = {
-  title: 'RiTs'
-}
 
 export default async function Play() {
     const scenario = await getScenarioById(18);

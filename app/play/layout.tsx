@@ -1,8 +1,8 @@
-import { getScenarioExtras } from "@/prisma/scripts/api/scenario/scenario"
+import { getScenarioExtras } from "@/prisma/scripts/scenario"
 
-import LocationCard from "@/app/cards/locationCard"
-import CharacterCard from "../scenario/[id]/characterCard"
-import EncounterCard from "../scenario/[id]/encounterCard"
+import LocationCard from "@/app/_cards/locationCard"
+import CharacterCard from "../(reference)/scenario/[id]/characterCard"
+import EncounterCard from "../(reference)/scenario/[id]/encounterCard"
 
 import Party from '/public/icons/sidebar/party.svg'
 import Location from '/public/icons/sidebar/location.svg'
@@ -61,9 +61,9 @@ export default async function PlayLayout({
   }
 
   return (
-    <div className='flex flex-row'>
+    <main className='flex flex-row'>
       {<Sidebar/>}
       {children}
-    </div>
+    </main>
   )
 }
