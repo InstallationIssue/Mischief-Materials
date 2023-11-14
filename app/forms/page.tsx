@@ -15,12 +15,13 @@ export default async function forms () {
         {/*<AddScenario/>
         <Divider/>*/}
         <AddLocation/>
-        <Divider/>
+        {/*<Divider/>
         <AddMonster/>
         <Divider/>
         <AddItem/>
         <Divider/>
         <AddCharacter/>
+        */}
     </div>
     )
 }

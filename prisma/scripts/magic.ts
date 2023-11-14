@@ -5,111 +5,107 @@ import { revalidatePath } from 'next/cache'
 import { z } from 'zod'
 
 // Read
-export async function getScenarios(){
-    return await prisma.scenario.findMany({
+export async function getMagics(){
+    return await prisma.magic.findMany({
         select: {
             id: true,
             name: true,
             description: true,
-            image: true
+            medium: true
         }
     })
 }
 
-export async function getScenarioById(id: number){
-    return await prisma.scenario.findUniqueOrThrow({
+export async function getMagicById(id: number){
+    return await prisma.magic.findUniqueOrThrow({
         where: {
             id: id
         },
         select: {
             name: true,
             description: true,
-            image: true,
-            locations: true,
+            medium: true
         }
     })
 }
 
-export async function getScenarioExtras(id: number){
-    return await prisma.scenario.findUniqueOrThrow({
+export async function getMagicExtras(id: number){
+    return await prisma.magic.findUniqueOrThrow({
         where: {
             id: id
         },
         select: {
-            locations: true,
-            characters: true,
-            encounters: true,
-            items: true,
-            magic: true
+            spells: true,
+            scenarios: true
         }
     })
 }
 
 // Create
-export async function createScenario(prevState: any, formData: FormData) {
+export async function createMagic(prevState: any, formData: FormData) {
     const schema = z.object({
         name: z.string(),
         description: z.string(),
-        image: z.string()
+        medium: z.string()
     })
 
     const parsed = schema.parse({
         name: formData.get('name'),
         description: formData.get('description'),
-        image: formData.get('image')
+        medium: formData.get('medium')
     })
 
     try {
-        const scenario = await prisma.scenario.create({
+        const magic = await prisma.magic.create({
             data: {
                 name: parsed.name,
                 description: parsed.description,
-                image: parsed.image
+                medium: parsed.medium
             }
         })
-        revalidatePath('/scenario')
-        return { message: `Added scenario ${scenario.id}` }
+        revalidatePath('/magic')
+        return { message: `Added magic ${magic.id}` }
     } catch (e) {
-        return { message: 'Failed to create scenario' }
+        return { message: 'Failed to create magic' }
     }
 }
 
 // Update
-export async function updateScenario(prevState: any, formData: FormData) {
+export async function updateMagic(prevState: any, formData: FormData) {
     const schema = z.object({
         id: z.number(),
         name: z.string(),
         description: z.string(),
-        image: z.string()
+        medium: z.string()
     })
 
     const parsed = schema.parse({
         id: formData.get('id'),
         name: formData.get('name'),
         description: formData.get('description'),
-        image: formData.get('image')
+        medium: formData.get('medium')
     })
     
     try {
-        const scenario = await prisma.scenario.update({
+        const magic = await prisma.magic.update({
             where: {
                 id: parsed.id
             },
             data: {
                 name: parsed.name,
                 description: parsed.description,
-                image: parsed.image
+                medium: parsed.medium
             }
         })
-        revalidatePath('/scenario')
-        return { message: `Updated scenario ${scenario.id}` }
+        revalidatePath('/magic')
+        return { message: `Updated magic ${magic.id}` }
     } catch (e) {
-        return { message: 'Failed to update scenario' }
+        return { message: 'Failed to update magic' }
     }
 }
 
 // Delete
-export async function deleteScenario(prevState: any, formData: FormData){
+export async function deleteMagic(prevState: any, formData: FormData){
     const schema = z.object({
         id: z.number()
     })
@@ -119,14 +115,14 @@ export async function deleteScenario(prevState: any, formData: FormData){
     })
     
     try {
-        const scenario = await prisma.scenario.delete({
+        const magic = await prisma.magic.delete({
             where: {
                 id: parsed.id
             }
         })
-        revalidatePath('/scenario')
-        return { message: `Deleted scenario ${parsed.id}` }
+        revalidatePath('/magic')
+        return { message: `Deleted magic ${parsed.id}` }
     } catch (e) {
-        return { message: 'Failed to delete scenario' }
+        return { message: 'Failed to delete magic' }
     }
 }

@@ -19,7 +19,7 @@ export default function SingleLineText ({
             <div className="grow shrink basis-0 flex-col justify-start items-start gap-1 inline-flex">
                 <label className='grow shrink basis-0 capitalize flex flex-col gap-1 self-stretch justify-start items-start '>
                     {id}
-                    <input id={id} name={name} type="text" placeholder={`Enter ${id}`} className='bg-transparent'/>
+                    <input id={id} name={name} type="text" placeholder={`Enter ${id}`} className='bg-transparent self-stretch active:border-none'/>
                 </label>
             </div>
             {showRandom && (

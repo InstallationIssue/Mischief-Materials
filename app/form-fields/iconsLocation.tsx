@@ -1,27 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-
-import Boat from '/public/icons/locations/boat.svg'
-import Building from '/public/icons/locations/building.svg'
-import Campground from '/public/icons/locations/campground.svg'
-import City from '/public/icons/locations/city.svg'
-import Dungeon from '/public/icons/locations/dungeon.svg'
-import Entrance from '/public/icons/locations/entrance.svg'
-import Factory from '/public/icons/locations/factory.svg'
-import Headquarters from '/public/icons/locations/headquarters.svg'
-import Hospital from '/public/icons/locations/hospital.svg'
-import Institution from '/public/icons/locations/institution.svg'
-import Landmark from '/public/icons/locations/landmark.svg'
-import Medical from '/public/icons/locations/medical.svg'
-import Mountown from '/public/icons/locations/mountown.svg'
-import Mountain from '/public/icons/locations/mountain.svg'
-import Outpost from '/public/icons/locations/outpost.svg'
-import Store from '/public/icons/locations/store.svg'
-import Tent from '/public/icons/locations/tent.svg'
-import Volcano from '/public/icons/locations/volcano.svg'
-import Warehouse from '/public/icons/locations/warehouse.svg'
-import Worship from '/public/icons/locations/worship.svg'
+import RadioInput from './radioInput'
 
 export default function IconsLocation ({
     id, name
@@ -32,55 +12,27 @@ export default function IconsLocation ({
     const [icon, setIcon] = useState('building')
 
     return (
-        <div className="w-96 px-5 py-2.5 rounded-lg justify-between items-center inline-flex">
-            <label htmlFor={name}></label>
-            <select id={id} name={name} value={icon} onChange={(e) => {
-                e.preventDefault() 
-                setIcon(e.target.value)
-                }}>
-                <input type='radio' value='boat'></input>
-                <option>building</option>
-                <option>campground</option>
-                <option>city</option>
-                <option>dungeon</option>
-                <option>entrance</option>
-                <option>factory</option>
-                <option>headquarters</option>
-                <option>hospital</option>
-                <option>institution</option>
-                <option>landmark</option>
-                <option>medical</option>
-                <option>mountown</option>
-                <option>mountain</option>
-                <option>outpost</option>
-                <option>store</option>
-                <option>tent</option>
-                <option>volcano</option>
-                <option>warehouse</option>
-                <option>worship</option>
-            </select>
-            <span className="flex flex-row flex-wrap gap-3 icon justify-between">
-                <Boat className="h-8"/>
-                <Building className="h-8"/>
-                <Campground className="h-8"/>
-                <City className="h-8"/>
-                <Dungeon className="h-8"/>
-                <Entrance className="h-8"/>
-                <Factory className="h-8"/>
-                <Headquarters className="h-8"/>
-                <Hospital className="h-8"/>
-                <Institution className="h-8"/>
-                <Landmark className="h-8"/>
-                <Medical className="h-8"/>
-                <Mountown className="h-8"/>
-                <Mountain className="h-8"/>
-                <Outpost className="h-8"/>
-                <Store className="h-8"/>
-                <Tent className="h-8"/>
-                <Volcano className="h-8"/>
-                <Warehouse className="h-8"/>
-                <Worship className="h-8"/>
-            </span>
+        <div className="w-96 px-5 py-2.5 rounded-lg justify-between items-center flex flex-row flex-wrap">
+            <RadioInput id={icons[0]} name={'location'}/>
+            <RadioInput id={icons[1]} name={'location'}/>
+            <RadioInput id={icons[2]} name={'location'}/>
+            <RadioInput id={icons[3]} name={'location'}/>
+            <RadioInput id={icons[4]} name={'location'}/>
+            <RadioInput id={icons[5]} name={'location'}/>
+            <RadioInput id={icons[6]} name={'location'}/>
+            <RadioInput id={icons[7]} name={'location'}/>
+            <RadioInput id={icons[8]} name={'location'}/>
+            <RadioInput id={icons[9]} name={'location'}/>
+            <RadioInput id={icons[10]} name={'location'}/>
+            <RadioInput id={icons[11]} name={'location'}/>
+            <RadioInput id={icons[12]} name={'location'}/>
+            <RadioInput id={icons[13]} name={'location'}/>
+            <RadioInput id={icons[14]} name={'location'}/>
+            <RadioInput id={icons[15]} name={'location'}/>
+            <RadioInput id={icons[16]} name={'location'}/>
+            <RadioInput id={icons[17]} name={'location'}/>
+            <RadioInput id={icons[18]} name={'location'}/>
+            <RadioInput id={icons[19]} name={'location'}/>
         </div>
     )
 }
