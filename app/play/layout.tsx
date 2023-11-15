@@ -4,12 +4,12 @@ import LocationCard from "@/app/_cards/locationCard"
 import CharacterCard from "../(reference)/scenario/[id]/characterCard"
 import EncounterCard from "../(reference)/scenario/[id]/encounterCard"
 
-import Party from '/public/icons/sidebar/party.svg'
-import Location from '/public/icons/sidebar/location.svg'
-import Npc from '/public/icons/sidebar/npc.svg'
-import Monster from '/public/icons/sidebar/monster.svg'
-import Items from '/public/icons/sidebar/items.svg'
-import Magic from '/public/icons/sidebar/magic.svg'
+import Party from '/public/icons/beings/party.svg'
+import Location from '/public/icons/locations/location.svg'
+import Npc from '/public/icons/beings/npc.svg'
+import Monster from '/public/icons/beings/monster.svg'
+import Items from '/public/icons/items/items.svg'
+import Magic from '/public/icons/magic/magic.svg'
   
 export default async function PlayLayout({
   children,

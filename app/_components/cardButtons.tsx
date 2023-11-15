@@ -1,8 +1,8 @@
 'use client'
 
-import Play from '/public/icons/system/action-play.svg'
-import Edit from '/public/icons/system/action-edit.svg'
-import Delete from '/public/icons/system/action-bin.svg'
+import Play from '/public/icons/system/play.svg'
+import Edit from '/public/icons/system/edit.svg'
+import Delete from '/public/icons/system/delete.svg'
 
 import { redirect } from 'next/navigation'
 

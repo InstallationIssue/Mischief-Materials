@@ -1,9 +1,9 @@
-import Weak from '/public/icons/monsters/size-1.svg'
-import Typical from '/public/icons/monsters/size-2.svg'
-import Tough from '/public/icons/monsters/size-3.svg'
-import Hulking from '/public/icons/monsters/size-4.svg'
-import Colossal from '/public/icons/monsters/size-5.svg'
-import Gargantuan from '/public/icons/monsters/size-final.svg'
+import Weak from '/public/icons/beings/size-1.svg'
+import Typical from '/public/icons/beings/size-2.svg'
+import Tough from '/public/icons/beings/size-3.svg'
+import Hulking from '/public/icons/beings/size-4.svg'
+import Colossal from '/public/icons/beings/size-5.svg'
+import Gargantuan from '/public/icons/beings/size-final.svg'
 
 export default function IconsSize ({
   id

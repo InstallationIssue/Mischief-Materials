@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Plus from "/public/icons/system/clean-plus.svg"
+import Plus from "/public/icons/system/plus.svg"
 
 export default function Header ({
     title, link
