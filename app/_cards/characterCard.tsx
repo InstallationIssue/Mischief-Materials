@@ -28,19 +28,19 @@ export default async function CharacterCard({
                     <p className="line-clamp-1 text-clip">{character.name}</p>
                     <div className="flex items-center gap-3 self-stretch">
                     <div className='flex flex-row gap-1 items-center'>
-                        <Strength className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                        <Strength className='aspect-square h-5 fill-primary-light cursor-pointer'/>
                         <p>{character.str}</p>
                     </div>
                     <div className='flex flex-row gap-1 items-center'>
-                        <Dexterity className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                        <Dexterity className='aspect-square h-5 fill-primary-light cursor-pointer'/>
                         <p>{character.dex}</p>
                     </div>
                     <div className='flex flex-row gap-1 items-center'>
-                        <Willpower className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                        <Willpower className='aspect-square h-5 fill-primary-light cursor-pointer'/>
                         <p>{character.wil}</p>
                     </div>
                     <div className='flex flex-row gap-1 items-center'>
-                        <Attack className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                        <Attack className='aspect-square h-5 fill-primary-light cursor-pointer'/>
                         <p>{character.att}</p>
                     </div>
                 </div>

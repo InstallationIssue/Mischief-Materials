@@ -18,7 +18,7 @@ export default function HealthCircle ({
         <div className='flex rounded-full aspect-square h-5/6 items-center justify-center bg-[--primary-light]'>
             <p>{health}</p>
         </div>
-        <Armor className='z-10 absolute left-0 bottom-0 h-2/5 fill-[--primary-dark]'/>
+        <Armor className='z-10 absolute left-0 bottom-0 h-2/5 fill-primary-light'/>
         <p>{params.armor}</p>
       </div>
     )

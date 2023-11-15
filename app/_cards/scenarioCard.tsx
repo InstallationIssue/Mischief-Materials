@@ -16,7 +16,7 @@ export default async function ScenarioCard({
   image: string
 }) {
     return (
-      <Link href={`/scenario/${id}`} className="flex flex-col border rounded-lg overflow-clip relative justify-end">
+      <Link href={`/scenario/${id}`} className="flex flex-col border rounded-lg overflow-clip relative justify-end fill-primary-light">
           {image == 'IcelandLupin' && <IcelandLupin className='w-60'/>}
           {image == 'MistyValley' && <MistyValley className='w-60'/>}
           {image == 'NeonCity' && <NeonCity className='w-60'/>}

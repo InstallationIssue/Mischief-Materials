@@ -31,7 +31,7 @@ export default async function LocationCard({
     const location = await getLocationById(id);
 
     return (
-        <Link href={`/location/${id}`} className="flex flex-row items-center border rounded-lg p-2 gap-2 w-72 h-12">
+        <Link href={`/location/${id}`} className="flex flex-row items-center border rounded-lg p-2 gap-2 w-72 h-12 fill-primary-light">
           <svg className="h-full aspect-square" fill={location.color} viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="40"></circle>
           </svg>

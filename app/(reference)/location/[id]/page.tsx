@@ -74,26 +74,26 @@ export default async function Location({
           <svg className="h-full aspect-square" fill={data.color} viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="40"></circle>
           </svg>
-          {data.icon == 'boat' && <Boat className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'building' && <Building className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'campground' && <Campground className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'city' && <City className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'dungeon' && <Dungeon className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'entrance' && <Entrance className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'factory' && <Factory className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'headquarters' && <Headquarters className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'hospital' && <Hospital className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'institution' && <Institution className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'landmark' && <Landmark className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'medical' && <MedicalHouse className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'mountown' && <MountainCity className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'mountain' && <Mountain className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'outpost' && <Outpost className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'store' && <Store className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'tent' && <Tent className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'volcano' && <Volcano className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'warehouse' && <Warehouse className='h-full aspect-square fill-[--primary-dark]'/>}
-          {data.icon == 'worship' && <Worship className='h-full aspect-square fill-[--primary-dark]'/>}
+          {data.icon == 'boat' && <Boat className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'building' && <Building className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'campground' && <Campground className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'city' && <City className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'dungeon' && <Dungeon className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'entrance' && <Entrance className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'factory' && <Factory className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'headquarters' && <Headquarters className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'hospital' && <Hospital className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'institution' && <Institution className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'landmark' && <Landmark className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'medical' && <MedicalHouse className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'mountown' && <MountainCity className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'mountain' && <Mountain className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'outpost' && <Outpost className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'store' && <Store className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'tent' && <Tent className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'volcano' && <Volcano className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'warehouse' && <Warehouse className='h-full aspect-square fill-primary-light'/>}
+          {data.icon == 'worship' && <Worship className='h-full aspect-square fill-primary-light'/>}
           <span className="flex-grow whitespace-nowrap overflow-clip">
             <p className="capitalize">{data.name}</p>
           </span>

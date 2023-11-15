@@ -41,30 +41,30 @@ export default function AlertMonster ({
             <p>{params.name}</p>
             <div className="flex items-center gap-3 self-stretch">
               <div>
-                <Strength className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <Strength className='aspect-square h-5 fill-primary-light cursor-pointer'/>
                 <p>{params.str}</p>
               </div>
               <div>
-                <Dexterity className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <Dexterity className='aspect-square h-5 fill-primary-light cursor-pointer'/>
                 <p>{params.dex}</p>
               </div>
               <div>
-                <Willpower className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <Willpower className='aspect-square h-5 fill-primary-light cursor-pointer'/>
                 <p>{params.wil}</p>
               </div>
               <div>
-                <Attack className='aspect-square h-5 fill-[--primary-dark] cursor-pointer'/>
+                <Attack className='aspect-square h-5 fill-primary-light cursor-pointer'/>
                 <p>{params.attack}</p>
               </div>
             </div>
           </div>
         </div>
-        {params.size == 'Weak' && <Weak className='h-full aspect-square fill-[--primary-dark]'/>}
-        {params.size == 'Typical' && <Typical className='h-full aspect-square fill-[--primary-dark]'/>}
-        {params.size == 'Tough' && <Tough className='h-full aspect-square fill-[--primary-dark]'/>}
-        {params.size == 'Hulking' && <Hulking className='h-full aspect-square fill-[--primary-dark]'/>}
-        {params.size == 'Colossal' && <Colossal className='h-full aspect-square fill-[--primary-dark]'/>}
-        {params.size == 'Boss' && <Boss className='h-full aspect-square fill-[--primary-dark]'/>}
+        {params.size == 'Weak' && <Weak className='h-full aspect-square fill-primary-light'/>}
+        {params.size == 'Typical' && <Typical className='h-full aspect-square fill-primary-light'/>}
+        {params.size == 'Tough' && <Tough className='h-full aspect-square fill-primary-light'/>}
+        {params.size == 'Hulking' && <Hulking className='h-full aspect-square fill-primary-light'/>}
+        {params.size == 'Colossal' && <Colossal className='h-full aspect-square fill-primary-light'/>}
+        {params.size == 'Boss' && <Boss className='h-full aspect-square fill-primary-light'/>}
       </div>
     )
 }
