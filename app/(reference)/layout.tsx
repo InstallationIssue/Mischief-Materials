@@ -1,9 +1,11 @@
+'use client'
 import Link from "next/link"
-import React from 'react'
 import Logo from '/public/icons/logo.svg'
+import { useState, useContext } from "react"
 import { PlayButton } from '../_components/playButton'
 
 function TopNav () {
+  const [scenario, setScenario] = useState('')
 
   return (
     <nav className='flex flex-row justify-between items-center px-2 h-12 border-b-2 border-white'>

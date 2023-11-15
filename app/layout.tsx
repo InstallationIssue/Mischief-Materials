@@ -1,8 +1,6 @@
-'use client'
 import './globals.css'
 import { Roboto, Play, Notable, Libre_Barcode_39_Text } from 'next/font/google'
 import React from 'react'
-import { useState, useContext } from "react"
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -38,7 +36,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [scenario, setScenario] = useState('')
 
   return (
       <html lang="en">
