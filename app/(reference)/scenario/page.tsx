@@ -10,7 +10,7 @@ export default async function Scenario(){
     const data = await getScenarios()
 
     return (
-            <div className="flex flex-row flex-wrap gap-6 justify-evenly">
+            <div className="flex flex-row flex-wrap">
                 {data.map((id) => (
                     <Card key={id.id} id={id.id} name={id.name} description={id.description} image={id.image}
                     />

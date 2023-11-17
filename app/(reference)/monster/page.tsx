@@ -8,7 +8,7 @@ export default async function Monster(){
     return (
         <div>
             <Header title="Monsters" link="/monster/add"></Header>
-            <div className="flex flex-row flex-wrap gap-4">
+            <div className="flex flex-row flex-wrap">
                 {data.map((id, index) => (
                     <MonsterCard key={id.id} id={id.id}/>
                 ))}

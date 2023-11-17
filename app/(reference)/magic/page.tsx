@@ -8,7 +8,7 @@ export default async function Page() {
     return (
         <div>
             <Header title="Magics" link="/magic/add"></Header>
-            <div className="flex flex-row flex-wrap gap-4">
+            <div className="flex flex-row flex-wrap">
                 {data.map((id, index) => (
                     <MagicCard key={id.id} id={id.id}/>
                 ))}

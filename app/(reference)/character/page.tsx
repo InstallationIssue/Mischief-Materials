@@ -8,7 +8,7 @@ export default async function Character(){
     return (
         <div>
             <Header title="Characters" link="/character/add"></Header>
-            <div className="flex flex-row flex-wrap gap-4">
+            <div className="flex flex-row flex-wrap">
                 {data.map((id, index) => (
                     <PlayerCard key={id.id} id={id.id}/>
                 ))}

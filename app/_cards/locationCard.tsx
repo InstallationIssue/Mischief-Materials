@@ -35,7 +35,8 @@ export default async function LocationCard({
     const location = await getLocationById(id);
 
     return (
-        <Link href={`/location/${id}`} className="flex flex-row items-center border rounded-lg p-2 gap-2 w-72 h-12 fill-primary-light">
+      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-1/6 p-2">
+        <Link href={`/location/${id}`} className="flex flex-row items-center border rounded-lg p-2 gap-2 h-12 fill-primary-light">
           <svg className="h-full aspect-square" fill={location.color} viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="40"></circle>
           </svg>
@@ -67,5 +68,6 @@ export default async function LocationCard({
           {location.icon == 'warehouse' && <Warehouse className='h-full aspect-square fill-primary-light'/>}
           {location.icon == 'worship' && <Worship className='h-full aspect-square fill-primary-light'/>}
         </Link>
+      </div>
     )
 }

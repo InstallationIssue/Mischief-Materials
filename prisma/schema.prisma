@@ -32,8 +32,9 @@ model Location {
 }
 
 model Event {
-  id   Int    @id @default(autoincrement())
-  name String @unique
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  description String
 }
 
 model Character {
@@ -67,6 +68,7 @@ model Character {
   relationships   Relationship[]
   scenarios       Scenario[]
   items           Item[]
+  path            PathInstance[]
 }
 
 model Relationship {
@@ -75,6 +77,22 @@ model Relationship {
   description  String    @default("")
   character    Character @relation(fields: [character_id], references: [id])
   character_id Int
+}
+
+model Path {
+  id          Int            @id @default(autoincrement())
+  name        String         @default("")
+  description String         @default("")
+  character   PathInstance[]
+}
+
+model PathInstance {
+  id           Int       @id @default(autoincrement())
+  character    Character @relation(fields: [character_id], references: [id])
+  character_id Int
+  path         Path      @relation(fields: [path_id], references: [id])
+  path_id      Int
+  health_lost  Int       @default(0)
 }
 
 model Monster {
@@ -132,6 +150,7 @@ model Magic {
   name        String     @unique
   description String     @default("")
   medium      String     @default("magic")
+  induction   String     @default("")
   spells      Spell[]
   scenarios   Scenario[]
 }
