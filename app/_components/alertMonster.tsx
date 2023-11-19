@@ -31,12 +31,10 @@ export default function AlertMonster ({
     return (
       <div className="flex flex-row justify-center items-start self-stretch rounded-md border w-80 p-2 h-20 border-primary-dark">
         <div className="flex flex-grow justify-center items-start self-stretch gap-2">
-          <HealthCircle params={{
-            health_max: params.health_max,
-            health_lost: params.health_lost,
-            armor: params.armor,
-            dimensions: 64
-          }}></HealthCircle>
+          <HealthCircle
+            health_max={params.health_max}
+            health_lost={params.health_lost}
+            armor={params.armor}/>
           <div className="flex flex-col flex-grow self-stretch justify-between">
             <p>{params.name}</p>
             <div className="flex items-center gap-3 self-stretch">
