@@ -1,4 +1,5 @@
 import { Prisma } from "@prisma/client"
+import { getRandomValues } from "crypto"
 
 const CIVILIZED_JOBS = [
     "Acolyte", "Actor", "Apothecary", "Baker", "Barber", "Blacksmith",
@@ -348,7 +349,11 @@ const MONSTER_SIZES = ['Weak', 'Typical', 'Tough', 'Hulking', 'Colossal']
 const HEALTH_WEIGHTING = [1,2,3,4,6]
 
 // Num Generator
-function num (num: number){return Math.floor(Math.random()*num)}
+function num (num: number){
+    var buf = new Uint8Array(1);
+    getRandomValues(buf)[0]/2**32;
+    return Math.floor(buf[0]/2**32*num)
+}
 
 // Job Getters
 export function getJobCivilised() {return CIVILIZED_JOBS[num(CIVILIZED_JOBS.length)]}
@@ -458,7 +463,7 @@ export function randNobleName (){
 
 export function monsterAbilities (){
     let power = num(20);
-    let attribute_weight = Array.from({length:4}, () => Math.random())
+    let attribute_weight = Array.from({length:4}, () => num(100))
     let total = attribute_weight.reduce((a,b)=> a+b, 0)
     let attributes = [power, 0, 0, 0, 0]
 
