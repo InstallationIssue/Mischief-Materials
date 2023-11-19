@@ -1,53 +1,47 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-import Link from "next/link"
+import { Roboto, Play, Notable, Libre_Barcode_39_Text } from 'next/font/google'
 import React from 'react'
-import Logo from '/public/icons/logo.svg'
-import Play from '/public/icons/system/action-play.svg'
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto({
+  weight: ['400', '700'],
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-roboto'
+})
 
-export const metadata = {
-  title: 'Rats in Transit',
-  description: 'Maze Rats Assistant'
-}
+const play = Play({
+  weight: ['400', '700'],
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-play'
+})
 
-function TopNav () {
-  return (
-    <nav className='flex flex-row justify-between items-center px-2 h-12 border-b-2 border-white'>
-      <Link className='nav-link' href={'/foundation'}>
-        <Logo className="w-8"/>
-      </Link>
+const notable = Notable({
+  weight: '400',
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-notable'
+})
 
-      <Link className="play" href={'/play'}>
-        <h4 className='line-clamp-1 leading-loose'>Ark of Cognizance</h4>
-        <Play className="h-full"/>
-      </Link>
+const libre = Libre_Barcode_39_Text({
+  weight: '400',
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-libre'
+})
 
-      <div className='flex flex-row items-center h-full'>
-        <Link href="/scenario" className="nav-link">Scenarios</Link>
-        <Link href="/location" className="nav-link">Locations</Link>
-        <Link href="/character" className="nav-link">Players</Link>
-        <Link href="/character" className="nav-link">NPCs</Link>
-        <Link href="/monster" className="nav-link">Monsters</Link>
-        <Link href="/item" className="nav-link">Items</Link>
-        <Link href="/magic" className="nav-link">Magic</Link>
-      </div>
-    </nav>
-  )
-}
   
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
   return (
-    <html lang="en">
-        <body className={inter.className}>
-          <TopNav/>
-          <main>{children}</main>
+      <html lang="en">
+        <body className={`flex flex-col text-primary-dark dark:fill-primary-light dark:text-primary-light dark:bg-primary-dark ${roboto.variable} ${play.variable} ${notable.variable} ${libre.variable}`}>
+          {children}
         </body>
-    </html>
+      </html>
   )
 }

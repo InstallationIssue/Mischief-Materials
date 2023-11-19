@@ -1,52 +1,31 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
-import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
-  title: 'RiT Home',
+  title: 'RiTs Home',
 }
 
 export default function Page() {
-  
-  //Temp
-  redirect('/foundation')
-  //Temp
-  
+  process.title = 'RiTs Home'
+
   return (
-    <div className='flex flex-row justify-evenly w-full h-5/6 items-center'>
-      <Link href='campaign/all' className='rounded-full flex flex-col items-center
-      aspect-square w-1/3 m-2 text-center justify-center
-      border-2 border-slate-300 bg-opacity-70 bg-vermillion'>
-        <Image
-          src="/images/note-with-pen.svg"
-          alt="Vercel Logo"
-          className="w-2/3"
-          width={200}
-          height={200}
-          priority
-        />
-        <h1 className='absolute font-mono font-bold text-2xl 
-        bg-slate-800 bg-opacity-70 rounded-lg p-2'>
-          Dungeon Master
-        </h1>
-      </Link>
-      <Link href='character/all' className='rounded-full flex flex-col items-center
-      aspect-square w-1/3 bg-teal-800 m-2 text-center justify-center
-      border-2 border-slate-300 bg-opacity-70 bg-pale-azure'>
-        <Image
-          src="/images/sword.svg"
-          alt="Vercel Logo"
-          className="w-2/3"
-          width={200}
-          height={200}
-          priority
-        />
-        <h1 className='absolute font-mono font-bold text-2xl 
-        bg-slate-800 bg-opacity-70 rounded-lg p-2'>
-          Character
-        </h1>
-      </Link>
+    <div className='flex flex-col items-center w-full'>
+      <span className='flex flex-row w-full justify-center'>
+        <p>Rats in Transit</p>
+      </span>
+      <p className='w-2/3'>Welcome to my Rats in Transit Web app. This is designed to be a companion app to the table top game maze rats. Please choose either of the options below to begin playing</p>
+      <div className='flex flex-row justify-center w-full items-center my-4'>
+        <Link href='/scenario' className=' rounded-s-full flex flex-col items-center h-40 text-center justify-center border-2 border-slate-300 bg-opacity-70 bg-vermillion px-4'>
+          <p>
+            Dungeon Master
+          </p>
+        </Link>
+        <Link href='/character' className='rounded-e-full flex flex-col items-center h-40 bg-teal-800 text-center justify-center border-2 border-slate-300 border-s-0 bg-opacity-70 bg-pale-azure px-4'>
+          <p>
+            Character
+          </p>
+        </Link>
+      </div>
     </div>
   )
 }

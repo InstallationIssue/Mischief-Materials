@@ -1,5 +1,10 @@
-import prisma from "./main"
+'use server'
 
+import prisma from './db'
+import { revalidatePath } from 'next/cache'
+import { z } from 'zod'
+
+// Read
 export async function getMonsters(){
     return await prisma.monster.findMany({
         select: {
@@ -7,7 +12,6 @@ export async function getMonsters(){
             name        : true,
             background  : true, 
             health_max  : true,
-            health_lost : true,
             armor       : true,
             str         : true,
             dex         : true,
@@ -16,49 +20,6 @@ export async function getMonsters(){
             attack      : true,
         }
     })
-}
-
-export async function createMonster(name: string, background: string,
-    str = 0, dex = 0, wil = 0, armor = 6, size = "Typical", attack = 0){
-
-    const monster = await prisma.monster.create({
-        data: {
-            name        : name,
-            background  : background,
-            health_max  : 4,
-            health_lost : 0,
-            armor       : armor,
-            str         : str,
-            dex         : dex,
-            wil         : wil,
-            size        : size,
-            attack      : attack
-        }
-      })
-    return monster
-}
-
-export async function updateMonster(id: number, name?: string, background?: string,
-    armor?: number, str?: number, dex?: number, wil?: number, size?: string, attack?: number
-    ) {
-    const monster = await prisma.monster.update({
-        where: {
-            id: id
-        },
-        data: {
-            name        : name,
-            background  : background,
-            health_max  : 4,
-            health_lost : 0,
-            armor       : armor,
-            str         : str,
-            dex         : dex,
-            wil         : wil,
-            size        : size,
-            attack      : attack
-        }
-    })
-    return monster
 }
 
 export async function getMonsterById(id: number){
@@ -70,34 +31,168 @@ export async function getMonsterById(id: number){
             name        : true,
             background  : true, 
             health_max  : true,
-            health_lost : true,
             armor       : true,
             str         : true,
             dex         : true,
             wil         : true,
             size        : true,
             attack      : true,
+            tactics     : true,
+            personality : true,
+            weakness    : true
         }
     })
 }
 
-export async function deleteMonster(id: number){
-    return await prisma.monster.delete({
-        where: {
-            id: id
-        }
-    })
-}
-
-//Check for no health
-export async function LoseHealth(id: number, health_lost: number) {
-    const monster = await prisma.monster.update({
+export async function getMonsterExtras(id: number){
+    return await prisma.monster.findUniqueOrThrow({
         where: {
             id: id
         },
-        data: {
-            health_lost: health_lost
+        select: {
+            tactics: true,
+            personality: true,
+            weakness: true
         }
     })
-    return monster
+}
+
+// Create
+export async function createMonster(prevState: any, formData: FormData) {
+    const schema = z.object({
+        name: z.string(),
+        background: z.string(),
+        health_max: z.number(),
+        armor: z.number(),
+        str: z.number(),
+        dex: z.number(),
+        wil: z.number(),
+        attack: z.number(),
+        size: z.string(),
+        tactics: z.string(),
+        personality: z.string(),
+        weakness: z.string()
+    })
+
+    const parsed = schema.parse({
+        name: formData.get('name'),
+        description: formData.get('description'),
+        health_max: formData.get('health_max'),
+        armor: formData.get('armor'),
+        str: formData.get('str'),
+        dex: formData.get('dex'),
+        wil: formData.get('wil'),
+        attack: formData.get('attack'),
+        size: formData.get('size'),
+        tactics: formData.get('tactics'),
+        personality: formData.get('personality'),
+        weakness: formData.get('weakness'),
+    })
+
+    try {
+        const monster = await prisma.monster.create({
+            data: {
+                name        : parsed.name,
+                background  : parsed.background,
+                health_max  : parsed.health_max,
+                armor       : parsed.armor,
+                str         : parsed.str,
+                dex         : parsed.dex,
+                wil         : parsed.wil,
+                size        : parsed.size,
+                attack      : parsed.attack,
+                tactics     : parsed.tactics,
+                personality : parsed.personality,
+                weakness    : parsed.weakness
+            }
+          })
+        revalidatePath('/monster')
+        return { message: `Added monster ${monster.id}` }
+    } catch (e) {
+        return { message: 'Failed to create monster' }
+    }
+}
+
+// Update
+export async function updateMonster(prevState: any, formData: FormData) {
+    const schema = z.object({
+        id: z.number(),
+        name: z.string(),
+        background: z.string(),
+        health_max: z.number(),
+        armor: z.number(),
+        str: z.number(),
+        dex: z.number(),
+        wil: z.number(),
+        attack: z.number(),
+        size: z.string(),
+        tactics: z.string(),
+        personality: z.string(),
+        weakness: z.string()
+    })
+
+    const parsed = schema.parse({
+        id: formData.get('id'),
+        name: formData.get('name'),
+        description: formData.get('description'),
+        health_max: formData.get('health_max'),
+        armor: formData.get('armor'),
+        str: formData.get('str'),
+        dex: formData.get('dex'),
+        wil: formData.get('wil'),
+        attack: formData.get('attack'),
+        size: formData.get('size'),
+        tactics: formData.get('tactics'),
+        personality: formData.get('personality'),
+        weakness: formData.get('weakness'),
+    })
+    
+    try {
+        const monster = await prisma.monster.update({
+            where: {
+                id: parsed.id
+            },
+            data: {
+                name        : parsed.name,
+                background  : parsed.background,
+                health_max  : parsed.health_max,
+                armor       : parsed.armor,
+                str         : parsed.str,
+                dex         : parsed.dex,
+                wil         : parsed.wil,
+                size        : parsed.size,
+                attack      : parsed.attack,
+                tactics     : parsed.tactics,
+                personality : parsed.personality,
+                weakness    : parsed.weakness
+            }
+        })
+        revalidatePath('/monster')
+        return { message: `Updated monster ${monster.id}` }
+    } catch (e) {
+        return { message: 'Failed to update monster' }
+    }
+}
+
+// Delete
+export async function deleteMonster(prevState: any, formData: FormData){
+    const schema = z.object({
+        id: z.number()
+    })
+
+    const parsed = schema.parse({
+        id: formData.get('id')
+    })
+    
+    try {
+        const monster = await prisma.monster.delete({
+            where: {
+                id: parsed.id
+            }
+        })
+        revalidatePath('/monster')
+        return { message: `Deleted monster ${parsed.id}` }
+    } catch (e) {
+        return { message: 'Failed to delete monster' }
+    }
 }

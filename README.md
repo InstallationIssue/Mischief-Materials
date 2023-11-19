@@ -4,7 +4,6 @@ This is a hobby web app created to assist with running sessions of the Tabletop 
 
 View the prod deployment on [Vercel](https://rats-in-transit.vercel.app/)
 
-
 ## Resources
 
 To learn more about Next.js, take a look at the following resources:
@@ -26,6 +25,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - [Colour Generator](https://coolors.co/)
 - [React API Reference](https://react.dev/reference/react)
 - [Font Reference](https://developers.google.com/fonts/docs/css2)
+- [Animation Refrence](https://www.framer.com/motion/)
 
 ### Database Resources
 
@@ -49,3 +49,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Vercel Deployment
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Useful Commands
+
+```bash
+npx prisma studio # Opens prisma studio
+
+npx prisma migrate dev # Updates database
+
+sqlite3 dev.db # Navigate to /prisma directory opens database with sqlite3 cli
+
+.output ./output.sql
+.dump table # Optional, ignore table to dump full database
+.exit # Outputs DB to file
+```
+
+For VS Code
+command [ ] - indenting
+command k command 0 - fold all
