@@ -16,7 +16,7 @@ import Hulking from '/public/icons/beings/size-4.svg'
 import Colossal from '/public/icons/beings/size-5.svg'
 import Boss from '/public/icons/beings/size-final.svg'
 
-export default async function MonsterCard ({
+export default function MonsterCard ({
     id, name, health_max, health_lost, armor, str, dex, wil, att, size
   }: { 
     id: number, name: string, health_max: number, health_lost: number, armor: number, str: number, dex: number, wil: number, att: number, size: string

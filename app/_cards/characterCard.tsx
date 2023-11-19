@@ -9,7 +9,7 @@ import Dexterity from '/public/icons/stats/dexterity.svg'
 import Willpower from '/public/icons/stats/willpower.svg'
 import Attack from '/public/icons/stats/attack.svg'
 
-export default async function CharacterCard({
+export default function CharacterCard({
     id, name, health_max, health_lost, armor, str, dex, wil, att
   }: {
     id: number, name: string, health_max: number, health_lost: number, armor: number, str: number, dex: number, wil: number, att: number
