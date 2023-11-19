@@ -4,7 +4,6 @@ This is a hobby web app created to assist with running sessions of the Tabletop 
 
 View the prod deployment on [Vercel](https://rats-in-transit.vercel.app/)
 
-
 ## Resources
 
 To learn more about Next.js, take a look at the following resources:
@@ -26,6 +25,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - [Colour Generator](https://coolors.co/)
 - [React API Reference](https://react.dev/reference/react)
 - [Font Reference](https://developers.google.com/fonts/docs/css2)
+- [Animation Refrence](https://www.framer.com/motion/)
 
 ### Database Resources
 

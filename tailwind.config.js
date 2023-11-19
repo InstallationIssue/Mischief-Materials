@@ -56,7 +56,6 @@ module.exports = {
         notable: ['var(--font-notable)'],
         libre: ['var(--font-libre)'],
       },
-      
     },
   },
   plugins: [],

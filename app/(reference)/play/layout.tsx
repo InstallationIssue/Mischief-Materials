@@ -1,8 +1,8 @@
 import { getScenarioExtras } from "@/prisma/scripts/scenario"
 
 import LocationCard from "@/app/_cards/locationCard"
-import CharacterCard from "../(reference)/scenario/[id]/characterCard"
-import EncounterCard from "../(reference)/scenario/[id]/encounterCard"
+import CharacterCard from "../scenario/[id]/characterCard"
+import EncounterCard from "../scenario/[id]/encounterCard"
 
 import Party from '/public/icons/beings/party.svg'
 import Location from '/public/icons/locations/location.svg'
