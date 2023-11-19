@@ -28,17 +28,20 @@ export async function getEventById(id: number){
 // Create
 export async function createEvent(prevState: any, formData: FormData) {
     const schema = z.object({
-        name: z.string()
+        name: z.string(),
+        description: z.string()
     })
 
     const parsed = schema.parse({
-        name: formData.get('name')
+        name: formData.get('name'),
+        description: formData.get('description')
     })
 
     try {
         const event = await prisma.event.create({
             data: {
-                name: parsed.name
+                name: parsed.name,
+                description: parsed.description
             }
         })
         revalidatePath('/event')
