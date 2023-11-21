@@ -1,6 +1,6 @@
 import Dice from '/public/icons/system/dice.svg'
-import Check from '/public/icons/system/clean-check.svg'
-import Xmark from '/public/icons/system/clean-xmark.svg'
+import Check from '/public/icons/system/check.svg'
+import Xmark from '/public/icons/system/xmark.svg'
 
 export default function FormButtons ({
     showRandom = true
@@ -8,7 +8,7 @@ export default function FormButtons ({
     showRandom: boolean
 }) {
     return (
-        <div className="flex flex-row justify-between w-full">
+        <div className="flex flex-row justify-between grow">
             <button className='rounded-lg py-1 px-3 pointer-events-auto hover:shadow-sm hover:shadow-highlight-light focus:shadow-sm focus:shadow-highlight-light transition-shadow disabled:bg-primary-light-grey bg-primary-dark border-2 border-danger-light'>
                 <Xmark className='h-6 aspect-square icon fill-danger-light'/>
             </button>

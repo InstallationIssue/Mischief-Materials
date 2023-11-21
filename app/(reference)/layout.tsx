@@ -10,7 +10,7 @@ function TopNav () {
   return (
     <nav className='flex flex-row justify-between items-center px-2 h-12 border-b-2 border-white'>
       <Link className='h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light' href={'/'}>
-        <Logo className="w-8 dark:fill-primary-light"/>
+        <Logo className="h-full"/>
       </Link>
       {/*scenario !== '' && <PlayButton scenario={scenario}/>*/}
       <div className='flex flex-row items-center h-full'>

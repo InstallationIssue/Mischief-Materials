@@ -7,7 +7,7 @@ import City from '/public/icons/locations/city.svg'
 import Dungeon from '/public/icons/locations/dungeon.svg'
 import Entrance from '/public/icons/locations/entrance.svg'
 import Factory from '/public/icons/locations/factory.svg'
-import Headquarters from '/public/icons/locations/headquarters.svg'
+import Hideout from '/public/icons/locations/hideout.svg'
 import Hospital from '/public/icons/locations/hospital.svg'
 import Institution from '/public/icons/locations/institution.svg'
 import Landmark from '/public/icons/locations/landmark.svg'
@@ -22,14 +22,17 @@ import Warehouse from '/public/icons/locations/warehouse.svg'
 import Worship from '/public/icons/locations/worship.svg'
 
 export default function RadioInput ({
-    id, name
+    id, name, defaultCheck
 }: { 
-    id: string, name: string
+    id: string, name: string, defaultCheck: boolean
 }){
-    const icons = ['boat', 'building', 'campground', 'city', 'dungeon', 'entrance', 'factory', 'headquarters', 'hospital', 'institution', 'landmark', 'medical', 'mountown', 'mountain', 'outpost', 'store', 'tent', 'volcano', 'warehouse', 'worship']
+    const icons = ['boat', 'building', 'campground', 'city', 'dungeon', 'entrance', 'factory', 'hideout', 'hospital', 'institution', 'landmark', 'medical', 'mountown', 'mountain', 'outpost', 'store', 'tent', 'volcano', 'warehouse', 'worship']
     
     return (
-        <label className='checked:fill-highlight-light flex flex-col items-center p-2 gap-1 last:checked:fill-highlight-light'>
+        <label className='checked:fill-highlight-light flex flex-col items-center p-2 gap-1'>
+            <input type='radio' name={name} id={id} value={id} className='hidden peer'/>
+            {defaultCheck ? <input type='radio' name={name} id={id} value={id} className='hidden peer' defaultChecked/> : <input type='radio' name={name} id={id} value={id} className='hidden peer'/>}
+            <div className='peer-checked:fill-highlight-light transition-colors peer-default:checked:fill-highlight-light'>
             {id === icons[0] && <Boat className="h-8 aspect-square"/>}
             {id === icons[1] && <Building className="h-8 aspect-square"/>}
             {id === icons[2] && <Campground className="h-8 aspect-square"/>}
@@ -37,7 +40,7 @@ export default function RadioInput ({
             {id === icons[4] && <Dungeon className="h-8 aspect-square"/>}
             {id === icons[5] && <Entrance className="h-8 aspect-square"/>}
             {id === icons[6] && <Factory className="h-8 aspect-square"/>}
-            {id === icons[7] && <Headquarters className="h-8 aspect-square"/>}
+            {id === icons[7] && <Hideout className="h-8 aspect-square"/>}
             {id === icons[8] && <Hospital className="h-8 aspect-square"/>}
             {id === icons[9] && <Institution className="h-8 aspect-square"/>}
             {id === icons[10] && <Landmark className="h-8 aspect-square"/>}
@@ -50,7 +53,7 @@ export default function RadioInput ({
             {id === icons[17] && <Volcano className="h-8 aspect-square"/>}
             {id === icons[18] && <Warehouse className="h-8 aspect-square"/>}
             {id === icons[19] && <Worship className="h-8 aspect-square"/>}
-            <input type='radio' name={name} id={id} value={id} className=''/>
+            </div>
         </label>
     )
 }

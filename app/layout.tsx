@@ -30,17 +30,17 @@ const libre = Libre_Barcode_39_Text({
   variable: '--font-libre'
 })
 
-  
 export default function RootLayout({
-  children,
+  children, modal
 }: {
-  children: React.ReactNode
+  children: React.ReactNode, modal: React.ReactNode
 }) {
 
   return (
       <html lang="en">
         <body className={`flex flex-col text-primary-dark dark:fill-primary-light dark:text-primary-light dark:bg-primary-dark ${roboto.variable} ${play.variable} ${notable.variable} ${libre.variable}`}>
           {children}
+          {modal}
         </body>
       </html>
   )

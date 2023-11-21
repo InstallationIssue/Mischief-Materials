@@ -1,7 +1,5 @@
 import { getLocationById, updateLocation } from "@/prisma/scripts/location"
 import { z } from "zod"
-import { revalidatePath } from "next/cache"
-import { redirect } from "next/navigation"
 
 import Boat from '/public/icons/locations/boat.svg'
 import Building from '/public/icons/locations/building.svg'

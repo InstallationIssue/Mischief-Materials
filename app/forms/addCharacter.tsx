@@ -22,17 +22,17 @@ function create () {}
 
 export default function AddCharacter() {
   return (
-      <form className="flex flex-col py-2 gap-2" action={create}>
-        <div className="flex flex-row">
-          <SingleLineText id={"name"} name={""} showRandom={false}/>
-          <SwitchField id={"NPC"}/>
+      <form className="flex flex-col p-2 gap-2 w-[676px]" action={create}>
+        <div className="flex flex-row gap-2">
+          <SingleLineText id={"name"} name={"name"} showRandom={false}/>
+          <SwitchField id={"npc"}/>
         </div>
-        <div className="flex flex-row">
-          <MultiLineText id="background" name={""}/>
+        <div className="flex flex-row gap-2">
+          <MultiLineText id="background" name={"background"}/>
           <VitalityLevel id={""}/>
         </div>
         <TraitsCharacter id={""} clothing={"Clothing"} appearance={"Appearance"} physical_detail={"Physical Detail"} personality={"Personality"} mannerism={"Mannerism"} hobby={"Hobby"}/>
-        <Details id={""} profession={""} reputation={""} misfortune={""} goal={""} secret={""} asset={""} liability={""}/>
+        <Details id={""} profession={"Profession"} reputation={"Reputation"} misfortune={"Misfortune"} goal={"Goal"} secret={"Secret"} asset={"Asset"} liability={"Liability"}/>
         <Attributes idArmor={""} idLevel={""}/>
         <FormButtons showRandom={false}/>
       </form>

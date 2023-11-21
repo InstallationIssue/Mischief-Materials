@@ -7,7 +7,7 @@ import NightMountains from '/public/landscapes/Night-Mountains.svg'
 import SunsetDesert from '/public/landscapes/Sunset-Desert.svg'
 import Default from '/public/landscapes/Default.svg'
 
-export default async function ScenarioCard({
+export default function ScenarioCard({
   id, name, description,image
 }: {
   id: number, 

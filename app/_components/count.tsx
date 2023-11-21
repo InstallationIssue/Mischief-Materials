@@ -1,4 +1,4 @@
-export default async function Count ({
+export default function Count ({
     remaining
 }: { 
     remaining: number

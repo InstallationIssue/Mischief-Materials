@@ -5,7 +5,7 @@ import NeonCity from '/public/landscapes/Neon-City.svg'
 import NightMountains from '/public/landscapes/Night-Mountains.svg'
 import SunsetDesert from '/public/landscapes/Sunset-Desert.svg'
 
-export default async function DesignSystem(){
+export default function DesignSystem(){
     
     return (
         <div className="flex flex-col justify-around p-5 w-full">

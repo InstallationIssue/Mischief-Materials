@@ -5,7 +5,7 @@ export default function Relation ({
 }) {
     return (
         <div>
-            <div className="w-fit h-48 p-2.5 bg-[--primary-dark-grey] rounded-lg flex-col justify-start items-start gap-2.5 inline-flex">
+            <div className="w-fit h-48 p-2.5 bg-primary-dark-grey rounded-lg flex-col justify-start items-start gap-2.5 inline-flex">
                 <div className="self-stretch justify-between items-center inline-flex">
                     <div className="text-justify capitalize">Relation</div>
                 </div>

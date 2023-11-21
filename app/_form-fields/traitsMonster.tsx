@@ -5,7 +5,7 @@ export default function TraitsMonster ({
 }) {
     return (
         <div>
-            <div className="w-full h-fit p-2.5 px-4 bg-[--primary-dark-grey] rounded-lg flex-col justify-start items-start gap-2.5 inline-flex">
+            <div className="w-full h-fit p-2.5 px-4 bg-primary-dark-grey rounded-lg flex-col justify-start items-start gap-2.5 inline-flex">
                 <div className="text-justify capitalize">Traits</div>
                 <div className="self-stretch justify-start items-start gap-1 inline-flex">
                     <div className="text-justify">

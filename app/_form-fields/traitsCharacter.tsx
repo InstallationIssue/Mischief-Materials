@@ -5,11 +5,11 @@ export default function TraitsCharacter ({
 }) {
     return (
         <div>
-            <div className="w-full h-fit p-2.5 bg-[--primary-dark-grey] rounded-lg flex-col justify-start items-start gap-2.5 inline-flex">
+            <div className="grow h-fit p-2.5 bg-primary-dark-grey rounded-lg flex-col justify-start items-start gap-2.5 inline-flex">
                 <div className="text-justify capitalize">Traits</div>
                 <div className="self-stretch justify-start items-start gap-1 inline-flex">
                     <div className="text-justify">
-                        Dressed in {clothing} clothing, they are a {appearance} person with {physical_detail}. In person, they are {personality}, recognizable by their {mannerism} or their hobby, {hobby}.
+                        Dressed in <span className="font-bold">{clothing}</span> clothing, they are a <span className="font-bold">{appearance}</span> person with <span className="font-bold">{physical_detail}</span>. In person, they are <span className="font-bold">{personality}</span>, recognizable by their <span className="font-bold">{mannerism}</span> or their hobby, <span className="font-bold">{hobby}</span>.
                     </div>
                 </div>
             </div>

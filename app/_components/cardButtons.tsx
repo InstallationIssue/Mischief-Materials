@@ -6,26 +6,6 @@ import Delete from '/public/icons/system/delete.svg'
 
 import { redirect } from 'next/navigation'
 
-/*
-async function deleteItem(formData: FormData) {
-      'use server'
-      
-      const parsed = schema.parse({
-        id: formData.get('id')
-      })
-
-      try {
-        const response = await deleteScenario(Number(parsed.id))
-        console.log("response")
-      }
-      catch (e) {
-        return { message: 'Failed to delete' }
-      }
-
-      return revalidatePath('/scenario');
-}
-*/
-
 export default function CardButtons ({
     id
   }: { 

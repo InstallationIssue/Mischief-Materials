@@ -1,5 +1,5 @@
 'use client'
-import Swatch from '/public/icons/system/swatchbook.svg'
+import Swatch from '/public/icons/system/swatch.svg'
 
 export default function Color ({
     id, name
@@ -9,7 +9,7 @@ export default function Color ({
     function colors () {}
 
     return (
-        <div className="w-full bg-[--primary-dark-grey] p-2.5 px-4 gap-4 rounded-lg justify-between items-center inline-flex font-play bg-primary-dark-grey">
+        <div className="w-full p-2.5 px-4 gap-4 rounded-lg justify-between items-center inline-flex font-play bg-primary-dark-grey">
             <div className='w-fit'>
                 Select Color
             </div>
@@ -17,6 +17,7 @@ export default function Color ({
             <button onClick={colors}>
                 <Swatch className="h-6 aspect-square"/>
             </button>
+            <aside className='hidden'></aside>
         </div>
     )
 }

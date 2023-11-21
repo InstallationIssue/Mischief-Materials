@@ -9,19 +9,24 @@ import AddItem from "./addItem";
 import AddCharacter from "./addCharacter";
 import Divider from "../_components/divider";
 
-export default async function forms () {
+import Modal from "../_components/modal";
+import Link from "next/link";
+
+export default function forms () {
     return (
     <div className="flex flex-col">
+        <Link className="bg-secondary-light" href="/intercept">
+            Go to intercept
+        </Link>
         {/*<AddScenario/>
         <Divider/>*/}
         <AddLocation/>
-        {/*<Divider/>
-        <AddMonster/>
+        <Divider/>
+        {/*<AddMonster/>
         <Divider/>
         <AddItem/>
-        <Divider/>
+        <Divider/>*/}
         <AddCharacter/>
-        */}
     </div>
     )
 }
