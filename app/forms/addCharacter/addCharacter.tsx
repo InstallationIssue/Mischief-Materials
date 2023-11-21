@@ -3,14 +3,14 @@
 import { createCharacter } from "@/prisma/scripts/character"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
-import SingleLineText from "../_form-fields/singleLineText"
-import SwitchField from "../_form-fields/switchField"
-import MultiLineText from "../_form-fields/multiLineText"
-import VitalityLevel from "../_form-fields/vitalityLevel"
-import TraitsCharacter from "../_form-fields/traitsCharacter"
-import Details from "../_form-fields/details"
-import Attributes from "../_form-fields/attributes"
-import FormButtons from "../_form-fields/formButtons"
+import SingleLineText from "../../_form-fields/singleLineText"
+import SwitchField from "../../_form-fields/switchField"
+import MultiLineText from "../../_form-fields/multiLineText"
+import VitalityLevel from "../../_form-fields/vitalityLevel"
+import TraitsCharacter from "../../_form-fields/traitsCharacter"
+import Details from "../../_form-fields/details"
+import Attributes from "../../_form-fields/attributes"
+import FormButtons from "../../_form-fields/formButtons"
 
 const schema = z.object({
   name: z.string(),

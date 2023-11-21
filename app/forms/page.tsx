@@ -6,7 +6,7 @@ import AddItem from "./addItem";
 // Magic
 // Spell
 // Relationship
-import AddCharacter from "./addCharacter";
+import AddCharacter from "./addCharacter/page";
 import Divider from "../_components/divider";
 
 import Modal from "../_components/modal";
