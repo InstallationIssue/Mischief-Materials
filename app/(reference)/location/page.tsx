@@ -1,6 +1,11 @@
 import LocationCard from "./locationCard"
 import Header from "../../_components/header"
 import { getLocations } from "@/prisma/scripts/location"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Locations'
+}
 
 export default async function Location(){
     const data = await getLocations()

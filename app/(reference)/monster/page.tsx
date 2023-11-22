@@ -1,6 +1,11 @@
 import MonsterCard from "./monsterCard"
 import Header from "../../_components/header"
 import { getMonsters } from "@/prisma/scripts/monster"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Monsters'
+}
 
 export default async function Monster(){
     const data = await getMonsters()

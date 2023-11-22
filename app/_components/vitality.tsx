@@ -49,7 +49,7 @@ export default function HealthCircle ({
         animate={{ scale: 1 }}
         transition={{ duration: 1 }}>
           <Armor className='absolute z-10 h-full aspect-square fill-primary-light'/>
-          <p className='z-50 font-bold text-primary-dark leading-none'>{armor}</p>
+          <p className='z-20 font-bold text-primary-dark leading-none'>{armor}</p>
         </motion.div>
       </div>
     )

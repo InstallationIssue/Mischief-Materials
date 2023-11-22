@@ -1,6 +1,11 @@
 import ItemCard from "./itemCard"
 import Header from "../../_components/header"
 import { getItems } from "@/prisma/scripts/item"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Items'
+}
 
 export default async function Page() {
     const data = await getItems()

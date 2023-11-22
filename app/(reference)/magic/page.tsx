@@ -1,6 +1,11 @@
 import MagicCard from "./magicCard"
 import Header from "../../_components/header"
 import { getMagics } from "@/prisma/scripts/magic"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Magic'
+}
 
 export default async function Page() {
     const data = await getMagics()

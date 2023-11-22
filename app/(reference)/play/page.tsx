@@ -5,6 +5,11 @@ import MistyValley from '/public/landscapes/Misty-Valley.svg'
 import NeonCity from '/public/landscapes/Neon-City.svg'
 import NightMountains from '/public/landscapes/Night-Mountains.svg'
 import SunsetDesert from '/public/landscapes/Sunset-Desert.svg'
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'Play'
+}
 
 export default async function Play() {
     const scenario = await getScenarioById(18);
