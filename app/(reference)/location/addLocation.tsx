@@ -5,11 +5,11 @@ import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
-import SingleLineText from "../_form-fields/singleLineText"
-import MultiLineText from "../_form-fields/multiLineText"
-import Color from "../_form-fields/color"
-import FormButtons from "../_form-fields/formButtons"
-import IconsLocation from "../_form-fields/iconsLocation"
+import SingleLineText from "../../_form-fields/singleLineText"
+import MultiLineText from "../../_form-fields/multiLineText"
+import Color from "../../_form-fields/color"
+import FormButtons from "../../_form-fields/formButtons"
+import IconsLocation from "../../_form-fields/iconsLocation"
 
 const schema = z.object({
     name: z.string(),

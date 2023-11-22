@@ -3,11 +3,11 @@
 import { createMonster } from "@/prisma/scripts/monster"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
-import SingleLineText from "../_form-fields/singleLineText"
-import MultiLineText from "../_form-fields/multiLineText"
-import TraitsMonster from "../_form-fields/traitsMonster"
-import IconsSize from "../_form-fields/iconsSize"
-import Attributes from "../_form-fields/attributes"
+import SingleLineText from "../../_form-fields/singleLineText"
+import MultiLineText from "../../_form-fields/multiLineText"
+import TraitsMonster from "../../_form-fields/traitsMonster"
+import IconsSize from "../../_form-fields/iconsSize"
+import Attributes from "../../_form-fields/attributes"
 
 const schema = z.object({
   name: z.string(),

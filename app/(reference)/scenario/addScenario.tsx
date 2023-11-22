@@ -1,11 +1,11 @@
 'use client'
 
 import { useFormState, useFormStatus } from "react-dom"
-import SingleLineText from "../_form-fields/singleLineText"
-import MultiLineText from "../_form-fields/multiLineText"
-import ImageInput from "../_form-fields/imageInput"
-import FormButtons from "../_form-fields/formButtons"
-import { createScenario } from "../../prisma/scripts/scenario"
+import SingleLineText from "../../_form-fields/singleLineText"
+import MultiLineText from "../../_form-fields/multiLineText"
+import ImageInput from "../../_form-fields/imageInput"
+import FormButtons from "../../_form-fields/formButtons"
+import { createScenario } from "../../../prisma/scripts/scenario"
 
 interface IAppState {
   message: string;

@@ -1,15 +1,14 @@
-import AddScenario from "./addScenario";
-import AddLocation from "./addLocation";
+import AddScenario from "../(reference)/scenario/addScenario";
+import AddLocation from "../(reference)/location/addLocation";
 // Encounter
-import AddMonster from "./addMonster";
-import AddItem from "./addItem";
+import AddMonster from "../(reference)/monster/addMonster";
+import AddItem from "../(reference)/item/addItem";
 // Magic
 // Spell
 // Relationship
-import AddCharacter from "./addCharacter/page";
+import AddCharacter from "../(reference)/character/add/page";
 import Divider from "../_components/divider";
 
-import Modal from "../_components/modal";
 import Link from "next/link";
 
 export default function forms () {

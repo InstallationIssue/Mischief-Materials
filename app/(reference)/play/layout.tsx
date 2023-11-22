@@ -12,9 +12,9 @@ import Items from '/public/icons/items/items.svg'
 import Magic from '/public/icons/magic/magic.svg'
   
 export default async function PlayLayout({
-  children,
+  children, modal
 }: {
-  children: React.ReactNode
+  children: React.ReactNode, modal: React.ReactNode
 }) {
 
   const scenario = await getScenarioExtras(18);

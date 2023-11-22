@@ -4,10 +4,10 @@ import { createItem } from "@/prisma/scripts/item"
 import { z } from "zod"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
-import SingleLineText from "../_form-fields/singleLineText"
-import Value from "../_form-fields/value"
-import MultiLineText from "../_form-fields/multiLineText"
-import FormButtons from "../_form-fields/formButtons"
+import SingleLineText from "../../_form-fields/singleLineText"
+import Value from "../../_form-fields/value"
+import MultiLineText from "../../_form-fields/multiLineText"
+import FormButtons from "../../_form-fields/formButtons"
 
 const schema = z.object({
     name: z.string(),

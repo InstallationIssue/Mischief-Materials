@@ -7,7 +7,7 @@ export default async function Character(){
 
     return (
         <div>
-            <Header title="Characters" link="/forms/addCharacter"></Header>
+            <Header title="Characters" link="/character/add"></Header>
             <div className="flex flex-row flex-wrap">
                 {data.map((id, index) => (
                     <PlayerCard 
