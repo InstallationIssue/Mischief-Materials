@@ -1,4 +1,4 @@
-import MagicCard from "../../_cards/magicCard"
+import MagicCard from "./magicCard"
 import Header from "../../_components/header"
 import { getMagics } from "@/prisma/scripts/magic"
 

@@ -1,4 +1,4 @@
-import Card from "../../_cards/scenarioCard"
+import Card from "./scenarioCard"
 import Header from "../../_components/header"
 import { getScenarios } from "@/prisma/scripts/scenario"
 

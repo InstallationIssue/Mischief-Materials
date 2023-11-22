@@ -1,6 +1,6 @@
 import { getScenarioExtras } from "@/prisma/scripts/scenario"
 
-import LocationCard from "@/app/_cards/locationCard"
+import LocationCard from "@/app/(reference)/location/locationCard"
 import CharacterCard from "../scenario/[id]/characterCard"
 import EncounterCard from "../scenario/[id]/encounterCard"
 

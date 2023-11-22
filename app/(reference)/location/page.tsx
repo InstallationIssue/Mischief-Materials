@@ -1,4 +1,4 @@
-import LocationCard from "../../_cards/locationCard"
+import LocationCard from "./locationCard"
 import Header from "../../_components/header"
 import { getLocations } from "@/prisma/scripts/location"
 

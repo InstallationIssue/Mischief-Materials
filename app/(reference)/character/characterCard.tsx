@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import HealthCircle from '../_components/vitality'
+import HealthCircle from '../../_components/vitality'
 
 import Strength from '/public/icons/stats/strength.svg'
 import Dexterity from '/public/icons/stats/dexterity.svg'

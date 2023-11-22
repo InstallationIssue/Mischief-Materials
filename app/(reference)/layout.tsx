@@ -1,39 +1,68 @@
 'use client'
 import Link from "next/link"
 import Logo from '/public/icons/logo.svg'
-import { useState, useContext } from "react"
+import { PlayContext } from "./playContext"
+import { useState } from "react"
 import { PlayButton } from '../_components/playButton'
 
-function TopNav () {
-  const [scenario, setScenario] = useState('')
-
-  return (
-    <nav className='flex flex-row justify-between items-center px-2 h-12 border-b-2 border-white'>
-      <Link className='h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light' href={'/'}>
-        <Logo className="h-full"/>
-      </Link>
-      {/*scenario !== '' && <PlayButton scenario={scenario}/>*/}
-      <div className='flex flex-row items-center h-full'>
-        <Link href="/scenario" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl">Scenarios</Link>
-        <Link href="/location" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl">Locations</Link>
-        <Link href="/character" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl">Characters</Link>
-        <Link href="/monster" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl">Monsters</Link>
-        <Link href="/item" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl">Items</Link>
-        <Link href="/magic" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl">Magic</Link>
-      </div>
-    </nav>
-  )
-}
+import Scenarios from '/public/icons/locations/scenario.svg'
+import Locations from '/public/icons/locations/location.svg'
+import Characters from '/public/icons/beings/npc.svg'
+import Monsters from '/public/icons/beings/monster.svg'
+import Items from '/public/icons/items/items.svg'
+import Magics from '/public/icons/magic/magic.svg'
   
 export default function ReferenceLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+  const [playChoice, setPlayChoice] = useState({ name: '', image: ''})
+
+  function TopNav () {
+    return (
+      <nav className='flex flex-row gap-4 justify-between items-center px-2 h-12 border-b-2 border-white'>
+        <Link className='h-full flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light' href={'/'}>
+          <Logo className="h-full"/>
+        </Link>
+        {playChoice.name !== '' && <PlayButton name={playChoice.name} image={playChoice.image}/>}
+        <div className='flex flex-row items-center h-full'>
+          <Link href="/scenario" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl fill-primary-light">
+            <p className="hidden md:inline">Scenarios</p>
+            <Scenarios className='md:hidden h-3/5'/>
+          </Link>
+          <Link href="/location" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl fill-primary-light">
+            <p className="hidden md:inline">Locations</p>
+            <Locations className='md:hidden h-3/5'/>
+          </Link>
+          <Link href="/character" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl fill-primary-light">
+            <p className="hidden md:inline">Characters</p>
+            <Characters className='md:hidden h-3/5'/>
+          </Link>
+          <Link href="/monster" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl fill-primary-light">
+            <p className="hidden md:inline">Monsters</p>
+            <Monsters className='md:hidden h-3/5'/>
+          </Link>
+          <Link href="/item" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl fill-primary-light">
+            <p className="hidden md:inline">Items</p>
+            <Items className='md:hidden h-3/5'/>
+          </Link>
+          <Link href="/magic" className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-play text-xl fill-primary-light">
+            <p className="hidden md:inline">Magic</p>
+            <Magics className='md:hidden h-3/5'/>
+          </Link>
+        </div>
+      </nav>
+    )
+  }
+
   return (
    <>
     <TopNav/>
-    <main className='flex flex-col h-full m-2 font-roboto'>{children}</main>
+    <PlayContext.Provider value={{playChoice, setPlayChoice}}>
+      <main className='flex flex-col h-full m-2 font-roboto'>{children}</main>
+    </PlayContext.Provider>
    </>
   )
 }
