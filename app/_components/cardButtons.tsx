@@ -17,7 +17,6 @@ export default function CardButtons ({
     
     function playItem () {
       setPlayChoice({name, image})
-      console.log(playChoice)
     }
 
     function editItem () {

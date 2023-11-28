@@ -39,14 +39,7 @@ async function create(formData: FormData) {
 */
 
 function create(formData: FormData) {
-    const parsed = schema.parse({
-        name: formData.get('name'),
-        description: formData.get('description'),
-        value: formData.get('value'),
-        icon: formData.get('itemIcon')
-      })
     
-    console.log(true)
 }
 
 export default function AddItem(){
