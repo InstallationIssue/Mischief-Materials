@@ -15,7 +15,7 @@ export default async function Location(){
             <Header title="Locations" link="/location/add"></Header>
             <div className="flex flex-row flex-wrap">
                 {data.map((id) => (
-                    <LocationCard key={id.id} id={id.id}/>
+                    <LocationCard key={id.id} id={id.id} color={id.color} icon={id.icon} name={id.name}/>
                 ))}
             </div>
         </div>

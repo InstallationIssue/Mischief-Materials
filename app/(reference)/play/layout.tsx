@@ -1,8 +1,7 @@
 import { getScenarioExtras } from "@/prisma/scripts/scenario"
 
 import LocationCard from "@/app/(reference)/location/locationCard"
-import CharacterCard from "../scenario/[id]/characterCard"
-import EncounterCard from "../scenario/[id]/encounterCard"
+import CharacterCard from "../character/characterCard"
 
 import Party from '/public/icons/beings/party.svg'
 import Location from '/public/icons/locations/location.svg'
@@ -38,23 +37,23 @@ export default async function PlayLayout({
         <div className="flex flex-col h-full overflow-clip">
           <div className="flex flex-col gap-2">
             {scenario.characters.map((id) => (
-              <CharacterCard key={id.id} id={id.id}/>
+              <CharacterCard key={id.id} id={id.id} name={id.name} health_max={id.health_max} health_lost={id.health_lost} armor={id.armor} str={id.str} dex={id.dex} wil={id.wil} att={id.att}/>
             ))}
           </div>
         </div>  
         <div className="h-1/2">
           <div className="flex flex-col gap-2">
             {scenario.locations.map((id) => (
-              <LocationCard key={id.id} id={id.id}/>
+              <LocationCard key={id.id} id={id.id} color={id.color} icon={id.icon} name={id.name}/>
             ))}
           </div>
         </div>
         <div className="h-1/2">
-          <div className="flex flex-col gap-2">
+          {/*<div className="flex flex-col gap-2">
             {scenario.encounters.map((id) => (
               <EncounterCard key={id.id} id={id.id}/>
             ))}
-          </div>
+            </div>*/}
         </div>
       </aside>
     )
