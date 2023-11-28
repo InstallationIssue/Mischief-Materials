@@ -15,7 +15,7 @@ export default async function Page() {
             <Header title="Items" link="/item/add"></Header>
             <div className="flex flex-row flex-wrap">
                 {data.map((id, index) => (
-                    <ItemCard key={id.id} id={id.id}/>
+                    <ItemCard key={id.id} id={id.id} name={id.name} value={id.value}/>
                 ))}
             </div>
         </div>

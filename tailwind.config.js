@@ -56,6 +56,9 @@ module.exports = {
         notable: ['var(--font-notable)'],
         libre: ['var(--font-libre)'],
       },
+      transitionProperty: {
+        'font': 'font-size, line-height',
+      }
     },
   },
   plugins: [],

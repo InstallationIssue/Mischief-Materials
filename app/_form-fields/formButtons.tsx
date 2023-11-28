@@ -8,7 +8,7 @@ export default function FormButtons ({
     showRandom: boolean
 }) {
     return (
-        <div className="flex flex-row justify-between grow">
+        <div className="flex flex-row justify-between w-full">
             <button className='rounded-lg py-1 px-3 pointer-events-auto hover:shadow-sm hover:shadow-highlight-light focus:shadow-sm focus:shadow-highlight-light transition-shadow disabled:bg-primary-light-grey bg-primary-dark border-2 border-danger-light'>
                 <Xmark className='h-6 aspect-square icon fill-danger-light'/>
             </button>

@@ -26,13 +26,6 @@ import Volcano from '/public/icons/locations/volcano.svg'
 import Warehouse from '/public/icons/locations/warehouse.svg'
 import Worship from '/public/icons/locations/worship.svg'
 
-const schema = z.object({
-  name: z.string(),
-  description: z.string(),
-  color: z.string(),
-  icon: z.string()
-})
-
 export default async function Location({
     params 
   }: { 
@@ -41,11 +34,16 @@ export default async function Location({
     const data = await getLocationById(Number(params.id))
 
     return (
-      <div>
-        <span className="flex flex-row items-center rounded gap-2 w-72 h-10">
-          <svg className="h-full aspect-square" fill={data.color} viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40"></circle>
-          </svg>
+      <div className="p-1">
+        <span className="flex flex-row items-center rounded justify-between w-full h-10">
+          <span className="flex gap-2 grow items-center">
+            <svg className="h-10 aspect-square" fill={data.color} viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40"></circle>
+            </svg>
+            <span className="flex-grow whitespace-nowrap overflow-clip">
+              <p className="capitalize font-play text-2xl">{data.name}</p>
+            </span>
+          </span>
           {data.icon == 'boat' && <Boat className='h-full aspect-square fill-primary-light'/>}
           {data.icon == 'building' && <Building className='h-full aspect-square fill-primary-light'/>}
           {data.icon == 'campground' && <Campground className='h-full aspect-square fill-primary-light'/>}
@@ -70,21 +68,8 @@ export default async function Location({
           {data.icon == 'volcano' && <Volcano className='h-full aspect-square fill-primary-light'/>}
           {data.icon == 'warehouse' && <Warehouse className='h-full aspect-square fill-primary-light'/>}
           {data.icon == 'worship' && <Worship className='h-full aspect-square fill-primary-light'/>}
-          <span className="flex-grow whitespace-nowrap overflow-clip">
-            <p className="capitalize">{data.name}</p>
-          </span>
         </span>
         <p className="mt-2">{data.description}</p>
-        
-        {/* 
-          <form className="flex flex-col space-y-2 py-2" action={update}>
-            <label htmlFor='name'>Name</label>
-            <input type="text" id="name" name='name' placeholder={data.name}></input>
-            <label htmlFor='setting'>Setting</label>
-            <input type="text" id="setting" name='setting' placeholder={data.setting}></input>
-            <button type='submit'>Submit</button>
-          </form>
-        */}
       </div>
     )
 }

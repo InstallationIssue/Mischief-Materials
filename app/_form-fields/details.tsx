@@ -4,7 +4,7 @@ export default function Details ({
   id: string, profession: string, reputation: string, misfortune: string, goal: string, secret: string, asset: string, liability: string
 }) {
     return (
-      <div className="grow h-fit p-2.5 bg-primary-dark-grey rounded-lg flex-col justify-start items-start gap-2.5 inline-flex">
+      <div className="h-fit p-2.5 bg-primary-dark-grey rounded-lg flex-col justify-start items-start gap-2.5 inline-flex">
         <div className="text-justify capitalize">Details</div>
         <div className="self-stretch justify-start items-start gap-1 inline-flex">
           <div className="text-justify">

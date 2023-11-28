@@ -19,7 +19,7 @@ export async function getCharacters(){
             dex: true,
             wil: true,
             att: true,
-            npc: true
+            npc: true,
         }
     })
 }
@@ -42,6 +42,11 @@ export async function getCharacterById(id: number){
             wil: true,
             att: true,
             npc: true,
+            clothing: true,
+            appearance: true,
+            physical_detail: true,
+            personality: true,
+            mannerism: true,
             assets: true,
             liabilities: true,
             goals: true,

@@ -18,7 +18,7 @@ export default function ImageInput ({
     const [image, setImage] = useState(images[0])
 
     return (
-        <div className="w-60 h-44 m-1 rounded-lg overflow-clip relative flex items-center justify-center">
+        <div className="w-60 h-44 rounded-lg overflow-clip relative flex items-center justify-center">
             <select id={id} name={name} value={image} onChange={(e) => {
                 e.preventDefault() 
                 setImage(e.target.value)
@@ -30,7 +30,6 @@ export default function ImageInput ({
                 <option value={images[4]}>Night Mountains</option>
                 <option value={images[5]}>Sunset Desert</option>
             </select>
-            
             {image === images[0] && <Default className='w-60 absolute'/>}
             {image === images[1] && <IcelandLupin className='w-60 absolute'/>}
             {image === images[2] && <MistyValley className='w-60 absolute'/>}

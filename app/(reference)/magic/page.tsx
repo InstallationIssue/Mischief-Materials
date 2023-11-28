@@ -15,7 +15,7 @@ export default async function Page() {
             <Header title="Magics" link="/magic/add"></Header>
             <div className="flex flex-row flex-wrap">
                 {data.map((id, index) => (
-                    <MagicCard key={id.id} id={id.id}/>
+                    <MagicCard key={id.id} id={id.id} name={id.name} medium={id.medium} spells={id.spells.length}/>
                 ))}
             </div>
         </div>

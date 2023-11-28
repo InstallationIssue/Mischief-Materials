@@ -18,7 +18,8 @@ export default function AddScenario() {
   const [state, formAction] = useFormState(createScenario, initialState)
 
   return (
-      <form className="flex flex-col space-y-2 py-2 items-center w-fit" action={formAction}>
+      <form className="flex flex-col space-y-2 p-2 items-center w-fit" action={formAction}>
+        <p className="text-2xl font-play">Add Scenario</p>
         <SingleLineText id="name" name="name" showRandom={false}/>
         <MultiLineText id="description" name="description"/>
         <ImageInput id="image" name="image"/>

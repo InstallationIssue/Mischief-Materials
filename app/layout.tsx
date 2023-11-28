@@ -1,8 +1,8 @@
 import './globals.css'
-import { Roboto, Play, Notable, Libre_Barcode_39_Text } from 'next/font/google'
+import { Roboto_Flex, Play, Smooch_Sans, Notable, Libre_Barcode_39_Text } from 'next/font/google'
 import React from 'react'
 
-const roboto = Roboto({
+const roboto = Roboto_Flex({
   weight: ['400', '700'],
   display: 'swap',
   subsets: ['latin'],
@@ -37,8 +37,8 @@ export default function RootLayout({
 }) {
 
   return (
-      <html lang="en">
-        <body className={`flex flex-col text-primary-dark dark:fill-primary-light dark:text-primary-light dark:bg-primary-dark ${roboto.variable} ${play.variable} ${notable.variable} ${libre.variable}`}>
+      <html lang="en" className='h-full'>
+        <body className={`flex flex-col h-full text-primary-dark dark:fill-primary-light dark:text-primary-light dark:bg-primary-dark ${roboto.variable} ${play.variable} ${notable.variable} ${libre.variable}`}>
           {children}
         </body>
       </html>

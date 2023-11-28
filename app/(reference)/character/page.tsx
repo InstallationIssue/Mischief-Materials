@@ -2,6 +2,7 @@ import PlayerCard from "./characterCard"
 import Header from "../../_components/header"
 import { getCharacters } from "@/prisma/scripts/character"
 import { Metadata } from "next"
+import CardList from "@/app/_components/cardList"
 
 export const metadata: Metadata = {
     title: 'Characters'
@@ -15,7 +16,7 @@ export default async function Character(){
     return (
         <div>
             <Header title="Characters" link="/character/add"></Header>
-            <div className="flex flex-row flex-wrap">
+            <CardList>
                 {data.map((id) => (
                     <PlayerCard 
                     key={id.id} 
@@ -29,7 +30,7 @@ export default async function Character(){
                     wil={id.wil} 
                     att={id.att}/>
                 ))}
-            </div>
+            </CardList>
         </div>
     )
 }

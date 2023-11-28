@@ -23,9 +23,12 @@ export async function getScenarioById(id: number){
         },
         select: {
             name: true,
+            setting: true,
             description: true,
             image: true,
             locations: true,
+            events: true,
+            threads: true,
         }
     })
 }

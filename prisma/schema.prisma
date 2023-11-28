@@ -13,13 +13,24 @@ datasource db {
 model Scenario {
   id          Int         @id @default(autoincrement())
   name        String      @unique
+  setting     String      @default("")
   description String      @default("")
   image       String      @default("Default")
+  threads     Thread[]
+  events      Event[]
   locations   Location[]
   characters  Character[]
   encounters  Encounter[]
   items       Item[]
   magic       Magic[]
+}
+
+model Thread {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  description String
+  scenario    Scenario @relation(fields: [scenario_id], references: [id])
+  scenario_id Int
 }
 
 model Location {
@@ -32,9 +43,11 @@ model Location {
 }
 
 model Event {
-  id          Int    @id @default(autoincrement())
-  name        String @unique
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
   description String
+  scenario    Scenario @relation(fields: [scenario_id], references: [id])
+  scenario_id Int
 }
 
 model Character {
