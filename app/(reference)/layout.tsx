@@ -22,8 +22,8 @@ export default function ReferenceLayout({
 
   function TopNav () {
     return (
-      <nav className='flex flex-row gap-4 justify-between items-center px-2 h-12 border-b-2 border-white'>
-        <Link className='h-full flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light' href={'/'}>
+      <nav className='flex flex-row gap-4 justify-between items-center px-2 border-b-2 border-white'>
+        <Link className='h-12 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light' href={'/'}>
           <Logo className="h-full"/>
         </Link>
         {playChoice.name !== '' && <PlayButton name={playChoice.name} image={playChoice.image}/>}

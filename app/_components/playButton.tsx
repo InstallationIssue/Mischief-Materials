@@ -14,7 +14,7 @@ export function PlayButton ({
 }
 ) {
     return (
-        <Link className="flex flex-row items-center h-full gap-2 bg-secondary-light transition active:text-highlight-light active:fill-highlight-light overflow-clip relative grow" href={'/play'}>
+        <Link className="flex flex-row items-center h-12 gap-2 bg-secondary-light transition active:text-highlight-light active:fill-highlight-light overflow-clip relative grow" href={'/play'}>
             <div className='absolute w-full'>
                 {image == 'IcelandLupin' && <IcelandLupin/>}
                 {image == 'MistyValley' && <MistyValley/>}
