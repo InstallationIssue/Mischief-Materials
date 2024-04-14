@@ -1,0 +1,41 @@
+services:
+  db:
+    build: 
+      context: ./db
+    ports:
+      - 3200:5432
+    secrets:
+      - db_root_password
+      - db_user
+      - db_password
+    volumes:
+      - db_data:/var/lib/postgres
+    environment:
+      NODE_ENV: development
+      POSTGRES_USER: rits
+      POSTGRES_DB: rits_dev
+      
+  randomizer:
+    build:
+      context: ./randomizer
+
+  client:
+    build:
+      context: ./client
+    depends_on:
+      - db
+      - randomizer
+    environment:
+      DATABASE_URL: 
+        - db_url
+    secrets:
+      - db_password
+
+secrets:
+  db_root_password: P05t&4eEs!
+  db_user: rits
+  db_password: 5%214sC5ackerS
+  db_url: postgresql://rits:5%214sC5ackerS@localhost:5432/rits_dev?schema=base
+
+volumes:
+    db_data: rits_volume
