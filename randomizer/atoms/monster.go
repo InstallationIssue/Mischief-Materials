@@ -71,11 +71,11 @@ func GetMonsterWeakness() string {
 }
 
 type MonsterAbilities struct {
-	power     int
-	strength  int
-	dexterity int
-	willpower int
-	attack    int
+	Power     int
+	Strength  int
+	Dexterity int
+	Willpower int
+	Attack    int
 }
 
 func GetMonsterAttributes() *MonsterAbilities {
@@ -89,68 +89,68 @@ func GetMonsterAttributes() *MonsterAbilities {
 	}
 
 	return &MonsterAbilities{
-		power:     newPower,
-		strength:  int(attributes[0] / total * newPower),
-		dexterity: int(attributes[1] / total * newPower),
-		willpower: int(attributes[2] / total * newPower),
-		attack:    int(attributes[3] / total * newPower),
+		Power:     newPower,
+		Strength:  int(attributes[0] / total * newPower),
+		Dexterity: int(attributes[1] / total * newPower),
+		Willpower: int(attributes[2] / total * newPower),
+		Attack:    int(attributes[3] / total * newPower),
 	}
 }
 
 type MonsterSizing struct {
-	size   string
-	health int
+	Size   string
+	Health int
 }
 
 func GetMonsterSizing() *MonsterSizing {
 	sizeChoice := rand.IntN(5)
 	sizeWeighting := [...]int{1, 2, 3, 4, 6}
 	return &MonsterSizing{
-		size:   monsterSize[sizeChoice],
-		health: rand.IntN(sizeWeighting[sizeChoice]*6) + 1,
+		Size:   monsterSize[sizeChoice],
+		Health: rand.IntN(sizeWeighting[sizeChoice]*6) + 1,
 	}
 }
 
 type Monster struct {
-	size         string
-	health_max   int
-	health_lost  int
-	armor        int
-	power        int
-	strength     int
-	dexterity    int
-	willpower    int
-	attack       int
-	environments string
-	animals      string
-	feature      string
-	trait        string
-	ability      string
-	tactic       string
-	personality  string
-	weakness     string
+	Size         string
+	HealthMax    int
+	HealthLost   int
+	Armor        int
+	Power        int
+	Strength     int
+	Dexterity    int
+	Willpower    int
+	Attack       int
+	Environments string
+	Animals      string
+	Feature      string
+	Trait        string
+	Ability      string
+	Tactic       string
+	Personality  string
+	Weakness     string
 }
 
 func CreateMonster() Monster {
 	newSizing := GetMonsterSizing()
 	newAbilities := GetMonsterAttributes()
 	return Monster{
-		size:         newSizing.size,
-		health_max:   newSizing.health,
-		health_lost:  0,
-		armor:        6,
-		power:        newAbilities.power,
-		attack:       newAbilities.attack,
-		strength:     newAbilities.strength,
-		dexterity:    newAbilities.dexterity,
-		willpower:    newAbilities.willpower,
-		environments: GetEnvironment(),
-		animals:      GetAnimalGround(),
-		feature:      GetMonsterFeature(),
-		trait:        GetMonsterTrait(),
-		ability:      GetMonsterAbility(),
-		tactic:       GetMonsterTactic(),
-		personality:  GetMonsterPersonality(),
-		weakness:     GetMonsterWeakness(),
+		Size:         newSizing.Size,
+		HealthMax:    newSizing.Health,
+		HealthLost:   0,
+		Armor:        6,
+		Power:        newAbilities.Power,
+		Attack:       newAbilities.Attack,
+		Strength:     newAbilities.Strength,
+		Dexterity:    newAbilities.Dexterity,
+		Willpower:    newAbilities.Willpower,
+		Environments: GetEnvironment(),
+		Animals:      GetAnimalGround(),
+		Feature:      GetMonsterFeature(),
+		Trait:        GetMonsterTrait(),
+		Ability:      GetMonsterAbility(),
+		Tactic:       GetMonsterTactic(),
+		Personality:  GetMonsterPersonality(),
+		Weakness:     GetMonsterWeakness(),
 	}
 }

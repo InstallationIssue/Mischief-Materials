@@ -157,6 +157,49 @@ func getNewMonsterWeakness(w http.ResponseWriter, r *http.Request) {
 
 // Items
 
+// Magic
+func getNewSpell(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(atoms.CreateSpell())
+}
+
+func getNewSpellEffectPhysical(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(atoms.GetSpellEffectPhysical())
+}
+
+func getNewSpellElementPhysical(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(atoms.GetSpellElementPhysical())
+}
+
+func getNewSpellFormPhysical(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(atoms.GetSpellFormPhysical())
+}
+
+func getNewSpellEffectEthereal(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(atoms.GetSpellEffectEthereal())
+}
+
+func getNewSpellElementEthereal(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(atoms.GetSpellElementEthereal())
+}
+
+func getNewSpellFormEthereal(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(atoms.GetSpellFormEthereal())
+}
+
+func getNewMutation(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(atoms.GetMutation())
+}
+
+func getNewInsanity(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(atoms.GetInsanity())
+}
+
+func getNewOmen(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(atoms.GetMutation())
+}
+
+//Locations
+
 func handleRequests() {
 	// Characters
 	http.HandleFunc("/character", getNewCharacter)
@@ -201,13 +244,19 @@ func handleRequests() {
 
 	// Items
 
-	// Spells
+	// Magic
+	http.HandleFunc("/spell", getNewSpell)
+	http.HandleFunc("/spell/effectphysical", getNewSpellEffectPhysical)
+	http.HandleFunc("/spell/elementphysical", getNewSpellElementPhysical)
+	http.HandleFunc("/spell/formphysical", getNewSpellFormPhysical)
+	http.HandleFunc("/spell/effectethereal", getNewSpellEffectEthereal)
+	http.HandleFunc("/spell/elementethereal", getNewSpellElementEthereal)
+	http.HandleFunc("/spell/formethereal", getNewSpellFormEthereal)
+	http.HandleFunc("/mutation", getNewMutation)
+	http.HandleFunc("/insanity", getNewInsanity)
+	http.HandleFunc("/omen", getNewOmen)
 
 	// Locations
-
-	// Treasures
-
-	// Weapons
 
 	log.Fatal(http.ListenAndServe(":10000", nil))
 }
