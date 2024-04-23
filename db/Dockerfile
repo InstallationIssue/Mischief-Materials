@@ -1,6 +1,6 @@
 FROM postgres
 
-#WORKDIR
+WORKDIR /db
 
 COPY init.sql init.sql
 
