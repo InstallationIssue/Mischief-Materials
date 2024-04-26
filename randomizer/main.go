@@ -5,197 +5,195 @@ import (
 	"fmt"
 	"log"
 	http "net/http"
-
-	atoms "randomizer/atoms"
 )
 
 // Characters
 
 func getNewCharacter(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.CreateCharacter())
+	json.NewEncoder(w).Encode(CreateCharacter())
 }
 
 func getNewName(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetName())
+	json.NewEncoder(w).Encode(GetName())
 }
 
 func getNewAttributes(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetAttributes())
+	json.NewEncoder(w).Encode(GetAttributes())
 }
 
 func getNewBackground(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetBackground())
+	json.NewEncoder(w).Encode(GetBackground())
 }
 
 func getNewAppearance(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetAppearance())
+	json.NewEncoder(w).Encode(GetAppearance())
 }
 
 func getNewPhysicalDetail(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetPhysicalDetail())
+	json.NewEncoder(w).Encode(GetPhysicalDetail())
 }
 
 func getNewClothing(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetClothing())
+	json.NewEncoder(w).Encode(GetClothing())
 }
 
 func getNewPersonality(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetPersonality())
+	json.NewEncoder(w).Encode(GetPersonality())
 }
 
 func getNewMannerism(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMannerism())
+	json.NewEncoder(w).Encode(GetMannerism())
 }
 
 // NPCs
 
 func getNewNpc(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.CreateNpc())
+	json.NewEncoder(w).Encode(CreateNpc())
 }
 
 func getNewAsset(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetAsset())
+	json.NewEncoder(w).Encode(GetAsset())
 }
 
 func getNewLiability(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetLiability())
+	json.NewEncoder(w).Encode(GetLiability())
 }
 
 func getNewGoal(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetGoal())
+	json.NewEncoder(w).Encode(GetGoal())
 }
 
 func getNewMisfortune(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMisfortune())
+	json.NewEncoder(w).Encode(GetMisfortune())
 }
 
 func getNewMission(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMission())
+	json.NewEncoder(w).Encode(GetMission())
 }
 
 func getNewMethod(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMethod())
+	json.NewEncoder(w).Encode(GetMethod())
 }
 
 func getNewSecret(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetSecret())
+	json.NewEncoder(w).Encode(GetSecret())
 }
 
 func getNewReputation(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetReputation())
+	json.NewEncoder(w).Encode(GetReputation())
 }
 
 func getNewHobby(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetHobby())
+	json.NewEncoder(w).Encode(GetHobby())
 }
 
 func getNewRelationship(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetRelationship())
+	json.NewEncoder(w).Encode(GetRelationship())
 }
 
 func getNewDivineDomain(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetDivineDomain())
+	json.NewEncoder(w).Encode(GetDivineDomain())
 }
 
 func getNewAfterPartyDisaster(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetAfterPartyDisaster())
+	json.NewEncoder(w).Encode(GetAfterPartyDisaster())
 }
 
 // Monsters
 
 func getNewMonster(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.CreateMonster())
+	json.NewEncoder(w).Encode(CreateMonster())
 }
 
 func getNewMonsterSizing(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMonsterSizing())
+	json.NewEncoder(w).Encode(GetMonsterSizing())
 }
 
 func getNewMonsterAttributes(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMonsterAttributes())
+	json.NewEncoder(w).Encode(GetMonsterAttributes())
 }
 
 func getNewEnvironment(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetEnvironment())
+	json.NewEncoder(w).Encode(GetEnvironment())
 }
 
 func getNewAnimalSky(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetAnimalSky())
+	json.NewEncoder(w).Encode(GetAnimalSky())
 }
 
 func getNewAnimalGround(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetAnimalGround())
+	json.NewEncoder(w).Encode(GetAnimalGround())
 }
 
 func getNewAnimalWater(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetAnimalWater())
+	json.NewEncoder(w).Encode(GetAnimalWater())
 }
 
 func getNewMonsterFeature(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMonsterFeature())
+	json.NewEncoder(w).Encode(GetMonsterFeature())
 }
 
 func getNewMonsterTrait(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMonsterFeature())
+	json.NewEncoder(w).Encode(GetMonsterFeature())
 }
 
 func getNewMonsterAbility(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMonsterFeature())
+	json.NewEncoder(w).Encode(GetMonsterFeature())
 }
 
 func getNewMonsterTactic(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMonsterFeature())
+	json.NewEncoder(w).Encode(GetMonsterFeature())
 }
 
 func getNewMonsterPersonality(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMonsterFeature())
+	json.NewEncoder(w).Encode(GetMonsterFeature())
 }
 
 func getNewMonsterWeakness(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMonsterFeature())
+	json.NewEncoder(w).Encode(GetMonsterFeature())
 }
 
 // Items
 
 // Magic
 func getNewSpell(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.CreateSpell())
+	json.NewEncoder(w).Encode(CreateSpell())
 }
 
 func getNewSpellEffectPhysical(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetSpellEffectPhysical())
+	json.NewEncoder(w).Encode(GetSpellEffectPhysical())
 }
 
 func getNewSpellElementPhysical(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetSpellElementPhysical())
+	json.NewEncoder(w).Encode(GetSpellElementPhysical())
 }
 
 func getNewSpellFormPhysical(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetSpellFormPhysical())
+	json.NewEncoder(w).Encode(GetSpellFormPhysical())
 }
 
 func getNewSpellEffectEthereal(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetSpellEffectEthereal())
+	json.NewEncoder(w).Encode(GetSpellEffectEthereal())
 }
 
 func getNewSpellElementEthereal(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetSpellElementEthereal())
+	json.NewEncoder(w).Encode(GetSpellElementEthereal())
 }
 
 func getNewSpellFormEthereal(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetSpellFormEthereal())
+	json.NewEncoder(w).Encode(GetSpellFormEthereal())
 }
 
 func getNewMutation(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMutation())
+	json.NewEncoder(w).Encode(GetMutation())
 }
 
 func getNewInsanity(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetInsanity())
+	json.NewEncoder(w).Encode(GetInsanity())
 }
 
 func getNewOmen(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(atoms.GetMutation())
+	json.NewEncoder(w).Encode(GetMutation())
 }
 
 //Locations

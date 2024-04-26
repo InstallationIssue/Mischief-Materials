@@ -1,4 +1,4 @@
-package atoms
+package main
 
 import (
 	rand "math/rand/v2"
