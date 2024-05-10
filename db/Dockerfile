@@ -6,4 +6,4 @@ COPY init.sql init.sql
 
 RUN init.sql
 
-CMD [ "executable" ]
+CMD [ "postgresql" ]

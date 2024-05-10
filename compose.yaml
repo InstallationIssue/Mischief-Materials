@@ -18,6 +18,8 @@ services:
   randomizer:
     build:
       context: ./randomizer
+    ports:
+      - 10000:8010
 
   client:
     build:
