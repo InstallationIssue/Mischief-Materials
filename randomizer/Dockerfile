@@ -6,8 +6,9 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o docker-randomizer
 
 FROM scratch
 WORKDIR /app
-COPY --from=build /src/docker-randomizer docker-randomizer
+USER randy
+COPY --chown=node:node --from=build /src/docker-randomizer docker-randomizer
 
-EXPOSE 8082
+EXPOSE 8080
 
 CMD [ "/docker-randomizer" ]
