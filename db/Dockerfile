@@ -1,9 +1,16 @@
 FROM postgres
 
+VOLUME rits-volume
+
+COPY init.sql /docker-entrypoint-initdb.d/
+
+# COPY env env
+
+ENV POSTGRES_USER=postgres \
+POSTGRES_PASSWORD=P05t&4eEs!
+
 WORKDIR /db
 
-COPY init.sql init.sql
+# CMD [ "postgresql" ]
 
-RUN init.sql
-
-CMD [ "postgresql" ]
+# docker build -t rits-db .
