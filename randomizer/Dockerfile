@@ -1,1 +1,13 @@
-FROM golang:1.13
+FROM golang:1.22.2 as build
+WORKDIR /src
+COPY src ./
+
+RUN CGO_ENABLED=0 GOOS=linux go build -o docker-randomizer
+
+FROM scratch
+WORKDIR /app
+COPY --from=build /src/docker-randomizer docker-randomizer
+
+EXPOSE 8082
+
+CMD [ "/docker-randomizer" ]
