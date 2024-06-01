@@ -6,11 +6,10 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o docker-randomizer
 
 FROM scratch
 WORKDIR /app
-USER randy
-COPY --chown=node:node --from=build /src/docker-randomizer docker-randomizer
+COPY --from=build /src/docker-randomizer docker-randomizer
 
 EXPOSE 8080
 
-CMD [ "/docker-randomizer" ]
+CMD [ "/app/docker-randomizer" ]
 
 # docker build -t rits-randomizer .

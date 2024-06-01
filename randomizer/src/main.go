@@ -196,7 +196,10 @@ func getNewOmen(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(GetMutation())
 }
 
-//Locations
+// Locations
+func getNewCityTheme(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetCityTheme())
+}
 
 func handleRequests(port string) {
 	// Characters
@@ -255,6 +258,8 @@ func handleRequests(port string) {
 	http.HandleFunc("/omen", getNewOmen)
 
 	// Locations
+	http.HandleFunc("/location", getNewCityTheme)
+	http.HandleFunc("/location/citytheme", getNewCityTheme)
 
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }

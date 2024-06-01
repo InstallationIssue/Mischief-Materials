@@ -1,42 +1,28 @@
 services:
-
-  db:
-    image: rits_db
+  rits-db:
+    image: rits-db
     ports:
-      - 3200:5432
-    secrets:
-      - db_root_password
-      - db_user
-      - db_password
-    volumes:
-      - db_data:/var/lib/postgres/data
-    environment:
-      - POSTGRES_USER=rits
-      - POSTGRES_PASSWORD=5!4sC5ackerS
-      - POSTGRES_DB=rits_dev
-      - NODE_ENV=development
+      - 8091:5432
       
-  randomizer:
-    image: rits_randomizer
+  rits-randomizer:
+    image: rits-randomizer
     ports:
-      - 10000:8010
+      - 8090:8010
 
-  client:
-    image: rits_client
+  rits-client:
+    image: rits-client
     depends_on:
-      - db
-      - randomizer
-    environment:
-      - DATABASE_URL=db_url
-    secrets:
-      - db_password
+      - rits-db
+      - rits-randomizer
+    ports:
+      - 8092:3000
+    
+#secrets:
+#  db_root_password: P05t&4eEs!
+#  db_user: rits
+#  db_password: 5!4sC5ackerS
+#  db_url: postgresql://rits:5!4sC5ackerS@localhost:5432/rits_dev?schema=base
 
-secrets:
-  #db_root_password: P05t&4eEs!
-  db_user: rits
-  db_password: 5!4sC5ackerS
-  db_url: postgresql://rits:5!4sC5ackerS@localhost:5432/rits_dev?schema=base
-
-volumes:
-    rits-volume:
-      external: true
+#volumes:
+#    rits-volume:
+#      external: true
