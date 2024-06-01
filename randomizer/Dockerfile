@@ -12,3 +12,5 @@ COPY --chown=node:node --from=build /src/docker-randomizer docker-randomizer
 EXPOSE 8080
 
 CMD [ "/docker-randomizer" ]
+
+# docker build -t rits-randomizer .
