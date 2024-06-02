@@ -1,13 +1,9 @@
 services:
   rits-db:
     image: rits-db
-    ports:
-      - 8091:5432
       
   rits-randomizer:
     image: rits-randomizer
-    ports:
-      - 8090:8010
 
   rits-client:
     image: rits-client
@@ -15,7 +11,7 @@ services:
       - rits-db
       - rits-randomizer
     ports:
-      - 8092:3000
+      - 8090:3000
     
 #secrets:
 #  db_root_password: P05t&4eEs!
