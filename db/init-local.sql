@@ -1,3 +1,37 @@
+-- Create user
+CREATE USER rits WITH PASSWORD '5!4sC5ackerS';
+
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 16.2
+-- Dumped by pg_dump version 16.2
+
+-- Started on 2024-04-13 21:00:11 ACST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3827 (class 1262 OID 16394)
+-- Name: rits_dev; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE rits_db WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'C';
+
+ALTER DATABASE rits_db OWNER TO rits;
+
+\connect rits_dev
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -15,6 +49,8 @@ SET row_security = off;
 --
 
 CREATE SCHEMA base;
+
+ALTER SCHEMA base OWNER TO rits;
 
 SET default_tablespace = '';
 
@@ -55,6 +91,9 @@ CREATE TABLE base."Character" (
     hobbies text DEFAULT ''::text NOT NULL
 );
 
+
+ALTER TABLE base."Character" OWNER TO rits;
+
 --
 -- TOC entry 224 (class 1259 OID 16463)
 -- Name: Character_id_seq; Type: SEQUENCE; Schema: base; Owner: rits
@@ -67,6 +106,9 @@ CREATE SEQUENCE base."Character_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."Character_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3828 (class 0 OID 0)
@@ -87,6 +129,9 @@ CREATE TABLE base."Encounter" (
     name text DEFAULT ''::text NOT NULL
 );
 
+
+ALTER TABLE base."Encounter" OWNER TO rits;
+
 --
 -- TOC entry 235 (class 1259 OID 16548)
 -- Name: EncounterInstance; Type: TABLE; Schema: base; Owner: rits
@@ -98,6 +143,9 @@ CREATE TABLE base."EncounterInstance" (
     encounter_id integer NOT NULL,
     health_lost integer DEFAULT 0 NOT NULL
 );
+
+
+ALTER TABLE base."EncounterInstance" OWNER TO rits;
 
 --
 -- TOC entry 234 (class 1259 OID 16547)
@@ -111,6 +159,9 @@ CREATE SEQUENCE base."EncounterInstance_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."EncounterInstance_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3829 (class 0 OID 0)
@@ -134,6 +185,9 @@ CREATE SEQUENCE base."Encounter_id_seq"
     NO MAXVALUE
     CACHE 1;
 
+
+ALTER SEQUENCE base."Encounter_id_seq" OWNER TO rits;
+
 --
 -- TOC entry 3830 (class 0 OID 0)
 -- Dependencies: 236
@@ -141,6 +195,7 @@ CREATE SEQUENCE base."Encounter_id_seq"
 --
 
 ALTER SEQUENCE base."Encounter_id_seq" OWNED BY base."Encounter".id;
+
 
 --
 -- TOC entry 223 (class 1259 OID 16455)
@@ -154,6 +209,9 @@ CREATE TABLE base."Event" (
     scenario_id integer NOT NULL
 );
 
+
+ALTER TABLE base."Event" OWNER TO rits;
+
 --
 -- TOC entry 222 (class 1259 OID 16454)
 -- Name: Event_id_seq; Type: SEQUENCE; Schema: base; Owner: rits
@@ -166,6 +224,9 @@ CREATE SEQUENCE base."Event_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."Event_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3831 (class 0 OID 0)
@@ -188,6 +249,9 @@ CREATE TABLE base."Item" (
     value integer DEFAULT 100 NOT NULL
 );
 
+
+ALTER TABLE base."Item" OWNER TO rits;
+
 --
 -- TOC entry 238 (class 1259 OID 16565)
 -- Name: Item_id_seq; Type: SEQUENCE; Schema: base; Owner: rits
@@ -200,6 +264,9 @@ CREATE SEQUENCE base."Item_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."Item_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3832 (class 0 OID 0)
@@ -223,6 +290,9 @@ CREATE TABLE base."Location" (
     icon text DEFAULT ''::text NOT NULL
 );
 
+
+ALTER TABLE base."Location" OWNER TO rits;
+
 --
 -- TOC entry 220 (class 1259 OID 16442)
 -- Name: Location_id_seq; Type: SEQUENCE; Schema: base; Owner: rits
@@ -235,6 +305,9 @@ CREATE SEQUENCE base."Location_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."Location_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3833 (class 0 OID 0)
@@ -258,6 +331,9 @@ CREATE TABLE base."Magic" (
     induction text DEFAULT ''::text NOT NULL
 );
 
+
+ALTER TABLE base."Magic" OWNER TO rits;
+
 --
 -- TOC entry 242 (class 1259 OID 16586)
 -- Name: Magic_id_seq; Type: SEQUENCE; Schema: base; Owner: rits
@@ -270,6 +346,9 @@ CREATE SEQUENCE base."Magic_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."Magic_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3834 (class 0 OID 0)
@@ -301,6 +380,9 @@ CREATE TABLE base."Monster" (
     weakness text DEFAULT ''::text NOT NULL
 );
 
+
+ALTER TABLE base."Monster" OWNER TO rits;
+
 --
 -- TOC entry 232 (class 1259 OID 16527)
 -- Name: Monster_id_seq; Type: SEQUENCE; Schema: base; Owner: rits
@@ -313,6 +395,9 @@ CREATE SEQUENCE base."Monster_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."Monster_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3835 (class 0 OID 0)
@@ -334,6 +419,9 @@ CREATE TABLE base."Path" (
     description text DEFAULT ''::text NOT NULL
 );
 
+
+ALTER TABLE base."Path" OWNER TO rits;
+
 --
 -- TOC entry 231 (class 1259 OID 16520)
 -- Name: PathInstance; Type: TABLE; Schema: base; Owner: rits
@@ -345,6 +433,9 @@ CREATE TABLE base."PathInstance" (
     path_id integer NOT NULL,
     health_lost integer DEFAULT 0 NOT NULL
 );
+
+
+ALTER TABLE base."PathInstance" OWNER TO rits;
 
 --
 -- TOC entry 230 (class 1259 OID 16519)
@@ -358,6 +449,9 @@ CREATE SEQUENCE base."PathInstance_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."PathInstance_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3836 (class 0 OID 0)
@@ -381,6 +475,9 @@ CREATE SEQUENCE base."Path_id_seq"
     NO MAXVALUE
     CACHE 1;
 
+
+ALTER SEQUENCE base."Path_id_seq" OWNER TO rits;
+
 --
 -- TOC entry 3837 (class 0 OID 0)
 -- Dependencies: 228
@@ -402,6 +499,9 @@ CREATE TABLE base."Relationship" (
     character_id integer NOT NULL
 );
 
+
+ALTER TABLE base."Relationship" OWNER TO rits;
+
 --
 -- TOC entry 226 (class 1259 OID 16497)
 -- Name: Relationship_id_seq; Type: SEQUENCE; Schema: base; Owner: rits
@@ -414,6 +514,9 @@ CREATE SEQUENCE base."Relationship_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."Relationship_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3838 (class 0 OID 0)
@@ -437,6 +540,9 @@ CREATE TABLE base."Scenario" (
     image text DEFAULT 'Default'::text NOT NULL
 );
 
+
+ALTER TABLE base."Scenario" OWNER TO rits;
+
 --
 -- TOC entry 216 (class 1259 OID 16421)
 -- Name: Scenario_id_seq; Type: SEQUENCE; Schema: base; Owner: rits
@@ -449,6 +555,9 @@ CREATE SEQUENCE base."Scenario_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."Scenario_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3839 (class 0 OID 0)
@@ -471,6 +580,9 @@ CREATE TABLE base."Spell" (
     magic_id integer NOT NULL
 );
 
+
+ALTER TABLE base."Spell" OWNER TO rits;
+
 --
 -- TOC entry 240 (class 1259 OID 16576)
 -- Name: Spell_id_seq; Type: SEQUENCE; Schema: base; Owner: rits
@@ -483,6 +595,9 @@ CREATE SEQUENCE base."Spell_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."Spell_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3840 (class 0 OID 0)
@@ -505,6 +620,9 @@ CREATE TABLE base."Thread" (
     scenario_id integer NOT NULL
 );
 
+
+ALTER TABLE base."Thread" OWNER TO rits;
+
 --
 -- TOC entry 218 (class 1259 OID 16433)
 -- Name: Thread_id_seq; Type: SEQUENCE; Schema: base; Owner: rits
@@ -517,6 +635,9 @@ CREATE SEQUENCE base."Thread_id_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+
+ALTER SEQUENCE base."Thread_id_seq" OWNER TO rits;
 
 --
 -- TOC entry 3841 (class 0 OID 0)
@@ -537,6 +658,9 @@ CREATE TABLE base."_CharacterToItem" (
     "B" integer NOT NULL
 );
 
+
+ALTER TABLE base."_CharacterToItem" OWNER TO rits;
+
 --
 -- TOC entry 245 (class 1259 OID 16601)
 -- Name: _CharacterToScenario; Type: TABLE; Schema: base; Owner: rits
@@ -546,6 +670,9 @@ CREATE TABLE base."_CharacterToScenario" (
     "A" integer NOT NULL,
     "B" integer NOT NULL
 );
+
+
+ALTER TABLE base."_CharacterToScenario" OWNER TO rits;
 
 --
 -- TOC entry 247 (class 1259 OID 16607)
@@ -557,6 +684,9 @@ CREATE TABLE base."_EncounterToScenario" (
     "B" integer NOT NULL
 );
 
+
+ALTER TABLE base."_EncounterToScenario" OWNER TO rits;
+
 --
 -- TOC entry 248 (class 1259 OID 16610)
 -- Name: _ItemToScenario; Type: TABLE; Schema: base; Owner: rits
@@ -566,6 +696,9 @@ CREATE TABLE base."_ItemToScenario" (
     "A" integer NOT NULL,
     "B" integer NOT NULL
 );
+
+
+ALTER TABLE base."_ItemToScenario" OWNER TO rits;
 
 --
 -- TOC entry 244 (class 1259 OID 16598)
@@ -577,6 +710,9 @@ CREATE TABLE base."_LocationToScenario" (
     "B" integer NOT NULL
 );
 
+
+ALTER TABLE base."_LocationToScenario" OWNER TO rits;
+
 --
 -- TOC entry 249 (class 1259 OID 16613)
 -- Name: _MagicToScenario; Type: TABLE; Schema: base; Owner: rits
@@ -586,6 +722,9 @@ CREATE TABLE base."_MagicToScenario" (
     "A" integer NOT NULL,
     "B" integer NOT NULL
 );
+
+
+ALTER TABLE base."_MagicToScenario" OWNER TO rits;
 
 --
 -- TOC entry 215 (class 1259 OID 16408)
@@ -602,6 +741,9 @@ CREATE TABLE base._prisma_migrations (
     started_at timestamp with time zone DEFAULT now() NOT NULL,
     applied_steps_count integer DEFAULT 0 NOT NULL
 );
+
+
+ALTER TABLE base._prisma_migrations OWNER TO rits;
 
 --
 -- TOC entry 3548 (class 2604 OID 16467)

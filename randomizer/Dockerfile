@@ -1,4 +1,4 @@
-FROM golang:1.22.2 as build
+FROM golang:1.22 AS build
 WORKDIR /src
 COPY src ./
 
@@ -8,8 +8,6 @@ FROM scratch
 WORKDIR /app
 COPY --from=build /src/docker-randomizer docker-randomizer
 
-EXPOSE 8080
+EXPOSE 10000
 
 CMD [ "/app/docker-randomizer" ]
-
-# docker build -t rits-randomizer .

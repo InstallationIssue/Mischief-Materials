@@ -1,16 +1,7 @@
 FROM postgres
 
-VOLUME rits-volume
-
 COPY init.sql /docker-entrypoint-initdb.d/
 
-# COPY env env
+#ARG DB_USER DB_PASSWORD POSTGRES_DB
 
-ENV POSTGRES_USER=postgres \
-POSTGRES_PASSWORD=P05t&4eEs!
-
-WORKDIR /db
-
-# CMD [ "postgresql" ]
-
-# docker build -t rits-db .
+#ENV POSTGRES_USER=${DB_USER} POSTGRES_PASSWORD=${DB_PASSWORD} POSTGRES_DB=${POSTGRES_DB}

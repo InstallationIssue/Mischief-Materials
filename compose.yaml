@@ -1,24 +1,77 @@
+name: rats-in-transit
+
 services:
-  rits-db:
-    image: rits-db
-      
   rits-randomizer:
-    image: rits-randomizer
+    build: 
+      context: ./randomizer/
+      labels:
+        - "com.description=Rits Randomizer"
+    networks:
+      - hidden
+
+  rits-db:
+    build: 
+      context: ./db/
+      labels:
+        - "com.description=Rits Database"
+    environment:
+      - POSTGRES_DB=rits_db
+      - POSTGRES_USER=db_user
+      - POSTGRES_PASSWORD=db_password
+    secrets:
+      - db_user
+      - db_password
+    volumes:
+      - type: volume
+        source: rits-volume
+        target: /var/lib/postgresql
+    networks:
+      - hidden
+    healthcheck:
+      test: ["CMD-SHELL", "psql -U db_user -d rits_db -c 'SELECT 1' || exit 1"]
+      interval: 4s
+      timeout: 20s
+      retries: 5
+      start_period: 4s
+      start_interval: 1s
 
   rits-client:
-    image: rits-client
+    build:
+      context: ./client/
+      labels:
+        - "com.description=Rits Web Client"
+    environment:
+      DATABASE_URL: postgresql://db_user:db_password@rits-db/rits_db?schema=base
+    secrets:
+      - db_user
+      - db_password
     depends_on:
-      - rits-db
-      - rits-randomizer
+      rits-db:
+        condition: service_healthy
+      rits-randomizer:
+        condition: service_started
     ports:
       - 8090:3000
+    networks:
+      - exposed
+      - hidden
     
-#secrets:
-#  db_root_password: P05t&4eEs!
-#  db_user: rits
-#  db_password: 5!4sC5ackerS
-#  db_url: postgresql://rits:5!4sC5ackerS@localhost:5432/rits_dev?schema=base
+secrets:
+  db_user:
+    file: .secret-db_user
+  db_password:
+    file: .secret-db_password
 
-#volumes:
-#    rits-volume:
-#      external: true
+networks:
+  exposed:
+    attachable: true
+    labels: 
+      - "com.description=Front End Network for Website Exposure"
+  hidden:
+    attachable: false
+    labels:
+      - "com.description=Back End Network for Service Interconnect"
+
+volumes:
+    rits-volume:
+      external: true

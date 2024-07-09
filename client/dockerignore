@@ -4,5 +4,4 @@ README.md
 next-env.d.ts
 Dockerfile
 .dockerignore
-.env.development
-.env
+.env*
