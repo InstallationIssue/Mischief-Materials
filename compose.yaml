@@ -69,6 +69,7 @@ networks:
       - "com.description=Front End Network for Website Exposure"
   hidden:
     attachable: false
+    internal: true
     labels:
       - "com.description=Back End Network for Service Interconnect"
 
