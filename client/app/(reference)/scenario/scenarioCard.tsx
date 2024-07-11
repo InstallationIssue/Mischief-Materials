@@ -28,7 +28,7 @@ export default function ScenarioCard({
             {image == 'Default' && <Default/>}
           </Link>
           <div className="w-full px-2 absolute bg-secondary-dark bg-opacity-40 backdrop-blur-sm">
-            <p className="capitalize text-center text-lg font-play overflow-x-auto whitespace-nowrap scroll-m-0">{name}</p>
+            <p className="capitalize text-center text-lg font-header overflow-x-auto whitespace-nowrap scroll-m-0">{name}</p>
             <CardButtons id={id} name={name} image={image}/>
           </div>
         </div>

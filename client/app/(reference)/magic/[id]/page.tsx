@@ -23,7 +23,7 @@ export default async function Magic({
 
     return (
       <div className="flex flex-col gap-2 p-1">
-        <div className="flex flex-row gap-2 magics-center overflow-clip rounded-lg items-center font-play text-lg">
+        <div className="flex flex-row gap-2 magics-center overflow-clip rounded-lg items-center font-header text-lg">
             {magic.medium == 'magic' && <MagicIcon className='h-8 w-8 fill-primary-light'/>}
             {magic.medium == 'flame' && <Flame className='h-8 w-8 fill-primary-light'/>}
             {magic.medium == 'flask' && <Flask className='h-8 w-8 fill-primary-light'/>}

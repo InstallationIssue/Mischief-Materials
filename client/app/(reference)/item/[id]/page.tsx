@@ -12,9 +12,9 @@ export default async function Item({
         <div className="flex flex-col p-1">
             <div className="flex flex-row gap-2 h-10 items-center overflow-clip fill-primary-light">
                 <span className="flex-grow whitespace-nowrap overflow-clip">
-                <p className="scrolling-text capitalize font-play font-bold text-xl">{item.name}</p>
+                <p className="scrolling-text capitalize font-header font-bold text-xl">{item.name}</p>
                 </span>
-                <p className="font-play text-xl font-bold">{item.value}</p>
+                <p className="font-header text-xl font-bold">{item.value}</p>
                 <Coins className="aspect-square h-5 cursor-pointer"/>
             </div>
             <div>

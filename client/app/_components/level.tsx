@@ -11,7 +11,7 @@ export default function Level (){
 
     return (
         <div className="relative aspect-square h-24 flex justify-center items-center">
-            <p className="text-primary-dark font-play font-bold text-2xl z-20 -mt-4">{level}</p>
+            <p className="text-primary-dark font-header font-bold text-2xl z-20 -mt-4">{level}</p>
             <LevelIcon className='fill-primary-light stroke-stats-level stroke-[4] aspect-square h-12 absolute z-10 top-5'/>
             <Circle className='absolute aspect-square h-28 fill-transparent stroke-[2] stroke-primary-light-grey'/>
             <label className='absolute left-[29px] top-[16px] -ml-2 -mt-2'>

@@ -10,10 +10,9 @@ export default function Page() {
 
   return (
     <div className='flex flex-col items-center w-full'>
-      <span className='flex flex-row w-full justify-center'>
-        <p>Rats in Transit</p>
+      <span className='flex flex-row w-full justify-start align-middle bg-primary-light-grey px-10 h-12'>
+        <p className='text-primary-dark font-title text-2xl align-middle'>Rats in Transit</p>
       </span>
-      <p className='w-2/3'>Welcome to my Rats in Transit Web app. This is designed to be a companion app to the table top game maze rats. Please choose either of the options below to begin playing</p>
       <div className='flex flex-row justify-center w-full items-center my-4'>
         <Link href='/scenario' className=' rounded-s-full flex flex-col items-center h-40 text-center justify-center border-2 border-slate-300 bg-opacity-70 bg-vermillion px-4'>
           <p>
@@ -26,6 +25,7 @@ export default function Page() {
           </p>
         </Link>
       </div>
+      <p className='w-2/3'>Welcome to my Rats in Transit Web app. This is designed to be a companion app to the table top game maze rats. Please choose either of the options below to begin playing</p>
     </div>
   )
 }

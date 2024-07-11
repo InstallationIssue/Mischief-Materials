@@ -6,21 +6,21 @@ const roboto = Roboto_Flex({
   weight: ['400', '700'],
   display: 'swap',
   subsets: ['latin'],
-  variable: '--font-roboto'
+  variable: '--font-text'
 })
 
 const play = Play({
   weight: ['400', '700'],
   display: 'swap',
   subsets: ['latin'],
-  variable: '--font-play'
+  variable: '--font-header'
 })
 
 const notable = Notable({
   weight: '400',
   display: 'swap',
   subsets: ['latin'],
-  variable: '--font-notable'
+  variable: '--font-title'
 })
 
 const libre = Libre_Barcode_39_Text({

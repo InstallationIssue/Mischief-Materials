@@ -23,7 +23,7 @@ export default function HealthCircle ({
     const [offset, setOffset] = useState(calcOffset(health/health_max))
 
     return (
-      <div className='flex justify-center items-center h-full aspect-square relative font-play'>
+      <div className='flex justify-center items-center h-full aspect-square relative font-header'>
         <motion.div className='flex rounded-full aspect-square h-[90%] items-center justify-center relative'
         initial={{ opacity: 0 }}
         animate={{ opacity: 100 }}
