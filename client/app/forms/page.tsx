@@ -7,7 +7,6 @@ import AddItem from "../(reference)/item/addItem";
 // Spell
 // Relationship
 import AddCharacter from "../(reference)/character/add/page";
-import Divider from "../_components/divider";
 
 import Link from "next/link";
 
@@ -17,14 +16,10 @@ export default function forms () {
         <Link className="bg-secondary-light" href="/intercept">
             Go to intercept
         </Link>
-        {/*<AddScenario/>
-        <Divider/>*/}
+        {/*<AddScenario/>*/}
         <AddLocation/>
-        <Divider/>
         {/*<AddMonster/>
-        <Divider/>
-        <AddItem/>
-        <Divider/>*/}
+        <AddItem/>*/}
         <AddCharacter/>
     </div>
     )

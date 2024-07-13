@@ -40,6 +40,7 @@ services:
       context: ./client/
       labels:
         - "com.description=Rits Web Client"
+    #pull_policy: build
     environment:
       DATABASE_URL: postgresql://db_user:db_password@rits-db/rits_db?schema=base
     secrets:

@@ -1,3 +1,5 @@
+import { title } from 'process';
+
 /** @type {import('tailwindcss').Config} */
 export const content = [
   './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -49,10 +51,11 @@ export const theme = {
       'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
     },
     fontFamily: {
-      roboto: ['var(--font-text)'],
-      play: ['var(--font-header)'],
-      notable: ['var(--font-title)'],
+      text: ['var(--font-text)'],
+      header: ['var(--font-header)'],
+      title: ['var(--font-title)'],
       libre: ['var(--font-libre)'],
+      smooch: ['var(--font-smooch)'],
     },
     transitionProperty: {
       'font': 'font-size, line-height',

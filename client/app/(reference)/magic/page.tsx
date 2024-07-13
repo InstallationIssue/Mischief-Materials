@@ -1,5 +1,7 @@
 import MagicCard from "./magicCard"
 import Header from "../../_components/header"
+import CardList from "@/app/_components/cardList"
+import AnimationContainer from "@/app/_components/animationContainer"
 import { getMagics } from "@/prisma/scripts/magic"
 import { Metadata } from "next"
 
@@ -13,11 +15,13 @@ export default async function Page() {
     return (
         <div>
             <Header title="Magics" link="/magic/add"></Header>
-            <div className="flex flex-row flex-wrap">
+            <CardList>
                 {data.map((id, index) => (
-                    <MagicCard key={id.id} id={id.id} name={id.name} medium={id.medium} spells={id.spells.length}/>
+                    <AnimationContainer className={"w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-1/6 p-2"}>
+                        <MagicCard key={id.id} id={id.id} name={id.name} medium={id.medium} spells={id.spells.length}/>
+                    </AnimationContainer>
                 ))}
-            </div>
+            </CardList>
         </div>
     )
 }

@@ -23,11 +23,8 @@ export default function MonsterCard ({
   }) {
 
     return (
-      <motion.div className="w-full sm:w-full md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 p-2 overflow-clip"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 100 }}
-        transition={{ duration: 0.5 }}>
-            <Link href={`/monster/${id}`} className="flex flex-row justify-center items-start self-stretch rounded-md border h-16 p-2">
+      
+            <Link href={`/monster/${id}`} className="flex flex-row justify-center items-start self-stretch rounded-md border h-16 p-2 overflow-clip">
                 <div className="flex flex-grow justify-center items-start self-stretch gap-2">
                     <HealthCircle
                         health_max={health_max}
@@ -53,18 +50,17 @@ export default function MonsterCard ({
                             </div>
                             <div className='flex flex-row gap-1 items-center'>
                                 <Attack className='aspect-square h-5 fill-primary-light cursor-pointer'/>
-                                <p>{att}</p>
-                            </div>
+                            <p>{att}</p>
                         </div>
-                    </motion.div>
-                </div>
-                {size == 'Weak' && <Weak className='h-full aspect-square fill-primary-light'/>}
-                {size == 'Typical' && <Typical className='h-full aspect-square fill-primary-light'/>}
-                {size == 'Tough' && <Tough className='h-full aspect-square fill-primary-light'/>}
-                {size == 'Hulking' && <Hulking className='h-full aspect-square fill-primary-light'/>}
-                {size == 'Colossal' && <Colossal className='h-full aspect-square fill-primary-light'/>}
-                {size == 'Boss' && <Boss className='h-full aspect-square fill-primary-light'/>} 
-            </Link>
-        </motion.div>
+                    </div>
+                </motion.div>
+            </div>
+            {size == 'Weak' && <Weak className='h-full aspect-square fill-primary-light'/>}
+            {size == 'Typical' && <Typical className='h-full aspect-square fill-primary-light'/>}
+            {size == 'Tough' && <Tough className='h-full aspect-square fill-primary-light'/>}
+            {size == 'Hulking' && <Hulking className='h-full aspect-square fill-primary-light'/>}
+            {size == 'Colossal' && <Colossal className='h-full aspect-square fill-primary-light'/>}
+            {size == 'Boss' && <Boss className='h-full aspect-square fill-primary-light'/>} 
+        </Link>
     )
 }

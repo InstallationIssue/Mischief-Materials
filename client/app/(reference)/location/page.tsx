@@ -1,4 +1,6 @@
-import LocationCard from "./locationCard"
+import Card from "./locationCard"
+import CardList from "@/app/_components/cardList"
+import AnimationContainer from "@/app/_components/animationContainer"
 import Header from "../../_components/header"
 import { getLocations } from "@/prisma/scripts/location"
 import { Metadata } from "next"
@@ -13,11 +15,13 @@ export default async function Location(){
     return (
         <div>
             <Header title="Locations" link="/location/add"></Header>
-            <div className="flex flex-row flex-wrap">
+            <CardList>
                 {data.map((id) => (
-                    <LocationCard key={id.id} id={id.id} color={id.color} icon={id.icon} name={id.name}/>
+                    <AnimationContainer className={"w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-1/6 p-2"}>
+                        <Card key={id.id} id={id.id} name={id.name} color={id.color} icon={id.icon}/>
+                    </AnimationContainer>
                 ))}
-            </div>
+            </CardList>
         </div>
     )
 }
