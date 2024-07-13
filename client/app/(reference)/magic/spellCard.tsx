@@ -5,6 +5,6 @@ export default async function SpellCard({
 }) {
     return (
         <div className="border rounded-md p-1 w-fit">
-            <p className="font-play">{name}</p>
+            <p className="font-header">{name}</p>
         </div>
 )}

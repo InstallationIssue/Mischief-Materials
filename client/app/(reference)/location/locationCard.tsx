@@ -34,39 +34,37 @@ export default async function LocationCard({
   }) {
     
     return (
-      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-1/6 p-2">
-        <Link href={`/location/${id}`} className="flex flex-row items-center border rounded-lg p-2 gap-2 h-12 fill-primary-light">
-          <svg className="h-full aspect-square" fill={color} viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40"></circle>
-          </svg>
-          <span className="flex-grow whitespace-nowrap overflow-clip">
-            <p className="scrolling-text capitalize">{name}</p>
-          </span>
-          {icon == 'boat' && <Boat className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'building' && <Building className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'campground' && <Campground className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'city' && <City className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'dungeon' && <Dungeon className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'entrance' && <Entrance className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'factory' && <Factory className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'hideout' && <Hideout className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'home' && <Home className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'hospital' && <Hospital className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'institution' && <Institution className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'landmark' && <Landmark className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'location' && <LocationIcon className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'medical' && <Medical className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'mountain' && <Mountain className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'mountown' && <Mountown className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'obelisk' && <Obelisk className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'outpost' && <Outpost className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'ship' && <Ship className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'store' && <Store className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'tent' && <Tent className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'volcano' && <Volcano className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'warehouse' && <Warehouse className='h-full aspect-square fill-primary-light'/>}
-          {icon == 'worship' && <Worship className='h-full aspect-square fill-primary-light'/>}
-        </Link>
-      </div>
+      <Link href={`/location/${id}`} className="flex flex-row items-center border rounded-lg p-2 gap-2 h-12 fill-primary-light">
+        <svg className="h-full aspect-square" fill={color} viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40"></circle>
+        </svg>
+        <span className="flex-grow whitespace-nowrap overflow-clip">
+          <p className="scrolling-text capitalize">{name}</p>
+        </span>
+        {icon == 'boat' && <Boat className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'building' && <Building className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'campground' && <Campground className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'city' && <City className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'dungeon' && <Dungeon className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'entrance' && <Entrance className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'factory' && <Factory className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'hideout' && <Hideout className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'home' && <Home className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'hospital' && <Hospital className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'institution' && <Institution className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'landmark' && <Landmark className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'location' && <LocationIcon className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'medical' && <Medical className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'mountain' && <Mountain className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'mountown' && <Mountown className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'obelisk' && <Obelisk className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'outpost' && <Outpost className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'ship' && <Ship className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'store' && <Store className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'tent' && <Tent className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'volcano' && <Volcano className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'warehouse' && <Warehouse className='h-full aspect-square fill-primary-light'/>}
+        {icon == 'worship' && <Worship className='h-full aspect-square fill-primary-light'/>}
+      </Link>
     )
 }

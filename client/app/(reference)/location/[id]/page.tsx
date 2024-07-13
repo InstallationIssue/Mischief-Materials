@@ -41,7 +41,7 @@ export default async function Location({
               <circle cx="50" cy="50" r="40"></circle>
             </svg>
             <span className="flex-grow whitespace-nowrap overflow-clip">
-              <p className="capitalize font-play text-2xl">{data.name}</p>
+              <p className="capitalize font-header text-2xl">{data.name}</p>
             </span>
           </span>
           {data.icon == 'boat' && <Boat className='h-full aspect-square fill-primary-light'/>}

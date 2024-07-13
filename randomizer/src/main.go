@@ -197,69 +197,264 @@ func getNewOmen(w http.ResponseWriter, r *http.Request) {
 }
 
 // Locations
+
 func getNewCityTheme(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(GetCityTheme())
 }
 
+func getNewCityEvent(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetCityEvent())
+}
+
+func getNewDistrictTheme(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDistrictTheme())
+}
+
+func getNewBuildingUpperClass(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetBuildingUpperClass())
+}
+
+func getNewBuildingLowerClass(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetBuildingLowerClass())
+}
+
+func getNewCityActivity(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetCityActivity())
+}
+
+func getNewBuildingRoom(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetBuildingRoom())
+}
+
+func getNewTacticalFeatureStreet(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetTacticalFeatureStreet())
+}
+
+func getNewTacticalFeatureBuilding(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetTacticalFeatureBuilding())
+}
+
+func getNewFaction(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetFaction())
+}
+
+func getNewFactionTrait(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetFactionTrait())
+}
+
+func getNewFactionGoal(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetFactionGoal())
+}
+
+func getNewWildRegion(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetWildRegion())
+}
+
+func getNewWildLandmark(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetWildLandmark())
+}
+
+func getNewWildStructure(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetWildStructure())
+}
+
+func getNewWildTrait(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetWildTrait())
+}
+
+func getNewWildDiscovery(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetWildDiscovery())
+}
+
+func getNewWildActivity(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetWildActivity())
+}
+
+func getNewWildHazard(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetWildHazard())
+}
+
+func getNewPlantEdible(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetPlantEdible())
+}
+
+func getNewPlantPoisonous(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetPlantPoisonous())
+}
+
+func getNewInnAdjective(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetInnAdjective())
+}
+
+func getNewInnNoun(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetInnNoun())
+}
+
+func getNewInnQuirk(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetInnQuirk())
+}
+
+func getNewDungeonEntrance(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDungeonEntrance())
+}
+
+func getNewDungeonForm(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDungeonForm())
+}
+
+func getNewDungeonLayout(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDungeonLayout())
+}
+
+func getNewDungeonRuination(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDungeonRuination())
+}
+
+func getNewDungeonReward(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDungeonReward())
+}
+
+func getNewDungeonActivity(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDungeonActivity())
+}
+
+func getNewDungeonRoom(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDungeonRoom())
+}
+
+func getNewDungeonDetail(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDungeonDetail())
+}
+
+func getNewDungeonTrick(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDungeonTrick())
+}
+
+func getNewDungeonHazard(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetDungeonHazard())
+}
+
+func getNewTrapEffect(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetTrapEffect())
+}
+
+func getNewTrapTrigger(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(GetTrapTrigger())
+}
+
+// Webpoint
+
+type endpoint struct {
+	address  string
+	function func(http.ResponseWriter, *http.Request)
+}
+
 func handleRequests(port string) {
-	// Characters
-	http.HandleFunc("/character", getNewCharacter)
-	http.HandleFunc("/character/attributes", getNewAttributes)
-	http.HandleFunc("/character/name", getNewName)
-	http.HandleFunc("/character/background", getNewBackground)
-	http.HandleFunc("/character/appearance", getNewAppearance)
-	http.HandleFunc("/character/physicaldetail", getNewPhysicalDetail)
-	http.HandleFunc("/character/clothing", getNewClothing)
-	http.HandleFunc("/character/personality", getNewPersonality)
-	http.HandleFunc("/character/mannerism", getNewMannerism)
+	endpoints := []*endpoint{
+		// Characters
+		{"/character", getNewCharacter},
+		{"/character/attributes", getNewAttributes},
+		{"/character/name", getNewName},
+		{"/character/background", getNewBackground},
+		{"/character/appearance", getNewAppearance},
+		{"/character/physicaldetail", getNewPhysicalDetail},
+		{"/character/clothing", getNewClothing},
+		{"/character/personality", getNewPersonality},
+		{"/character/mannerism", getNewMannerism},
 
-	// NPCs
-	http.HandleFunc("/npc", getNewNpc)
-	http.HandleFunc("/npc/asset", getNewAsset)
-	http.HandleFunc("/npc/liability", getNewLiability)
-	http.HandleFunc("/npc/goal", getNewGoal)
-	http.HandleFunc("/npc/misfortune", getNewMisfortune)
-	http.HandleFunc("/npc/mission", getNewMission)
-	http.HandleFunc("/npc/method", getNewMethod)
-	http.HandleFunc("/npc/secret", getNewSecret)
-	http.HandleFunc("/npc/reputation", getNewReputation)
-	http.HandleFunc("/npc/hobby", getNewHobby)
-	http.HandleFunc("/npc/relationship", getNewRelationship)
-	http.HandleFunc("/divinedomain", getNewDivineDomain)
-	http.HandleFunc("/afterpartydisaster", getNewAfterPartyDisaster)
+		// NPCs
+		{"/npc", getNewNpc},
+		{"/npc/asset", getNewAsset},
+		{"/npc/liability", getNewLiability},
+		{"/npc/goal", getNewGoal},
+		{"/npc/misfortune", getNewMisfortune},
+		{"/npc/mission", getNewMission},
+		{"/npc/method", getNewMethod},
+		{"/npc/secret", getNewSecret},
+		{"/npc/reputation", getNewReputation},
+		{"/npc/hobby", getNewHobby},
+		{"/npc/relationship", getNewRelationship},
+		{"/divinedomain", getNewDivineDomain},
+		{"/afterpartydisaster", getNewAfterPartyDisaster},
 
-	// Monsters
-	http.HandleFunc("/monster", getNewMonster)
-	http.HandleFunc("/monster/sizing", getNewMonsterSizing)
-	http.HandleFunc("/monster/attributes", getNewMonsterAttributes)
-	http.HandleFunc("/monster/environment", getNewEnvironment)
-	http.HandleFunc("/monster/animalsky", getNewAnimalSky)
-	http.HandleFunc("/monster/animalground", getNewAnimalGround)
-	http.HandleFunc("/monster/animalwater", getNewAnimalWater)
-	http.HandleFunc("/monster/feature", getNewMonsterFeature)
-	http.HandleFunc("/monster/trait", getNewMonsterTrait)
-	http.HandleFunc("/monster/ability", getNewMonsterAbility)
-	http.HandleFunc("/monster/tactic", getNewMonsterTactic)
-	http.HandleFunc("/monster/personality", getNewMonsterPersonality)
-	http.HandleFunc("/monster/weakness", getNewMonsterWeakness)
+		// Monsters
+		{"/monster", getNewMonster},
+		{"/monster/sizing", getNewMonsterSizing},
+		{"/monster/attributes", getNewMonsterAttributes},
+		{"/monster/environment", getNewEnvironment},
+		{"/monster/animalsky", getNewAnimalSky},
+		{"/monster/animalground", getNewAnimalGround},
+		{"/monster/animalwater", getNewAnimalWater},
+		{"/monster/feature", getNewMonsterFeature},
+		{"/monster/trait", getNewMonsterTrait},
+		{"/monster/ability", getNewMonsterAbility},
+		{"/monster/tactic", getNewMonsterTactic},
+		{"/monster/personality", getNewMonsterPersonality},
+		{"/monster/weakness", getNewMonsterWeakness},
 
-	// Items
+		// Items
+		//{"/item/", getNew},
 
-	// Magic
-	http.HandleFunc("/spell", getNewSpell)
-	http.HandleFunc("/spell/effectphysical", getNewSpellEffectPhysical)
-	http.HandleFunc("/spell/elementphysical", getNewSpellElementPhysical)
-	http.HandleFunc("/spell/formphysical", getNewSpellFormPhysical)
-	http.HandleFunc("/spell/effectethereal", getNewSpellEffectEthereal)
-	http.HandleFunc("/spell/elementethereal", getNewSpellElementEthereal)
-	http.HandleFunc("/spell/formethereal", getNewSpellFormEthereal)
-	http.HandleFunc("/mutation", getNewMutation)
-	http.HandleFunc("/insanity", getNewInsanity)
-	http.HandleFunc("/omen", getNewOmen)
+		// Magic
+		{"/spell", getNewSpell},
+		{"/spell/effectphysical", getNewSpellEffectPhysical},
+		{"/spell/elementphysical", getNewSpellElementPhysical},
+		{"/spell/formphysical", getNewSpellFormPhysical},
+		{"/spell/effectethereal", getNewSpellEffectEthereal},
+		{"/spell/elementethereal", getNewSpellElementEthereal},
+		{"/spell/formethereal", getNewSpellFormEthereal},
+		{"/mutation", getNewMutation},
+		{"/insanity", getNewInsanity},
+		{"/omen", getNewOmen},
 
-	// Locations
-	http.HandleFunc("/location", getNewCityTheme)
-	http.HandleFunc("/location/citytheme", getNewCityTheme)
+		// Locations
+		//{"/location", getNewLocation},
+		{"/location/city/theme", getNewCityTheme},
+		{"/location/city/event", getNewCityEvent},
+		{"/location/city/district", getNewDistrictTheme},
+		{"/location/building/upperclass", getNewBuildingUpperClass},
+		{"/location/building/lowerclass", getNewBuildingLowerClass},
+		{"/location/city/activity", getNewCityActivity},
+		{"/location/building/room", getNewBuildingRoom},
+		{"/location/tacticalfeature/building", getNewTacticalFeatureBuilding},
+		{"/location/tacticalfeature/street", getNewTacticalFeatureStreet},
+		{"/faction", getNewFaction},
+		{"/faction/trait", getNewFactionTrait},
+		{"/faction/goal", getNewFactionGoal},
+		{"/location/wild/region", getNewWildRegion},
+		{"/location/wild/landmark", getNewWildLandmark},
+		{"/location/wild/structure", getNewWildStructure},
+		{"/location/wild/trait", getNewWildTrait},
+		{"/location/wild/discovery", getNewWildDiscovery},
+		{"/location/wild/activity", getNewWildActivity},
+		{"/location/wild/hazard", getNewWildHazard},
+		//{"/location/wild/plant", getNewPlant},
+		{"/location/wild/plant/edible", getNewPlantEdible},
+		{"/location/wild/plant/poisonous", getNewPlantPoisonous},
+		//{"/location/inn", getNewInn},
+		{"/location/inn/adjective", getNewInnAdjective},
+		{"/location/inn/noun", getNewInnNoun},
+		{"/location/inn/quirk", getNewInnQuirk},
+		//{"/location/dungeon", getNewDungeon},
+		{"/location/dungeon/entrance", getNewDungeonEntrance},
+		{"/location/dungeon/form", getNewDungeonForm},
+		{"/location/dungeon/layout", getNewDungeonLayout},
+		{"/location/dungeon/ruination", getNewDungeonRuination},
+		{"/location/dungeon/reward", getNewDungeonReward},
+		{"/location/dungeon/activity", getNewDungeonActivity},
+		{"/location/dungeon/room", getNewDungeonRoom},
+		{"/location/dungeon/detail", getNewDungeonDetail},
+		{"/location/dungeon/trick", getNewDungeonTrick},
+		{"/location/dungeon/hazard", getNewDungeonHazard},
+		//{"/location/trap", getNewTrap},
+		{"/location/trap/effect", getNewTrapEffect},
+		{"/location/trap/trigger", getNewTrapTrigger},
+	}
+
+	//test
+	for i := 0; i < len(endpoints); i++ {
+		http.HandleFunc(endpoints[i].address, endpoints[i].function)
+	}
 
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }

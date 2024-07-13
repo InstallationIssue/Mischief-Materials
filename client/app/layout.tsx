@@ -6,21 +6,28 @@ const roboto = Roboto_Flex({
   weight: ['400', '700'],
   display: 'swap',
   subsets: ['latin'],
-  variable: '--font-roboto'
+  variable: '--font-text'
 })
 
 const play = Play({
   weight: ['400', '700'],
   display: 'swap',
   subsets: ['latin'],
-  variable: '--font-play'
+  variable: '--font-header'
 })
 
 const notable = Notable({
   weight: '400',
   display: 'swap',
   subsets: ['latin'],
-  variable: '--font-notable'
+  variable: '--font-title'
+})
+
+const smooch = Smooch_Sans({
+  weight: ['400', '700'],
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-smooch'
 })
 
 const libre = Libre_Barcode_39_Text({
@@ -37,8 +44,8 @@ export default function RootLayout({
 }) {
 
   return (
-      <html lang="en" className='h-full'>
-        <body className={`flex flex-col h-full text-primary-dark dark:fill-primary-light dark:text-primary-light dark:bg-primary-dark ${roboto.variable} ${play.variable} ${notable.variable} ${libre.variable}`}>
+      <html lang="en" className={`h-full ${roboto.variable} ${play.variable} ${notable.variable} ${libre.variable} ${smooch.variable}`}>
+        <body className='flex flex-col h-full text-primary-dark dark:fill-primary-light dark:text-primary-light dark:bg-primary-dark'>
           {children}
         </body>
       </html>

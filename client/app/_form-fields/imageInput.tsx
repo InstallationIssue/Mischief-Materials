@@ -22,7 +22,7 @@ export default function ImageInput ({
             <select id={id} name={name} value={image} onChange={(e) => {
                 e.preventDefault() 
                 setImage(e.target.value)
-                }} className="w-fit h-fit p-2 rounded backdrop-blur-lg text-center z-10 bg-transparent border font-play">
+                }} className="w-fit h-fit p-2 rounded backdrop-blur-lg text-center z-10 bg-transparent border font-header">
                 <option value={images[0]}>Default</option>
                 <option value={images[1]}>Lupin in Iceland</option>
                 <option value={images[2]}>Misty Valley</option>

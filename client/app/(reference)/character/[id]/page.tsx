@@ -30,23 +30,23 @@ export default async function Character({
                         health_lost={character.health_lost}
                         armor={character.armor}/>
                     <div className="flex flex-grow self-stretch justify-between h-12 items-center">
-                        <p className="font-play text-clip text-3xl">{character.name}</p>
+                        <p className="font-header text-clip text-3xl">{character.name}</p>
                         <div className="flex items-center gap-6">
                             <div className='flex flex-row gap-2 items-center'>
                                 <Strength className='aspect-square h-10 fill-primary-light cursor-pointer'/>
-                                <p className="font-play text-3xl font-bold">{character.str}</p>
+                                <p className="font-header text-3xl font-bold">{character.str}</p>
                             </div>
                             <div className='flex flex-row gap-2 items-center'>
                                 <Dexterity className='aspect-square h-10 fill-primary-light cursor-pointer'/>
-                                <p className="font-play text-3xl font-bold">{character.dex}</p>
+                                <p className="font-header text-3xl font-bold">{character.dex}</p>
                             </div>
                             <div className='flex flex-row gap-2 items-center'>
                                 <Willpower className='aspect-square h-9 fill-primary-light cursor-pointer'/>
-                                <p className="font-play text-3xl font-bold">{character.wil}</p>
+                                <p className="font-header text-3xl font-bold">{character.wil}</p>
                             </div>
                             <div className='flex flex-row gap-2 items-center'>
                                 <Attack className='aspect-square h-9 fill-primary-light cursor-pointer'/>
-                                <p className="font-play text-3xl font-bold">{character.att}</p>
+                                <p className="font-header text-3xl font-bold">{character.att}</p>
                             </div>
                         </div>
                     </div>
@@ -54,21 +54,21 @@ export default async function Character({
             <div className="flex flex-row border w-full h-full rounded-lg overflow-clip">
                 <div className="flex flex-col w-1/2 border border-y-0 border-s-0">
                     <div className="h-3/5 w-full bg-primary-grey flex items-center justify-center">
-                        <p className="font-play font-bold text-2xl">Portrait</p>
+                        <p className="font-header font-bold text-2xl">Portrait</p>
                     </div>
                     <div className="w-full flex flex-col grow px-2 border border-x-0 border-b-0">
-                        <p className="font-play font-bold text-lg">Backstory</p>
+                        <p className="font-header font-bold text-lg">Backstory</p>
                         <p>{character.background}</p>
                     </div>
                 </div>
                 <div className="flex flex-col w-1/2 px-2">
-                    <p className="font-play font-bold text-lg">Traits</p>
+                    <p className="font-header font-bold text-lg">Traits</p>
                     <TraitsCharacter id={""} clothing={character.clothing} appearance={character.appearance} physical_detail={character.physical_detail} personality={character.personality} mannerism={character.mannerism} hobby={character.hobbies}/>
-                    <p className="font-play font-bold text-lg">Details</p>
+                    <p className="font-header font-bold text-lg">Details</p>
                     <Details id={""} profession={""} reputation={character.reputations} misfortune={character.misfortunes} goal={character.goals} secret={character.secrets} asset={character.assets} liability={character.liabilities}/>
                 </div>
             </div>
-            <div className="flex flex-row justify-between bottom-0 w-full font-play text-xl h-10">
+            <div className="flex flex-row justify-between bottom-0 w-full font-header text-xl h-10">
             <span className="py-1 w-[19%] flex justify-center bg-secondary-light rounded-lg border">
                 <p className="hidden sm:inline">Inventory</p>
                 <Items className='sm:hidden h-full'/>

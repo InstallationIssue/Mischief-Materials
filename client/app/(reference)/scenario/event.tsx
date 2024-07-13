@@ -7,7 +7,7 @@ export default function Event({
 }) {
     return (
       <div className="w-full px-2 py-1 bg-primary-dark-grey rounded">
-        <p className="font-play">{name}</p>
+        <p className="font-header">{name}</p>
       </div>
     )
 }

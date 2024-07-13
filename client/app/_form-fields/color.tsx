@@ -9,7 +9,7 @@ export default function Color ({
     function colors () {}
 
     return (
-        <div className="w-full p-2.5 px-4 gap-4 rounded-lg justify-between items-center inline-flex font-play bg-primary-dark-grey">
+        <div className="w-full p-2.5 px-4 gap-4 rounded-lg justify-between items-center inline-flex font-header bg-primary-dark-grey">
             <div className='w-fit'>
                 Select Color
             </div>

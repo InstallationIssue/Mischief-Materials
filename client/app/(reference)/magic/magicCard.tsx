@@ -20,8 +20,7 @@ export default async function MagicCard({
   }) {
 
     return (
-      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-1/6 p-2">
-        <Link href={`/magic/${id}`} className="flex flex-row gap-2 h-12 magics-center overflow-clip border rounded-lg p-2 border-primary-light items-center font-play text-lg">
+        <Link href={`/magic/${id}`} className="flex flex-row gap-2 h-12 magics-center overflow-clip border rounded-lg p-2 border-primary-light items-center font-header text-lg">
             {medium == 'magic' && <Magic className='h-8 w-8 fill-primary-light'/>}
             {medium == 'flame' && <Flame className='h-8 w-8 fill-primary-light'/>}
             {medium == 'flask' && <Flask className='h-8 w-8 fill-primary-light'/>}
@@ -41,6 +40,5 @@ export default async function MagicCard({
               <p>{spells}</p>
             </span>
         </Link>
-      </div>
     )
 }

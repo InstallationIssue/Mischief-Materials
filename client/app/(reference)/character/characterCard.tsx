@@ -15,11 +15,8 @@ export default function CharacterCard({
     id: number, name: string, health_max: number, health_lost: number, armor: number, str: number, dex: number, wil: number, att: number
   }) {
     return (
-        <motion.div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-1/6 p-2 overflow-clip"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 100 }}
-        transition={{ duration: 0.5 }}>
-            <Link href={`/character/${id}`} className="flex flex-row justify-center items-start self-stretch rounded-md border h-16 p-2">
+        
+            <Link href={`/character/${id}`} className="flex flex-row justify-center items-start self-stretch rounded-md border h-16 p-2 overflow-clip">
                 <div className="flex flex-grow justify-center items-start self-stretch gap-2">
                     <HealthCircle
                         health_max={health_max}
@@ -51,6 +48,5 @@ export default function CharacterCard({
                     </motion.div>
                 </div>
             </Link>
-        </motion.div>
     )
 }

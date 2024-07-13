@@ -16,6 +16,8 @@ RUN npm install @prisma/client
 
 RUN npm run postinstall
 
+RUN npx next telemetry disable
+
 EXPOSE 3000
 
 CMD  npm run build && npm run start

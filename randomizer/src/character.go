@@ -68,6 +68,9 @@ func GetName() string {
 	case 1:
 		newName += feminineNames[rand.IntN(len(feminineNames))]
 	}
+
+	newName += " "
+
 	switch rand.IntN(2) {
 	case 0:
 		newName += nobleSurnames[rand.IntN(len(nobleSurnames))]

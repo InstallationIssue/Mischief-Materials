@@ -21,7 +21,7 @@ export default function Armor (){
                 <circle cx="54.2082" cy="78.8293" r="5.41667" fill="#2446DB"/>
                 <circle cx="35.7919" cy="78.8293" r="5.41667" fill="#D9D9D9"/>
             </svg>
-            <p className="text-primary-dark font-play font-bold text-2xl z-10">{armor}</p>
+            <p className="text-primary-dark font-header font-bold text-2xl z-10">{armor}</p>
         </div>
     )
 }
