@@ -57,6 +57,47 @@ export async function getMonsterExtras(id: number){
     })
 }
 
+export async function getMonstersBySearch(term: string){
+    if (term === ''){
+        return await prisma.monster.findMany({
+            select: {
+                id          : true,
+                name        : true,
+                background  : true, 
+                health_max  : true,
+                armor       : true,
+                str         : true,
+                dex         : true,
+                wil         : true,
+                size        : true,
+                attack      : true,
+            }, 
+        })
+    }
+    else {
+        return await prisma.monster.findMany({
+            select: {
+                id          : true,
+                name        : true,
+                background  : true, 
+                health_max  : true,
+                armor       : true,
+                str         : true,
+                dex         : true,
+                wil         : true,
+                size        : true,
+                attack      : true,
+            }, 
+            where: {
+                name: {
+                    contains: term,
+                    mode: 'insensitive',
+                },
+            },
+        })
+    }
+}
+
 // Create
 export async function createMonster(prevState: any, formData: FormData) {
     const schema = z.object({

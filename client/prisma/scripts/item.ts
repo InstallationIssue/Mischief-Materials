@@ -41,6 +41,36 @@ export async function getItemExtras(id: number){
     })
 }
 
+export async function getItemsBySearch(term: string){
+    if (term === ''){
+        return await prisma.item.findMany({
+            select: {
+                id: true,
+                name: true,
+                description: true,
+                value: true
+            }
+        })
+    }
+    else {
+        return await prisma.item.findMany({
+            select: {
+                id: true,
+                name: true,
+                description: true,
+                value: true 
+            },
+            where: {
+                name: {
+                    contains: term,
+                    mode: 'insensitive',
+                },
+            },
+        })
+    }
+}
+
+
 // Create
 export async function createItem(prevState: any, formData: FormData) {
     const schema = z.object({

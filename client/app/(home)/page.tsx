@@ -29,15 +29,15 @@ export default function Page() {
           <HomeChoiceButton text='Character' hyperlink='/character'/>
         </span>
       </div>
-      <div className='flex flex-col bg-primary-dark-grey px-10 py-6 gap-4'>
+      <div className='flex flex-col bg-primary-dark-grey px-10 py-6 gap-4 w-full'>
         <h2 className='font-header font-bold text-2xl'>What is Maze Rats?</h2>
         <p>Maze Rats is a table top role playing game similar to DND but designed to be much simpler and a more digestible format for newer or less patient players</p>
       </div>
-      <div className='flex flex-col bg-primary-dark px-10 py-6 gap-4'>
+      <div className='flex flex-col bg-primary-dark px-10 py-6 gap-4 w-full'>
         <h2 className='font-header font-bold text-2xl'>About The Site</h2>
         <p>Welcome to my Rats in Transit Web app. This is designed to be a companion app to the table top game maze rats. Please choose either of the options below to begin playing</p>
       </div>
-      <div className='flex flex-col bg-primary-dark-grey px-10 py-6 gap-4'>
+      <div className='flex flex-col bg-primary-dark-grey px-10 py-6 gap-4 w-full'>
         <h2 className='font-header font-bold text-2xl'>About The Creator</h2>
         <p>This site was created by Angus Frost, a recently graduated Software Engineer for the purpose of developing skills in web development and as a way to more easily run and develop Maze Rats sessions</p>
       </div>

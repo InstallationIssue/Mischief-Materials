@@ -82,6 +82,52 @@ export async function getCharacterExtras(id: number){
     })
 }
 
+export async function getCharactersBySearch(term: string){
+    if (term === ''){
+        return await prisma.character.findMany({
+            select: {
+                id: true,
+                name: true,
+                xp: true,
+                level: true,
+                health_max: true,
+                health_lost: true,
+                armor: true,
+                str: true,
+                dex: true,
+                wil: true,
+                att: true,
+                npc: true,
+            }
+        })
+    }
+    else {
+        return await prisma.character.findMany({
+            select: {
+                id: true,
+                name: true,
+                xp: true,
+                level: true,
+                health_max: true,
+                health_lost: true,
+                armor: true,
+                str: true,
+                dex: true,
+                wil: true,
+                att: true,
+                npc: true,
+            },
+            where: {
+                name: {
+                    contains: term,
+                    mode: 'insensitive',
+                },
+            },
+        })
+    }
+}
+
+
 export async function getPlayers(){
     return await prisma.character.findMany({
         where: {

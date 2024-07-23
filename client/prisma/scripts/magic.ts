@@ -8,11 +8,11 @@ import { z } from 'zod'
 export async function getMagics(){
     return await prisma.magic.findMany({
         select: {
-            id: true,
-            name: true,
-            description: true,
-            medium: true,
-            spells: true,
+            id:             true,
+            name:           true,
+            description:    true,
+            medium:         true,
+            spells:         true,
         }
     })
 }
@@ -42,6 +42,38 @@ export async function getMagicExtras(id: number){
         }
     })
 }
+
+export async function getMagicsBySearch(term: string){
+    if (term === ''){
+        return await prisma.magic.findMany({
+            select: {
+                id:             true,
+                name:           true,
+                description:    true,
+                medium:         true,
+                spells:         true,
+            }, 
+        })
+    }
+    else {
+        return await prisma.magic.findMany({
+            select: {
+                id:             true,
+                name:           true,
+                description:    true,
+                medium:         true,
+                spells:         true,
+            }, 
+            where: {
+                name: {
+                    contains: term,
+                    mode: 'insensitive',
+                },
+            },
+        })
+    }
+}
+
 
 // Create
 export async function createMagic(prevState: any, formData: FormData) {

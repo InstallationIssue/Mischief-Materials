@@ -1,5 +1,3 @@
-import { title } from 'process';
-
 /** @type {import('tailwindcss').Config} */
 export const content = [
   './pages/**/*.{js,ts,jsx,tsx,mdx}',

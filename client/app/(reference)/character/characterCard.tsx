@@ -1,7 +1,4 @@
-'use client'
-
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import HealthCircle from '../../_components/vitality'
 
 import Strength from '/public/icons/stats/strength.svg'
@@ -22,10 +19,7 @@ export default function CharacterCard({
                         health_max={health_max}
                         health_lost={health_lost}
                         armor={armor}/>
-                    <motion.div className="flex flex-col flex-grow self-stretch justify-between"
-                    initial={{ opacity: 0, x:500 }}
-                    animate={{ opacity: 100, x:0 }}
-                    transition={{ duration: 0.5 }}>
+                    <div className="flex flex-col flex-grow self-stretch justify-between">
                         <p className="line-clamp-1 text-clip">{name}</p>
                         <div className="flex items-center gap-3 self-stretch">
                             <div className='flex flex-row gap-1 items-center'>
@@ -45,7 +39,7 @@ export default function CharacterCard({
                                 <p>{att}</p>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </Link>
     )

@@ -10,7 +10,7 @@ export default function Header ({
   }) {
     return (
         <div className="flex flex-row w-full justify-between p-2 items-center">
-            <p className="font-header font-bold text-2xl w-32">{title}</p>
+            <p className="flex-grow font-header font-bold text-2xl w-32">{title}</p>
             <SearchFilterBar/>
             <Link href={link} className="p-2 border rounded-lg">
                 <Plus className="aspect-square h-5 cursor-pointer fill-primary-light"/>

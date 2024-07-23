@@ -48,6 +48,36 @@ export async function getScenarioExtras(id: number){
     })
 }
 
+export async function getScenariosBySearch(term: string){
+    if (term === ''){
+        return await prisma.scenario.findMany({
+            select: {
+                id: true,
+                name: true,
+                description: true,
+                image: true
+            }, 
+        })
+    }
+    else {
+        return await prisma.scenario.findMany({
+            select: {
+                id: true,
+                name: true,
+                description: true,
+                image: true
+            }, 
+            where: {
+                name: {
+                    contains: term,
+                    mode: 'insensitive',
+                },
+            },
+        })
+    }
+}
+
+
 // Create
 export async function createScenario(prevState: any, formData: FormData) {
     const schema = z.object({

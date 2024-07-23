@@ -43,6 +43,38 @@ export async function getLocationExtras(id: number){
     })
 }
 
+export async function getLocationsBySearch(term: string){
+    if (term === ''){
+        return await prisma.location.findMany({
+            select: {
+                id: true,
+                name: true,
+                description: true,
+                color: true,
+                icon: true
+            }
+        })
+    }
+    else {
+        return await prisma.location.findMany({
+            select: {
+                id: true,
+                name: true,
+                description: true,
+                color: true,
+                icon: true
+            },
+            where: {
+                name: {
+                    contains: term,
+                    mode: 'insensitive',
+                },
+            },
+        })
+    }
+}
+
+
 // Create
 export async function createLocation(prevState: any, formData: FormData) {
     const schema = z.object({
