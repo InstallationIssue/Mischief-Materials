@@ -7,20 +7,22 @@ import AddItem from "../(reference)/item/addItem";
 // Spell
 // Relationship
 import AddCharacter from "../(reference)/character/add/page";
+import HoverScrollField from "../_components/hoverScrollField";
 
 import Link from "next/link";
 
 export default function forms () {
     return (
-    <div className="flex flex-col">
-        <Link className="bg-secondary-light" href="/intercept">
-            Go to intercept
-        </Link>
+    <div className="flex flex-col p-32">
+        
         {/*<AddScenario/>*/}
-        <AddLocation/>
+        {/*<AddLocation/>*/}
         {/*<AddMonster/>
         <AddItem/>*/}
-        <AddCharacter/>
+        {/*<AddCharacter/>*/}
+        <div className="w-64 bg-secondary-light p-2">
+            <HoverScrollField text={"henri eiab oansvu oaisdc ovnfuosa oasdjcbo ovfnbdsaoj"} style={""} innerStyle={""}/>
+        </div>
     </div>
     )
 }

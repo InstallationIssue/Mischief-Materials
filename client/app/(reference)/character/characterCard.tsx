@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import HealthCircle from '../../_components/vitality'
+import HoverScrollField from "@/app/_components/hoverScrollField"
 
 import Strength from '/public/icons/stats/strength.svg'
 import Dexterity from '/public/icons/stats/dexterity.svg'
@@ -13,14 +14,14 @@ export default function CharacterCard({
   }) {
     return (
         
-            <Link href={`/character/${id}`} className="flex flex-row justify-center items-start self-stretch rounded-md border h-16 p-2 overflow-clip">
-                <div className="flex flex-grow justify-center items-start self-stretch gap-2">
+            <Link href={`/character/${id}`} className="w-full flex flex-row justify-center items-start self-stretch rounded-md border h-16 p-2 overflow-clip">
+                <div className="w-full flex justify-center items-start self-stretch gap-2">
                     <HealthCircle
                         health_max={health_max}
                         health_lost={health_lost}
                         armor={armor}/>
-                    <div className="flex flex-col flex-grow self-stretch justify-between">
-                        <p className="line-clamp-1 text-clip">{name}</p>
+                    <div className="grow flex-col justify-between min-w-0">
+                        <HoverScrollField text={name} style={'flex flex-grow'} innerStyle={''}/>
                         <div className="flex items-center gap-3 self-stretch">
                             <div className='flex flex-row gap-1 items-center'>
                                 <Strength className='aspect-square h-5 fill-primary-light cursor-pointer'/>

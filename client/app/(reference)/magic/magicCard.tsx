@@ -1,4 +1,5 @@
 import Link from "next/link"
+import HoverScrollField from "@/app/_components/hoverScrollField"
 
 import Magic from "/public/icons/magic/magic.svg"
 import Flame from "/public/icons/magic/flame.svg"
@@ -33,9 +34,7 @@ export default async function MagicCard({
             {medium == 'sick' && <Sick className='h-8 w-8 fill-primary-light'/>}
             {medium == 'summon' && <Summon className='h-8 w-8 fill-primary-light'/>}
             {medium == 'wind' && <Wind className='h-8 w-8 fill-primary-light'/>}
-            <span className="whitespace-nowrap overflow-clip grow">
-              <p className="scrolling-text capitalize">{name}</p>
-            </span>
+            <HoverScrollField text={name} style={"grow"} innerStyle={""}/>
             <span className="flex rounded-full border-2 border-highlight-light h-8 w-8 justify-center items-center text-highlight-light">
               <p>{spells}</p>
             </span>

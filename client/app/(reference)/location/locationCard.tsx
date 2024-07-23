@@ -1,4 +1,5 @@
 import Link from "next/link"
+import HoverScrollField from "@/app/_components/hoverScrollField"
 
 import Boat from '/public/icons/locations/boat.svg'
 import Building from '/public/icons/locations/building.svg'
@@ -38,9 +39,7 @@ export default async function LocationCard({
             <circle cx="50" cy="50" r="40"></circle>
           </svg>
         </span>
-        <div className="flex flex-grow overflow-hidden">
-          <p className="w-full capitalize text-nowrap overflow-x-auto">{name}</p>
-        </div>
+        <HoverScrollField text={name} style={"flex flex-grow"} innerStyle={""}/>
         <span className="h-full">
           {icon == 'boat' && <Boat className='h-full aspect-square fill-primary-light'/>}
           {icon == 'building' && <Building className='h-full aspect-square fill-primary-light'/>}
@@ -70,18 +69,3 @@ export default async function LocationCard({
       </Link>
     )
 }
-
-// capitalize overflow-x-auto whitespace-nowrap scroll-m-0
-/*
-.scrolling-text:hover {
-  @apply whitespace-nowrap text-clip w-fit;
-  animation: scrolling 4s linear 0s infinite;
-}
-
-@keyframes scrolling {
-    0% {}
-    100% {
-        transform: translate3d(-110%,0,0);
-    }
-}
-*/

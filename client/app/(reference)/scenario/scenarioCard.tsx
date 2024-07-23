@@ -1,5 +1,7 @@
 import CardButtons from "../../_components/cardButtons"
 import Link from "next/link"
+import HoverScrollField from "@/app/_components/hoverScrollField"
+
 import IcelandLupin from '/public/landscapes/Iceland-Lupin.svg'
 import MistyValley from '/public/landscapes/Misty-Valley.svg'
 import NeonCity from '/public/landscapes/Neon-City.svg'
@@ -27,7 +29,7 @@ export default function ScenarioCard({
           {image == 'Default' && <Default/>}
         </Link>
         <div className="w-full px-2 absolute bg-secondary-dark bg-opacity-40 backdrop-blur-sm">
-          <p className="capitalize text-center text-lg font-header overflow-x-auto whitespace-nowrap scroll-m-0">{name}</p>
+          <HoverScrollField text={name} style={""} innerStyle={"text-center text-lg font-header"}/>
           <CardButtons id={id} name={name} image={image}/>
         </div>
       </div>

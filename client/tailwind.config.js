@@ -57,7 +57,18 @@ export const theme = {
     },
     transitionProperty: {
       'font': 'font-size, line-height',
-    }
+    },
+    animation: {
+      'scrolling-text': 'scrolling 4s linear 0s infinite;',
+    },
+    keyframes: {
+      scrolling: {
+        '0%': {},
+        '100%': {
+          transform: 'translate3d(-110%,0,0)'
+        },
+      },
+    },
   },
 };
 export const plugins = [];
