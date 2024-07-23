@@ -25,7 +25,7 @@ export default function ReferenceLayout({
       <nav className='flex flex-row gap-4 justify-between items-center px-2 border-b-2 border-white'>
         <Link className='h-12 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light py-1' href={'/'}>
           <Logo className="h-full"/>
-          <p className='text-4xl font-smooch px-1'>Rats in Transit</p>
+          <p className='text-4xl font-smooch px-1 hidden sm:line-clamp-1 md:hidden min-[896px]:line-clamp-1'>Rats in Transit</p>
         </Link>
         {playChoice.name !== '' && <PlayButton name={playChoice.name} image={playChoice.image}/>}
         <div className='flex flex-row items-center h-full'>
