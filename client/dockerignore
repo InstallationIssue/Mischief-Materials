@@ -3,5 +3,5 @@ node_modules
 README.md
 next-env.d.ts
 Dockerfile
-.dockerignore
+dockerignore
 .env*
