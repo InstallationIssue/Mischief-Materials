@@ -1,7 +1,5 @@
-import AddScenario from "../addScenario"
+import AddScenario from "../addScenario";
 
 export default function AddScenarioPage() {
-  return (
-      <AddScenario/>
-  )
+  return <AddScenario />;
 }

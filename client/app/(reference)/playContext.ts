@@ -1,13 +1,16 @@
-import { Dispatch, SetStateAction, createContext } from 'react';
+import { Dispatch, SetStateAction, createContext } from "react";
 
 interface playChoice {
-    name: string,
-    image: string
+  name: string;
+  image: string;
 }
 
 interface setChoice {
-    playChoice: playChoice,
-    setPlayChoice: (choice: playChoice) => void
+  playChoice: playChoice;
+  setPlayChoice: (choice: playChoice) => void;
 }
 
-export const PlayContext = createContext<setChoice>({playChoice: {name: '', image: ''}, setPlayChoice: () => {}});
+export const PlayContext = createContext<setChoice>({
+  playChoice: { name: "", image: "" },
+  setPlayChoice: () => {},
+});

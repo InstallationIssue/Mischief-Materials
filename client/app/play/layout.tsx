@@ -1,37 +1,38 @@
-import { getScenarioExtras } from "@/prisma/scripts/scenario"
+import { getScenarioExtras } from "@/prisma/scripts/scenario";
 
-import LocationCard from "@/app/(reference)/location/locationCard"
-import CharacterCard from "../(reference)/character/characterCard"
+import LocationCard from "@/app/(reference)/location/locationCard";
+import CharacterCard from "../(reference)/character/characterCard";
 
-import Party from '/public/icons/beings/party.svg'
-import Location from '/public/icons/locations/location.svg'
-import Npc from '/public/icons/beings/npc.svg'
-import Monster from '/public/icons/beings/monster.svg'
-import Items from '/public/icons/items/items.svg'
-import Magic from '/public/icons/magic/magic.svg'
-  
+import Party from "/public/icons/beings/party.svg";
+import Location from "/public/icons/locations/location.svg";
+import Npc from "/public/icons/beings/npc.svg";
+import Monster from "/public/icons/beings/monster.svg";
+import Items from "/public/icons/items/items.svg";
+import Magic from "/public/icons/magic/magic.svg";
+
 export default async function PlayLayout({
-  children, modal
+  children,
+  modal,
 }: {
-  children: React.ReactNode, modal: React.ReactNode
+  children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
-
   const scenario = await getScenarioExtras(18);
 
-  function Sidebar () {
+  function Sidebar() {
     return (
-      <nav className='flex flex-col items-center h-full my-4 mx-2 gap-6 w-12'>
-        <Party className="sidebar-icon"/>
-        <Location className="sidebar-icon"/>
-        <Npc className="sidebar-icon"/>
-        <Monster className="sidebar-icon"/>
-        <Items className="sidebar-icon"/>
-        <Magic className="sidebar-icon"/>
+      <nav className="flex flex-col items-center h-full my-4 mx-2 gap-6 w-12">
+        <Party className="sidebar-icon" />
+        <Location className="sidebar-icon" />
+        <Npc className="sidebar-icon" />
+        <Monster className="sidebar-icon" />
+        <Items className="sidebar-icon" />
+        <Magic className="sidebar-icon" />
       </nav>
-    )
+    );
   }
-  
-  function Aside () {
+
+  function Aside() {
     return (
       <aside className="absolute w-64 h-screen top-0 left-16 bg-primary-grey z-50">
         {/*
@@ -47,14 +48,14 @@ export default async function PlayLayout({
         </div>
           */}
       </aside>
-    )
+    );
   }
 
   return (
-    <main className='flex flex-row relative'>
-      {<Sidebar/>}
-      {<Aside/>}
+    <main className="flex flex-row relative">
+      {<Sidebar />}
+      {<Aside />}
       {children}
     </main>
-  )
+  );
 }

@@ -2,7 +2,7 @@ name: rats-in-transit
 
 services:
   rits-randomizer:
-    build: 
+    build:
       context: ./randomizer/
       labels:
         - "com.description=Rits Randomizer"
@@ -10,7 +10,7 @@ services:
       - hidden
 
   rits-db:
-    build: 
+    build:
       context: ./db/
       labels:
         - "com.description=Rits Database"
@@ -56,7 +56,7 @@ services:
     networks:
       - exposed
       - hidden
-    
+
 secrets:
   db_user:
     file: .secret-db_user
@@ -66,7 +66,7 @@ secrets:
 networks:
   exposed:
     attachable: true
-    labels: 
+    labels:
       - "com.description=Front End Network for Website Exposure"
   hidden:
     attachable: false
@@ -75,5 +75,5 @@ networks:
       - "com.description=Back End Network for Service Interconnect"
 
 volumes:
-    rits-volume:
-      external: true
+  rits-volume:
+    external: true

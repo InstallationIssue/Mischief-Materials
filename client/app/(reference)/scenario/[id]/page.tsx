@@ -23,6 +23,8 @@ export default async function Scenario({
   }) {
     const scenario = await getScenarioById(Number(params.id))
     
+    const tabs = [ "party", "actors/factions", "encounters", "items", "magic", "map" ]
+    
     return (
       <div className="w-full h-full flex flex-col gap-2">
         <div className="relative overflow-clip rounded-lg border flex h-16">
@@ -72,31 +74,18 @@ export default async function Scenario({
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-between bottom-0 w-full font-header text-xl h-10">
-          <span className="py-1 w-[15%] flex justify-center bg-secondary-light rounded-lg border">
-            <p className="hidden lg:inline">Party</p>
-            <Party className='lg:hidden h-full'/>
-          </span>
-          <span className="py-1 w-[15%] flex justify-center bg-secondary-light rounded-lg border">
-            <p className="hidden lg:inline">Actors/Factions</p>
-            <Npc className='lg:hidden h-full'/>
-          </span>
-          <span className="py-1 w-[15%] flex justify-center bg-secondary-light rounded-lg border">
-            <p className="hidden lg:inline">Encounters</p>
-            <Monster className='lg:hidden h-full'/>
-          </span>
-          <span className="py-1 w-[15%] flex justify-center bg-secondary-light rounded-lg border">
-            <p className="hidden lg:inline">Items</p>
-            <Items className='lg:hidden h-full'/>
-          </span>
-          <span className="py-1 w-[15%] flex justify-center bg-secondary-light rounded-lg border">
-            <p className="hidden lg:inline">Magic</p>
-            <Magic className='lg:hidden h-full'/>
-          </span>
-          <span className="py-1 w-[15%] flex justify-center bg-secondary-light rounded-lg border">
-            <p className="hidden lg:inline">Map</p>
-            <Map className='lg:hidden h-full'/>
-          </span>
+        <div className="flex flex-row justify-between bottom-0 w-full font-header text-xl h-10 border-t-2">
+          {tabs.map((item) => (
+            <span className="flex w-1/6 justify-center py-1">
+              <p className="hidden lg:inline capitalize">{item}</p>
+              {item === "party" && <Party className='lg:hidden h-full'/>}
+              {item === "actors/factions" && <Npc className='lg:hidden h-full'/>}
+              {item === "encounters" && <Monster className='lg:hidden h-full'/>}
+              {item === "items" && <Items className='lg:hidden h-full'/>}
+              {item === "magic" && <Magic className='lg:hidden h-full'/>}
+              {item === "map" && <Map className='lg:hidden h-full'/>}
+            </span>
+          ))}
         </div>
       </div>
     )

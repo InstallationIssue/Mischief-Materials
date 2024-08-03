@@ -11,18 +11,21 @@ import HoverScrollField from "../_components/hoverScrollField";
 
 import Link from "next/link";
 
-export default function forms () {
-    return (
+export default function forms() {
+  return (
     <div className="flex flex-col p-32">
-        
-        {/*<AddScenario/>*/}
-        {/*<AddLocation/>*/}
-        {/*<AddMonster/>
+      {/*<AddScenario/>*/}
+      {/*<AddLocation/>*/}
+      {/*<AddMonster/>
         <AddItem/>*/}
-        {/*<AddCharacter/>*/}
-        <div className="w-64 bg-secondary-light p-2">
-            <HoverScrollField text={"henri eiab oansvu oaisdc ovnfuosa oasdjcbo ovfnbdsaoj"} style={""} innerStyle={""}/>
-        </div>
+      {/*<AddCharacter/>*/}
+      <div className="w-64 bg-secondary-light p-2">
+        <HoverScrollField
+          text={"henri eiab oansvu oaisdc ovnfuosa oasdjcbo ovfnbdsaoj"}
+          style={""}
+          innerStyle={""}
+        />
+      </div>
     </div>
-    )
+  );
 }
