@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Play from "/public/icons/system/play.svg";
-import ScenarioImage from "./scenarioImage";
+import ScenarioImage from "../_imageComponents/scenarioImage";
 
 export function PlayButton({ name, image }: { name: string; image: string }) {
   return (

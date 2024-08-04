@@ -1,7 +1,7 @@
 import CardButtons from "../../_components/cardButtons";
 import Link from "next/link";
 import HoverScrollField from "@/app/_components/hoverScrollField";
-import ScenarioImage from "@/app/_components/scenarioImage";
+import ScenarioImage from "@/app/_imageComponents/scenarioImage";
 
 export default function ScenarioCard({
   id,

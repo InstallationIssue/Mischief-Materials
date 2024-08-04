@@ -1,10 +1,9 @@
 import { getScenarioById } from "@/prisma/scripts/scenario";
 
-import Default from "/public/landscapes/Default.svg";
 import { Metadata } from "next";
 import Event from "../(reference)/scenario/event";
 import Thread from "../(reference)/scenario/thread";
-import ScenarioImage from "../_components/scenarioImage";
+import ScenarioImage from "../_imageComponents/scenarioImage";
 
 export const metadata: Metadata = {
   title: "Play",

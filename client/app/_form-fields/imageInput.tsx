@@ -4,7 +4,7 @@
 import { useState } from "react";
 import ScenarioImage, {
   getScenarioImageOptions,
-} from "../_components/scenarioImage";
+} from "../_imageComponents/scenarioImage";
 
 export default function ImageInput({ id, name }: { id: string; name: string }) {
   const [image, setImage] = useState(getScenarioImageOptions()[0]);
