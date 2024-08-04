@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import Play from "/public/icons/system/play.svg";
 import Edit from "/public/icons/system/edit.svg";
