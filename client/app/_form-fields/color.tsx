@@ -1,4 +1,6 @@
-"use client";
+// prettier-ignore
+'use client'
+
 import Swatch from "/public/icons/system/swatch.svg";
 
 export default function Color({ id, name }: { id: string; name: string }) {

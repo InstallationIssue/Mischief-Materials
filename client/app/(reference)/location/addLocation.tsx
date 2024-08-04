@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import { createLocation } from "@/prisma/scripts/location";
 import { z } from "zod";

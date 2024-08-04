@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import { createCharacter } from "@/prisma/scripts/character";
 import { z } from "zod";

@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import Level from "../_components/level";
 import Armor from "../_components/armor";

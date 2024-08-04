@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import SearchIcon from "/public/icons/system/search.svg";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";

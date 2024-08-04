@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import SortUp from "/public/icons/system/sort-up.svg";
 import Filter from "./filter";

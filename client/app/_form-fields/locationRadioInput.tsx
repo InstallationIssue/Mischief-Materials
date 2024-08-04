@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import Boat from "/public/icons/locations/boat.svg";
 import Building from "/public/icons/locations/building.svg";

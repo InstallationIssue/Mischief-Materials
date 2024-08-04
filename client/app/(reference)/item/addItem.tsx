@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import { createItem } from "@/prisma/scripts/item";
 import { z } from "zod";

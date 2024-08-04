@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import LevelIcon from "/public/icons/stats/level.svg";
 import Circle from "/public/attributes/circle.svg";

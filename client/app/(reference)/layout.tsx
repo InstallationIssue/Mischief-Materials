@@ -1,4 +1,6 @@
-"use client";
+// prettier-ignore
+'use client'
+
 import Link from "next/link";
 import Logo from "/public/icons/logo.svg";
 import { PlayContext } from "./playContext";
@@ -19,6 +21,20 @@ export default function ReferenceLayout({
 }) {
   const [playChoice, setPlayChoice] = useState({ name: "", image: "" });
 
+  type Tab = {
+    name: string;
+    link: string;
+  };
+
+  const tabs: Tab[] = [
+    { name: "scenarios", link: "scenario" },
+    { name: "locations", link: "location" },
+    { name: "characters", link: "character" },
+    { name: "monsters", link: "monster" },
+    { name: "items", link: "item" },
+    { name: "magic", link: "magic" },
+  ];
+
   function TopNav() {
     return (
       <nav className="flex flex-row gap-4 justify-between items-center px-2 border-b-2 border-white">
@@ -32,51 +48,34 @@ export default function ReferenceLayout({
           </p>
         </Link>
         {playChoice.name !== "" && (
-          <PlayButton name={playChoice.name} image={playChoice.image} />
+          <span className="h-12">
+            <PlayButton name={playChoice.name} image={playChoice.image} />
+          </span>
         )}
         <div className="flex flex-row items-center h-full">
-          <Link
-            href="/scenario"
-            className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-header text-xl fill-primary-light"
-          >
-            <p className="hidden md:inline">Scenarios</p>
-            <Scenarios className="md:hidden h-3/5" />
-          </Link>
-          <Link
-            href="/location"
-            className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-header text-xl fill-primary-light"
-          >
-            <p className="hidden md:inline">Locations</p>
-            <Locations className="md:hidden h-3/5" />
-          </Link>
-          <Link
-            href="/character"
-            className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-header text-xl fill-primary-light"
-          >
-            <p className="hidden md:inline">Characters</p>
-            <Characters className="md:hidden h-3/5" />
-          </Link>
-          <Link
-            href="/monster"
-            className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-header text-xl fill-primary-light"
-          >
-            <p className="hidden md:inline">Monsters</p>
-            <Monsters className="md:hidden h-3/5" />
-          </Link>
-          <Link
-            href="/item"
-            className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-header text-xl fill-primary-light"
-          >
-            <p className="hidden md:inline">Items</p>
-            <Items className="md:hidden h-3/5" />
-          </Link>
-          <Link
-            href="/magic"
-            className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-header text-xl fill-primary-light"
-          >
-            <p className="hidden md:inline">Magic</p>
-            <Magics className="md:hidden h-3/5" />
-          </Link>
+          {tabs.map((item) => (
+            <Link
+              key={item.name}
+              href={"/" + item.link}
+              className="h-full px-4 flex items-center transition hover:shadow-none hover:bg-gradient-to-t from-transparent to-secondary-light focus:bg-gradient-to-t active:fill-highlight-light active:text-highlight-light font-header text-xl fill-primary-light"
+            >
+              <p className="hidden md:inline capitalize">{item.name}</p>
+              {item.name === "scenarios" && (
+                <Scenarios className="md:hidden h-3/5" />
+              )}
+              {item.name === "locations" && (
+                <Locations className="md:hidden h-3/5" />
+              )}
+              {item.name === "characters" && (
+                <Characters className="md:hidden h-3/5" />
+              )}
+              {item.name === "monsters" && (
+                <Monsters className="md:hidden h-3/5" />
+              )}
+              {item.name === "items" && <Items className="md:hidden h-3/5" />}
+              {item.name === "magic" && <Magics className="md:hidden h-3/5" />}
+            </Link>
+          ))}
         </div>
       </nav>
     );

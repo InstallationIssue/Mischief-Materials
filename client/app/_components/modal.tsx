@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import { MouseEventHandler, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";

@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import Chevron from "/public/icons/system/chevron-down.svg";
 

@@ -1,4 +1,5 @@
-"use client";
+// prettier-ignore
+'use client'
 
 import { useFormState, useFormStatus } from "react-dom";
 import SingleLineText from "../../_form-fields/singleLineText";

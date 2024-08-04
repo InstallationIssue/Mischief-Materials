@@ -1,4 +1,6 @@
-"use client";
+// prettier-ignore
+'use client'
+
 import { useEffect } from "react";
 import { useAnimate, stagger } from "framer-motion";
 
