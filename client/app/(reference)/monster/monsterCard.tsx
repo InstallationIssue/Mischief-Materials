@@ -6,13 +6,7 @@ import Strength from "/public/icons/stats/strength.svg";
 import Dexterity from "/public/icons/stats/dexterity.svg";
 import Willpower from "/public/icons/stats/willpower.svg";
 import Attack from "/public/icons/stats/attack.svg";
-
-import Weak from "/public/icons/beings/size-1.svg";
-import Typical from "/public/icons/beings/size-2.svg";
-import Tough from "/public/icons/beings/size-3.svg";
-import Hulking from "/public/icons/beings/size-4.svg";
-import Colossal from "/public/icons/beings/size-5.svg";
-import Boss from "/public/icons/beings/size-final.svg";
+import SizeIcon from "@/app/_imageComponents/sizeIcon";
 
 export default function MonsterCard({
   id,
@@ -74,24 +68,9 @@ export default function MonsterCard({
           </div>
         </div>
       </div>
-      {size == "Weak" && (
-        <Weak className="h-full aspect-square fill-primary-light" />
-      )}
-      {size == "Typical" && (
-        <Typical className="h-full aspect-square fill-primary-light" />
-      )}
-      {size == "Tough" && (
-        <Tough className="h-full aspect-square fill-primary-light" />
-      )}
-      {size == "Hulking" && (
-        <Hulking className="h-full aspect-square fill-primary-light" />
-      )}
-      {size == "Colossal" && (
-        <Colossal className="h-full aspect-square fill-primary-light" />
-      )}
-      {size == "Boss" && (
-        <Boss className="h-full aspect-square fill-primary-light" />
-      )}
+      <div className="h-full aspect-square fill-primary-light">
+        <SizeIcon icon={size} />
+      </div>
     </Link>
   );
 }

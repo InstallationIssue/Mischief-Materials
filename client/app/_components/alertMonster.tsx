@@ -4,13 +4,7 @@ import Strength from "/public/icons/stats/strength.svg";
 import Dexterity from "/public/icons/stats/dexterity.svg";
 import Willpower from "/public/icons/stats/willpower.svg";
 import Attack from "/public/icons/stats/attack.svg";
-
-import Weak from "/public/icons/beings/size-1.svg";
-import Typical from "/public/icons/beings/size-2.svg";
-import Tough from "/public/icons/beings/size-3.svg";
-import Hulking from "/public/icons/beings/size-4.svg";
-import Colossal from "/public/icons/beings/size-5.svg";
-import Boss from "/public/icons/beings/size-final.svg";
+import SizeIcon from "../_imageComponents/sizeIcon";
 
 export default function AlertMonster({
   params,
@@ -59,24 +53,9 @@ export default function AlertMonster({
           </div>
         </div>
       </div>
-      {params.size == "Weak" && (
-        <Weak className="h-full aspect-square fill-primary-light" />
-      )}
-      {params.size == "Typical" && (
-        <Typical className="h-full aspect-square fill-primary-light" />
-      )}
-      {params.size == "Tough" && (
-        <Tough className="h-full aspect-square fill-primary-light" />
-      )}
-      {params.size == "Hulking" && (
-        <Hulking className="h-full aspect-square fill-primary-light" />
-      )}
-      {params.size == "Colossal" && (
-        <Colossal className="h-full aspect-square fill-primary-light" />
-      )}
-      {params.size == "Boss" && (
-        <Boss className="h-full aspect-square fill-primary-light" />
-      )}
+      <div className="h-full aspect-square fill-primary-light">
+        <SizeIcon icon={params.size} />
+      </div>
     </div>
   );
 }
