@@ -28,7 +28,7 @@ export default async function LocationCard({
         </svg>
       </span>
       <HoverScrollField text={name} style={"flex flex-grow"} innerStyle={""} />
-      <span className="h-full aspect-square fill-primary-light">
+      <span className="flex h-full aspect-square fill-primary-light">
         <LocationIcon icon={icon} />
       </span>
     </Link>

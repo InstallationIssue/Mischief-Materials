@@ -68,7 +68,7 @@ export default function MonsterCard({
           </div>
         </div>
       </div>
-      <div className="h-full aspect-square fill-primary-light">
+      <div className="flex justify-center h-full aspect-square fill-primary-light">
         <SizeIcon icon={size} />
       </div>
     </Link>
