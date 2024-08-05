@@ -3,14 +3,14 @@
 
 import Swatch from "/public/icons/system/swatch.svg";
 
-export default function Color({ id, name }: { id: string; name: string }) {
+export default function Color({ name }: { name: string }) {
   function colors() {}
 
   return (
     <div className="w-full p-2.5 px-4 gap-4 rounded-lg justify-between items-center inline-flex font-header bg-primary-dark-grey">
       <div className="w-fit">Select Color</div>
       <input
-        id={id}
+        id={name}
         name={name}
         defaultValue={"#FFB800"}
         type="color"

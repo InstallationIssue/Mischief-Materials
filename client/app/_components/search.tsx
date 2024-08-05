@@ -26,7 +26,7 @@ export default function Search() {
         id="search"
         type="text"
         placeholder="Search..."
-        className="font-header font-normal text-lg capitalize bg-transparent"
+        className="font-header font-normal text-lg capitalize bg-transparent focus:outline-none"
         defaultValue={searchParams.get("query")?.toString()}
         onChange={(e) => {
           handleSearch(e.target.value);

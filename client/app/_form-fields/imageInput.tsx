@@ -10,7 +10,7 @@ export default function ImageInput({ id, name }: { id: string; name: string }) {
   const [image, setImage] = useState(getScenarioImageOptions()[0]);
 
   return (
-    <div className="w-60 h-44 rounded-lg overflow-clip relative flex items-center justify-center">
+    <div className="w-full aspect-[4/3] rounded-lg overflow-clip relative flex items-center justify-center">
       <select
         id={id}
         name={name}
@@ -27,7 +27,7 @@ export default function ImageInput({ id, name }: { id: string; name: string }) {
           </option>
         ))}
       </select>
-      <div className="w-60 absolute">
+      <div className="w-full absolute">
         <ScenarioImage image={image} />
       </div>
     </div>

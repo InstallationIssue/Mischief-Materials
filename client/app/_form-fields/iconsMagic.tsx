@@ -1,12 +1,6 @@
-// prettier-ignore
-'use client'
-
-import { useState } from "react";
 import MagicIcon, { getMagicIconOptions } from "../_imageComponents/magicIcon";
 
 export default function IconsMagic({ id, name }: { id: string; name: string }) {
-  const [icon, setIcon] = useState("magic");
-
   return (
     <div className="w-96 px-5 py-2.5 rounded-lg justify-between items-center flex flex-row flex-wrap">
       {getMagicIconOptions().map((option) => (
@@ -20,7 +14,7 @@ export default function IconsMagic({ id, name }: { id: string; name: string }) {
             id={option}
             value={option}
             className="hidden peer"
-            defaultChecked={option === "magic"}
+            defaultChecked={option === getMagicIconOptions()[0]}
           />
           <div className="flex peer-checked:fill-highlight-light transition-colors peer-default:checked:fill-highlight-light h-8 aspect-square">
             <MagicIcon icon={option} />

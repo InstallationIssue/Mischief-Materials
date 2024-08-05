@@ -4,9 +4,8 @@
 import { createCharacter } from "@/prisma/scripts/character";
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
-import SingleLineText from "../../_form-fields/singleLineText";
+import TextInput from "../../_form-fields/textInput";
 import SwitchField from "../../_form-fields/switchField";
-import MultiLineText from "../../_form-fields/multiLineText";
 import VitalityLevel from "../../_form-fields/vitalityLevel";
 import TraitsCharacter from "../../_form-fields/traitsCharacter";
 import Details from "../../_form-fields/details";
@@ -25,11 +24,21 @@ export default function AddCharacter() {
   return (
     <form className="flex flex-col p-2 gap-2 w-[676px]" action={create}>
       <div className="flex flex-row gap-2">
-        <SingleLineText id={"name"} name={"name"} showRandom={false} />
+        <TextInput
+          id={"name"}
+          name={"name"}
+          multiline={false}
+          showRandom={false}
+        />
         <SwitchField id={"npc"} />
       </div>
       <div className="flex flex-row gap-2">
-        <MultiLineText id="background" name={"background"} />
+        <TextInput
+          id="background"
+          name={"background"}
+          multiline={true}
+          showRandom={false}
+        />
         <VitalityLevel id={""} />
       </div>
       <TraitsCharacter
