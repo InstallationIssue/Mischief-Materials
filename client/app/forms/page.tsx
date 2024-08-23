@@ -14,7 +14,7 @@ import HoverScrollField from "../_components/hoverScrollField";
 
 export default function forms() {
   return (
-    <div className="flex flex-col p-32">
+    <div className="flex flex-col p-10">
       {/*<AddScenario />
       <AddLocation />*/}
       <AddMonster />
