@@ -5,10 +5,18 @@ import {
   Smooch_Sans,
   Notable,
   Libre_Barcode_39_Text,
+  Roboto_Mono,
 } from "next/font/google";
 import React from "react";
 
-const roboto = Roboto_Flex({
+const robotoMono = Roboto_Mono({
+  weight: ["400", "700"],
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
+
+const robotoFlex = Roboto_Flex({
   weight: ["400", "700"],
   display: "swap",
   subsets: ["latin"],
@@ -51,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full ${roboto.variable} ${play.variable} ${notable.variable} ${libre.variable} ${smooch.variable}`}
+      className={`h-full ${robotoFlex.variable} ${robotoMono.variable} ${play.variable} ${notable.variable} ${libre.variable} ${smooch.variable}`}
     >
       <body className="flex flex-col h-full text-primary-dark dark:fill-primary-light dark:text-primary-light dark:bg-primary-dark">
         {children}

@@ -1,5 +1,5 @@
 // prettier-ignore
-'use client'
+//'use client'
 
 import { useFormState, useFormStatus } from "react-dom";
 import TextInput from "../../_form-fields/textInput";
@@ -39,7 +39,7 @@ export default function AddMonster() {
       />
       <IconsSize name={"size"} />
       <Attributes idArmor={"armor"} idLevel={"level"} />
-      <FormButtons showRandom={false} />
+      <FormButtons showRandom={true} />
       <Accessibility state={state} />
     </form>
   );

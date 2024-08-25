@@ -1,4 +1,4 @@
-import Switch from "../_components/switch";
+import Switch from "./switch";
 
 export default function SwitchField({ id }: { id: string }) {
   return (

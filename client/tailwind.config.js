@@ -55,6 +55,7 @@ export const theme = {
       title: ["var(--font-title)"],
       libre: ["var(--font-libre)"],
       smooch: ["var(--font-smooch)"],
+      mono: ["var(--font-mono)"],
     },
     transitionProperty: {
       font: "font-size, line-height",
