@@ -21,3 +21,5 @@ EXPOSE 3000
 # If build exists, do not rerun the build stage
 
 ENTRYPOINT [ "/bin/sh", "-c", "if [ -d .next ]; then npm run start; else npm run build && npm run start; fi" ]
+# ENTRYPOINT [ "/bin/sh", "-c", "npm run build && npm run start" ]
+# ENTRYPOINT [ "/bin/sh", "-c", "ls -al .next" ]

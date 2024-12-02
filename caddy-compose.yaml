@@ -1,6 +1,28 @@
 name: rits
 
 services:
+  proxy:
+    container_name: caddy
+    image: caddy:2.9-alpine
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+      - ./rits.key:/config/key.pem:ro
+      - ./rits.crt:/config/cert.pem:ro
+    depends_on:
+      client:
+        condition: service_healthy
+    networks:
+      - hidden
+      - exposed
   randomizer:
     container_name: randomizer
     build:
@@ -52,9 +74,6 @@ services:
         condition: service_started
     networks:
       - hidden
-      - exposed
-    ports:
-      - "80:3000"
     healthcheck:
       test: ["CMD-SHELL", "wget --spider -S localhost:3000/healthz"]
       interval: 1m

@@ -1,18 +1,17 @@
-rats-in-transit.com {
-  reverse-proxy       client:3000
-  encode              zstd gzip
-  metrics
-  # tls cert.pem key.pem
+{
+	ocsp_stapling off
+}
 
-  health_uri /healthz
+rats-in-transit.local.home {
+  reverse_proxy client:3000
+  encode zstd gzip
+  tls /config/cert.pem /config/key.pem
 
   log {
-    output            file    /var/log/access.log {
-      roll_size       1gb
-      roll_keep       5
-      roll_keep_for   720h
+    output file /var/log/access.log {
+      roll_size 1gb
+      roll_keep 5
+      roll_keep_for 720h
     }
   }
 }
-
-# metrics /metrics

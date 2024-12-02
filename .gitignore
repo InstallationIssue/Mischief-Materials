@@ -35,3 +35,7 @@
 *.tsbuildinfo
 *next-env.d.ts
 .secret*
+
+# certs
+*.key
+*.crt
