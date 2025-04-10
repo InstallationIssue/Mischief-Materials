@@ -1,0 +1,110 @@
+name: rits
+
+services:
+  proxy:
+    container_name: caddy
+    image: caddy:2.9-alpine
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+      - ./rits.key:/config/key.pem:ro
+      - ./rits.crt:/config/cert.pem:ro
+    depends_on:
+      client:
+        condition: service_healthy
+    networks:
+      - hidden
+      - exposed
+  randomizer:
+    container_name: randomizer
+    build:
+      context: ./randomizer/
+      labels:
+        - "com.description=Rits Randomizer"
+    networks:
+      - hidden
+  db:
+    container_name: database
+    image: postgres:16.3-alpine
+    environment:
+      - POSTGRES_DB=rits_db
+      - POSTGRES_USER=db_user
+      - POSTGRES_PASSWORD=db_password
+    secrets:
+      - db_user
+      - db_password
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - type: volume
+        source: rits-volume
+        target: /var/lib/postgresql
+    networks:
+      - hidden
+    healthcheck:
+      test: ["CMD-SHELL", "psql -U db_user -d rits_db -c 'SELECT 1' || exit 1"]
+      interval: 1m
+      timeout: 20s
+      retries: 5
+      start_period: 10s
+      start_interval: 1s
+  client:
+    container_name: client
+    build:
+      context: ./client/
+      labels:
+        - "com.description=Rits Web Client"
+    environment:
+      - DATABASE_URL=postgresql://db_user:db_password@db/rits_db?schema=base
+      - RANDOMIZER_URL="localhost:"
+    secrets:
+      - db_user
+      - db_password
+    depends_on:
+      db:
+        condition: service_healthy
+      randomizer:
+        condition: service_started
+    networks:
+      - hidden
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -S localhost:3000/healthz"]
+      interval: 1m
+      timeout: 20s
+      retries: 5
+      start_period: 10s
+      start_interval: 1s
+
+secrets:
+  db_user:
+    file: .secret-db_user
+  db_password:
+    file: .secret-db_password
+
+networks:
+  exposed:
+    attachable: true
+    labels:
+      - "com.description=Front End Network for Website Exposure"
+  hidden:
+    attachable: false
+    internal: true
+    labels:
+      - "com.description=Back End Network for Service Interconnect"
+
+volumes:
+  rits-volume:
+    external: true
+  caddy-data:
+    labels:
+      - "com.description=Caddy data volume"
+  caddy-config:
+    labels:
+      - "com.description=Caddy config volume"

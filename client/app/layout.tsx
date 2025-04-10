@@ -1,53 +1,69 @@
-import './globals.css'
-import { Roboto_Flex, Play, Smooch_Sans, Notable, Libre_Barcode_39_Text } from 'next/font/google'
-import React from 'react'
+import "./globals.css";
+import {
+  Roboto_Flex,
+  Play,
+  Smooch_Sans,
+  Notable,
+  Libre_Barcode_39_Text,
+  Roboto_Mono,
+} from "next/font/google";
+import React from "react";
 
-const roboto = Roboto_Flex({
-  weight: ['400', '700'],
-  display: 'swap',
-  subsets: ['latin'],
-  variable: '--font-text'
-})
+const robotoMono = Roboto_Mono({
+  weight: ["400", "700"],
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
+
+const robotoFlex = Roboto_Flex({
+  weight: ["400", "700"],
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-text",
+});
 
 const play = Play({
-  weight: ['400', '700'],
-  display: 'swap',
-  subsets: ['latin'],
-  variable: '--font-header'
-})
+  weight: ["400", "700"],
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-header",
+});
 
 const notable = Notable({
-  weight: '400',
-  display: 'swap',
-  subsets: ['latin'],
-  variable: '--font-title'
-})
+  weight: "400",
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-title",
+});
 
 const smooch = Smooch_Sans({
-  weight: ['400', '700'],
-  display: 'swap',
-  subsets: ['latin'],
-  variable: '--font-smooch'
-})
+  weight: ["400", "700"],
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-smooch",
+});
 
 const libre = Libre_Barcode_39_Text({
-  weight: '400',
-  display: 'swap',
-  subsets: ['latin'],
-  variable: '--font-libre'
-})
+  weight: "400",
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-libre",
+});
 
 export default function RootLayout({
-  children
+  children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-
   return (
-      <html lang="en" className={`h-full ${roboto.variable} ${play.variable} ${notable.variable} ${libre.variable} ${smooch.variable}`}>
-        <body className='flex flex-col h-full text-primary-dark dark:fill-primary-light dark:text-primary-light dark:bg-primary-dark'>
-          {children}
-        </body>
-      </html>
-  )
+    <html
+      lang="en"
+      className={`h-full ${robotoFlex.variable} ${robotoMono.variable} ${play.variable} ${notable.variable} ${libre.variable} ${smooch.variable}`}
+    >
+      <body className="flex flex-col h-full text-primary-dark dark:fill-primary-light dark:text-primary-light dark:bg-primary-dark">
+        {children}
+      </body>
+    </html>
+  );
 }

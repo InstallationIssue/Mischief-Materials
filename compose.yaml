@@ -1,19 +1,17 @@
-name: rats-in-transit
+name: rits
 
 services:
-  rits-randomizer:
-    build: 
+  randomizer:
+    container_name: randomizer
+    build:
       context: ./randomizer/
       labels:
         - "com.description=Rits Randomizer"
     networks:
       - hidden
-
-  rits-db:
-    build: 
-      context: ./db/
-      labels:
-        - "com.description=Rits Database"
+  db:
+    container_name: database
+    image: postgres:16.3-alpine
     environment:
       - POSTGRES_DB=rits_db
       - POSTGRES_USER=db_user
@@ -22,6 +20,7 @@ services:
       - db_user
       - db_password
     volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
       - type: volume
         source: rits-volume
         target: /var/lib/postgresql
@@ -29,34 +28,41 @@ services:
       - hidden
     healthcheck:
       test: ["CMD-SHELL", "psql -U db_user -d rits_db -c 'SELECT 1' || exit 1"]
-      interval: 4s
+      interval: 1m
       timeout: 20s
       retries: 5
-      start_period: 4s
+      start_period: 10s
       start_interval: 1s
-
-  rits-client:
+  client:
+    container_name: client
     build:
       context: ./client/
       labels:
         - "com.description=Rits Web Client"
-    #pull_policy: build
     environment:
-      DATABASE_URL: postgresql://db_user:db_password@rits-db/rits_db?schema=base
+      - DATABASE_URL=postgresql://db_user:db_password@db/rits_db?schema=base
+      - RANDOMIZER_URL="localhost:"
     secrets:
       - db_user
       - db_password
     depends_on:
-      rits-db:
+      db:
         condition: service_healthy
-      rits-randomizer:
+      randomizer:
         condition: service_started
-    ports:
-      - 8090:3000
     networks:
-      - exposed
       - hidden
-    
+      - exposed
+    ports:
+      - "80:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -S localhost:3000/healthz"]
+      interval: 1m
+      timeout: 20s
+      retries: 5
+      start_period: 10s
+      start_interval: 1s
+
 secrets:
   db_user:
     file: .secret-db_user
@@ -66,7 +72,7 @@ secrets:
 networks:
   exposed:
     attachable: true
-    labels: 
+    labels:
       - "com.description=Front End Network for Website Exposure"
   hidden:
     attachable: false
@@ -75,5 +81,11 @@ networks:
       - "com.description=Back End Network for Service Interconnect"
 
 volumes:
-    rits-volume:
-      external: true
+  rits-volume:
+    external: true
+  caddy-data:
+    labels:
+      - "com.description=Caddy data volume"
+  caddy-config:
+    labels:
+      - "com.description=Caddy config volume"

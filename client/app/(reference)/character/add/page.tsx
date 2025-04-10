@@ -1,7 +1,5 @@
-import AddCharacter from "../addCharacter"
+import AddCharacter from "../addCharacter";
 
 export default function AddCharacterPage() {
-  return (
-      <AddCharacter/>
-  )
+  return <AddCharacter />;
 }

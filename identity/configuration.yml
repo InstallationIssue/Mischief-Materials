@@ -1,0 +1,43 @@
+
+log:
+  level: 'debug'
+telemetry:
+  metrics:
+    enabled: false
+totp:
+  disable: false
+webauthn:
+  disable: false
+identity_validation:
+  reset_password:
+    jwt_secret: 'a_very_important_secret'
+authentication_backend:
+  password_reset:
+    disable: false
+password_policy:
+  standard:
+    enabled: false
+    min_length: 8
+    max_length: 0
+    require_uppercase: true
+    require_lowercase: true
+    require_number: true
+    require_special: true
+  zxcvbn:
+    enabled: false
+    min_score: 3
+privacy_policy:
+  enabled: false
+  require_user_acceptance: false
+  policy_url: ''
+access_control:
+  default_policy: 'deny'
+session:
+  secret: 'insecure_session_secret'
+  name: 'authelia_session'
+  same_site: 'lax'
+  inactivity: '5m'
+  expiration: '1h'
+  remember_me: '1M'
+notifier:
+  disable_startup_check: false

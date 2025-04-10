@@ -1,7 +1,5 @@
-import AddLocation from "../addLocation"
+import AddLocation from "../addLocation";
 
 export default function AddLocationPage() {
-  return (
-      <AddLocation/>
-  )
+  return <AddLocation />;
 }
