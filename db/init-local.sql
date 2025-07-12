@@ -26,11 +26,11 @@ SET row_security = off;
 -- Name: rits_dev; Type: DATABASE; Schema: -; Owner: postgres
 --
 
-CREATE DATABASE rits_db WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'C';
+-- CREATE DATABASE rits_db WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'C';
 
 ALTER DATABASE rits_db OWNER TO rits;
 
-\connect rits_dev
+-- \connect rits_dev
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
