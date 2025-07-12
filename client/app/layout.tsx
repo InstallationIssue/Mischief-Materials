@@ -1,53 +1,46 @@
 import "./globals.css";
-import {
-  Roboto_Flex,
-  Play,
-  Smooch_Sans,
-  Notable,
-  Libre_Barcode_39_Text,
-  Roboto_Mono,
-} from "next/font/google";
+import localFont from "next/font/local";
 import React from "react";
 
-const robotoMono = Roboto_Mono({
-  weight: ["400", "700"],
+const robotoMono = localFont({
+  src: "../public/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf",
+  weight: "400",
   display: "swap",
-  subsets: ["latin"],
   variable: "--font-mono",
 });
 
-const robotoFlex = Roboto_Flex({
-  weight: ["400", "700"],
+const robotoFlex = localFont({
+  src: "../public/fonts/Roboto_Flex/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf",
+  weight: "400",
   display: "swap",
-  subsets: ["latin"],
   variable: "--font-text",
 });
 
-const play = Play({
-  weight: ["400", "700"],
+const play = localFont({
+  src: "../public/fonts/Play/Play-Regular.ttf",
+  weight: "400",
   display: "swap",
-  subsets: ["latin"],
   variable: "--font-header",
 });
 
-const notable = Notable({
+const notable = localFont({
+  src: "../public/fonts/Notable/Notable-Regular.ttf",
   weight: "400",
   display: "swap",
-  subsets: ["latin"],
   variable: "--font-title",
 });
 
-const smooch = Smooch_Sans({
-  weight: ["400", "700"],
+const smooch = localFont({
+  src: "../public/fonts/Smooch_Sans/SmoochSans-VariableFont_wght.ttf",
+  weight: "400",
   display: "swap",
-  subsets: ["latin"],
   variable: "--font-smooch",
 });
 
-const libre = Libre_Barcode_39_Text({
+const libre = localFont({
+  src: "../public/fonts/Libre_Barcode_39/LibreBarcode39-Regular.ttf",
   weight: "400",
   display: "swap",
-  subsets: ["latin"],
   variable: "--font-libre",
 });
 

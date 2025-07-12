@@ -15,12 +15,8 @@ import Dexterity from "/public/icons/stats/dexterity.svg";
 import Willpower from "/public/icons/stats/willpower.svg";
 import Attack from "/public/icons/stats/attack.svg";
 
-export default async function Character({
-  params,
-}: {
-  params: { id: number };
-}) {
-  const character = await getCharacterById(Number(params.id));
+export default async function Character(props: { params: { id: number } }) {
+  const character = await getCharacterById(Number(props.params.id));
 
   return (
     <div className="w-full h-full flex flex-col gap-2">

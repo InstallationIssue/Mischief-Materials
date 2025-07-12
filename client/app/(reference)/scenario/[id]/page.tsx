@@ -10,7 +10,7 @@ import Magic from "/public/icons/magic/magic.svg";
 import Map from "/public/icons/locations/location.svg";
 
 import { PlayButton } from "@/app/_components/playButton";
-import ScenarioImage from "@/app/_components/scenarioImage";
+import ScenarioImage from "@/app/_imageComponents/scenarioImage";
 
 export default async function Scenario({ params }: { params: { id: number } }) {
   const scenario = await getScenarioById(Number(params.id));

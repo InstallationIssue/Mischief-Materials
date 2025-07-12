@@ -2,7 +2,7 @@
 'use client'
 import { useState } from "react";
 
-export default function textInputResizer({
+export default function TextInputResizer({
   id,
   placeholder,
 }: {
