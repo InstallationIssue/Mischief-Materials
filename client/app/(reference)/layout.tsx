@@ -44,7 +44,7 @@ export default function ReferenceLayout({
         >
           <Logo className="h-full" />
           <p className="text-4xl font-smooch px-1 hidden sm:line-clamp-1 md:hidden min-[896px]:line-clamp-1">
-            Rats in Transit
+            Mischief Materials
           </p>
         </Link>
         {playChoice.name !== "" && (

@@ -1,4 +1,4 @@
-name: rits
+name: mismat
 
 services:
   randomizer:
@@ -6,14 +6,14 @@ services:
     build:
       context: ./randomizer/
       labels:
-        - "com.description=Rits Randomizer"
+        - "com.description=Mismat Randomizer"
     networks:
       - hidden
   db:
     container_name: database
     image: postgres:17.5-alpine
     environment:
-      - POSTGRES_DB=rits_db
+      - POSTGRES_DB=mismat_db
       - POSTGRES_USER=db_user
       - POSTGRES_PASSWORD=db_password
     secrets:
@@ -22,12 +22,13 @@ services:
     volumes:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
       - type: volume
-        source: rits-volume
+        source: mismat-volume
         target: /var/lib/postgresql
     networks:
       - hidden
     healthcheck:
-      test: ["CMD-SHELL", "psql -U db_user -d rits_db -c 'SELECT 1' || exit 1"]
+      test:
+        ["CMD-SHELL", "psql -U db_user -d mismat_db -c 'SELECT 1' || exit 1"]
       interval: 1m
       timeout: 20s
       retries: 5
@@ -38,9 +39,9 @@ services:
     build:
       context: ./client/
       labels:
-        - "com.description=Rits Web Client"
+        - "com.description=Mismat Web Client"
     environment:
-      - DATABASE_URL=postgresql://db_user:db_password@db/rits_db?schema=base
+      - DATABASE_URL=postgresql://db_user:db_password@db/mismat_db?schema=base
       - RANDOMIZER_URL="localhost:"
     secrets:
       - db_user
@@ -79,9 +80,8 @@ networks:
     internal: true
     labels:
       - "com.description=Back End Network for Service Interconnect"
-
 # volumes:
-#   rits-volume:
+#   mismat-volume:
 #     external: true
 #   caddy-data:
 #     labels:

@@ -1,11 +1,11 @@
-name: rits-db
+name: mismat-db
 
 services:
   db:
-    container_name: rits-db
+    container_name: mismat-db
     image: postgres:17.5-alpine
     environment:
-      - POSTGRES_DB=rits_db
+      - POSTGRES_DB=mismat_db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:

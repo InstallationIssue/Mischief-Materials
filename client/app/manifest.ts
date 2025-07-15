@@ -2,8 +2,8 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Rats in Transit",
-    short_name: "RiTs",
+    name: "Mischief Materials",
+    short_name: "MisMat",
     description: "",
     start_url: "/",
     display: "standalone",
