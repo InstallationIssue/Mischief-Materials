@@ -1,4 +1,4 @@
-# Rats in Transit
+# Mischief Materials
 
 This is a hobby web app created to assist with running sessions of the Tabletop Game Maze Rats
 
@@ -51,9 +51,3 @@ npx prisma studio # Opens prisma studio
 
 npx prisma migrate dev # Updates database
 ```
-
-For VS Code
-
-command [ ] - indenting
-
-command k command 0 - fold all

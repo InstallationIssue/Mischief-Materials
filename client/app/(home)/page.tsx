@@ -5,11 +5,11 @@ import HomeChoiceButton from "../_components/homeChoiceButton";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "RiTs Home",
+  title: "MisMat Home",
 };
 
 export default function Page() {
-  process.title = "RiTs Home";
+  process.title = "MisMat Home";
 
   return (
     <div className="flex flex-col items-center w-full relative">
@@ -20,7 +20,7 @@ export default function Page() {
         <div className="h-16 aspect-square">
           <Logo />
         </div>
-        <p className="text-4xl font-smooch shadow-sm">Rats in Transit</p>
+        <p className="text-4xl font-smooch shadow-sm">Mischief Materials</p>
       </Link>
       <div className="flex relative overflow-clip w-full h-96 justify-center">
         <Image
@@ -47,7 +47,7 @@ export default function Page() {
       <div className="flex flex-col bg-primary-dark px-10 py-6 gap-4 w-full">
         <h2 className="font-header font-bold text-2xl">About The Site</h2>
         <p>
-          Welcome to my Rats in Transit Web app. This is designed to be a
+          Welcome to my Mischief Materials Web app. This is designed to be a
           companion app to the table top game maze rats. Please choose either of
           the options below to begin playing
         </p>
