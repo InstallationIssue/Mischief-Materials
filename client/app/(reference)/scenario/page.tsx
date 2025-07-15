@@ -12,13 +12,14 @@ export const metadata: Metadata = {
 export default async function Scenario({
   searchParams,
 }: {
-  searchParams?: {
-    query?: string;
-    page?: string;
+  searchParams: {
+    query: string;
+    page: string;
   };
 }) {
-  const query = await searchParams?.query || "";
-  const currentPage = Number(searchParams?.page) || 1;
+  const params = await searchParams
+  const query = params.query || "";
+  const currentPage = Number(params.page) || 1;
   const data = await getScenariosBySearch(query);
 
   return (

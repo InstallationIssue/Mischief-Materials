@@ -1,3 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary-dark: #1a1a27;
+  --color-primary-dark-grey: #1f2937;
+  --color-primary-grey: #6c756b;
+  --color-primary-light-grey: #d9d9d9;
+  --color-primary-light: #f2f5ea;
+  --color-primary-white: #ffffff;
+  --color-primary-faint: #d9d9d980;
+
+  --color-secondary-dark: #2d4d89;
+  --color-secondary-light: #647aa3;
+  --color-secondary-faint: #647aa380;
+
+  --color-highlight-dark: #b53453;
+  --color-highlight-light: #e75a7c;
+  --color-highlight-faint: #e75a7c80;
+
+  --color-success-dark: #13c90f;
+  --color-success-light: #40ff3d;
+  --color-success-faint: #40ff3d80;
+
+  --color-warning-dark: #e4a400;
+  --color-warning-light: #ffb800;
+  --color-warning-faint: #ffb80080;
+
+  --color-danger-dark: #dc1414;
+  --color-danger-light: #ff3434;
+  --color-danger-faint: #ff343480;
+
+  --color-stats-strength: #d65129;
+  --color-stats-dexterity: #29aed6;
+  --color-stats-willpower: #58d629;
+  --color-stats-attack: #a729d6;
+  --color-stats-level: #dbb924;
+  --color-stats-armor: #2446db;
+
+  --color-transparent: transparent;
+
+  --font-text: [ "var(--font-text)"];
+  --font-header: [ "var(--font-header)"];
+  --font-title: [ "var(--font-title)"];
+  --font-libre: [ "var(--font-libre)"];
+  --font-smooch: [ "var(--font-smooch)"];
+  --font-mono: [ "var(--font-mono)"];
+
+  --animation-scrolling-text: scrolling 4s linear 0s infinite;
+
+  --background-image: {
+    gradient-radial: radial-gradient(var(--tw-gradient-stops));
+    gradient-conic: conic-gradient(
+      from 180deg at 50% 50%,
+      var(--tw-gradient-stops)
+    );
+  }
+
+  --transition-font: {
+    font: font-size, line-height;
+  }
+}
+
+@keyframes scrolling {
+  0%,
+  100% {
+    transform: "translate3d(-110%,0,0)";
+  }
+}
