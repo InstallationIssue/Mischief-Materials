@@ -1,3 +1,8 @@
+![GitHub License](https://img.shields.io/github/license/InstallationIssue/Mischief-Materials)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/InstallationIssue/Mischief-Materials)
+![GitHub last commit](https://img.shields.io/github/last-commit/InstallationIssue/Mischief-Materials)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/InstallationIssue/Mischief-Materials?filename=client%2Fpackage.json)
+
 # Mischief Materials
 
 This is a hobby web app created to assist with running sessions of the Tabletop Game Maze Rats
