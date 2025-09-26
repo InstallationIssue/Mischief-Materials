@@ -56,3 +56,18 @@ npx prisma studio # Opens prisma studio
 
 npx prisma migrate dev # Updates database
 ```
+
+### NPM Updating & Auditing
+
+```bash
+npm audit
+
+npm outdated
+
+npm prune
+
+npm update
+
+#major version
+npm install $PACKAGE
+```
