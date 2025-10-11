@@ -1,7 +1,7 @@
 // prettier-ignore
 'use client'
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState, useFormStatus } from "react-dom";
 import TextInput from "../../_form-fields/textInput";
 import Color from "../../_form-fields/color";
 import FormButtons from "../../_form-fields/formButtons";
@@ -14,7 +14,7 @@ const initialState: IAppState = {
 };
 
 export default function AddLocation() {
-  const [state, formAction] = useFormState(createLocation, initialState);
+  const [state, formAction] = useActionState(createLocation, initialState);
 
   return (
     <form

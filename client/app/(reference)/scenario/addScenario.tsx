@@ -1,7 +1,7 @@
 // prettier-ignore
 'use client'
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState, useFormStatus } from "react-dom";
 import TextInput from "../../_form-fields/textInput";
 import ImageInput from "../../_form-fields/imageInput";
 import FormButtons from "../../_form-fields/formButtons";
@@ -13,7 +13,7 @@ const initialState: IAppState = {
 };
 
 export default function AddScenario() {
-  const [state, formAction] = useFormState(createScenario, initialState);
+  const [state, formAction] = useActionState(createScenario, initialState);
 
   return (
     <form
