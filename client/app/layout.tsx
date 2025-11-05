@@ -1,6 +1,6 @@
-import "./globals.css";
-import localFont from "next/font/local";
-import React from "react";
+import './globals.css';
+import localFont from 'next/font/local';
+import React from 'react';
 
 const robotoMono = localFont({
   src: "../public/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf",

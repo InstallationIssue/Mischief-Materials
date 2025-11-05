@@ -1,7 +1,7 @@
 // prettier-ignore
 'use client'
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState, useFormStatus } from "react-dom";
 import TextInput from "../../_form-fields/textInput";
 import TraitsMonster from "../../_form-fields/traitsMonster";
 import IconsSize from "../../_form-fields/iconsSize";
@@ -15,7 +15,7 @@ const initialState: IAppState = {
 };
 
 export default function AddMonster() {
-  const [state, formAction] = useFormState(createMonster, initialState);
+  const [state, formAction] = useActionState(createMonster, initialState);
 
   return (
     <form className="w-[660px] flex flex-col gap-2 py-2" action={formAction}>
