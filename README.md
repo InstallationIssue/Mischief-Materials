@@ -71,3 +71,112 @@ npm update
 #major version
 npm install $PACKAGE
 ```
+
+## Diagrams
+[Mermaid Entity Relationship Documentation](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
+
+[Mermaid Architecture Documentation](https://mermaid.js.org/syntax/architecture.html)
+
+```mermaid
+---
+title: Database ER Diagram
+---
+erDiagram
+
+Scenario {
+    string name
+    string description
+    string setting
+    string image
+}
+
+Location {
+    string name
+    string description
+    string color
+    string icon
+}
+
+Character {
+    string name
+    string background
+    int xp
+    int level
+    int health_max
+    int health_lost
+    int armor
+    int strength
+    int dexerity
+    int will
+    int attack
+    string profession
+    string appearance
+    string physical_detail
+    string clothing
+    string personality
+    string mannerism
+    boolean npc
+}
+
+Path {
+    string name
+    string description
+}
+
+Monster {
+    string name
+    string background
+    int health_max
+    int armor
+    int strength
+    int dexterity
+    int will
+    string size
+    int attack
+    string tactics
+    string personality
+    string weakness
+}
+
+Item {
+    string name
+    string description
+    int value
+}
+
+Spell {
+    string name
+    string description
+}
+
+Scenario }o--o{ Location : contains
+Scenario }o--o{ Character : contains
+Scenario }o--o{ Monster : contains
+Scenario }o--o{ Item : contains
+Scenario }o--o{ Spell : contains
+Character }|--o{ Path : contains
+
+```
+
+## Architecture
+
+```mermaid
+architecture-beta
+
+group architecture[Mischief Materials Architecture]
+service mischief_materials(server)[Mischief Materials Server] in architecture
+junction join in hide_net
+
+group hide_net[Hidden Network] in architecture
+service randomizer(server)[Randomizer] in hide_net
+service sql_db(database)[SQL Database] in hide_net
+service image_db(database)[Image Database] in hide_net
+
+service external(internet)[External]
+
+external:R <-- L:mischief_materials
+mischief_materials:R <-- L:join
+join:T -- B:sql_db
+join:R -- L:image_db
+join:B -- T:randomizer
+```
